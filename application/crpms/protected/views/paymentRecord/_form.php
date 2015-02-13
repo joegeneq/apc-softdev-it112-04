@@ -27,7 +27,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_date'); ?>
-		<?php echo $form->textField($model,'payment_date'); ?>
+		<?php echo CHtml::activeTextField($model,'payment_date',array("id"=>"payment_date")); ?>
+		  <?php $this->widget('application.extensions.calendar.SCalendar',
+        array(
+        'inputField'=>'payment_date',
+        'ifFormat'=>'%Y-%m-%d',
+		));
+		?>
 		<?php echo $form->error($model,'payment_date'); ?>
 	</div>
 

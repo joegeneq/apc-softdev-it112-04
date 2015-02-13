@@ -26,9 +26,16 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Medicine_expiration_date'); ?>
-		<?php echo $form->textField($model,'Medicine_expiration_date'); ?>
-		<?php echo $form->error($model,'Medicine_expiration_date'); ?>
+		<?php echo $form->labelEx($model,'medicine_expiration_date'); ?>
+		<?php //echo $form->textField($model,'medicine_expiration_date',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo CHtml::activeTextField($model,'medicine_expiration_date',array("id"=>"medicine_expiration_date")); ?>
+		  <?php $this->widget('application.extensions.calendar.SCalendar',
+        array(
+        'inputField'=>'medicine_expiration_date',
+        'ifFormat'=>'%Y-%m-%d',
+		));
+		?>
+		<?php echo $form->error($model,'medicine_expiration_date'); ?>
 	</div>
 
 	<div class="row">

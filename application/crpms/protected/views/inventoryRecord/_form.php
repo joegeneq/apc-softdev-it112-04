@@ -20,9 +20,16 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'delivery_Date'); ?>
-		<?php echo $form->textField($model,'delivery_Date'); ?>
-		<?php echo $form->error($model,'delivery_Date'); ?>
+		<?php echo $form->labelEx($model,'delivery_date'); ?>
+		<?php //echo $form->textField($model,'delivery_date',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo CHtml::activeTextField($model,'delivery_date',array("id"=>"delivery_date")); ?>
+		  <?php $this->widget('application.extensions.calendar.SCalendar',
+        array(
+        'inputField'=>'delivery_date',
+        'ifFormat'=>'%Y-%m-%d',
+		));
+		?>
+		<?php echo $form->error($model,'delivery_date'); ?>
 	</div>
 
 	<div class="row">
