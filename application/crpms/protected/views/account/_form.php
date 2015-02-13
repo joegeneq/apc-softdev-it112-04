@@ -72,8 +72,8 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	
 	<div class="column">
 		<?php echo $form->labelEx($model,'account_type'); ?>
-		<?php echo $form->dropDownList($model,'account_type',array('admin'=>'admin','employee'=>'employee', 
-		'encoder'=>'encoder', 'guest'=>'guest', 'supervisor'=>'supervisor' )); ?> 
+		<?php echo $form->dropDownList($model,'account_type',array('admin'=>'admin','pharmacist'=>'pharmacist', 
+		'accountant'=>'accountant', 'guest'=>'guest')); ?> 
 		<?php echo $form->error($model,'account_type'); ?>
 	</div>
 
