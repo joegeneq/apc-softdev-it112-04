@@ -26,6 +26,11 @@
 	</div>
 
 	<div class="row">
+<<<<<<< HEAD
+		<?php echo $form->labelEx($model,'Medicine_expiration_date'); ?>
+		<?php echo $form->textField($model,'Medicine_expiration_date'); ?>
+		<?php echo $form->error($model,'Medicine_expiration_date'); ?>
+=======
 		<?php echo $form->labelEx($model,'medicine_expiration_date'); ?>
 		<?php //echo $form->textField($model,'medicine_expiration_date',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo CHtml::activeTextField($model,'medicine_expiration_date',array("id"=>"medicine_expiration_date")); ?>
@@ -36,6 +41,7 @@
 		));
 		?>
 		<?php echo $form->error($model,'medicine_expiration_date'); ?>
+>>>>>>> 96e29da47882c5cc515b8e09669c44ffeea4bcd7
 	</div>
 
 	<div class="row">

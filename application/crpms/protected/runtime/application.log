@@ -2760,6 +2760,8 @@ in C:\xampp\htdocs\crpms\index.php (13)
 2015/02/12 20:00:54 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
 in C:\xampp\htdocs\crpms\protected\controllers\SiteController.php (86)
 in C:\xampp\htdocs\crpms\index.php (13)
+<<<<<<< HEAD
+=======
 2015/02/13 03:55:33 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
 in C:\xampp\htdocs\crpms\protected\controllers\SiteController.php (86)
 in C:\xampp\htdocs\crpms\index.php (13)
@@ -2930,3 +2932,4 @@ Stack trace:
 REQUEST_URI=/crpms/index.php?r=patientRecord/create
 HTTP_REFERER=http://localhost/crpms/index.php?r=patientRecord/index
 ---
+>>>>>>> 96e29da47882c5cc515b8e09669c44ffeea4bcd7

@@ -26,9 +26,15 @@
 	</div>
 
 	<div class="row">
+<<<<<<< HEAD
+		<?php echo $form->labelEx($model,'Patient_firstname'); ?>
+		<?php echo $form->textField($model,'Patient_firstname',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'Patient_firstname'); ?>
+=======
 		<?php echo $form->labelEx($model,'patient_firstname'); ?>
 		<?php echo $form->textField($model,'patient_firstname',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'patient_firstname'); ?>
+>>>>>>> 96e29da47882c5cc515b8e09669c44ffeea4bcd7
 	</div>
 
 	<div class="row">
@@ -44,6 +50,17 @@
 	</div>
 
 	<div class="row">
+<<<<<<< HEAD
+		<?php echo $form->labelEx($model,'Patient_address'); ?>
+		<?php echo $form->textField($model,'Patient_address',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'Patient_address'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'Patient_birthdatel'); ?>
+		<?php echo $form->textField($model,'Patient_birthdatel'); ?>
+		<?php echo $form->error($model,'Patient_birthdatel'); ?>
+=======
 		<?php echo $form->labelEx($model,'patient_address'); ?>
 		<?php echo $form->textField($model,'patient_address',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'patient_address'); ?>
@@ -59,6 +76,7 @@
 		));
 		?>
 		<?php echo $form->error($model,'patient_birthdate'); ?>
+>>>>>>> 96e29da47882c5cc515b8e09669c44ffeea4bcd7
 	</div>
 
 	<div class="row buttons">
