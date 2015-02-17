@@ -23,7 +23,9 @@ ENGINE = InnoDB;
 -- Table `crpms`.`Prescription_Record`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `crpms`.`Prescription_Record` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `date` DATE NOT NULL ,
+  `prescription_status` TINYINT(1) NOT NULL ,
   `patient_first_name` VARCHAR(45) NOT NULL ,
   `patient_last_name` VARCHAR(45) NOT NULL ,
   `patient_middle_initial` VARCHAR(45) NOT NULL ,
