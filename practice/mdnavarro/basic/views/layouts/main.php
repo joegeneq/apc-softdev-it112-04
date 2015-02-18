@@ -41,6 +41,7 @@ AppAsset::register($this);
 					['label' => 'City', 'url' => ['/city/index']],
 					['label' => 'Province', 'url' => ['/province/index']],
 					['label' => 'Region', 'url' => ['/region/index']],
+					['label' => 'Barangay', 'url' => ['/region/index']],
                     Yii::$app->user->isGuest ?
                         ['label' => 'Login', 'url' => ['/site/login']] :
                         ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
