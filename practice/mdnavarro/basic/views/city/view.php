@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'city_code',
             'city_description',                                 
                 [
-                        'label' => 'Province',
+                        'label' => 'Province Description',
                         'value' => $model->province->province_description,
                         ],
                         
