@@ -66,10 +66,6 @@
 	<?php echo CHtml::encode($data->account_type); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('account_number')); ?>:</b>
-	<?php echo CHtml::encode($data->account_number); ?>
-	<br />
-
 	*/ ?>
 
 </div>

@@ -4,17 +4,16 @@ $this->breadcrumbs=array(
 );
 /*
 $this->menu=array(
-	array('label'=>'Create SearchModule', 'url'=>array('create')),
-	array('label'=>'Manage SearchModule', 'url'=>array('admin')),
+	array('label'=>'Create Search Module', 'url'=>array('create')),
+	array('label'=>'Manage Search Module', 'url'=>array('admin')),
 ); */ ?>
 
 
 <h1>Search Modules</h1>
 <div class="row buttons">
-    <?php echo CHtml::button('Record', array('submit' => array('record/freesearch'))); ?>
-	<?php echo CHtml::button('Student201', array('submit' => array('student201/freesearch'))); ?>
-	<?php echo CHtml::button('Employee201', array('submit' => array('employee201/freesearch'))); ?>
-	<?php echo CHtml::button('Records/Documents', array('submit' => array('recordsDocuments/freesearch'))); ?>
+    <?php echo CHtml::button('Medicine Record', array('submit' => array('medicineRecord/freesearch'))); ?>
+	<?php echo CHtml::button('Medicine Location', array('submit' => array('medicineLocation/freesearch'))); ?>
+	
 	
 	</div>
 <?php $this->widget('zii.widgets.CListView', array(

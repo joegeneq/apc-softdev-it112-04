@@ -22,7 +22,7 @@ body
 {
 	margin-top: 30px;
 	padding: 0;
-	background-image: url( 'headlog2-copy.jpg' );
+	background-image: url( 'headlog pms1.jpg' );
 	background-repeat: no-repeat;
 	height: 200px;
 	 border-radius:15px;
@@ -31,7 +31,7 @@ body
 #Sublogo {
 
 	left:180px;
-	top:20px;
+	top:18px;
 	width:210px;
 	height:200px;
 	z-index:1;

@@ -27,7 +27,7 @@
 	</div><!-- header -->
 		<?php $this->widget('bootstrap.widgets.TbNavbar', array(
     'type'=>'inverse', // null or 'inverse'
-    'brand'=>'CRPMS',
+    'brand'=>'E-Module',
     'brandUrl'=>'',
     'collapse'=>true, // requires bootstrap-responsive.css
     'items'=>array(
@@ -39,16 +39,23 @@
 				array('visible'=>Yii::app()->user->getState('account_type')=='admin' || Yii::app()->user->getState('account_type')=='encoder' || Yii::app()->user->getState('account_type')=='supervisor' ,'label'=>'Manage','icon'=>'cog white', 'url'=>array('/department/index'),
 				'items'=>array(
                     
-                    array('visible'=>!Yii::app()->user->isGuest,'label'=>'Account','icon'=>'user', 'url'=>array('/account/index')),
-					array('label'=>'______________________'),
-					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Medicine Record','icon'=>'folder-open', 'url'=>array('/medicineRecord/index')),
-					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Patient Record','icon'=>'file', 'url'=>array('/patientRecord/index')),
-					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Prescription Record','icon'=>'book', 'url'=>array('/prescriptionRecord/index')),
-					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Inventory Record','icon'=>'th-list', 'url'=>array('/inventoryRecord/index')),
-				     array('visible'=>!Yii::app()->user->isGuest,'label'=>'Medicine Location','icon'=>'list', 'url'=>array('/medicineLocation/index')),
-					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Payment Record','icon'=>'file', 'url'=>array('/paymentRecord/index')),
-						  
+                    array('label'=>'Account','icon'=>'folder-open white', 'url'=>array('/account/index')),
                 )), 
+				
+					 array('visible'=>Yii::app()->user->getState('account_type')=='admin' || Yii::app()->user->getState('account_type')=='encoder' ,'label'=>'Resources','icon'=>'book white', 'url'=>array('/archives/index'),
+				'items'=>array(
+                    array('label'=>'Modules','icon'=>'folder-open white', 'url'=>array('/site/page', 'view'=>'modules')),
+					array('label'=>'Videos','icon'=>'folder-open white', 'url'=>array('/site/page', 'view'=>'videos')),
+                )),
+				
+				array('visible'=>Yii::app()->user->getState('account_type')=='guest' || Yii::app()->user->getState('account_type')=='encoder' || Yii::app()->user->getState('account_type')=='supervisor' , 'label'=>'Resources','icon'=>'list white', 'url'=>array('/site/page', 'view'=>'modules'),  
+				'items'=>array(
+                    array('label'=>'Modules','icon'=>'folder-open white', 'url'=>array('/site/page', 'view'=>'modules')),
+					array('label'=>'Videos','icon'=>'folder-open white', 'url'=>array('/site/page', 'view'=>'videos')),
+               
+                )),
+				
+				array('visible'=>!Yii::app()->user->isGuest, 'label'=>'Forms','icon'=>'file white', 'url'=>array('/forms/index')),
 				
             ),
         ),
@@ -95,14 +102,12 @@
 			
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
-	
 
 	<?php echo $content; ?>
+
 	<div id="footer">
-		
-		Copyright &copy; <?php echo date('Y'); ?> by Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> Philippine State College of Aeronautics.<br/>
 		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
 </div><!-- page -->

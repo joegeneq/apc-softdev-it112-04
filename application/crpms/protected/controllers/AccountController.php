@@ -28,18 +28,22 @@ class AccountController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "supervisor")'
+				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "pharmacist")'
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "encoder" | "supervisor")'
+				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "pharmacist" | "accountant")'
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="encoder" | "guest" | "supervisor")'
+				'expression'=>'isset($user->account_type) && ($user->account_type==="pharmacist")'
 			),
 			array('deny',  // deny all users
-				'expression'=>'isset($user->account_type) && ($user->account_type==="encoder")'
+				'expression'=>'isset($user->account_type) && ($user->account_type==="guest")'
+			),
+			array('allow',  // allow all users to perform 'view' actions
+				'actions'=>array('view'),
+				'expression'=>'isset($user->account_type) && ($user->account_type==="guest" | "accountant")'
 			),
 		);
 	}

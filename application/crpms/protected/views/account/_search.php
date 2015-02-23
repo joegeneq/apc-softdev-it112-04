@@ -55,10 +55,6 @@
 		<?php echo $form->textField($model,'account_type',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'account_number'); ?>
-		<?php echo $form->textField($model,'account_number',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

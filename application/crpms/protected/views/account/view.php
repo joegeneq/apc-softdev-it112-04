@@ -26,9 +26,8 @@ $this->menu=array(
 		'account_home_address',
 		'account_email_address',
 		'account_contact_number',
-		'account_username',
-		'account_password',
-		'account_type',
-		'account_number',
+		//'account_username',
+		//'account_password',
+		//'account_type',
 	),
 )); ?>

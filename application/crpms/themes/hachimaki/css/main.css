@@ -14,28 +14,28 @@ body
 	/*background-color: transparent ;*/
 	background-image: url('light.png');
 	border: 1px solid #121c28;
-	border:1px solid;
-    border-radius:30px;
+	border:2px solid;
+    border-radius:35px;
 }
 
 #header
 {
 	margin-top: 30px;
 	padding: 0;
-	background-image: url( 'cats.jpg' );
-	background-repeat:;
-	height: 180px;
+	background-image: url( 'headlog2 copy2.jpg' );
+	background-repeat: no-repeat;
+	height: 200px;
 	 border-radius:15px;
 	
 }
 #Sublogo {
 
 	left:180px;
-	top:18px;
+	top:20px;
 	width:210px;
-	height:180px;
+	height:200px;
 	z-index:1;
-	background-image: url('logo.jpg');
+	background-image: url('');
 }
 #content
 {
@@ -69,8 +69,7 @@ body
 {
 	/* background:white url(bg.gif) repeat-x left top; */
 	/*background-color: #231f20;*/
-		background-image: url('piclog234.jpg');
-		padding: 10px;
+		background-image: url('JSHd.jpg');
 	 /*background-color: #dbab21;*/ 
 	 
 	 
@@ -123,7 +122,7 @@ body
 	display: none; 
 	position: absolute; 
 	top: 100%;
-    background-image: url('jhs.jpg');
+    background-image: url('JSHd.jpg');
 	border-left: 5px solid #090909;
 
 	color: #fff; 
@@ -177,7 +176,7 @@ color: #fff;
 	display: none; 
 	position: absolute; 
 	top: 100%;
-    background-image: url('jhs.jpg');
+    background-image: url('JSHd.jpg');
 	color: #fff; 
 	height: auto;
 }
@@ -286,7 +285,7 @@ div.search-form
 	font-size:0.9em;
 	margin: 0 0 10px 0;
 	padding: 5px 8px;
-	background-image:url('jhs.jpg');
+	background-image:url('JSHd.jpg');
 	-moz-border-radius-bottomright: 50px 25px;
 	border-bottom-right-radius: 50px 25px;
 }

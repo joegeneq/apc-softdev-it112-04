@@ -5,8 +5,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List SearchModule', 'url'=>array('index')),
-	array('label'=>'Create SearchModule', 'url'=>array('create')),
+	array('label'=>'List Search Module', 'url'=>array('index')),
+	array('label'=>'Create Search Module', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

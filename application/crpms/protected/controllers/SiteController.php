@@ -5,6 +5,9 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
+	 
+	 
+	 
 	public function actions()
 	{
 		return array(
@@ -30,6 +33,8 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
+		if(Yii::app()->user->getId()===null)
+$this->redirect(array('site/login'));
 	}
 
 	/**
@@ -100,4 +105,5 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
 }
