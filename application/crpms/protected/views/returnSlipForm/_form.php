@@ -32,7 +32,7 @@
 		  <?php $this->widget('application.extensions.calendar.SCalendar',
         array(
         'inputField'=>'date',
-        'ifFormat'=>'%m-%d-%Y',
+        'ifFormat'=>'%Y-%m-%d',
     ));
     ?>
 		<?php echo $form->error($model,'date'); ?>
@@ -95,10 +95,8 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'ward_name'); ?>
 		<?php //echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45));
-        echo CHtml::activeDropDownList($model, 'id',
-        Chtml::listData(stockIssueForm::model()->findAllByAttributes(array('id'=>$model->id)), 'id', 'ward_name'),
-        array('prompt'=>'Select Ward Unit'))
-    ?>
+        echo CHtml::listData(stockIssueForm::model()->findAll(), 
+		'id','ward_name'),array('prompt' =>'Select material')); ?>
 </div>
 
 	<div class="row">

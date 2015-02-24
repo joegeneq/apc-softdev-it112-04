@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List StockIssueForm', 'url'=>array('index')),
-	array('label'=>'Create StockIssueForm', 'url'=>array('create')),
+	array('label'=>'List Stock Issue Form', 'url'=>array('index')),
+	array('label'=>'Create Stock Issue Form', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

@@ -44,7 +44,7 @@
 		  <?php $this->widget('application.extensions.calendar.SCalendar',
         array(
         'inputField'=>'delivery_date',
-        'ifFormat'=>'%m-%d-%Y',
+        'ifFormat'=>'%Y-%m-%d',
     ));
     ?>
 		<?php echo $form->error($model,'delivery_date'); ?>

@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List StockIssueForm', 'url'=>array('index')),
-	array('label'=>'Create StockIssueForm', 'url'=>array('create')),
-	array('label'=>'Update StockIssueForm', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete StockIssueForm', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage StockIssueForm', 'url'=>array('admin')),
+	array('label'=>'List Stock Issue Form', 'url'=>array('index')),
+	array('label'=>'Create Stock Issue Form', 'url'=>array('create')),
+	array('label'=>'Update Stock Issue Form', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Stock Issue Form', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Stock Issue Form', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View StockIssueForm #<?php echo $model->id; ?></h1>
+<h1>View Stock Issue Form #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -35,6 +35,6 @@ $this->menu=array(
 		'issued_by',
 		'received_by',
 		'ward_name',
-		'account_id',
+		//'account_id',
 	),
 )); ?>

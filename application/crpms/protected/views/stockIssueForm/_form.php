@@ -26,7 +26,7 @@
 		  <?php $this->widget('application.extensions.calendar.SCalendar',
         array(
         'inputField'=>'current_date',
-        'ifFormat'=>'%m-%d-%Y',
+        'ifFormat'=>'%Y-%m-%d',
     ));
     ?>
 		<?php echo $form->error($model,'current_date'); ?>
@@ -114,12 +114,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ward_name'); ?>
-		<?php //echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45));
-        echo CHtml::activeDropDownList($model, 'id',
-        Chtml::listData(returnSlipForm::model()->findAllByAttributes(array('id'=>$model->id)), 'id', 'ward_name'),
-        array('prompt'=>'Select Ward Unit'))
-    ?>
-</div>
+		<?php echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'ward_name'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'account_id'); ?>

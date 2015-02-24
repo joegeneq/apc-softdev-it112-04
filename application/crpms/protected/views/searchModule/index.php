@@ -11,8 +11,9 @@ $this->menu=array(
 
 <h1>Search Modules</h1>
 <div class="row buttons">
-    <?php echo CHtml::button('Medicine Record', array('submit' => array('medicineRecord/freesearch'))); ?>
-	<?php echo CHtml::button('Medicine Location', array('submit' => array('medicineLocation/freesearch'))); ?>
+    <?php echo CHtml::button('Stocks Record', array('submit' => array('stocksRecord/freesearch'))); ?>
+	<?php echo CHtml::button('Return Slip Form', array('submit' => array('returnSlipForm/freesearch'))); ?>
+	<?php echo CHtml::button('Stock Issue Form', array('submit' => array('stockIssueForm/freesearch'))); ?>
 	
 	
 	</div>

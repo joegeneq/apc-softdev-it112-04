@@ -7,29 +7,23 @@
 
 <?php $this->widget('bootstrap.widgets.TbCarousel', array(
     'items'=>array(
-	
+		
 		array(
-		'image'=>'',  
+		'image'=>'images/slide3.jpg', 
 		'label'=>'', 
-		'caption'=>'',
-		),
-			
-		array(
-		'image'=>'', 
-		'label'=>'', 
-		'caption'=>'',
+		'caption'=>'Main Entrance',
 		),
 		
 		array(
-		'image'=>'', 
+		'image'=>'images/slide4.jpg', 
 		'label'=>'', 
-		'caption'=>'',
+		'caption'=>'Pharmacy Office / Medicine Cabinet',
 		),
 		
 		array(
-		'image'=>'', 
+		'image'=>'images/slide5.jpg', 
 		'label'=>'', 
-		'caption'=>'',
+		'caption'=>'Main Entrance',
 		),
 		
 		
