@@ -81,16 +81,16 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'accounting_status'); ?>
-		<?php echo $form->textField($model,'accounting_status'); ?>
+		<?php echo $form->labelEx($model,'Accounting Status'); ?>
+		<?php echo $form->radioButtonList($model, 'accounting_status', array(1 => 'For Accounting Viewing', 0 => 'Done Reviewing'), array('separator' => '')); ?>
 		<?php echo $form->error($model,'accounting_status'); ?>
 	</div>
 
-	<!---<div class="row">
-		</*?php echo $form->labelEx($model,'account_id'); ?>
-		</*?php echo $form->textField($model,'account_id'); ?>
-		</*?php echo $form->error($model,'account_id'); ?*/>
-	</div>--->
+	<<div class="row">
+		<?php echo $form->labelEx($model,'account_id'); ?>
+		<?php echo $form->textField($model,'account_id'); ?>
+		<?php echo $form->error($model,'account_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
