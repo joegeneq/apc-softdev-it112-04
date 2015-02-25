@@ -20,72 +20,15 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'current_date'); ?>
-		<?php //echo $form->textField($model,'current_date',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo CHtml::activeTextField($model,'current_date',array("id"=>"current_date")); ?>
-		  <?php $this->widget('application.extensions.calendar.SCalendar',
-        array(
-        'inputField'=>'current_date',
-        'ifFormat'=>'%Y-%m-%d',
-    ));
-    ?>
-		<?php echo $form->error($model,'current_date'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'date'); ?>
-		<?php //echo $form->textField($model,'date',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo CHtml::activeTextField($model,'date',array("id"=>"date")); ?>
-		  <?php $this->widget('application.extensions.calendar.SCalendar',
-        array(
-        'inputField'=>'date',
-        'ifFormat'=>'%m-%d-%Y',
-    ));
-    ?>
+		<?php echo $form->textField($model,'date'); ?>
 		<?php echo $form->error($model,'date'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'item'); ?>
-		<?php echo $form->textField($model,'item',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'item'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'expiration_date'); ?>
-		<?php //echo $form->textField($model,'expiration_date',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo CHtml::activeTextField($model,'expiration_date',array("id"=>"expiration_date")); ?>
-		  <?php $this->widget('application.extensions.calendar.SCalendar',
-        array(
-        'inputField'=>'expiration_date',
-        'ifFormat'=>'%m-%d-%Y',
-    ));
-    ?>
-		<?php echo $form->error($model,'expiration_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'quantity'); ?>
-		<?php echo $form->textField($model,'quantity'); ?>
-		<?php echo $form->error($model,'quantity'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'unit_cost'); ?>
-		<?php echo $form->textField($model,'unit_cost'); ?>
-		<?php echo $form->error($model,'unit_cost'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'amount'); ?>
-		<?php echo $form->textField($model,'amount'); ?>
-		<?php echo $form->error($model,'amount'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'remarks'); ?>
-		<?php echo $form->textField($model,'remarks',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'remarks'); ?>
+		<?php echo $form->labelEx($model,'ward_name'); ?>
+		<?php echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'ward_name'); ?>
 	</div>
 
 	<div class="row">
@@ -110,12 +53,6 @@
 		<?php echo $form->labelEx($model,'received_by'); ?>
 		<?php echo $form->textField($model,'received_by',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'received_by'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ward_name'); ?>
-		<?php echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'ward_name'); ?>
 	</div>
 
 	<div class="row">

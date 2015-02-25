@@ -5,16 +5,12 @@
  *
  * The followings are the available columns in table 'stocks_record':
  * @property integer $id
- * @property string $item_name
- * @property integer $available_quantity
- * @property integer $released_quantity
- * @property string $delivery_date
- * @property integer $purchasing_status
- * @property string $remarks
+ * @property string $desciption
  * @property integer $account_id
  *
  * The followings are the available model relations:
  * @property Account $account
+ * @property StocksRecordItem[] $stocksRecordItems
  */
 class StocksRecord extends CActiveRecord
 {
@@ -34,12 +30,12 @@ class StocksRecord extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('item_name, available_quantity, released_quantity, delivery_date, purchasing_status, account_id', 'required'),
-			array('available_quantity, released_quantity, purchasing_status, account_id', 'numerical', 'integerOnly'=>true),
-			array('item_name, remarks', 'length', 'max'=>45),
+			array('desciption, account_id', 'required'),
+			array('account_id', 'numerical', 'integerOnly'=>true),
+			array('desciption', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, item_name, available_quantity, released_quantity, delivery_date, purchasing_status, remarks, account_id', 'safe', 'on'=>'search'),
+			array('id, desciption, account_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,6 +48,7 @@ class StocksRecord extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'account' => array(self::BELONGS_TO, 'Account', 'account_id'),
+			'stocksRecordItems' => array(self::HAS_MANY, 'StocksRecordItem', 'stocks_record_id'),
 		);
 	}
 
@@ -62,12 +59,7 @@ class StocksRecord extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'item_name' => 'Item Name',
-			'available_quantity' => 'Available Quantity',
-			'released_quantity' => 'Released Quantity',
-			'delivery_date' => 'Delivery Date',
-			'purchasing_status' => 'Purchasing Status',
-			'remarks' => 'Remarks',
+			'desciption' => 'Desciption',
 			'account_id' => 'Account',
 		);
 	}
@@ -91,12 +83,7 @@ class StocksRecord extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('item_name',$this->item_name,true);
-		$criteria->compare('available_quantity',$this->available_quantity);
-		$criteria->compare('released_quantity',$this->released_quantity);
-		$criteria->compare('delivery_date',$this->delivery_date,true);
-		$criteria->compare('purchasing_status',$this->purchasing_status);
-		$criteria->compare('remarks',$this->remarks,true);
+		$criteria->compare('desciption',$this->desciption,true);
 		$criteria->compare('account_id',$this->account_id);
 
 		return new CActiveDataProvider($this, array(

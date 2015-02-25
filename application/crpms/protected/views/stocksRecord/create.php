@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Stocks Record', 'url'=>array('index')),
-	array('label'=>'Manage Stocks Record', 'url'=>array('admin')),
+	array('label'=>'List StocksRecord', 'url'=>array('index')),
+	array('label'=>'Manage StocksRecord', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Stocks Record</h1>
+<h1>Create StocksRecord</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

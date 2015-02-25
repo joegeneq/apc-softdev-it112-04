@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Return Slip Form', 'url'=>array('index')),
-	array('label'=>'Create Return Slip Form', 'url'=>array('create')),
+	array('label'=>'List ReturnSlipForm', 'url'=>array('index')),
+	array('label'=>'Create ReturnSlipForm', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -46,19 +46,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'patient_name',
+		'patient_last_name',
+		'patient_first_name',
+		'patient_middle_initial',
 		'date',
-		'bed_number',
-		'item',
-		'quantity',
+		'ward_name',
 		/*
-		'amount',
-		'remarks',
+		'bed_number',
 		'returned_by',
 		'received_by',
 		'approved_by',
 		'accounting_status',
-		'ward_name',
 		'account_id',
 		*/
 		array(

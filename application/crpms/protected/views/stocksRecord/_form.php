@@ -20,46 +20,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'item_name'); ?>
-		<?php echo $form->textField($model,'item_name',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'item_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'available_quantity'); ?>
-		<?php echo $form->textField($model,'available_quantity'); ?>
-		<?php echo $form->error($model,'available_quantity'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'released_quantity'); ?>
-		<?php echo $form->textField($model,'released_quantity'); ?>
-		<?php echo $form->error($model,'released_quantity'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'delivery_date'); ?>
-		<?php //echo $form->textField($model,'delivery_date',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo CHtml::activeTextField($model,'delivery_date',array("id"=>"delivery_date")); ?>
-		  <?php $this->widget('application.extensions.calendar.SCalendar',
-        array(
-        'inputField'=>'delivery_date',
-        'ifFormat'=>'%Y-%m-%d',
-    ));
-    ?>
-		<?php echo $form->error($model,'delivery_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'purchasing_status'); ?>
-		<?php echo $form->textField($model,'purchasing_status'); ?>
-		<?php echo $form->error($model,'purchasing_status'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'remarks'); ?>
-		<?php echo $form->textField($model,'remarks',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'remarks'); ?>
+		<?php echo $form->labelEx($model,'desciption'); ?>
+		<?php echo $form->textField($model,'desciption',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'desciption'); ?>
 	</div>
 
 	<div class="row">

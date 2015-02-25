@@ -5,23 +5,17 @@
  *
  * The followings are the available columns in table 'stock_issue_form':
  * @property integer $id
- * @property string $current_date
  * @property string $date
- * @property string $item
- * @property string $expiration_date
- * @property integer $quantity
- * @property integer $unit_cost
- * @property integer $amount
- * @property string $remarks
+ * @property string $ward_name
  * @property string $prepared_by
  * @property string $approved_by
  * @property string $issued_by
  * @property string $received_by
- * @property string $ward_name
  * @property integer $account_id
  *
  * The followings are the available model relations:
  * @property Account $account
+ * @property StockIssueItem[] $stockIssueItems
  */
 class StockIssueForm extends CActiveRecord
 {
@@ -41,12 +35,12 @@ class StockIssueForm extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('current_date, date, item, expiration_date, quantity, unit_cost, amount, prepared_by, approved_by, issued_by, received_by, ward_name, account_id', 'required'),
-			array('quantity, unit_cost, amount, account_id', 'numerical', 'integerOnly'=>true),
-			array('item, remarks, prepared_by, approved_by, issued_by, received_by, ward_name', 'length', 'max'=>45),
+			array('date, ward_name, prepared_by, approved_by, issued_by, received_by, account_id', 'required'),
+			array('account_id', 'numerical', 'integerOnly'=>true),
+			array('ward_name, prepared_by, approved_by, issued_by, received_by', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, current_date, date, item, expiration_date, quantity, unit_cost, amount, remarks, prepared_by, approved_by, issued_by, received_by, ward_name, account_id', 'safe', 'on'=>'search'),
+			array('id, date, ward_name, prepared_by, approved_by, issued_by, received_by, account_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,6 +53,7 @@ class StockIssueForm extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'account' => array(self::BELONGS_TO, 'Account', 'account_id'),
+			'stockIssueItems' => array(self::HAS_MANY, 'StockIssueItem', 'stock_issue_form_id'),
 		);
 	}
 
@@ -69,19 +64,12 @@ class StockIssueForm extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'current_date' => 'Current Date',
 			'date' => 'Date',
-			'item' => 'Item',
-			'expiration_date' => 'Expiration Date',
-			'quantity' => 'Quantity',
-			'unit_cost' => 'Unit Cost',
-			'amount' => 'Amount',
-			'remarks' => 'Remarks',
+			'ward_name' => 'Ward Name',
 			'prepared_by' => 'Prepared By',
 			'approved_by' => 'Approved By',
 			'issued_by' => 'Issued By',
 			'received_by' => 'Received By',
-			'ward_name' => 'Ward Name',
 			'account_id' => 'Account',
 		);
 	}
@@ -105,19 +93,12 @@ class StockIssueForm extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('current_date',$this->current_date,true);
 		$criteria->compare('date',$this->date,true);
-		$criteria->compare('item',$this->item,true);
-		$criteria->compare('expiration_date',$this->expiration_date,true);
-		$criteria->compare('quantity',$this->quantity);
-		$criteria->compare('unit_cost',$this->unit_cost);
-		$criteria->compare('amount',$this->amount);
-		$criteria->compare('remarks',$this->remarks,true);
+		$criteria->compare('ward_name',$this->ward_name,true);
 		$criteria->compare('prepared_by',$this->prepared_by,true);
 		$criteria->compare('approved_by',$this->approved_by,true);
 		$criteria->compare('issued_by',$this->issued_by,true);
 		$criteria->compare('received_by',$this->received_by,true);
-		$criteria->compare('ward_name',$this->ward_name,true);
 		$criteria->compare('account_id',$this->account_id);
 
 		return new CActiveDataProvider($this, array(

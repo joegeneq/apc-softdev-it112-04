@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Stock Issue Form', 'url'=>array('index')),
-	array('label'=>'Create Stock Issue Form', 'url'=>array('create')),
+	array('label'=>'List StockIssueForm', 'url'=>array('index')),
+	array('label'=>'Create StockIssueForm', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -46,20 +46,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'current_date',
 		'date',
-		'item',
-		'expiration_date',
-		'quantity',
-		/*
-		'unit_cost',
-		'amount',
-		'remarks',
+		'ward_name',
 		'prepared_by',
 		'approved_by',
 		'issued_by',
+		/*
 		'received_by',
-		'ward_name',
 		'account_id',
 		*/
 		array(

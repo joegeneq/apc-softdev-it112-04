@@ -8000,3 +8000,569 @@ Stack trace:
 REQUEST_URI=/crpms/index.php?r=stocksRecord/freesearch
 HTTP_REFERER=http://localhost/crpms/index.php?r=searchModule/index
 ---
+2015/02/24 07:31:41 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.stock_issue_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('stock_issue_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('stock_issue_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'stock_issue_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'stock_issue_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'stock_issue_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:53 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:54 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:54 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:55 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:55 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:55 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:55 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:55 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 07:53:55 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1802): CHtml::resolveValue(Object(ReturnSlipForm), 'return_slip_for...')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(847): CHtml::activeDropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#4 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(98): CActiveForm->dropDownList(Object(ReturnSlipForm), 'return_slip_for...', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/index
+---
+2015/02/24 08:11:26 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:11:36 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:12:10 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:12:54 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:12:54 [error] [php] Missing argument 3 for CHtml::listData(), called in C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php on line 98 and defined (C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php:2073)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ReturnSlipFormController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(869): ReturnSlipFormController->renderFile()
+#2 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): ReturnSlipFormController->renderPartial()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ReturnSlipFormController->renderInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): ReturnSlipFormController->renderFile()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(782): ReturnSlipFormController->renderPartial()
+#7 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): ReturnSlipFormController->render()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ReturnSlipFormController->runAction()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ReturnSlipFormController->filterAccessControl()
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): ReturnSlipFormController->runActionWithFilters()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ReturnSlipFormController->run()
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\crpms\index.php(13): CWebApplication->run()
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+in C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php (98)
+in C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php (18)
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (79)
+2015/02/24 08:14:39 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:14:39 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "activedropDownList".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(99): CComponent->__call('activedropDownL...', Array)
+#1 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(99): CActiveForm->activedropDownList(Object(ReturnSlipForm), 'id', Array, Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/create
+---
+2015/02/24 08:15:13 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:16:41 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:17:31 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:18:58 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:18:58 [error] [exception.CException] exception 'CException' with message 'Property "ReturnSlipForm.return_slip_form_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('return_slip_for...')
+#1 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\_form.php(99): CActiveRecord->__get('return_slip_for...')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\crpms\protected\views\returnSlipForm\create.php(18): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php(79): CController->render('create', Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ReturnSlipFormController->actionCreate()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\crpms\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/crpms/index.php?r=returnSlipForm/create
+HTTP_REFERER=http://localhost/crpms/index.php?r=returnSlipForm/create
+---
+2015/02/24 08:23:10 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/24 08:50:53 [warning] [application] Failed to set unsafe attribute "id" of "ReturnSlipForm".
+in C:\xampp\htdocs\crpms\protected\controllers\ReturnSlipFormController.php (72)
+in C:\xampp\htdocs\crpms\index.php (13)
+2015/02/25 03:08:48 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 07:09:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crpms1.stocks_record_item' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `stocks_record_item`.
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 07:44:35 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crpms1.1.search_module' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `search_module`.
+in C:\xampp\htdocs\crpms1\protected\views\searchModule\index.php (23)
+in C:\xampp\htdocs\crpms1\protected\controllers\SearchModuleController.php (133)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 07:44:35 [error] [exception.CDbException] exception 'CDbException' with message 'The table "search_module" for active record class "SearchModule" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(SearchModule))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CActiveRecord->getTableSchema()
+#3 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#6 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): CListView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\crpms1\protected\views\searchModule\index.php(23): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\xampp\htdocs\crpms1\protected\controllers\SearchModuleController.php(133): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SearchModuleController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('searchModule/in...')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\crpms1\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/crpms1/index.php?r=searchModule/index
+HTTP_REFERER=http://localhost/crpms1/index.php
+---
+2015/02/25 07:45:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "freesearch".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('freesearch')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('freesearch')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('stockIssueForm/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crpms1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crpms1/index.php?r=stockIssueForm/freesearch
+HTTP_REFERER=http://localhost/crpms1/index.php?r=searchModule/index
+---
+2015/02/25 07:45:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "freesearch".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('freesearch')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('freesearch')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('returnSlipForm/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crpms1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crpms1/index.php?r=returnSlipForm/freesearch
+HTTP_REFERER=http://localhost/crpms1/index.php?r=searchModule/index
+---
+2015/02/25 07:45:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "freesearch".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('freesearch')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('freesearch')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('stocksRecord/fr...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crpms1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crpms1/index.php?r=stocksRecord/freesearch
+HTTP_REFERER=http://localhost/crpms1/index.php?r=searchModule/index
+---
+2015/02/25 07:48:29 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 07:49:09 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 07:49:18 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 07:50:12 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 15:37:33 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 15:39:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "freesearch".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('freesearch')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('freesearch')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('stockIssueForm/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crpms1\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crpms1/index.php?r=stockIssueForm/freesearch
+HTTP_REFERER=http://localhost/crpms1/index.php?r=searchModule/index
+---
+2015/02/25 15:41:28 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 15:52:33 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 17:33:01 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)
+2015/02/25 19:14:17 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
+in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
+in C:\xampp\htdocs\crpms1\index.php (13)

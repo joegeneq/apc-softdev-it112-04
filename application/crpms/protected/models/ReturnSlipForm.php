@@ -5,21 +5,20 @@
  *
  * The followings are the available columns in table 'return_slip_form':
  * @property integer $id
- * @property string $patient_name
+ * @property string $patient_last_name
+ * @property string $patient_first_name
+ * @property string $patient_middle_initial
  * @property string $date
+ * @property string $ward_name
  * @property string $bed_number
- * @property string $item
- * @property string $quantity
- * @property string $amount
- * @property string $remarks
  * @property string $returned_by
  * @property string $received_by
  * @property string $approved_by
  * @property integer $accounting_status
- * @property string $ward_name
  * @property integer $account_id
  *
  * The followings are the available model relations:
+ * @property ReturnItem[] $returnItems
  * @property Account $account
  */
 class ReturnSlipForm extends CActiveRecord
@@ -40,12 +39,12 @@ class ReturnSlipForm extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('patient_name, date, bed_number, item, quantity, amount, returned_by, received_by, approved_by, accounting_status, ward_name, account_id', 'required'),
+			array('patient_last_name, patient_first_name, date, ward_name, bed_number, returned_by, received_by, approved_by, accounting_status, account_id', 'required'),
 			array('accounting_status, account_id', 'numerical', 'integerOnly'=>true),
-			array('patient_name, bed_number, item, quantity, amount, remarks, returned_by, received_by, approved_by, ward_name', 'length', 'max'=>45),
+			array('patient_last_name, patient_first_name, patient_middle_initial, ward_name, bed_number, returned_by, received_by, approved_by', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, patient_name, date, bed_number, item, quantity, amount, remarks, returned_by, received_by, approved_by, accounting_status, ward_name, account_id', 'safe', 'on'=>'search'),
+			array('id, patient_last_name, patient_first_name, patient_middle_initial, date, ward_name, bed_number, returned_by, received_by, approved_by, accounting_status, account_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,6 +56,7 @@ class ReturnSlipForm extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'returnItems' => array(self::HAS_MANY, 'ReturnItem', 'return_slip_form_id'),
 			'account' => array(self::BELONGS_TO, 'Account', 'account_id'),
 		);
 	}
@@ -68,18 +68,16 @@ class ReturnSlipForm extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'patient_name' => 'Patient Name',
+			'patient_last_name' => 'Patient Last Name',
+			'patient_first_name' => 'Patient First Name',
+			'patient_middle_initial' => 'Patient Middle Initial',
 			'date' => 'Date',
+			'ward_name' => 'Ward Name',
 			'bed_number' => 'Bed Number',
-			'item' => 'Item',
-			'quantity' => 'Quantity',
-			'amount' => 'Amount',
-			'remarks' => 'Remarks',
 			'returned_by' => 'Returned By',
 			'received_by' => 'Received By',
 			'approved_by' => 'Approved By',
 			'accounting_status' => 'Accounting Status',
-			'ward_name' => 'Ward Name',
 			'account_id' => 'Account',
 		);
 	}
@@ -103,18 +101,16 @@ class ReturnSlipForm extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('patient_name',$this->patient_name,true);
+		$criteria->compare('patient_last_name',$this->patient_last_name,true);
+		$criteria->compare('patient_first_name',$this->patient_first_name,true);
+		$criteria->compare('patient_middle_initial',$this->patient_middle_initial,true);
 		$criteria->compare('date',$this->date,true);
+		$criteria->compare('ward_name',$this->ward_name,true);
 		$criteria->compare('bed_number',$this->bed_number,true);
-		$criteria->compare('item',$this->item,true);
-		$criteria->compare('quantity',$this->quantity,true);
-		$criteria->compare('amount',$this->amount,true);
-		$criteria->compare('remarks',$this->remarks,true);
 		$criteria->compare('returned_by',$this->returned_by,true);
 		$criteria->compare('received_by',$this->received_by,true);
 		$criteria->compare('approved_by',$this->approved_by,true);
 		$criteria->compare('accounting_status',$this->accounting_status);
-		$criteria->compare('ward_name',$this->ward_name,true);
 		$criteria->compare('account_id',$this->account_id);
 
 		return new CActiveDataProvider($this, array(

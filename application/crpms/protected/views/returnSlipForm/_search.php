@@ -17,8 +17,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'patient_name'); ?>
-		<?php echo $form->textField($model,'patient_name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'patient_last_name'); ?>
+		<?php echo $form->textField($model,'patient_last_name',array('size'=>45,'maxlength'=>45)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'patient_first_name'); ?>
+		<?php echo $form->textField($model,'patient_first_name',array('size'=>45,'maxlength'=>45)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'patient_middle_initial'); ?>
+		<?php echo $form->textField($model,'patient_middle_initial',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
@@ -27,28 +37,13 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'ward_name'); ?>
+		<?php echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'bed_number'); ?>
 		<?php echo $form->textField($model,'bed_number',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'item'); ?>
-		<?php echo $form->textField($model,'item',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'quantity'); ?>
-		<?php echo $form->textField($model,'quantity',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'amount'); ?>
-		<?php echo $form->textField($model,'amount',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'remarks'); ?>
-		<?php echo $form->textField($model,'remarks',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
@@ -69,11 +64,6 @@
 	<div class="row">
 		<?php echo $form->label($model,'accounting_status'); ?>
 		<?php echo $form->textField($model,'accounting_status'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'ward_name'); ?>
-		<?php echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">

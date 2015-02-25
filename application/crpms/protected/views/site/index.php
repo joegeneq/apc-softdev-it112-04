@@ -1,9 +1,10 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<h2><center>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i>CRUZ-RABE Maternity and General Hospital</center></h2>
+<h2>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i>CRMGH</h2>
 
 <body>
 <br><br><br>
+
 
 <?php $this->widget('bootstrap.widgets.TbCarousel', array(
     'items'=>array(
@@ -39,6 +40,9 @@
 ?>
  
 
+
+<p><small><strong>We are DONORS because a strong hospital is Essential to a Vibrant, Growing Community</strong><br>
+<em>Cruz-Rabe Hospt. Management</em></p>
 
 <p>
 <?php $this->widget('bootstrap.widgets.TbButton', array(

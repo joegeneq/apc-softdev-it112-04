@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Stock Issue Form', 'url'=>array('create')),
-	array('label'=>'Manage Stock Issue Form', 'url'=>array('admin')),
+	array('label'=>'Create StockIssueForm', 'url'=>array('create')),
+	array('label'=>'Manage StockIssueForm', 'url'=>array('admin')),
 );
 ?>
 

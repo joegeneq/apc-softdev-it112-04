@@ -54,7 +54,7 @@
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
               	array('visible'=>!Yii::app()->user->isGuest,'label'=>'Home','icon'=>'home white', 'url'=>array('/site/index')),
-				array('visible'=>!Yii::app()->user->isGuest,'label'=>'About','icon'=>'briefcase white', 'url'=>array('/site/page', 'view'=>'about')),
+				array('visible'=>!Yii::app()->user->isGuest,'label'=>'About','icon'=>'info-sign white', 'url'=>array('/site/page', 'view'=>'about')),
 				array('visible'=>Yii::app()->user->getState('account_type')=='admin' || Yii::app()->user->getState('account_type')=='pharmacist','label'=>'Manage','icon'=>'cog white', 'url'=>array('/department/index'),
 				'items'=>array(
                     
@@ -81,6 +81,16 @@
 				'items'=>array(
                      array('visible'=>!Yii::app()->user->isGuest,'label'=>'Return Slip Form','icon'=>'folder-open white', 'url'=>array('/returnSlipForm/index')),
 					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stock Issue Form','icon'=>'file white', 'url'=>array('/stockIssueForm/index')),
+					 
+					 )),
+					 
+					 
+				
+				array('visible'=>Yii::app()->user->getState('account_type')=='admin' || Yii::app()->user->getState('account_type')=='pharmacist', 'label'=>'Items','icon'=>'list-alt white', 'url'=>array('/department/index'),  
+				'items'=>array(
+                     array('visible'=>!Yii::app()->user->isGuest,'label'=>'Return Item','icon'=>'folder-open white', 'url'=>array('/returnItem/index')),
+					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stock Issue Item','icon'=>'file white', 'url'=>array('/stockIssueItem/index')),
+					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stocks Record Item','icon'=>'folder-open white', 'url'=>array('/stocksRecordItem/index')),
 					 
 					 )),
 				

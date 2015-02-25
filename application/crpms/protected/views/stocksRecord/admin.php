@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Stocks Record', 'url'=>array('index')),
-	array('label'=>'Create Stocks Record', 'url'=>array('create')),
+	array('label'=>'List StocksRecord', 'url'=>array('index')),
+	array('label'=>'Create StocksRecord', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -46,15 +46,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'item_name',
-		'available_quantity',
-		'released_quantity',
-		'delivery_date',
-		'purchasing_status',
-		/*
-		'remarks',
+		'desciption',
 		'account_id',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),
