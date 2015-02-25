@@ -8643,6 +8643,7 @@ Stack trace:
 REQUEST_URI=/crpms1/index.php?r=stocksRecordItem/create
 HTTP_REFERER=http://localhost/crpms1/index.php?r=stocksRecordItem/index
 ---
+<<<<<<< HEAD
 2015/02/25 06:36:13 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
 in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
 in C:\xampp\htdocs\crpms1\index.php (13)
@@ -8667,3 +8668,5 @@ in C:\xampp\htdocs\crpms1\index.php (13)
 2015/02/25 07:02:44 [warning] [application] Failed to set unsafe attribute "rememberMe" of "LoginForm".
 in C:\xampp\htdocs\crpms1\protected\controllers\SiteController.php (91)
 in C:\xampp\htdocs\crpms1\index.php (13)
+=======
+>>>>>>> 66d4b8443b16da65bd1edb2c3cb31b3ba6855b62
