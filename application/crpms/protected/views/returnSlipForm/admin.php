@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ReturnSlipForm', 'url'=>array('index')),
-	array('label'=>'Create ReturnSlipForm', 'url'=>array('create')),
+	array('label'=>'List Return Slip Form', 'url'=>array('index')),
+	array('label'=>'Create Return Slip Form', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

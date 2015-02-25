@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ReturnSlipForm', 'url'=>array('index')),
-	array('label'=>'Create ReturnSlipForm', 'url'=>array('create')),
-	array('label'=>'Update ReturnSlipForm', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ReturnSlipForm', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ReturnSlipForm', 'url'=>array('admin')),
+	array('label'=>'List Return Slip Form', 'url'=>array('index')),
+	array('label'=>'Create Return Slip Form', 'url'=>array('create')),
+	array('label'=>'Update Return Slip Form', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Return Slip Form', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Return Slip Form', 'url'=>array('admin')),
 );
 ?>
 
@@ -32,6 +32,6 @@ $this->menu=array(
 		'received_by',
 		'approved_by',
 		'accounting_status',
-		'account_id',
+		//'account_id',
 	),
 )); ?>
