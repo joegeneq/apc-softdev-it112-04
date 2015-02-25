@@ -21,9 +21,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date'); ?>
-		<?php echo $form->textField($model,'date'); ?>
+		<?php //echo $form->textField($model,'date',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo CHtml::activeTextField($model,'date',array("id"=>"date")); ?>
+		  <?php $this->widget('application.extensions.calendar.SCalendar',
+        array(
+        'inputField'=>'date',
+        'ifFormat'=>'%Y-%m-%d',
+    ));
+    ?>
 		<?php echo $form->error($model,'date'); ?>
 	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ward_name'); ?>
@@ -55,11 +63,11 @@
 		<?php echo $form->error($model,'received_by'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'account_id'); ?>
-		<?php echo $form->textField($model,'account_id'); ?>
-		<?php echo $form->error($model,'account_id'); ?>
-	</div>
+	<!----<div class="row">
+		</*?php echo $form->labelEx($model,'account_id'); ?>
+		</*?php echo $form->textField($model,'account_id'); ?>
+		</*?php echo $form->error($model,'account_id'); ?>
+	</div>--->
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create ReturnSlipForm', 'url'=>array('create')),
-	array('label'=>'Manage ReturnSlipForm', 'url'=>array('admin')),
+	array('label'=>'Create Return Slip Form', 'url'=>array('create')),
+	array('label'=>'Manage Return Slip Form', 'url'=>array('admin')),
 );
 ?>
 
