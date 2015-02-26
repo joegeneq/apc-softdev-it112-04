@@ -35,8 +35,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ward_name'); ?>
-		<?php echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'ward_name'); ?>
+		<?php echo $form->dropDownList($model,'ward_name',array('prompt' =>'Select Ward','pedia'=>'pedia','private ward'=>'private ward', 
+		'semi-private ward'=>'semi-private ward', 'male ward'=>'male ward', 'suite room'=>'suite room', 'ob gyne'=>'ob gyne ward',)); ?> 
 	</div>
 
 	<div class="row">
@@ -63,11 +63,11 @@
 		<?php echo $form->error($model,'received_by'); ?>
 	</div>
 
-	<!----<div class="row">
-		</*?php echo $form->labelEx($model,'account_id'); ?>
-		</*?php echo $form->textField($model,'account_id'); ?>
-		</*?php echo $form->error($model,'account_id'); ?>
-	</div>--->
+	<div class="row">
+		<?php echo $form->labelEx($model,'account_id'); ?>
+		<?php echo $form->textField($model,'account_id'); ?>
+		<?php echo $form->error($model,'account_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

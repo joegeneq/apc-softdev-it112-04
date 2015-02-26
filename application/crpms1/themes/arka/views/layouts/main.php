@@ -65,8 +65,8 @@
                 array('visible'=>Yii::app()->user->getState('account_type')=='accountant' ,'label'=>'Records','icon'=>'book white', 'url'=>array('/department/index'),
 				'items'=>array(
                     array('visible'=>!Yii::app()->user->isGuest,'label'=>'Return Slip Form','icon'=>'folder-open white', 'url'=>array('/returnSlipForm/index')),
-					array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stock Issue Form','icon'=>'file white', 'url'=>array('/stockIssueForm/index')),
-					array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stock Record','icon'=>'book white', 'url'=>array('/stocksRecord/index')),
+					//array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stock Issue Form','icon'=>'file white', 'url'=>array('/stockIssueForm/index')),
+					//array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stock Record','icon'=>'book white', 'url'=>array('/stocksRecord/index')),
                     
                 )),
 				
@@ -74,6 +74,7 @@
 				'items'=>array(
                      
 					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stock Record','icon'=>'book white', 'url'=>array('/stocksRecord/index')),
+					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stocks Record Item','icon'=>'folder-open white', 'url'=>array('/stocksRecordItem/index')),
 
                 )),
 				
@@ -90,12 +91,12 @@
 				'items'=>array(
                      array('visible'=>!Yii::app()->user->isGuest,'label'=>'Return Item','icon'=>'folder-open white', 'url'=>array('/returnItem/index')),
 					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stock Issue Item','icon'=>'file white', 'url'=>array('/stockIssueItem/index')),
-					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Stocks Record Item','icon'=>'folder-open white', 'url'=>array('/stocksRecordItem/index')),
+					
 					 
 					 )),
 				
 				//array('visible'=>!Yii::app()->user->isGuest, 'label'=>'Forms','icon'=>'file white', 'url'=>array('/forms/index')),
-				array('visible'=>!Yii::app()->user->isGuest, 'label'=>'Search','icon'=>'search white', 'url'=>array('/searchModule/index')),
+				//array('visible'=>!Yii::app()->user->isGuest, 'label'=>'Search','icon'=>'search white', 'url'=>array('/searchModule/index')),
 				
 
 				

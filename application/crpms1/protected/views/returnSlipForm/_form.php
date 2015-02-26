@@ -52,14 +52,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ward_name'); ?>
-		<?php echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'ward_name'); ?>
+		<?php echo $form->dropDownList($model,'ward_name',array('prompt' =>'Select Ward','pedia'=>'pedia','private ward'=>'private ward', 
+		'semi-private ward'=>'semi-private ward', 'male ward'=>'male ward', 'suite room'=>'suite room', 'ob gyne'=>'ob gyne ward',)); ?> 
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'bed_number'); ?>
-		<?php echo $form->textField($model,'bed_number',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'bed_number'); ?>
+		<?php echo $form->dropDownList($model,'bed_number',array('prompt' =>'Select Bed Number','pedia'=>'pedia (202)','private ward'=>'private ward (210)', 
+		'semi-private ward'=>'semi-private ward (207|209)', 'male ward'=>' male ward (204)', 'suite room'=>'suite room (208|210)', 'ob gyne'=>'ob gyne (203)')); ?> 
 	</div>
 
 	<div class="row">
@@ -86,11 +86,11 @@
 		<?php echo $form->error($model,'accounting_status'); ?>
 	</div>
 
-	<!---<div class="row">
-		</*?php echo $form->labelEx($model,'account_id'); ?>
-		</*?php echo $form->textField($model,'account_id'); ?>
-		</*?php echo $form->error($model,'account_id'); ?*/>
-	</div>--->
+	<div class="row">
+		<?php echo $form->labelEx($model,'account_id'); ?>
+		<?php echo $form->textField($model,'account_id'); ?>
+		<?php echo $form->error($model,'account_id');?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

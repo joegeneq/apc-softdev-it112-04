@@ -9,11 +9,11 @@
 <?php $this->widget('bootstrap.widgets.TbCarousel', array(
     'items'=>array(
 		
-		array(
+		/*array(
 		'image'=>'images/slide3.jpg', 
 		'label'=>'', 
 		'caption'=>'Main Entrance',
-		),
+		),*/
 		
 		array(
 		'image'=>'images/slide4.jpg', 

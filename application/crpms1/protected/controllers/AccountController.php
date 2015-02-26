@@ -28,11 +28,11 @@ class AccountController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "pharmacist")'
+				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "pharmacist" | "accountant")'
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "pharmacist" | "accountant")'
+				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "pharmacist")'
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),

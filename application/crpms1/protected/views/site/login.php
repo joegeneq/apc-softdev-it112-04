@@ -14,8 +14,8 @@ $this->breadcrumbs=array(
 
 	); 
 ?>
- <p><small><p>""</p><br>
-<em></em></p>
+ <p><small><strong>We are DONORS because a strong hospital is Essential to a Vibrant, Growing Community</strong><br>
+<em>Cruz-Rabe Hospt. Management</em></p>
 
 <p>
 <a href="#myModal" role="button" class="btn btn-warning" data-toggle="modal">Login</a>
