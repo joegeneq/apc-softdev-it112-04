@@ -16,8 +16,10 @@ $this->menu=array(
 );
 ?>
 
-<h1>View StocksRecordItem #<?php echo $model->id; ?></h1>
-
+<h1>View Stocks Record Item of<?php echo $model->id; ?></h1>
+<p><b> NOTE: </b> </p>
+<p>(1) Supplies for this item is enough </p>
+<p>(0) Supplies for this item is Critical.</p>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
