@@ -54,7 +54,15 @@
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
               	array('visible'=>!Yii::app()->user->isGuest,'label'=>'Home','icon'=>'home white', 'url'=>array('/site/index')),
-				array('visible'=>!Yii::app()->user->isGuest,'label'=>'About','icon'=>'info-sign white', 'url'=>array('/site/page', 'view'=>'about')),
+				array('visible'=>Yii::app()->user->getState('account_type')=='admin' || Yii::app()->user->getState('account_type')=='pharmacist' || Yii::app()->user->getState('account_type')=='accounting','label'=>'About','icon'=>'info-sign white', 'url'=>array('/department/index'),
+				'items'=>array(
+                    
+					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Company Background','icon'=>'book white', 'url'=>array('/site/page', 'view'=>'profile')),
+                     array('visible'=>!Yii::app()->user->isGuest,'label'=>'Vision','icon'=>'tag white', 'url'=>array('/site/page', 'view'=>'vision')),
+					 array('visible'=>!Yii::app()->user->isGuest,'label'=>'Mission Statement','icon'=>'tags white', 'url'=>array('/site/page', 'view'=>'mission')),
+					 
+				)),
+				
 				array('visible'=>Yii::app()->user->getState('account_type')=='admin' || Yii::app()->user->getState('account_type')=='pharmacist','label'=>'Manage','icon'=>'cog white', 'url'=>array('/department/index'),
 				'items'=>array(
                     

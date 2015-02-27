@@ -21,17 +21,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date'); ?>
-		<?php //echo $form->textField($model,'date',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo CHtml::activeTextField($model,'date',array("id"=>"date")); ?>
-		  <?php $this->widget('application.extensions.calendar.SCalendar',
-        array(
-        'inputField'=>'date',
-        'ifFormat'=>'%Y-%m-%d',
-    ));
-    ?>
+		<?php echo $form->textField($model,'date'); ?>
 		<?php echo $form->error($model,'date'); ?>
 	</div>
-
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'item_name'); ?>
@@ -47,17 +39,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'expiration_date'); ?>
-		<?php //echo $form->textField($model,'expiration_date',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo CHtml::activeTextField($model,'date',array("id"=>"expiration_date")); ?>
-		  <?php $this->widget('application.extensions.calendar.SCalendar',
-        array(
-        'inputField'=>'expiration_date',
-        'ifFormat'=>'%Y-%m-%d',
-    ));
-    ?>
-		<?php echo $form->error($model,'date'); ?>
+		<?php echo $form->textField($model,'expiration_date'); ?>
+		<?php echo $form->error($model,'expiration_date'); ?>
 	</div>
-
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'unit_cost'); ?>

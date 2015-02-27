@@ -19,12 +19,13 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="column">
+	<div class="row">
 		<?php echo $form->labelEx($model,'item_name'); ?>
 		<?php echo $form->textField($model,'item_name',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'item_name'); ?>
 	</div>
-	<div class="column">
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'available_quantity'); ?>
 		<?php echo $form->textField($model,'available_quantity'); ?>
 		<?php echo $form->error($model,'available_quantity'); ?>
@@ -36,7 +37,7 @@
 		<?php echo $form->error($model,'released_quantity'); ?>
 	</div>
 
-	<div class="column">
+	<div class="row">
 		<?php echo $form->labelEx($model,'delivery_date'); ?>
 		<?php //echo $form->textField($model,'delivery_date',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo CHtml::activeTextField($model,'delivery_date',array("id"=>"delivery_date")); ?>
@@ -50,22 +51,21 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'purchasing_status'); ?>
+		<?php echo $form->textField($model,'purchasing_status'); ?>
+		<?php echo $form->error($model,'purchasing_status'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'remarks'); ?>
 		<?php echo $form->textField($model,'remarks',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'remarks'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Stocks Record Id'); ?>
+		<?php echo $form->labelEx($model,'stocks_record_id'); ?>
 		<?php echo $form->textField($model,'stocks_record_id'); ?>
 		<?php echo $form->error($model,'stocks_record_id'); ?>
-	</div>
-		<div class="row">
-		<?php echo $form->labelEx($model,'Purchasing Status'); ?>
-		<?php echo $form->radioButtonList($model, 'purchasing_status',
-		 array(1 => 'Enough Supplies', 0 => 'Need more Supplies'),
-		 array('separator' => '')); ?>
-		<?php echo $form->error($model,'purchasing_status'); ?>
 	</div>
 
 	<div class="row buttons">

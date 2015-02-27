@@ -58,8 +58,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'bed_number'); ?>
-		<?php echo $form->dropDownList($model,'bed_number',array('prompt' =>'Select Bed Number','pedia'=>'pedia (202)','private ward'=>'private ward (210)', 
-		'semi-private ward'=>'semi-private ward (207|209)', 'male ward'=>' male ward (204)', 'suite room'=>'suite room (208|210)', 'ob gyne'=>'ob gyne (203)')); ?> 
+		<?php echo $form->dropDownList($model,'bed_number',array('prompt' =>'Select Bed Number','202'=>'Pedia (202)','210'=>'Private Ward (210)', 
+		'207|209'=>'semi-private ward (207|209)', '204'=>' male ward (204)', '208|210'=>'Suite Room (208|210)', '203'=>'OB Gyne (203)')); ?> 
 	</div>
 
 	<div class="row">
@@ -81,22 +81,15 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Accounting Status'); ?>
-		<?php echo $form->radioButtonList($model, 'accounting_status', array(1 => 'For Accounting Viewing', 0 => 'Done Reviewing'), array('separator' => '')); ?>
+		<?php echo $form->labelEx($model,'accounting_status'); ?>
+		<?php echo $form->textField($model,'accounting_status'); ?>
 		<?php echo $form->error($model,'accounting_status'); ?>
 	</div>
 
-<<<<<<< HEAD
 	<div class="row">
 		<?php echo $form->labelEx($model,'account_id'); ?>
 		<?php echo $form->textField($model,'account_id'); ?>
 		<?php echo $form->error($model,'account_id');?>
-=======
-	<<div class="row">
-		<?php echo $form->labelEx($model,'account_id'); ?>
-		<?php echo $form->textField($model,'account_id'); ?>
-		<?php echo $form->error($model,'account_id'); ?>
->>>>>>> 7a01b50cd5b5007788c13b7b090b493ca1d7370c
 	</div>
 
 	<div class="row buttons">
