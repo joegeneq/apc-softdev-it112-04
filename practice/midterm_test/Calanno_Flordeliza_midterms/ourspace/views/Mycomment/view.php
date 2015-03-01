@@ -2,12 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use app\models\Myaddress;
 /* @var $this yii\web\View */
 /* @var $model app\models\Mycomment */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Mycomments', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'My comments', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mycomment-view">
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'myaddress_id',
+			['attribute' => 'myaddress.lastname', 'label' => 'My Address ID'],
             'author',
             'body:ntext',
             'created_at',
