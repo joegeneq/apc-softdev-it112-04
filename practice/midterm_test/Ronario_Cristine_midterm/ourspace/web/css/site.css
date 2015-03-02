@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+	background-color: #F6CEF5;
 }
 
 .wrap {
@@ -27,7 +28,7 @@ body {
 }
 
 .jumbotron .btn {
-    font-size: 21px;
+    font-size: 50px;
     padding: 14px 24px;
 }
 
@@ -41,7 +42,7 @@ a.asc:after, a.desc:after {
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
+    font-family: 'Times New Roman';
     font-style: normal;
     font-weight: normal;
     line-height: 1;
