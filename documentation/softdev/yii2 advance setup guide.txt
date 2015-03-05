@@ -1,0 +1,75 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\Kevs>cd xampp/htdocs
+The system cannot find the path specified.
+
+C:\Users\Kevs>cd \
+
+C:\>cd xampp/htdocs
+
+C:\xampp\htdocs>composer create-project --prefer-dist yiisoft/basic
+'composer' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\htdocs>cd crpms2/advanced
+The system cannot find the path specified.
+
+C:\xampp\htdocs>cd crpms2/apps/advanced
+
+C:\xampp\htdocs\crpms2\apps\advanced>php init
+Yii Application Initialization Tool v1.0
+
+Which environment do you want the application to be initialized in?
+
+  [0] Development
+  [1] Production
+
+  Your choice [0-1, or "q" to quit] 0
+
+  Initialize the application under 'Development' environment? [yes|no] y
+
+  Start initialization ...
+
+      exist backend/config/main-local.php
+            ...overwrite? [Yes|No|All|Quit] A
+  overwrite backend/config/main-local.php
+  unchanged backend/config/params-local.php
+  unchanged backend/web/index-test.php
+  unchanged backend/web/index.php
+  unchanged common/config/main-local.php
+  unchanged common/config/params-local.php
+  unchanged console/config/main-local.php
+  unchanged console/config/params-local.php
+  overwrite frontend/config/main-local.php
+  unchanged frontend/config/params-local.php
+  unchanged frontend/web/index-test.php
+  unchanged frontend/web/index.php
+  unchanged yii
+   generate cookie validation key in backend/config/main-local.php
+   generate cookie validation key in frontend/config/main-local.php
+      chmod 0777 backend/runtime
+      chmod 0777 backend/web/assets
+      chmod 0777 frontend/runtime
+      chmod 0777 frontend/web/assets
+      chmod 0755 yii
+
+  ... initialization completed.
+
+
+C:\xampp\htdocs\crpms2\apps\advanced>yii migrate
+Yii Migration Tool (based on Yii v2.0.3)
+
+Creating migration history table "migration"...Done.
+Total 1 new migration to be applied:
+        m130524_201442_init
+
+Apply the above migration? (yes|no) [no]:y
+*** applying m130524_201442_init
+    > create table {{%user}} ... done (time: 0.372s)
+*** applied m130524_201442_init (time: 0.555s)
+
+
+Migrated up successfully.
+
+C:\xampp\htdocs\crpms2\apps\advanced>
