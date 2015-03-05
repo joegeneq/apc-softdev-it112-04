@@ -1,1 +1,0 @@
-<?phpforeach ($results as $row){echo "<br>";echo "Record Reference Code: ".$row['reference_code']."   ";echo "Record Location Code: ".$row['location_code']."   ";}?>

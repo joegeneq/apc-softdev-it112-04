@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+ background-color: #99ff66; font-style: times new roman;
 }
 
 .wrap {
@@ -16,7 +17,7 @@ body {
 
 .footer {
     height: 60px;
-    background-color: #f5f5f5;
+    background-color: #99ff66;
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
@@ -33,7 +34,7 @@ body {
 
 .not-set {
     color: #c55;
-    font-style: italic;
+    font-style: times new roman;
 }
 
 /* add sorting icons to gridview sort links */
