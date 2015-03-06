@@ -1,19 +1,9 @@
 Microsoft Windows [Version 6.1.7601]
 Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
 
-C:\Users\Kevs>cd xampp/htdocs
-The system cannot find the path specified.
-
 C:\Users\Kevs>cd \
 
 C:\>cd xampp/htdocs
-
-C:\xampp\htdocs>composer create-project --prefer-dist yiisoft/basic
-'composer' is not recognized as an internal or external command,
-operable program or batch file.
-
-C:\xampp\htdocs>cd crpms2/advanced
-The system cannot find the path specified.
 
 C:\xampp\htdocs>cd crpms2/apps/advanced
 
