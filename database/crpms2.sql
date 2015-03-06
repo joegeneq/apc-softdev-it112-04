@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2015 at 12:57 AM
+-- Generation Time: Mar 06, 2015 at 05:13 AM
 -- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `crpms1`
+-- Database: `crpms2`
 --
 
 -- --------------------------------------------------------
@@ -46,14 +46,14 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `return_item` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `date` date NOT NULL,
   `item_name` varchar(45) NOT NULL,
   `quantity` int(11) NOT NULL,
   `amount` decimal(10,0) NOT NULL,
   `remarks` varchar(45) DEFAULT NULL,
   `return_slip_form_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `return_item`
@@ -70,7 +70,7 @@ INSERT INTO `return_item` (`id`, `date`, `item_name`, `quantity`, `amount`, `rem
 --
 
 CREATE TABLE IF NOT EXISTS `return_slip_form` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `patient_last_name` varchar(45) NOT NULL,
   `patient_first_name` varchar(45) NOT NULL,
   `patient_middle_initial` varchar(45) DEFAULT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `return_slip_form` (
   `approved_by` varchar(45) NOT NULL,
   `accounting_status` tinyint(1) NOT NULL,
   `account_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `return_slip_form`
@@ -100,7 +100,7 @@ INSERT INTO `return_slip_form` (`id`, `patient_last_name`, `patient_first_name`,
 --
 
 CREATE TABLE IF NOT EXISTS `search_module` (
-`id` int(11) NOT NULL
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -110,18 +110,20 @@ CREATE TABLE IF NOT EXISTS `search_module` (
 --
 
 CREATE TABLE IF NOT EXISTS `stocks_record` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `description` varchar(45) NOT NULL,
-  `account_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stocks_record`
 --
 
-INSERT INTO `stocks_record` (`id`, `description`, `account_id`) VALUES
-(1, 'Medicine Supply', 2),
-(2, 'For Operation', 1);
+INSERT INTO `stocks_record` (`id`, `description`, `user_id`) VALUES
+(1, 'Medicine Supply', 0),
+(2, 'For Operation', 0),
+(3, 'For Pedia Ward', 0),
+(5, 'For Male Ward', 0);
 
 -- --------------------------------------------------------
 
@@ -130,7 +132,7 @@ INSERT INTO `stocks_record` (`id`, `description`, `account_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `stocks_record_item` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `item_name` varchar(45) NOT NULL,
   `available_quantity` int(11) NOT NULL,
   `released_quantity` int(11) NOT NULL,
@@ -138,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `stocks_record_item` (
   `purchasing_status` tinyint(1) NOT NULL,
   `remarks` varchar(45) DEFAULT NULL,
   `stocks_record_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stocks_record_item`
@@ -147,6 +149,7 @@ CREATE TABLE IF NOT EXISTS `stocks_record_item` (
 INSERT INTO `stocks_record_item` (`id`, `item_name`, `available_quantity`, `released_quantity`, `delivery_date`, `purchasing_status`, `remarks`, `stocks_record_id`) VALUES
 (1, 'Biogesic', 100, 0, '2015-02-18', 1, '', 1),
 (2, 'Gauze Bandage', 100, 10, '2015-02-18', 1, '', 2),
+(3, 'milk', 100, 0, '2015-06-06', 1, '', 3),
 (4, 'alcohol', 60, 10, '2015-02-18', 2, '', 2);
 
 -- --------------------------------------------------------
@@ -156,7 +159,7 @@ INSERT INTO `stocks_record_item` (`id`, `item_name`, `available_quantity`, `rele
 --
 
 CREATE TABLE IF NOT EXISTS `stock_issue_form` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `date` date NOT NULL,
   `ward_name` varchar(45) NOT NULL,
   `prepared_by` varchar(45) NOT NULL,
@@ -164,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `stock_issue_form` (
   `issued_by` varchar(45) NOT NULL,
   `received_by` varchar(45) NOT NULL,
   `account_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock_issue_form`
@@ -182,7 +185,7 @@ INSERT INTO `stock_issue_form` (`id`, `date`, `ward_name`, `prepared_by`, `appro
 --
 
 CREATE TABLE IF NOT EXISTS `stock_issue_item` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `date` date NOT NULL,
   `item_name` varchar(45) NOT NULL,
   `quantity` int(11) NOT NULL,
@@ -191,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `stock_issue_item` (
   `amount` int(11) NOT NULL,
   `remarks` varchar(45) DEFAULT NULL,
   `stock_issue_form_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock_issue_item`
@@ -207,7 +210,7 @@ INSERT INTO `stock_issue_item` (`id`, `date`, `item_name`, `quantity`, `expirati
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -216,13 +219,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `status` smallint(6) NOT NULL DEFAULT '10',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
+(0, 'pharmacist', 'cQJSEAUSouFEnBLfcwPkpNu67QDAMx5V', '$2y$13$qEDYlF28pEyIuRqhFqv2teTdNYnM3B5IEFjeC8D.8iNj4Rs3ikPUu', NULL, 'florcalanno@gmail.com', 10, 1425609615, 1425609615),
 (1, 'admin', '0ZkJw-9LXn7fcWhB0aYgwkeZpbsCioXm', '$2y$13$tq/zLNe59DpmQqSrj/2I4uIRqZZUbKmS7o5FpHbBAnDvovOUKzIH2', NULL, 'admin@example.com', 10, 1425599488, 1425599488);
 
 --
@@ -230,58 +234,16 @@ INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_res
 --
 
 --
--- Indexes for table `account`
---
-ALTER TABLE `account`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `account_username_UNIQUE` (`account_username`);
-
---
--- Indexes for table `migration`
---
-ALTER TABLE `migration`
- ADD PRIMARY KEY (`version`);
-
---
--- Indexes for table `return_item`
---
-ALTER TABLE `return_item`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_return_item_return_slip_form1_idx` (`return_slip_form_id`);
-
---
--- Indexes for table `return_slip_form`
---
-ALTER TABLE `return_slip_form`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `patient_name_UNIQUE` (`patient_last_name`), ADD UNIQUE KEY `patient_first_name_UNIQUE` (`patient_first_name`), ADD KEY `fk_return_slip_form_account1` (`account_id`);
-
---
--- Indexes for table `search_module`
---
-ALTER TABLE `search_module`
- ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `stocks_record`
 --
 ALTER TABLE `stocks_record`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_stocks_record_account1_idx` (`account_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `stocks_record_ibfk_1` (`user_id`);
 
 --
 -- Indexes for table `stocks_record_item`
 --
 ALTER TABLE `stocks_record_item`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_stocks_record_item_stocks_record1_idx` (`stocks_record_id`);
-
---
--- Indexes for table `stock_issue_form`
---
-ALTER TABLE `stock_issue_form`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_stock_issue_form_account1_idx` (`account_id`);
-
---
--- Indexes for table `stock_issue_item`
---
-ALTER TABLE `stock_issue_item`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_stock_issue_item_stock_issue_form1_idx` (`stock_issue_form_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `stocks_record_item_ibfk_1` (`stocks_record_id`);
 
 --
 -- Indexes for table `user`
@@ -290,93 +252,20 @@ ALTER TABLE `user`
  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `account`
---
-ALTER TABLE `account`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `return_item`
---
-ALTER TABLE `return_item`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `return_slip_form`
---
-ALTER TABLE `return_slip_form`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `search_module`
---
-ALTER TABLE `search_module`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `stocks_record`
---
-ALTER TABLE `stocks_record`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `stocks_record_item`
---
-ALTER TABLE `stocks_record_item`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `stock_issue_form`
---
-ALTER TABLE `stock_issue_form`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `stock_issue_item`
---
-ALTER TABLE `stock_issue_item`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `return_item`
---
-ALTER TABLE `return_item`
-ADD CONSTRAINT `fk_return_item_return_slip_form1` FOREIGN KEY (`return_slip_form_id`) REFERENCES `return_slip_form` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `return_slip_form`
---
-ALTER TABLE `return_slip_form`
-ADD CONSTRAINT `fk_return_slip_form_account1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `stocks_record`
 --
 ALTER TABLE `stocks_record`
-ADD CONSTRAINT `fk_stocks_record_account1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `stocks_record_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `stocks_record_item`
 --
 ALTER TABLE `stocks_record_item`
-ADD CONSTRAINT `fk_stocks_record_item_stocks_record1` FOREIGN KEY (`stocks_record_id`) REFERENCES `stocks_record` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `stock_issue_form`
---
-ALTER TABLE `stock_issue_form`
-ADD CONSTRAINT `fk_stock_issue_form_account1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `stock_issue_item`
---
-ALTER TABLE `stock_issue_item`
-ADD CONSTRAINT `fk_stock_issue_item_stock_issue_form1` FOREIGN KEY (`stock_issue_form_id`) REFERENCES `stock_issue_form` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ADD CONSTRAINT `stocks_record_item_ibfk_1` FOREIGN KEY (`stocks_record_id`) REFERENCES `stocks_record` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
