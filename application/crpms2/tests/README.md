@@ -1,51 +1,58 @@
-Yii 2.0 Unit tests
-==================
+This directory contains various tests for the advanced applications.
 
-DIRECTORY STRUCTURE
--------------------
+Tests in `codeception` directory are developed with [Codeception PHP Testing Framework](http://codeception.com/).
 
-      unit/                Unit tests to run with PHPUnit
-          data/            models, config and other test data
-              config.php   this file contains configuration for database and caching backends
-          framework/       the framework unit tests
-          runtime/         the application runtime dir for the yii test app
-      web/                 webapp for functional testing
+After creating and setting up the advanced application, follow these steps to prepare for the tests:
 
+1. Install Codeception if it's not yet installed:
 
-HOW TO RUN THE TESTS
---------------------
+   ```
+   composer global require "codeception/codeception=2.0.*" "codeception/specify=*" "codeception/verify=*"
+   ```
 
-Make sure you have PHPUnit installed and that you installed all composer dependencies (run `composer update` in the repo base directory).
+   If you've never used Composer for global packages run `composer global status`. It should output:
 
-Run PHPUnit in the yii repo base directory.
+   ```
+   Changed current directory to <directory>
+   ```
 
-```php
-phpunit
-```
+   Then add `<directory>/vendor/bin` to you `PATH` environment variable. Now you're able to use `codecept` from command
+   line globally.
 
-You can run tests for specific groups only:
+2. Install faker extension by running the following from template root directory where `composer.json` is:
 
-```php
-phpunit --group=mysql,base,i18n
-```
+   ```
+   composer require --dev yiisoft/yii2-faker:*
+   ```
 
-You can get a list of available groups via `phpunit --list-groups`.
+3. Create `yii2_advanced_tests` database then update it by applying migrations:
 
-TEST CONFIGURATION
-------------------
+   ```
+   codeception/bin/yii migrate
+   ```
 
-PHPUnit configuration is in `phpunit.xml.dist` in repository root folder.
-You can create your own phpunit.xml to override dist config.
+4. In order to be able to run acceptance tests you need to start a webserver. The simplest way is to use PHP built in
+   webserver. In the root directory where `common`, `frontend` etc. are execute the following:
 
-Database and other backend system configuration can be found in `unit/data/config.php`
-adjust them to your needs to allow testing databases and caching in your environment.
-You can override configuration values by creating a `config.local.php` file
-and manipulate the `$config` variable.
-For example to change MySQL username and password your `config.local.php` should
-contain the following:
+   ```
+   php -S localhost:8080
+   ```
 
-```php
-<?php
-$config['databases']['mysql']['username'] = 'yiitest';
-$config['databases']['mysql']['password'] = 'changeme';
-```
+5. Now you can run the tests with the following commands, assuming you are in the `tests/codeception` directory:
+
+   ```
+   # frontend tests
+   cd frontend
+   codecept build
+   codecept run
+   
+   # backend tests
+   
+   cd backend
+   codecept build
+   codecept run
+    
+   # etc.
+   ```
+
+  If you already have run `codecept build` for each application, you can skip that step and run all tests by a single `codecept run`.

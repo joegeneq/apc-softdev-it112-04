@@ -1,70 +1,97 @@
-Yii PHP Framework Version 2
-===========================
+Yii 2 Advanced Application Template
+===================================
 
-Thank you for choosing Yii 2 - a modern PHP framework designed for professional Web development.
+Yii 2 Advanced Application Template is a skeleton Yii 2 application best for
+developing complex Web applications with multiple tiers.
 
-Yii 2 is a complete rewrite of its previous version Yii 1.1 which is one of the most popular PHP frameworks.
-Yii 2 inherits the main spirit behind Yii for being simple, fast and highly extensible.
-Yii 2 requires PHP 5.4 and embraces the best practices and protocols found in modern Web application development.
+The template includes three tiers: front end, back end, and console, each of which
+is a separate Yii application.
 
+The template is designed to work in a team development environment. It supports
+deploying the application in different environments.
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2/v/stable.png)](https://packagist.org/packages/yiisoft/yii2)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2/downloads.png)](https://packagist.org/packages/yiisoft/yii2)
-[![Reference Status](https://www.versioneye.com/php/yiisoft:yii2/reference_badge.svg)](https://www.versioneye.com/php/yiisoft:yii2/references)
-[![Build Status](https://secure.travis-ci.org/yiisoft/yii2.png)](http://travis-ci.org/yiisoft/yii2)
-[![Dependency Status](https://www.versioneye.com/php/yiisoft:yii2/dev-master/badge.png)](https://www.versioneye.com/php/yiisoft:yii2/dev-master)
-[![HHVM Status](http://hhvm.h4cc.de/badge/yiisoft/yii2-dev.png)](http://hhvm.h4cc.de/package/yiisoft/yii2-dev)
-[![Code Coverage](https://scrutinizer-ci.com/g/yiisoft/yii2/badges/coverage.png?s=31d80f1036099e9d6a3e4d7738f6b000b3c3d10e)](https://scrutinizer-ci.com/g/yiisoft/yii2/)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/yiisoft/yii2/badges/quality-score.png?s=b1074a1ff6d0b214d54fa5ab7abbb90fc092471d)](https://scrutinizer-ci.com/g/yiisoft/yii2/)
-[![Code Climate](https://codeclimate.com/github/yiisoft/yii2.png)](https://codeclimate.com/github/yiisoft/yii2)
 
 DIRECTORY STRUCTURE
 -------------------
 
 ```
-apps/                ready-to-use application templates
-    advanced/        a template suitable for building sophisticated Web applications
-    basic/           a template suitable for building simple Web applications
-    benchmark/       an application demonstrating the performance of Yii
-build/               internally used build tools
-docs/                documentation
-extensions/          extensions
-framework/           core framework code
-tests/               tests of the core framework code
+common
+    config/              contains shared configurations
+    mail/                contains view files for e-mails
+    models/              contains model classes used in both backend and frontend
+console
+    config/              contains console configurations
+    controllers/         contains console controllers (commands)
+    migrations/          contains database migrations
+    models/              contains console-specific model classes
+    runtime/             contains files generated during runtime
+backend
+    assets/              contains application assets such as JavaScript and CSS
+    config/              contains backend configurations
+    controllers/         contains Web controller classes
+    models/              contains backend-specific model classes
+    runtime/             contains files generated during runtime
+    views/               contains view files for the Web application
+    web/                 contains the entry script and Web resources
+frontend
+    assets/              contains application assets such as JavaScript and CSS
+    config/              contains frontend configurations
+    controllers/         contains Web controller classes
+    models/              contains frontend-specific model classes
+    runtime/             contains files generated during runtime
+    views/               contains view files for the Web application
+    web/                 contains the entry script and Web resources
+    widgets/             contains frontend widgets
+vendor/                  contains dependent 3rd-party packages
+environments/            contains environment-based overrides
+tests                    contains various tests for the advanced application
+    codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
 
 
 REQUIREMENTS
 ------------
 
-The minimum requirement by Yii is that your Web server supports PHP 5.4.
+The minimum requirement by this application template that your Web server supports PHP 5.4.0.
 
 
-DOCUMENTATION
--------------
+INSTALLATION
+------------
 
-Yii 2.0 has a [Definitive Guide](http://www.yiiframework.com/doc-2.0/guide-index.html) and 
-a [Class Reference](http://www.yiiframework.com/doc-2.0/index.html) which cover every detail of Yii.
+### Install from an Archive File
 
-There is also a [PDF version](http://stuff.cebe.cc/yii2-guide.pdf) of the Definitive Guide
-and a [Definitive Guide Mirror](http://stuff.cebe.cc/yii2docs/) which update every 15 minutes.
+Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
+a directory named `advanced` that is directly under the Web root.
 
-For 1.1 users, you may refer to [Upgrading from Yii 1.1](docs/guide/intro-upgrade-from-v1.md)
-to have a general idea of what has changed in 2.0.
+Then follow the instructions given in "GETTING STARTED".
 
 
-HOW TO PARTICIPATE
-------------------
+### Install via Composer
 
-**Your participation to Yii 2 development is very welcome!**
+If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
+at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
-You may participate in the following ways:
+You can then install the application using the following command:
 
-* [Report issues](https://github.com/yiisoft/yii2/issues)
-* [Give us feedback or start a design discussion](http://www.yiiframework.com/forum/index.php/forum/42-design-discussions-for-yii-20/)
-* Fix issues, develop features, write/polish documentation
-    - Before you start, please adopt an existing issue (labelled with "ready for adoption") or start a new one to avoid duplicated efforts.
-    - Please submit a merge request after you finish development.
+~~~
+php composer.phar global require "fxp/composer-asset-plugin:1.0.0"
+php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-advanced advanced
+~~~
 
-In order to make it easier we've prepared [special `yii2-dev` Composer package](https://github.com/yiisoft/yii2/blob/master/docs/internals/getting-started.md).
 
+GETTING STARTED
+---------------
+
+After you install the application, you have to conduct the following steps to initialize
+the installed application. You only need to do these once for all.
+
+1. Run command `init` to initialize the application with a specific environment.
+2. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
+3. Apply migrations with console command `yii migrate`. This will create tables needed for the application to work.
+4. Set document roots of your Web server:
+
+- for frontend `/path/to/yii-application/frontend/web/` and using the URL `http://frontend/`
+- for backend `/path/to/yii-application/backend/web/` and using the URL `http://backend/`
+
+To login into the application, you need to first sign up, with any of your email address, username and password.
+Then, you can login into the application with same email address and password at any time.
