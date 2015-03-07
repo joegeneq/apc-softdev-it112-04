@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2015 at 05:13 AM
+-- Generation Time: Mar 07, 2015 at 05:54 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -166,17 +166,17 @@ CREATE TABLE IF NOT EXISTS `stock_issue_form` (
   `approved_by` varchar(45) NOT NULL,
   `issued_by` varchar(45) NOT NULL,
   `received_by` varchar(45) NOT NULL,
-  `account_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock_issue_form`
 --
 
-INSERT INTO `stock_issue_form` (`id`, `date`, `ward_name`, `prepared_by`, `approved_by`, `issued_by`, `received_by`, `account_id`) VALUES
-(1, '2015-02-19', 'Male Ward', 'Calanno Flor', 'Mrs. Carmelita', 'Dr. Jerry Cruz', 'Mrs. Carmelita', 2),
-(2, '2015-02-04', 'private ward', 'Calanno Flor', 'Mrs. Carmelita', 'Dr. Jerry Cruz', 'Mrs. Carmelita', 2),
-(3, '2015-02-09', 'suite room', 'Calanno Flor', 'Mrs. Carmelita', 'Dr. Jerry Cruz', 'Mrs. Carmelita', 2);
+INSERT INTO `stock_issue_form` (`id`, `date`, `ward_name`, `prepared_by`, `approved_by`, `issued_by`, `received_by`, `user_id`) VALUES
+(1, '2015-02-19', 'Male Ward', 'Calanno Flor', 'Mrs. Carmelita', 'Dr. Jerry Cruz', 'Mrs. Carmelita', 0),
+(2, '2015-02-04', 'private ward', 'Calanno Flor', 'Mrs. Carmelita', 'Dr. Jerry Cruz', 'Mrs. Carmelita', 0),
+(3, '2015-02-09', 'suite room', 'Calanno Flor', 'Mrs. Carmelita', 'Dr. Jerry Cruz', 'Mrs. Carmelita', 0);
 
 -- --------------------------------------------------------
 
@@ -246,6 +246,18 @@ ALTER TABLE `stocks_record_item`
  ADD PRIMARY KEY (`id`), ADD KEY `stocks_record_item_ibfk_1` (`stocks_record_id`);
 
 --
+-- Indexes for table `stock_issue_form`
+--
+ALTER TABLE `stock_issue_form`
+ ADD PRIMARY KEY (`id`), ADD KEY `stock_issue_form_ibfk_1` (`user_id`);
+
+--
+-- Indexes for table `stock_issue_item`
+--
+ALTER TABLE `stock_issue_item`
+ ADD PRIMARY KEY (`id`), ADD KEY `stock_issue_item_ibfk_1` (`stock_issue_form_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -266,6 +278,18 @@ ADD CONSTRAINT `stocks_record_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` 
 --
 ALTER TABLE `stocks_record_item`
 ADD CONSTRAINT `stocks_record_item_ibfk_1` FOREIGN KEY (`stocks_record_id`) REFERENCES `stocks_record` (`id`);
+
+--
+-- Constraints for table `stock_issue_form`
+--
+ALTER TABLE `stock_issue_form`
+ADD CONSTRAINT `stock_issue_form_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- Constraints for table `stock_issue_item`
+--
+ALTER TABLE `stock_issue_item`
+ADD CONSTRAINT `stock_issue_item_ibfk_1` FOREIGN KEY (`stock_issue_form_id`) REFERENCES `stock_issue_form` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
