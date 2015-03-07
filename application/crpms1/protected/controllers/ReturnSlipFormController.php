@@ -29,22 +29,18 @@ class ReturnSlipFormController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "pharmacist" | "accountant")'
+				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="admin" | "pharmacist")'
+				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="pharmacist")'
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
-				'expression'=>'isset($user->account_type) && ($user->account_type==="guest")'
-			),
-			array('allow',  // allow all users to perform 'view' actions
-				'actions'=>array('view'),
-				'expression'=>'isset($user->account_type) && ($user->account_type==="guest" | "accountant")'
+				'users'=>array('*'),
 			),
 		);
 	}

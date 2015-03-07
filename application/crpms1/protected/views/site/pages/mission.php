@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 ?>
 <center><img width="200" height="240" src=""></center><br>
 
-<p><center><h3>Mission Statement</h3></center></p>
+<p><center><h3>Mission Statement</h3></center></p><br>
 
 <p><li><h4>SSMC regards all those it serve with the respect,kindness and compassion;</h4></li></p><br>
 

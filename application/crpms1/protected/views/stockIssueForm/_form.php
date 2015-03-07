@@ -21,22 +21,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date'); ?>
-		<?php //echo $form->textField($model,'date',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo CHtml::activeTextField($model,'date',array("id"=>"date")); ?>
-		  <?php $this->widget('application.extensions.calendar.SCalendar',
-        array(
-        'inputField'=>'date',
-        'ifFormat'=>'%Y-%m-%d',
-    ));
-    ?>
+		<?php echo $form->textField($model,'date'); ?>
 		<?php echo $form->error($model,'date'); ?>
 	</div>
 
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'ward_name'); ?>
-		<?php echo $form->dropDownList($model,'ward_name',array('prompt' =>'Select Ward','pedia'=>'pedia','private ward'=>'private ward', 
-		'semi-private ward'=>'semi-private ward', 'male ward'=>'male ward', 'suite room'=>'suite room', 'ob gyne'=>'ob gyne ward',)); ?> 
+		<?php echo $form->textField($model,'ward_name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'ward_name'); ?>
 	</div>
 
 	<div class="row">

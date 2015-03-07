@@ -1,6 +1,6 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i>CRMGH</h1>
+<h1><center>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i>CRMGH</center></h1>
 
 <body>
 <br><br><br>
