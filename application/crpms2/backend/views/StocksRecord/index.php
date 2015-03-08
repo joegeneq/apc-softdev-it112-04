@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use backend\models\User;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\StocksRecordSearch */
@@ -27,7 +28,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'description',
-            'user_id',
+            
+			['attribute' => 'user_id',
+			'label' => 'Created By',
+			'value' => 'user.username',
+			'filter' => yii\helpers\ArrayHelper::map(backend\models\User::find()-> all(),'id','username')],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

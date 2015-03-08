@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use backend\models\User;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\StocksRecord */
@@ -30,7 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'description',
-            'user_id',
+         
+			['attribute' => 'user.username', 'label' => 'Created By:'],
         ],
     ]) ?>
 
