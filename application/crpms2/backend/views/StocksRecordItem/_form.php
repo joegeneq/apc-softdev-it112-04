@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use backend\models\StocksRecord;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StocksRecordItem */
 /* @var $form yii\widgets\ActiveForm */
@@ -26,7 +27,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'remarks')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'stocks_record_id')->textInput() ?>
+    
+	<?php
+        $StocksRecord=StocksRecord::find()->all();
+        $listData=ArrayHelper::map($StocksRecord, 'id', 'description');
+        echo $form->field($model, 'stocks_record_id')->dropDownList(
+            $listData,['prompt'=>'Select Form']);
+    ?>
+	
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
