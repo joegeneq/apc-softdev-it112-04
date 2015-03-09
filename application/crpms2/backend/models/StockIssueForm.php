@@ -14,7 +14,10 @@ use Yii;
  * @property string $approved_by
  * @property string $issued_by
  * @property string $received_by
- * @property integer $account_id
+ * @property integer $user_id
+ *
+ * @property User $user
+ * @property StockIssueItem[] $stockIssueItems
  */
 class StockIssueForm extends \yii\db\ActiveRecord
 {
@@ -32,8 +35,8 @@ class StockIssueForm extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'date', 'ward_name', 'prepared_by', 'approved_by', 'issued_by', 'received_by', 'account_id'], 'required'],
-            [['id', 'account_id'], 'integer'],
+            [['id', 'date', 'ward_name', 'prepared_by', 'approved_by', 'issued_by', 'received_by', 'user_id'], 'required'],
+            [['id', 'user_id'], 'integer'],
             [['date'], 'safe'],
             [['ward_name', 'prepared_by', 'approved_by', 'issued_by', 'received_by'], 'string', 'max' => 45]
         ];
@@ -52,7 +55,23 @@ class StockIssueForm extends \yii\db\ActiveRecord
             'approved_by' => 'Approved By',
             'issued_by' => 'Issued By',
             'received_by' => 'Received By',
-            'account_id' => 'Account ID',
+            'user_id' => 'User ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStockIssueItems()
+    {
+        return $this->hasMany(StockIssueItem::className(), ['stock_issue_form_id' => 'id']);
     }
 }
