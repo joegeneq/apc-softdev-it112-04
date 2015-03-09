@@ -28,6 +28,7 @@ use backend\models\User;
 
     <?= $form->field($model, 'received_by')->textInput(['maxlength' => 45]) ?>
 
+	
    <?= $form->field($model, 'user_id')->textInput() ?>
         <?php
         $users=User::find()->all();

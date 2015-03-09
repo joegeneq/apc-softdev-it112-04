@@ -35,6 +35,7 @@ use backend\models\StockIssueForm;
         $listData=ArrayHelper::map($StockIssueForm, 'id', 'ward_name');
         echo $form->field($model, 'stock_issue_form_id')->dropDownList(
             $listData,['prompt'=>'Select Ward Name']);
+			
     ?>
 
 
