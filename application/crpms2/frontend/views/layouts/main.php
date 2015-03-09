@@ -36,7 +36,8 @@ AppAsset::register($this);
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'Contact', 'url' => ['/site/contact']],
-				['label' => 'Return Slip Form', 'url' => ['/returnSlipForm/index']],
+				//['label' => 'Return Slip Form', 'url' => ['/returnSlipForm']],
+				//['label' => 'Stocks Record', 'url' => ['/stocksRecord']],
 				
             ];
             if (Yii::$app->user->isGuest) {
