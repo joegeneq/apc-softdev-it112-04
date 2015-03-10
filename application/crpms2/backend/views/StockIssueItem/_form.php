@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use backend\models\StockIssueForm;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueItem */
 /* @var $form yii\widgets\ActiveForm */
@@ -27,8 +28,16 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'amount')->textInput() ?>
 
     <?= $form->field($model, 'remarks')->textInput(['maxlength' => 45]) ?>
+	
+	<?= $form->field($model, 'stock_issue_form_id')->textInput() ?>
+        <?php
+        $StockIssueForm=StockIssueForm::find()->all();
+        $listData=ArrayHelper::map($StockIssueForm, 'id', 'ward_name');
+        echo $form->field($model, 'stock_issue_form_id')->dropDownList(
+            $listData,['prompt'=>'Select Ward Name']);
+			
+    ?>
 
-    <?= $form->field($model, 'stock_issue_form_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
