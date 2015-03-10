@@ -4,38 +4,8 @@
 
 $this->title = 'CRMGH-PMS';
 ?>
-<<<<<<< HEAD
 <center><body background="../images/background5.png">
-
-=======
-
-<!-----</*?php $this->widget('bootstrap.widgets.Carousel', array[
-    'items'=>array[
-		
-		/*array[
-		'image'=>'images/slide3.jpg', 
-		'label'=>'', 
-		'caption'=>'Main Entrance',
-		],*/
-		
-		array[
-		'image'=>'images/slide4.jpg', 
-		'label'=>'', 
-		'caption'=>'Pharmacy Office / Medicine Cabinet',
-		],
-		
-		array[
-		'image'=>'images/slide5.jpg', 
-		'label'=>'', 
-		'caption'=>'Main Entrance',
-		],
-		
-		
-    ],
-]; ?*/>--->
 <div class="site-index">
->>>>>>> 7ff028995d45ac06d332b9ab155d2047cde16aaa
-
     <div class="jumbotron">
     <h1>Welcome to Cruz-Rabe Maternity and General Hospital </h1>
     </div>

@@ -8,7 +8,6 @@ $this->title = 'CRMGH-PMS';
     <div class="jumbotron">
         <h1>Welcome to Cruz-Rabe Maternity and General Hospital </h1>
 
-
 <script type="text/javascript"> 
 
 var i = 0; 
