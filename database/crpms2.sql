@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2015 at 03:37 AM
+-- Generation Time: Mar 10, 2015 at 05:13 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -81,17 +81,17 @@ CREATE TABLE IF NOT EXISTS `return_slip_form` (
   `received_by` varchar(45) NOT NULL,
   `approved_by` varchar(45) NOT NULL,
   `accounting_status` tinyint(1) NOT NULL,
-  `account_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `return_slip_form`
 --
 
-INSERT INTO `return_slip_form` (`id`, `patient_last_name`, `patient_first_name`, `patient_middle_initial`, `date`, `ward_name`, `bed_number`, `returned_by`, `received_by`, `approved_by`, `accounting_status`, `account_id`) VALUES
-(1, 'Abisado', 'Jandra Marie', 'K', '2015-02-26', 'private ward', '210', 'Cristine Ronario', 'Carmelita Buenaflor', 'Mr. Jerry Cruz', 1, 1),
-(2, 'Ronario', 'Cristine', 'L', '2015-02-09', 'suite room', '208|210', 'Flordeliza Calanno', 'Carmelita Buenaflor', 'Mr. Jerry Cruz', 1, 2),
-(3, 'Navarro', 'Mark', 'K', '2015-02-18', 'male ward', '204', 'Cristine Ronario', 'Carmelita Buenaflor', 'Mr. Jerry Cruz', 0, 2);
+INSERT INTO `return_slip_form` (`id`, `patient_last_name`, `patient_first_name`, `patient_middle_initial`, `date`, `ward_name`, `bed_number`, `returned_by`, `received_by`, `approved_by`, `accounting_status`, `user_id`) VALUES
+(1, 'Abisado', 'Jandra Marie', 'K', '2015-02-26', 'private ward', '210', 'Cristine Ronario', 'Carmelita Buenaflor', 'Mr. Jerry Cruz', 1, 0),
+(2, 'Ronario', 'Cristine', 'L', '2015-02-09', 'suite room', '208|210', 'Flordeliza Calanno', 'Carmelita Buenaflor', 'Mr. Jerry Cruz', 1, 0),
+(3, 'Navarro', 'Mark', 'K', '2015-02-18', 'male ward', '204', 'Cristine Ronario', 'Carmelita Buenaflor', 'Mr. Jerry Cruz', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -234,6 +234,18 @@ INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_res
 --
 
 --
+-- Indexes for table `return_item`
+--
+ALTER TABLE `return_item`
+ ADD PRIMARY KEY (`id`), ADD KEY `return_item_ibfk_1` (`return_slip_form_id`);
+
+--
+-- Indexes for table `return_slip_form`
+--
+ALTER TABLE `return_slip_form`
+ ADD PRIMARY KEY (`id`), ADD KEY `return_slip_form_ibfk_1` (`user_id`);
+
+--
 -- Indexes for table `stocks_record`
 --
 ALTER TABLE `stocks_record`
@@ -266,6 +278,18 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `return_item`
+--
+ALTER TABLE `return_item`
+ADD CONSTRAINT `return_item_ibfk_1` FOREIGN KEY (`return_slip_form_id`) REFERENCES `return_slip_form` (`id`);
+
+--
+-- Constraints for table `return_slip_form`
+--
+ALTER TABLE `return_slip_form`
+ADD CONSTRAINT `return_slip_form_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `stocks_record`
