@@ -33,8 +33,8 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
-				['label' => 'Return Slip Form', 'url' => ['/ReturnSlipForm/index']],
-				['label' => 'Return Item', 'url' => ['/ReturnItem/index']],
+				['label' => 'Return Slip Form', 'url' => ['/returnSlipForm/index']],
+				['label' => 'Return Item', 'url' => ['/returnItem/index']],
 				['label' => 'Stocks Record', 'url' => ['/stocksrecord/index']],
 				['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
 				['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],

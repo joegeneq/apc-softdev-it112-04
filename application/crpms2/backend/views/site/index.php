@@ -1,8 +1,34 @@
 <?php
 /* @var $this yii\web\View */
+/* @var $form yii\bootstrap\Carousel */
 
-$this->title = 'My Yii Application';
+$this->title = 'CRMGH-PMS';
 ?>
+
+<!-----</*?php $this->widget('bootstrap.widgets.Carousel', array[
+    'items'=>array[
+		
+		/*array[
+		'image'=>'images/slide3.jpg', 
+		'label'=>'', 
+		'caption'=>'Main Entrance',
+		],*/
+		
+		array[
+		'image'=>'images/slide4.jpg', 
+		'label'=>'', 
+		'caption'=>'Pharmacy Office / Medicine Cabinet',
+		],
+		
+		array[
+		'image'=>'images/slide5.jpg', 
+		'label'=>'', 
+		'caption'=>'Main Entrance',
+		],
+		
+		
+    ],
+]; ?*/>--->
 <div class="site-index">
 
     <div class="jumbotron">
