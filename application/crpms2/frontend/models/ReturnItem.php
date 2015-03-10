@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\models;
+namespace frontend\models;
 
 use Yii;
 
@@ -14,6 +14,8 @@ use Yii;
  * @property string $amount
  * @property string $remarks
  * @property integer $return_slip_form_id
+ *
+ * @property ReturnSlipForm $returnSlipForm
  */
 class ReturnItem extends \yii\db\ActiveRecord
 {
@@ -31,9 +33,9 @@ class ReturnItem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'item_name', 'quantity', 'amount', 'return_slip_form_id'], 'required'],
+            [['id', 'date', 'item_name', 'quantity', 'amount', 'return_slip_form_id'], 'required'],
+            [['id', 'quantity', 'return_slip_form_id'], 'integer'],
             [['date'], 'safe'],
-            [['quantity', 'return_slip_form_id'], 'integer'],
             [['amount'], 'number'],
             [['item_name', 'remarks'], 'string', 'max' => 45]
         ];
@@ -53,5 +55,13 @@ class ReturnItem extends \yii\db\ActiveRecord
             'remarks' => 'Remarks',
             'return_slip_form_id' => 'Return Slip Form ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReturnSlipForm()
+    {
+        return $this->hasOne(ReturnSlipForm::className(), ['id' => 'return_slip_form_id']);
     }
 }

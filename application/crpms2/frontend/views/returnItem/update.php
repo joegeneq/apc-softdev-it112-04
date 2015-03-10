@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ReturnItem */
+/* @var $model frontend\models\ReturnItem */
 
 $this->title = 'Update Return Item: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Return Items', 'url' => ['index']];

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ReturnItem */
+/* @var $model frontend\models\ReturnItem */
 
 $this->title = 'Create Return Item';
 $this->params['breadcrumbs'][] = ['label' => 'Return Items', 'url' => ['index']];

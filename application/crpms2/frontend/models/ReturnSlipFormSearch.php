@@ -1,14 +1,14 @@
 <?php
 
-namespace backend\models;
+namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\ReturnSlipForm;
+use frontend\models\ReturnSlipForm;
 
 /**
- * ReturnSlipFormSearch represents the model behind the search form about `backend\models\ReturnSlipForm`.
+ * ReturnSlipFormSearch represents the model behind the search form about `frontend\models\ReturnSlipForm`.
  */
 class ReturnSlipFormSearch extends ReturnSlipForm
 {

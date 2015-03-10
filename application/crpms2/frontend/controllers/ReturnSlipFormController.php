@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\controllers;
+namespace frontend\controllers;
 
 use Yii;
-use backend\models\ReturnSlipForm;
-use backend\models\ReturnSlipFormSearch;
+use frontend\models\ReturnSlipForm;
+use frontend\models\ReturnSlipFormSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
