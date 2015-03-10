@@ -3,16 +3,16 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\ReturnSlipForm;
-use frontend\models\ReturnSlipFormSearch;
+use frontend\models\StocksRecord;
+use frontend\models\StocksRecordSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ReturnSlipFormController implements the CRUD actions for ReturnSlipForm model.
+ * StocksRecordController implements the CRUD actions for StocksRecord model.
  */
-class ReturnSlipFormController extends Controller
+class StocksRecordController extends Controller
 {
     public function behaviors()
     {
@@ -27,12 +27,12 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Lists all ReturnSlipForm models.
+     * Lists all StocksRecord models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ReturnSlipFormSearch();
+        $searchModel = new StocksRecordSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -42,7 +42,7 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Displays a single ReturnSlipForm model.
+     * Displays a single StocksRecord model.
      * @param integer $id
      * @return mixed
      */
@@ -54,13 +54,13 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Creates a new ReturnSlipForm model.
+     * Creates a new StocksRecord model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new ReturnSlipForm();
+        $model = new StocksRecord();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -72,7 +72,7 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Updates an existing ReturnSlipForm model.
+     * Updates an existing StocksRecord model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -91,7 +91,7 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Deletes an existing ReturnSlipForm model.
+     * Deletes an existing StocksRecord model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -104,15 +104,15 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Finds the ReturnSlipForm model based on its primary key value.
+     * Finds the StocksRecord model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return ReturnSlipForm the loaded model
+     * @return StocksRecord the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ReturnSlipForm::findOne($id)) !== null) {
+        if (($model = StocksRecord::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

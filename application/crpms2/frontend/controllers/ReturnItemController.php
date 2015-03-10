@@ -3,16 +3,16 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\ReturnSlipForm;
-use frontend\models\ReturnSlipFormSearch;
+use frontend\models\ReturnItem;
+use frontend\models\ReturnItemSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ReturnSlipFormController implements the CRUD actions for ReturnSlipForm model.
+ * ReturnItemController implements the CRUD actions for ReturnItem model.
  */
-class ReturnSlipFormController extends Controller
+class ReturnItemController extends Controller
 {
     public function behaviors()
     {
@@ -27,12 +27,12 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Lists all ReturnSlipForm models.
+     * Lists all ReturnItem models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ReturnSlipFormSearch();
+        $searchModel = new ReturnItemSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -42,7 +42,7 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Displays a single ReturnSlipForm model.
+     * Displays a single ReturnItem model.
      * @param integer $id
      * @return mixed
      */
@@ -54,13 +54,13 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Creates a new ReturnSlipForm model.
+     * Creates a new ReturnItem model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new ReturnSlipForm();
+        $model = new ReturnItem();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -72,7 +72,7 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Updates an existing ReturnSlipForm model.
+     * Updates an existing ReturnItem model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -91,7 +91,7 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Deletes an existing ReturnSlipForm model.
+     * Deletes an existing ReturnItem model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -104,15 +104,15 @@ class ReturnSlipFormController extends Controller
     }
 
     /**
-     * Finds the ReturnSlipForm model based on its primary key value.
+     * Finds the ReturnItem model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return ReturnSlipForm the loaded model
+     * @return ReturnItem the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ReturnSlipForm::findOne($id)) !== null) {
+        if (($model = ReturnItem::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

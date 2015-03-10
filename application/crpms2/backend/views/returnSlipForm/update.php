@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\ReturnSlipForm */
+/* @var $model backend\models\ReturnSlipForm */
 
 $this->title = 'Update Return Slip Form: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Return Slip Forms', 'url' => ['index']];

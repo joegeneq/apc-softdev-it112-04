@@ -26,18 +26,18 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Cruz-Rabe Maternity and General Hospital',
+                'brandLabel' => 'CRMGH-PMS',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-inverse navbar-top',
                 ],
             ]);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'Contact', 'url' => ['/site/contact']],
-				//['label' => 'Return Slip Form', 'url' => ['/returnSlipForm']],
-				//['label' => 'Stocks Record', 'url' => ['/stocksRecord']],
+				['label' => 'Return Slip Form', 'url' => ['/returnslipform']],
+				['label' => 'Return Item', 'url' => ['/returnitem']],
 				
             ];
             if (Yii::$app->user->isGuest) {

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\ReturnSlipForm */
+/* @var $model backend\models\ReturnSlipForm */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Return Slip Forms', 'url' => ['index']];
