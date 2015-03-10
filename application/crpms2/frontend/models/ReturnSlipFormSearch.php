@@ -1,14 +1,14 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\ReturnSlipForm;
+use backend\models\ReturnSlipForm;
 
 /**
- * ReturnSlipFormSearch represents the model behind the search form about `app\models\ReturnSlipForm`.
+ * ReturnSlipFormSearch represents the model behind the search form about `backend\models\ReturnSlipForm`.
  */
 class ReturnSlipFormSearch extends ReturnSlipForm
 {
@@ -18,7 +18,7 @@ class ReturnSlipFormSearch extends ReturnSlipForm
     public function rules()
     {
         return [
-            [['id', 'accounting_status', 'account_id'], 'integer'],
+            [['id', 'accounting_status', 'user_id'], 'integer'],
             [['patient_last_name', 'patient_first_name', 'patient_middle_initial', 'date', 'ward_name', 'bed_number', 'returned_by', 'received_by', 'approved_by'], 'safe'],
         ];
     }
@@ -59,7 +59,7 @@ class ReturnSlipFormSearch extends ReturnSlipForm
             'id' => $this->id,
             'date' => $this->date,
             'accounting_status' => $this->accounting_status,
-            'account_id' => $this->account_id,
+            'user_id' => $this->user_id,
         ]);
 
         $query->andFilterWhere(['like', 'patient_last_name', $this->patient_last_name])

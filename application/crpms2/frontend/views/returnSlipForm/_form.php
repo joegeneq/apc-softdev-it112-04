@@ -4,13 +4,15 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ReturnSlipForm */
+/* @var $model backend\models\ReturnSlipForm */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="return-slip-form-form">
 
     <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'id')->textInput() ?>
 
     <?= $form->field($model, 'patient_last_name')->textInput(['maxlength' => 45]) ?>
 
@@ -32,7 +34,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'accounting_status')->textInput() ?>
 
-    <?= $form->field($model, 'account_id')->textInput() ?>
+    <?= $form->field($model, 'user_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

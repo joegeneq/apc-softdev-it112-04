@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\controllers;
+namespace backend\models;
 
 use Yii;
 use backend\models\ReturnSlipForm;

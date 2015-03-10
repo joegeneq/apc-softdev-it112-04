@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ReturnSlipForm */
+/* @var $model backend\models\ReturnItem */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Return Slip Forms', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Return Items', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="return-slip-form-view">
+<div class="return-item-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,17 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'patient_last_name',
-            'patient_first_name',
-            'patient_middle_initial',
             'date',
-            'ward_name',
-            'bed_number',
-            'returned_by',
-            'received_by',
-            'approved_by',
-            'accounting_status',
-            'user_id',
+            'item_name',
+            'quantity',
+            'amount',
+            'remarks',
+            'return_slip_form_id',
         ],
     ]) ?>
 
