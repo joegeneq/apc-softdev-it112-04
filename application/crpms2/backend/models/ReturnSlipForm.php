@@ -18,7 +18,10 @@ use Yii;
  * @property string $received_by
  * @property string $approved_by
  * @property integer $accounting_status
- * @property integer $account_id
+ * @property integer $user_id
+ *
+ * @property ReturnItem[] $returnItems
+ * @property User $user
  */
 class ReturnSlipForm extends \yii\db\ActiveRecord
 {
@@ -36,9 +39,9 @@ class ReturnSlipForm extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['patient_last_name', 'patient_first_name', 'date', 'ward_name', 'bed_number', 'returned_by', 'received_by', 'approved_by', 'accounting_status', 'account_id'], 'required'],
+            [['id', 'patient_last_name', 'patient_first_name', 'date', 'ward_name', 'bed_number', 'returned_by', 'received_by', 'approved_by', 'accounting_status', 'user_id'], 'required'],
+            [['id', 'accounting_status', 'user_id'], 'integer'],
             [['date'], 'safe'],
-            [['accounting_status', 'account_id'], 'integer'],
             [['patient_last_name', 'patient_first_name', 'patient_middle_initial', 'ward_name', 'bed_number', 'returned_by', 'received_by', 'approved_by'], 'string', 'max' => 45]
         ];
     }
@@ -60,7 +63,23 @@ class ReturnSlipForm extends \yii\db\ActiveRecord
             'received_by' => 'Received By',
             'approved_by' => 'Approved By',
             'accounting_status' => 'Accounting Status',
-            'account_id' => 'Account ID',
+            'user_id' => 'User ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReturnItems()
+    {
+        return $this->hasMany(ReturnItem::className(), ['return_slip_form_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }

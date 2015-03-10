@@ -33,13 +33,13 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
-				['label' => 'Return Slip Form', 'url' => ['/returnSlipForm/index']],
-				['label' => 'Return Item', 'url' => ['/returnItem/index']],
+				['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
+				['label' => 'Return Item', 'url' => ['/returnitem/index']],
 				['label' => 'Stocks Record', 'url' => ['/stocksrecord/index']],
 				['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
 				['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
 				['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
-			
+				
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

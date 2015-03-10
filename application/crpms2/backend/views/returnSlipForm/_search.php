@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="return-item-search">
+<div class="return-slip-form-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,17 +17,27 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
+    <?= $form->field($model, 'patient_last_name') ?>
+
+    <?= $form->field($model, 'patient_first_name') ?>
+
+    <?= $form->field($model, 'patient_middle_initial') ?>
+
     <?= $form->field($model, 'date') ?>
 
-    <?= $form->field($model, 'item_name') ?>
+    <?php // echo $form->field($model, 'ward_name') ?>
 
-    <?= $form->field($model, 'quantity') ?>
+    <?php // echo $form->field($model, 'bed_number') ?>
 
-    <?= $form->field($model, 'amount') ?>
+    <?php // echo $form->field($model, 'returned_by') ?>
 
-    <?php // echo $form->field($model, 'remarks') ?>
+    <?php // echo $form->field($model, 'received_by') ?>
 
-    <?php // echo $form->field($model, 'return_slip_form_id') ?>
+    <?php // echo $form->field($model, 'approved_by') ?>
+
+    <?php // echo $form->field($model, 'accounting_status') ?>
+
+    <?php // echo $form->field($model, 'user_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

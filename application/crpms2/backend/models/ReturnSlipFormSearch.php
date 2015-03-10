@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\ReturnItem;
+use backend\models\ReturnSlipForm;
 
 /**
- * ReturnSlipFormSearch represents the model behind the search form about `backend\models\ReturnItem`.
+ * ReturnSlipFormSearch represents the model behind the search form about `backend\models\ReturnSlipForm`.
  */
-class ReturnSlipFormSearch extends ReturnItem
+class ReturnSlipFormSearch extends ReturnSlipForm
 {
     /**
      * @inheritdoc
@@ -18,9 +18,8 @@ class ReturnSlipFormSearch extends ReturnItem
     public function rules()
     {
         return [
-            [['id', 'quantity', 'return_slip_form_id'], 'integer'],
-            [['date', 'item_name', 'remarks'], 'safe'],
-            [['amount'], 'number'],
+            [['id', 'accounting_status', 'user_id'], 'integer'],
+            [['patient_last_name', 'patient_first_name', 'patient_middle_initial', 'date', 'ward_name', 'bed_number', 'returned_by', 'received_by', 'approved_by'], 'safe'],
         ];
     }
 
@@ -42,7 +41,7 @@ class ReturnSlipFormSearch extends ReturnItem
      */
     public function search($params)
     {
-        $query = ReturnItem::find();
+        $query = ReturnSlipForm::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -59,13 +58,18 @@ class ReturnSlipFormSearch extends ReturnItem
         $query->andFilterWhere([
             'id' => $this->id,
             'date' => $this->date,
-            'quantity' => $this->quantity,
-            'amount' => $this->amount,
-            'return_slip_form_id' => $this->return_slip_form_id,
+            'accounting_status' => $this->accounting_status,
+            'user_id' => $this->user_id,
         ]);
 
-        $query->andFilterWhere(['like', 'item_name', $this->item_name])
-            ->andFilterWhere(['like', 'remarks', $this->remarks]);
+        $query->andFilterWhere(['like', 'patient_last_name', $this->patient_last_name])
+            ->andFilterWhere(['like', 'patient_first_name', $this->patient_first_name])
+            ->andFilterWhere(['like', 'patient_middle_initial', $this->patient_middle_initial])
+            ->andFilterWhere(['like', 'ward_name', $this->ward_name])
+            ->andFilterWhere(['like', 'bed_number', $this->bed_number])
+            ->andFilterWhere(['like', 'returned_by', $this->returned_by])
+            ->andFilterWhere(['like', 'received_by', $this->received_by])
+            ->andFilterWhere(['like', 'approved_by', $this->approved_by]);
 
         return $dataProvider;
     }
