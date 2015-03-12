@@ -24,15 +24,33 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
-            NavBar::begin([
+		
+		/*echo Nav::widget([
+					'brandLabel' => 'CRMGH-PMS',
+                'brandUrl' => Yii::$app->homeUrl,
+                'options' => ['class'=> 'navbar-nav-inverse navbar-fixed-top',]
+				'items' => [
+				
+				['label' => 'Home', 'url' => ['/site/index']],
+				['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
+				['label' => 'Return Item', 'url' => ['/returnitem/index']],
+				['label' => 'Stocks Record', 'url' => ['/stocksrecord/index']],
+				['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
+				['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
+				['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
+				
+				];*/
+           NavBar::begin([
                 'brandLabel' => 'CRMGH-PMS',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-inverse navbar-top',
                 ],
             ]);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
+				//['label' => 'Home', 'url' => ['/site/index']],
+				
 				['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
 				['label' => 'Return Item', 'url' => ['/returnitem/index']],
 				['label' => 'Stocks Record', 'url' => ['/stocksrecord/index']],
