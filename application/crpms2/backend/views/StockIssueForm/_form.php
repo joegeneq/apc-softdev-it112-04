@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use backend\models\User;
 use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
