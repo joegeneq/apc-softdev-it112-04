@@ -2,9 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use backend\models\ReturnSlipForm;
 use dosamigos\datepicker\DatePicker;
+
 /* @var $this yii\web\View */
-/* @var $model backend\models\ReturnItem */
+/* @var $model backend\models\StockIssueForm */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -32,7 +35,12 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'remarks')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'return_slip_form_id')->textInput() ?>
+    <?php
+        $returnslipform=ReturnSlipForm::find()->all();
+        $listData=ArrayHelper::map($returnslipform, 'id', 'ward_name');
+        echo $form->field($model, 'return_slip_form_id')->dropDownList(
+            $listData,['prompt'=>'Select Ward Name']);
+		?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
