@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use backend\models\PurchasingStatus;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StocksRecordItem */
 
@@ -28,14 +28,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            'stocks_record_id',
+            //'id',
             'medicine_name',
             'available_quantity',
             'released_quantity',
             'delivery_date',
             'remarks',
-            'purchasing_status_id',
-            'stocks_record_id',
+            ['attribute' => 'purchasingStatus.status', 'label' => 'Purchasing Status'],
+            
+
         ],
     ]) ?>
 
