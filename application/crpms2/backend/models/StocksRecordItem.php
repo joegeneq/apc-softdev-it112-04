@@ -8,15 +8,16 @@ use Yii;
  * This is the model class for table "stocks_record_item".
  *
  * @property integer $id
- * @property string $item_name
+ * @property string $medicine_name
  * @property integer $available_quantity
  * @property integer $released_quantity
  * @property string $delivery_date
- * @property integer $purchasing_status
  * @property string $remarks
+ * @property integer $purchasing_status_id
  * @property integer $stocks_record_id
  *
- * @property StocksRecord $stocksRecord
+ * @property AboutMedicine[] $aboutMedicines
+ * @property PurchasingStatus $purchasingStatus
  */
 class StocksRecordItem extends \yii\db\ActiveRecord
 {
@@ -34,10 +35,10 @@ class StocksRecordItem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'item_name', 'available_quantity', 'released_quantity', 'delivery_date', 'purchasing_status', 'stocks_record_id'], 'required'],
-            [['id', 'available_quantity', 'released_quantity', 'purchasing_status', 'stocks_record_id'], 'integer'],
+            [['medicine_name', 'available_quantity', 'released_quantity', 'delivery_date', 'purchasing_status_id', 'stocks_record_id'], 'required'],
+            [['available_quantity', 'released_quantity', 'purchasing_status_id', 'stocks_record_id'], 'integer'],
             [['delivery_date'], 'safe'],
-            [['item_name', 'remarks'], 'string', 'max' => 45]
+            [['medicine_name', 'remarks'], 'string', 'max' => 45]
         ];
     }
 
@@ -48,12 +49,12 @@ class StocksRecordItem extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'item_name' => 'Item Name',
+            'medicine_name' => 'Medicine Name',
             'available_quantity' => 'Available Quantity',
             'released_quantity' => 'Released Quantity',
             'delivery_date' => 'Delivery Date',
-            'purchasing_status' => 'Purchasing Status',
             'remarks' => 'Remarks',
+            'purchasing_status_id' => 'Purchasing Status ID',
             'stocks_record_id' => 'Stocks Record ID',
         ];
     }
@@ -61,8 +62,16 @@ class StocksRecordItem extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getStocksRecord()
+    public function getAboutMedicines()
     {
-        return $this->hasOne(StocksRecord::className(), ['id' => 'stocks_record_id']);
+        return $this->hasMany(AboutMedicine::className(), ['stocks_record_item_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPurchasingStatus()
+    {
+        return $this->hasOne(PurchasingStatus::className(), ['id' => 'purchasing_status_id']);
     }
 }

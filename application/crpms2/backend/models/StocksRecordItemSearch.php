@@ -18,8 +18,8 @@ class StocksRecordItemSearch extends StocksRecordItem
     public function rules()
     {
         return [
-            [['id', 'available_quantity', 'released_quantity', 'purchasing_status', 'stocks_record_id'], 'integer'],
-            [['item_name', 'delivery_date', 'remarks'], 'safe'],
+            [['id', 'available_quantity', 'released_quantity', 'purchasing_status_id', 'stocks_record_id'], 'integer'],
+            [['medicine_name', 'delivery_date', 'remarks'], 'safe'],
         ];
     }
 
@@ -60,11 +60,11 @@ class StocksRecordItemSearch extends StocksRecordItem
             'available_quantity' => $this->available_quantity,
             'released_quantity' => $this->released_quantity,
             'delivery_date' => $this->delivery_date,
-            'purchasing_status' => $this->purchasing_status,
+            'purchasing_status_id' => $this->purchasing_status_id,
             'stocks_record_id' => $this->stocks_record_id,
         ]);
 
-        $query->andFilterWhere(['like', 'item_name', $this->item_name])
+        $query->andFilterWhere(['like', 'medicine_name', $this->medicine_name])
             ->andFilterWhere(['like', 'remarks', $this->remarks]);
 
         return $dataProvider;
