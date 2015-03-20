@@ -19,7 +19,7 @@ class ReturnItemSearch extends ReturnItem
     {
         return [
             [['id', 'quantity', 'return_slip_form_id'], 'integer'],
-            [['date', 'item_name', 'remarks'], 'safe'],
+            [['date', 'medicine_name', 'remarks'], 'safe'],
             [['amount'], 'number'],
         ];
     }
@@ -64,7 +64,7 @@ class ReturnItemSearch extends ReturnItem
             'return_slip_form_id' => $this->return_slip_form_id,
         ]);
 
-        $query->andFilterWhere(['like', 'item_name', $this->item_name])
+        $query->andFilterWhere(['like', 'medicine_name', $this->medicine_name])
             ->andFilterWhere(['like', 'remarks', $this->remarks]);
 
         return $dataProvider;

@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Return Items';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="return-item-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -27,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'date',
-            'item_name',
+            'medicine_name',
             'quantity',
             'amount',
             // 'remarks',

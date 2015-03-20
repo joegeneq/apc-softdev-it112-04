@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+use backend\models\PurchasingStatus;
+
+
 /* @var $this yii\web\View */
 /* @var $model backend\models\StocksRecordItem */
 
@@ -29,12 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'item_name',
+            'medicine_name',
             'available_quantity',
             'released_quantity',
             'delivery_date',
-            'purchasing_status',
             'remarks',
+            
+            ['attribute' => 'purchasingStatus.status', 'label' => 'Purchasing Status'],
             'stocks_record_id',
         ],
     ]) ?>

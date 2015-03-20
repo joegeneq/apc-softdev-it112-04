@@ -56,6 +56,7 @@ AppAsset::register($this);
 				//['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
 				//['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
 				//['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
+				['label' => 'User', 'url' => ['/user/create']],
                 ['label' => 'Stocks Record', 'items' => [
                     ['label' => 'Stocks Record', 'url' => ['/stocksrecord/index'],],
                     ['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
@@ -95,7 +96,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; SOFTDEV-IT112<?= date('Y') ?></p>
+        <p class="pull-left">&copy; SOFTDEV-IT112_<?= date('Y') ?></p>
         <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>

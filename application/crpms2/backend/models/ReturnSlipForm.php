@@ -12,16 +12,17 @@ use Yii;
  * @property string $patient_first_name
  * @property string $patient_middle_initial
  * @property string $date
- * @property string $ward_name
- * @property string $bed_number
+ * @property integer $ward_id
+ * @property integer $bed_number_id
+ * @property integer $accounting_status_id
  * @property string $returned_by
  * @property string $received_by
  * @property string $approved_by
- * @property integer $accounting_status
  * @property integer $user_id
  *
- * @property ReturnItem[] $returnItems
- * @property User $user
+ * @property Ward $ward
+ * @property BedNumber $bedNumber
+ * @property AccountingStatus $accountingStatus
  */
 class ReturnSlipForm extends \yii\db\ActiveRecord
 {
@@ -39,10 +40,10 @@ class ReturnSlipForm extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'patient_last_name', 'patient_first_name', 'date', 'ward_name', 'bed_number', 'returned_by', 'received_by', 'approved_by', 'accounting_status', 'user_id'], 'required'],
-            [['id', 'accounting_status', 'user_id'], 'integer'],
+            [['id', 'patient_last_name', 'patient_first_name', 'date', 'ward_id', 'bed_number_id', 'accounting_status_id', 'returned_by', 'received_by', 'approved_by', 'user_id'], 'required'],
+            [['id', 'ward_id', 'bed_number_id', 'accounting_status_id', 'user_id'], 'integer'],
             [['date'], 'safe'],
-            [['patient_last_name', 'patient_first_name', 'patient_middle_initial', 'ward_name', 'bed_number', 'returned_by', 'received_by', 'approved_by'], 'string', 'max' => 45]
+            [['patient_last_name', 'patient_first_name', 'patient_middle_initial', 'returned_by', 'received_by', 'approved_by'], 'string', 'max' => 45]
         ];
     }
 
@@ -57,12 +58,12 @@ class ReturnSlipForm extends \yii\db\ActiveRecord
             'patient_first_name' => 'Patient First Name',
             'patient_middle_initial' => 'Patient Middle Initial',
             'date' => 'Date',
-            'ward_name' => 'Ward Name',
-            'bed_number' => 'Bed Number',
+            'ward_id' => 'Ward ID',
+            'bed_number_id' => 'Bed Number ID',
+            'accounting_status_id' => 'Accounting Status ID',
             'returned_by' => 'Returned By',
             'received_by' => 'Received By',
             'approved_by' => 'Approved By',
-            'accounting_status' => 'Accounting Status',
             'user_id' => 'User ID',
         ];
     }
@@ -70,16 +71,24 @@ class ReturnSlipForm extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReturnItems()
+    public function getWard()
     {
-        return $this->hasMany(ReturnItem::className(), ['return_slip_form_id' => 'id']);
+        return $this->hasOne(Ward::className(), ['id' => 'ward_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUser()
+    public function getBedNumber()
     {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
+        return $this->hasOne(BedNumber::className(), ['id' => 'bed_number_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAccountingStatus()
+    {
+        return $this->hasOne(AccountingStatus::className(), ['id' => 'accounting_status_id']);
     }
 }

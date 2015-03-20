@@ -27,7 +27,7 @@ use dosamigos\datepicker\DatePicker;
         ]
 ]);?>
 
-    <?= $form->field($model, 'item_name')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'medicine_name')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'quantity')->textInput() ?>
 
