@@ -10,6 +10,8 @@ use Yii;
  * @property integer $id
  * @property string $description
  * @property integer $user_id
+ *
+ * @property User $user
  */
 class StocksRecord extends \yii\db\ActiveRecord
 {
@@ -43,5 +45,13 @@ class StocksRecord extends \yii\db\ActiveRecord
             'description' => 'Description',
             'user_id' => 'User ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }
