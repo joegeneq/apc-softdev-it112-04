@@ -23,22 +23,18 @@ use yii\helpers\ArrayHelper;
             $listData,['prompt'=>'Select Form']);
     ?>
 
-<<<<<<< HEAD
+
     <?= $form->field($model, 'id') ?>
 
-=======
->>>>>>> 8f7d8597addaa950b6e6c1d75f9c72a332a989eb
     <?= $form->field($model, 'medicine_name') ?>
 
     <?= $form->field($model, 'available_quantity') ?>
 
     <?= $form->field($model, 'released_quantity') ?>
 
-<<<<<<< HEAD
-    <?= $form->field($model, 'delivery_date') ?>
-=======
-    <?php // $form->field($model, 'delivery_date') ?>
->>>>>>> 8f7d8597addaa950b6e6c1d75f9c72a332a989eb
+
+    <?php // echo $form->field($model, 'delivery_date') ?>
+
 
     <?php // echo $form->field($model, 'remarks') ?>
 

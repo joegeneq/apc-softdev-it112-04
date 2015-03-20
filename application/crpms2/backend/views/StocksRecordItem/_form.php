@@ -4,11 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use backend\models\StocksRecord;
 use backend\models\PurchasingStatus;
-<<<<<<< HEAD
 use yii\helpers\ArrayHelper;
-=======
-
->>>>>>> 8f7d8597addaa950b6e6c1d75f9c72a332a989eb
 use dosamigos\datepicker\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StocksRecordItem */
@@ -52,10 +48,8 @@ use dosamigos\datepicker\DatePicker;
         echo $form->field($model, 'stocks_record_id')->dropDownList(
             $listData,['prompt'=>'Select Form']);
     ?>
-<<<<<<< HEAD
 
-=======
->>>>>>> 8f7d8597addaa950b6e6c1d75f9c72a332a989eb
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

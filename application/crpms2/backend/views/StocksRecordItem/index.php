@@ -28,16 +28,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-<<<<<<< HEAD
-            'id',
-            'medicine_name',
-            'available_quantity',
-            'released_quantity',
-            'delivery_date',
+
+          //  'id',
+           // 'medicine_name',
+           // 'available_quantity',
+          // 'released_quantity',
+          //  'delivery_date',
             // 'remarks',
             // 'purchasing_status_id',
             // 'stocks_record_id',
-=======
+
             'stocks_record_id',
             'medicine_name',
             'available_quantity',
@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'remarks',
             // 'purchasing_status_id',
             // 'id',
->>>>>>> 8f7d8597addaa950b6e6c1d75f9c72a332a989eb
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
