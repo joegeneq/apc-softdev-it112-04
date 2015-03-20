@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\ReturnSlipForm;
-use backend\models\ReturnSlipFormSeach;
+use backend\models\ReturnSlipFormSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,7 +32,7 @@ class ReturnSlipFormController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ReturnSlipFormSeach();
+        $searchModel = new ReturnSlipFormSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
