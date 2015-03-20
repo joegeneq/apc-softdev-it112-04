@@ -9,7 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $date
- * @property string $item_name
+ * @property string $medicine_name
  * @property integer $quantity
  * @property string $amount
  * @property string $remarks
@@ -31,11 +31,11 @@ class ReturnItem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'item_name', 'quantity', 'amount', 'return_slip_form_id'], 'required'],
+            [['date', 'medicine_name', 'quantity', 'amount', 'return_slip_form_id'], 'required'],
             [['date'], 'safe'],
             [['quantity', 'return_slip_form_id'], 'integer'],
             [['amount'], 'number'],
-            [['item_name', 'remarks'], 'string', 'max' => 45]
+            [['medicine_name', 'remarks'], 'string', 'max' => 45]
         ];
     }
 
@@ -47,7 +47,7 @@ class ReturnItem extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'date' => 'Date',
-            'item_name' => 'Item Name',
+            'medicine_name' => 'Medicine Name',
             'quantity' => 'Quantity',
             'amount' => 'Amount',
             'remarks' => 'Remarks',

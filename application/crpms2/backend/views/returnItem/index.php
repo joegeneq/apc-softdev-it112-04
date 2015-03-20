@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Return Items';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
+<center><body background="../images/background5.png">
 <div class="return-item-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
