@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Stocks Record Items';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="stocks-record-item-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -26,12 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'item_name',
+            'medicine_name',
             'available_quantity',
             'released_quantity',
             'delivery_date',
-            // 'purchasing_status',
             // 'remarks',
+            // 'purchasing_status_id',
             // 'stocks_record_id',
 
             ['class' => 'yii\grid\ActionColumn'],

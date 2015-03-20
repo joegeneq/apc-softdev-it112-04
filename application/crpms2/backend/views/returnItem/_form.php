@@ -10,7 +10,7 @@ use dosamigos\datepicker\DatePicker;
 /* @var $model backend\models\StockIssueForm */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../images/background5.png">
 <div class="return-item-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -27,7 +27,7 @@ use dosamigos\datepicker\DatePicker;
         ]
 ]);?>
 
-    <?= $form->field($model, 'item_name')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'medicine_name')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'quantity')->textInput() ?>
 

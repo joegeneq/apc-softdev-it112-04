@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'item_name') ?>
+    <?= $form->field($model, 'medicine_name') ?>
 
     <?= $form->field($model, 'available_quantity') ?>
 
@@ -25,9 +25,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'delivery_date') ?>
 
-    <?php // echo $form->field($model, 'purchasing_status') ?>
-
     <?php // echo $form->field($model, 'remarks') ?>
+
+    <?php // echo $form->field($model, 'purchasing_status_id') ?>
 
     <?php // echo $form->field($model, 'stocks_record_id') ?>
 

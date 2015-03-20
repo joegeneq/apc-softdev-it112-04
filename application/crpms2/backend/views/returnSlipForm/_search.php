@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ReturnSlipFormSearch */
+/* @var $model backend\models\ReturnSlipFormSeach */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -25,17 +25,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'date') ?>
 
-    <?php // echo $form->field($model, 'ward_name') ?>
+    <?php // echo $form->field($model, 'ward_id') ?>
 
-    <?php // echo $form->field($model, 'bed_number') ?>
+    <?php // echo $form->field($model, 'bed_number_id') ?>
+
+    <?php // echo $form->field($model, 'accounting_status_id') ?>
 
     <?php // echo $form->field($model, 'returned_by') ?>
 
     <?php // echo $form->field($model, 'received_by') ?>
 
     <?php // echo $form->field($model, 'approved_by') ?>
-
-    <?php // echo $form->field($model, 'accounting_status') ?>
 
     <?php // echo $form->field($model, 'user_id') ?>
 

@@ -11,6 +11,7 @@ use backend\models\User;
 $this->title = 'Stocks Records';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="stocks-record-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

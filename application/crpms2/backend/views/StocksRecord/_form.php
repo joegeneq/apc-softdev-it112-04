@@ -9,7 +9,7 @@ use backend\models\User;
 /* @var $model backend\models\StocksRecord */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../images/background5.png">
 <div class="stocks-record-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -18,7 +18,6 @@ use backend\models\User;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
 	<?php
         $users=User::find()->all();
         $listData=ArrayHelper::map($users, 'id', 'username');
