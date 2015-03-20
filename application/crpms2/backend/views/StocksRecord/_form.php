@@ -18,7 +18,6 @@ use backend\models\User;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
 	<?php
         $users=User::find()->all();
         $listData=ArrayHelper::map($users, 'id', 'username');

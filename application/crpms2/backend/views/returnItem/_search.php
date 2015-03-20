@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'date') ?>
 
-    <?= $form->field($model, 'item_name') ?>
+    <?= $form->field($model, 'medicine_name') ?>
 
     <?= $form->field($model, 'quantity') ?>
 
