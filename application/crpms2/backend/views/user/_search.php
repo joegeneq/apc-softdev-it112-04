@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\UserSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<center><body background="../images/background5.png"></center>
 <div class="user-search">
 
     <?php $form = ActiveForm::begin([

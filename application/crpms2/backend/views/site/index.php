@@ -5,7 +5,7 @@
 $this->title = 'CRMGH-PMS';
 ?>
 <header><center><img src="../images/crpmslogo.png" width="300" height="250" >
-<center><body background="../images/background5.png">
+<center><body background="../images/background5.png"></center>
 <div class="site-index">
 
         <div class="jumbotron">

@@ -9,7 +9,7 @@ use backend\models\User;
 /* @var $model backend\models\StocksRecord */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<center><body background="../images/background5.png"></center>
 <div class="stocks-record-form">
 
     <?php $form = ActiveForm::begin(); ?>

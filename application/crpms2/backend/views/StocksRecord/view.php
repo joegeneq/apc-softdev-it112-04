@@ -10,7 +10,7 @@ use backend\models\User;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Stocks Records', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-?>
+?><center><body background="../images/background5.png"></center>
 <div class="stocks-record-view">
 
     <h1><?= Html::encode($this->title) ?></h1>

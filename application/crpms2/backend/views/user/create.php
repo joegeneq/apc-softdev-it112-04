@@ -9,7 +9,7 @@ use yii\helpers\Html;
 $this->title = 'Create User';
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-?>
+?><center><body background="../images/background5.png"></center>
 <div class="user-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
