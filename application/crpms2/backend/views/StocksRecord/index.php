@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use backend\models\User;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\StocksRecordSearch */
@@ -11,7 +10,6 @@ use backend\models\User;
 $this->title = 'Stocks Records';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
 <div class="stocks-record-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -29,11 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'description',
-            
-			['attribute' => 'user_id',
-			'label' => 'Created By',
-			'value' => 'user.username',
-			'filter' => yii\helpers\ArrayHelper::map(backend\models\User::find()-> all(),'id','username')],
+            'user_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
