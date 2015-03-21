@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2015 at 05:20 PM
+-- Generation Time: Mar 21, 2015 at 10:13 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -172,14 +172,15 @@ CREATE TABLE IF NOT EXISTS `stocks_record` (
 `id` int(11) NOT NULL,
   `description` varchar(45) NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15002 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15003 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stocks_record`
 --
 
 INSERT INTO `stocks_record` (`id`, `description`, `user_id`) VALUES
-(15001, 'For Male Ward', 2);
+(15001, 'For Male Ward', 2),
+(15002, 'For Pedia Ward', 1);
 
 -- --------------------------------------------------------
 
@@ -196,14 +197,16 @@ CREATE TABLE IF NOT EXISTS `stocks_record_item` (
   `remarks` varchar(45) DEFAULT NULL,
   `purchasing_status_id` int(11) NOT NULL,
   `stocks_record_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stocks_record_item`
 --
 
 INSERT INTO `stocks_record_item` (`id`, `medicine_name`, `available_quantity`, `released_quantity`, `delivery_date`, `remarks`, `purchasing_status_id`, `stocks_record_id`) VALUES
-(1, 'Biogesic', 1000, 500, '2015-03-31', '', 1, 15001);
+(1, 'Biogesic', 1000, 500, '2015-03-31', '', 1, 15001),
+(2, 'alaxan', 1000, 500, '2015-03-28', '', 1, 15001),
+(3, 'IV', 1000, 80, '2015-03-31', '', 1, 15001);
 
 -- --------------------------------------------------------
 
@@ -340,7 +343,7 @@ ALTER TABLE `search_module`
 -- Indexes for table `stocks_record`
 --
 ALTER TABLE `stocks_record`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `stocks_record_ibfk_1` (`user_id`);
 
 --
 -- Indexes for table `stocks_record_item`
@@ -395,12 +398,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `stocks_record`
 --
 ALTER TABLE `stocks_record`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15002;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15003;
 --
 -- AUTO_INCREMENT for table `stocks_record_item`
 --
 ALTER TABLE `stocks_record_item`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `stock_issue_form`
 --
@@ -433,6 +436,12 @@ ALTER TABLE `return_slip_form`
 ADD CONSTRAINT `return_slip_form_ibfk_1` FOREIGN KEY (`ward_id`) REFERENCES `ward` (`id`),
 ADD CONSTRAINT `return_slip_form_ibfk_2` FOREIGN KEY (`bed_number_id`) REFERENCES `bed_number` (`id`),
 ADD CONSTRAINT `return_slip_form_ibfk_3` FOREIGN KEY (`accounting_status_id`) REFERENCES `accounting_status` (`id`);
+
+--
+-- Constraints for table `stocks_record`
+--
+ALTER TABLE `stocks_record`
+ADD CONSTRAINT `stocks_record_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `stocks_record_item`
