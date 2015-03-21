@@ -10,6 +10,7 @@ $this->title = 'Create Stocks Record';
 $this->params['breadcrumbs'][] = ['label' => 'Stocks Records', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="stocks-record-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
