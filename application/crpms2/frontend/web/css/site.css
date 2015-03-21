@@ -3,6 +3,14 @@ body {
     height: 100%;
 }
 
+
+.navbar-inverse {
+  background-color: #088A29;
+  border-color: black;
+}
+.navbar-inverse .navbar-brand {
+  color: black;
+}
 .wrap {
     min-height: 100%;
     height: auto;
