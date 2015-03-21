@@ -10,6 +10,7 @@ $this->title = 'Create Return Slip Form';
 $this->params['breadcrumbs'][] = ['label' => 'Return Slip Forms', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="return-slip-form-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
