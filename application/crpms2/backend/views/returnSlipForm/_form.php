@@ -3,7 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
+use yii\helpers\ArrayHelper;
 
+use backend\models\User;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnSlipForm */
@@ -46,7 +48,13 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'approved_by')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
+      <?php
+        $user=User::find()->all();
+        $listData=ArrayHelper::map($user, 'id', 'username');
+        echo $form->field($model, 'user_id')->dropDownList(
+            $listData,['prompt'=>'Select User']);
+		?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
