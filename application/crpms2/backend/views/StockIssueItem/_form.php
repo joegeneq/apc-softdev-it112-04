@@ -4,6 +4,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use dosamigos\datepicker\DatePicker;
+use backend\models\User;
+
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueItem */
 /* @var $form yii\widgets\ActiveForm */
@@ -48,8 +50,14 @@ use dosamigos\datepicker\DatePicker;
     <?= $form->field($model, 'amount')->textInput() ?>
 
     <?= $form->field($model, 'remarks')->textInput(['maxlength' => 45]) ?>
+	     <?php
+        $user=User::find()->all();
+        $listData=ArrayHelper::map($user, 'id', 'id');
+        echo $form->field($model, 'stock_issue_form_id')->dropDownList(
+            $listData,['prompt'=>'Select Stock Issue id ']);
+		?>
 
-    <?= $form->field($model, 'stock_issue_form_id')->textInput() ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
