@@ -26,13 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'return_slip_form_id',
+            'id',
             'date',
             'medicine_name',
             'quantity',
             'amount',
             // 'remarks',
-            // 'id',
+            // 'return_slip_form_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

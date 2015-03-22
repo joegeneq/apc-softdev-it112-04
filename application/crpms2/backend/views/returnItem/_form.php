@@ -37,9 +37,9 @@ use dosamigos\datepicker\DatePicker;
 
     <?php
         $returnslipform=ReturnSlipForm::find()->all();
-        $listData=ArrayHelper::map($returnslipform, 'id', 'id');
+        $listData=ArrayHelper::map($returnslipform, 'id', 'ward_name');
         echo $form->field($model, 'return_slip_form_id')->dropDownList(
-            $listData,['prompt'=>'Select Return Form']);
+            $listData,['prompt'=>'Select Ward Name']);
 		?>
 
     <div class="form-group">
