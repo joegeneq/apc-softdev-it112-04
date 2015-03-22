@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\StockIssueItemSearch */
@@ -26,16 +27,41 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'date',
+            'stock_issue_form_id',
+            
+             [
+                'attribute'=>'date',
+                'value'=>'date',
+                
+                'filter'=>DatePicker::widget([
+                    'model' => $searchModel,
+                    'attribute' => 'date',    
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'format' => 'yyyy-m-d',
+                    ]
+                    ]),
+                ],
             'item_name',
             'quantity',
-            'expiration_date',
+           
+            [
+                'attribute'=>'expiration_date',
+                'value'=>'expiration_date',
+                
+                'filter'=>DatePicker::widget([
+                    'model' => $searchModel,
+                    'attribute' => 'expiration_date',    
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'format' => 'yyyy-m-d',
+                    ]
+ ]),
+],
             // 'unit_cost',
             // 'amount',
             // 'remarks',
-            // 'stock_issue_form_id',
-
+            // 'id',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

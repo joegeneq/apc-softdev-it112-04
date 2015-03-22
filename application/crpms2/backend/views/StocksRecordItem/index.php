@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="stocks-record-item-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?= $this->render('_search', ['model' => $searchModel]); ?>
+    <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Stocks Record Item', ['create'], ['class' => 'btn btn-success']) ?>

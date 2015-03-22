@@ -6,7 +6,9 @@ use dosamigos\datepicker\DatePicker;
 use yii\helpers\ArrayHelper;
 
 use backend\models\User;
-
+use backend\models\AccountingStatus;
+use backend\models\Ward;
+use backend\models\BedNumber;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnSlipForm */
 /* @var $form yii\widgets\ActiveForm */
@@ -36,11 +38,26 @@ use backend\models\User;
         ]
 ]);?>
 
-    <?= $form->field($model, 'ward_id')->textInput() ?>
 
-    <?= $form->field($model, 'bed_number_id')->textInput() ?>
+    <?php
+        $ward=Ward::find()->all();
+        $listData=ArrayHelper::map($ward, 'id', 'ward_name');
+        echo $form->field($model, 'ward_id')->dropDownList(
+            $listData,['prompt'=>'Select ward']);
+        ?>
 
-    <?= $form->field($model, 'accounting_status_id')->textInput() ?>
+    <?php
+        $bedNumber=BedNumber::find()->all();
+        $listData=ArrayHelper::map($bedNumber, 'id', 'description');
+        echo $form->field($model, 'bed_number_id')->dropDownList(
+            $listData,['prompt'=>'Select bedroom']);
+        ?>
+    <?php
+        $accountingStatus=AccountingStatus::find()->all();
+        $listData=ArrayHelper::map($accountingStatus, 'id', 'description');
+        echo $form->field($model, 'accounting_status_id')->dropDownList(
+            $listData,['prompt'=>'Select Status']);
+        ?>
 
     <?= $form->field($model, 'returned_by')->textInput(['maxlength' => 45]) ?>
 
