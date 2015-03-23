@@ -4,13 +4,12 @@
 
 $this->title = 'CRMGH-PMS';
 ?>
-<header><center><img src="../images/crpmslogo.png" width="300" height="250" >
+
+<header><img src="../images/header1.png" width="1100" height="250" >
 <center><body background="../images/background5.png">
 <div class="site-index">
 
-        <div class="jumbotron">
-		<h1>Welcome to Cruz-Rabe Maternity and General Hospital </h1>
-    </div>
+    
 
 <script type="text/javascript"> 
 
