@@ -49,6 +49,11 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
+<<<<<<< HEAD
+=======
+                ['label' => 'User', 'url' => ['/user/index']],
+                ['label' => 'About Medicine', 'url' => ['/aboutmedicine/index']],
+>>>>>>> 0e8049b9449bab1774088fccc8163a14329809ca
 				//['label' => 'Home', 'url' => ['/site/index']],
 				//['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
 				//['label' => 'Return Item', 'url' => ['/returnitem/index']],

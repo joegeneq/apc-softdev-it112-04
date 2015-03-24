@@ -4,20 +4,20 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\ReturnItemSearch */
+/* @var $searchModel backend\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Return Items';
+$this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../images/background5.png">
-<div class="return-item-index">
+<div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Return Item', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -26,21 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-<<<<<<< HEAD
             'id',
-=======
-            'return_slip_form_id',
->>>>>>> 0e8049b9449bab1774088fccc8163a14329809ca
-            'date',
-            'medicine_name',
-            'quantity',
-            'amount',
-            // 'remarks',
-<<<<<<< HEAD
-            // 'return_slip_form_id',
-=======
-            // 'id',
->>>>>>> 0e8049b9449bab1774088fccc8163a14329809ca
+            'username',
+            'auth_key',
+            'password_hash',
+            'password_reset_token',
+            // 'email:email',
+            // 'status',
+            // 'created_at',
+            // 'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
