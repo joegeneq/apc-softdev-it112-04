@@ -50,8 +50,8 @@ AppAsset::register($this);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
 
-                ['label' => 'User', 'url' => ['/user/index']],
-                ['label' => 'About Medicine', 'url' => ['/aboutmedicine/index']],
+                ['label' => 'User', 'url' => ['/user/index'],'visible' => !Yii::$app->user->isGuest, ],
+               
 				//['label' => 'Home', 'url' => ['/site/index']],
 				//['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
 				//['label' => 'Return Item', 'url' => ['/returnitem/index']],
@@ -62,7 +62,8 @@ AppAsset::register($this);
                 ['label' => 'Stocks Record', 'items' => [
                     ['label' => 'Stocks Record', 'url' => ['/stocksrecord/index'],],
                     ['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
-                    ],'visible' => !Yii::$app->user->isGuest,],
+                     ['label' => 'About Medicine', 'url' => ['/aboutmedicine/index']],
+                     ],'visible' => !Yii::$app->user->isGuest,],
 				 ['label' => 'Return Slip Form', 'items' => [
                     ['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
                     ['label' => 'Return Item', 'url' => ['/returnitem/index']],

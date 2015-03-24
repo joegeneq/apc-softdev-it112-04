@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2015 at 10:13 AM
+-- Generation Time: Mar 24, 2015 at 01:44 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -122,14 +122,15 @@ CREATE TABLE IF NOT EXISTS `return_item` (
   `amount` decimal(10,0) NOT NULL,
   `remarks` varchar(45) DEFAULT NULL,
   `return_slip_form_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `return_item`
 --
 
 INSERT INTO `return_item` (`id`, `date`, `medicine_name`, `quantity`, `amount`, `remarks`, `return_slip_form_id`) VALUES
-(1, '2015-03-16', 'Biogesic', 1, '5', 'Unused', 15001);
+(1, '2015-03-16', 'Biogesic', 1, '5', 'Unused', 15002),
+(2, '2015-03-22', 'Biogesic', 10, '100', '', 15002);
 
 -- --------------------------------------------------------
 
@@ -151,6 +152,13 @@ CREATE TABLE IF NOT EXISTS `return_slip_form` (
   `approved_by` varchar(45) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `return_slip_form`
+--
+
+INSERT INTO `return_slip_form` (`id`, `patient_last_name`, `patient_first_name`, `patient_middle_initial`, `date`, `ward_id`, `bed_number_id`, `accounting_status_id`, `returned_by`, `received_by`, `approved_by`, `user_id`) VALUES
+(15002, 'calanno', 'jovelyn', 'm', '2015-03-22', 5, 9, 1, 'kevin Navarro', 'Flor Calanno', 'Sir Jerry Cruz', 1);
 
 -- --------------------------------------------------------
 
@@ -223,7 +231,14 @@ CREATE TABLE IF NOT EXISTS `stock_issue_form` (
   `issued_by` varchar(45) NOT NULL,
   `received_by` varchar(45) NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stock_issue_form`
+--
+
+INSERT INTO `stock_issue_form` (`id`, `date`, `ward_name`, `prepared_by`, `approved_by`, `issued_by`, `received_by`, `user_id`) VALUES
+(1, '2015-03-22', '1', 'Flordeliza Calanno', 'Jerry Cruz', 'Mrs. Carmelita', 'Critine Ronario', 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +256,14 @@ CREATE TABLE IF NOT EXISTS `stock_issue_item` (
   `amount` int(11) NOT NULL,
   `remarks` varchar(45) DEFAULT NULL,
   `stock_issue_form_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stock_issue_item`
+--
+
+INSERT INTO `stock_issue_item` (`id`, `date`, `item_name`, `quantity`, `expiration_date`, `unit_cost`, `amount`, `remarks`, `stock_issue_form_id`) VALUES
+(1, '2015-03-22', 'Biogesic', 10, '2015-03-31', 60, 10, '', 1);
 
 -- --------------------------------------------------------
 
@@ -256,6 +278,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `role` int(11) NOT NULL DEFAULT '10',
   `status` smallint(6) NOT NULL DEFAULT '10',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL
@@ -265,10 +288,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'E3n4JKw-tdsNvCx17E8e4gZx_AmjBlJ8', '$2y$13$7fkt3MbsuuxMiV1P3jVDTuT6qLliDVJ7HccG7apbeRwlU1OJ1wyy6', NULL, 'admin@example.com', 10, 1426402583, 1426402583),
-(2, 'pharmacist', 'Cl8ToJBJ3UOWQr-iJ4LArYBFWjMJ0x0O', '$2y$13$/P27cRnmiD8SDUi4ONzc9O3mU8H.4dkAbUnsBvXXWLC.TlvuHO3IC', NULL, 'pharmacist@example.com', 10, 1426403016, 1426403016),
-(3, 'accounting', 'qHlTcIVACOvo6M6WhoomZBy9NCFtCVva', '$2y$13$ITYbouiUdeEogfgL2xRiFOhTfQx8GguVrOpD5iSGupUHbmo.YmJDm', NULL, 'accounting@example.com', 10, 1426403400, 1426403400);
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'E3n4JKw-tdsNvCx17E8e4gZx_AmjBlJ8', '$2y$13$7fkt3MbsuuxMiV1P3jVDTuT6qLliDVJ7HccG7apbeRwlU1OJ1wyy6', NULL, 'admin@example.com', 10, 10, 1426402583, 1426402583),
+(2, 'pharmacist', 'Cl8ToJBJ3UOWQr-iJ4LArYBFWjMJ0x0O', '$2y$13$/P27cRnmiD8SDUi4ONzc9O3mU8H.4dkAbUnsBvXXWLC.TlvuHO3IC', NULL, 'pharmacist@example.com', 10, 10, 1426403016, 1426403016),
+(3, 'accounting', 'qHlTcIVACOvo6M6WhoomZBy9NCFtCVva', '$2y$13$ITYbouiUdeEogfgL2xRiFOhTfQx8GguVrOpD5iSGupUHbmo.YmJDm', '', 'accounting@example.com', 20, 10, 1426403400, 1426403400);
 
 -- --------------------------------------------------------
 
@@ -393,7 +416,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `return_item`
 --
 ALTER TABLE `return_item`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `stocks_record`
 --
@@ -408,12 +431,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `stock_issue_form`
 --
 ALTER TABLE `stock_issue_form`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `stock_issue_item`
 --
 ALTER TABLE `stock_issue_item`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user`
 --
