@@ -1,9 +1,8 @@
 html,
 body {
     height: 100%;
+
 }
-
-
 .navbar-inverse {
   background-color: #088A29;
   border-color: black;
@@ -11,6 +10,7 @@ body {
 .navbar-inverse .navbar-brand {
   color: black;
 }
+
 .wrap {
     min-height: 100%;
     height: auto;
@@ -18,12 +18,9 @@ body {
     padding: 0 0 60px;
 }
 
-<<<<<<< HEAD
 .wrap > .container {
     padding: 70px 15px 20px;
 }
-=======
->>>>>>> 0e8049b9449bab1774088fccc8163a14329809ca
 
 .footer {
     height: 60px;

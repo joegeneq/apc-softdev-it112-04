@@ -10,7 +10,6 @@ use yii\grid\GridView;
 $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
 <div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -32,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'password_hash',
             'password_reset_token',
             // 'email:email',
+            // 'role',
             // 'status',
             // 'created_at',
             // 'updated_at',

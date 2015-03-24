@@ -13,9 +13,12 @@ use Yii;
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
+ * @property integer $role
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
+ *
+ * @property StocksRecord[] $stocksRecords
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -34,7 +37,7 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
+            [['role', 'status', 'created_at', 'updated_at'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32]
         ];
@@ -52,9 +55,18 @@ class User extends \yii\db\ActiveRecord
             'password_hash' => 'Password Hash',
             'password_reset_token' => 'Password Reset Token',
             'email' => 'Email',
+            'role' => 'Role',
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStocksRecords()
+    {
+        return $this->hasMany(StocksRecord::className(), ['user_id' => 'id']);
     }
 }
