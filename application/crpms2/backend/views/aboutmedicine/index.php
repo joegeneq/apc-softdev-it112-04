@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-
+use backend\models\StockRecordItem;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\AboutMedicineSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -24,11 +24,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
+			
+			//'stocks_record_item_id',
+			['attribute' => 'stocks_record_item_id',
+            'label' => 'Medicine Name',
+            'value' => 'aboutmedicine.medicine_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\StocksRecordItem::find()-> all(),'id','medicine_name')],
+            //'id',
             'description:ntext',
             'manufacturer',
-            'stocks_record_item_id',
+			
+            
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

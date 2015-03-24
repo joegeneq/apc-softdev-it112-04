@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use backend\models\StocksRecordItem;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\AboutMedicine */
@@ -28,10 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'stocks_record_item_id',
+			//'id',
             'description:ntext',
+			
             'manufacturer',
-            'stocks_record_item_id',
+            'label' => 'Medicine Name',
+            'value' => 'aboutmedicine.medicine_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\StocksRecordItem::find()-> all(),'id','medicine_name')],
         ],
     ]) ?>
 
