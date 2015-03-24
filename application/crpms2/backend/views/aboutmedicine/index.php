@@ -10,7 +10,7 @@ use backend\models\StockRecordItem;
 $this->title = 'About Medicines';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
+<body background="../images/background5.png">
 <div class="about-medicine-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
