@@ -39,7 +39,9 @@ AppAsset::register($this);
                 ['label' => 'User Management', 'items' => [
                     ['label' => 'Update Users', 'url' => ['/user/index'],],
                     ['label' => 'Manage Employee records', 'url' => ['/employee/index']],
-                     ['label' => 'Manage Positions', 'url' => ['/position/index'],],
+
+                     ['label' => 'Manage Positions', 'url' => ['/position/index']],
+
                      ],'visible' => !Yii::$app->user->isGuest,],
               
                 ['label' => 'Stock Inventory', 'items' => [
