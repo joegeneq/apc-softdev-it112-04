@@ -15,13 +15,10 @@ use yii\helpers\ArrayHelper;
 
  <?php
         $itemcategory=ItemCategory::find()->all();
-        $listData=ArrayHelper::map($itemcategory, 'id', 'category_id');
+        $listData=ArrayHelper::map($itemcategory, 'id', 'category_name');
         echo $form->field($model, 'category_name')->dropDownList(
-            $listData,['prompt'=>'Select Category']);
+            $listData,['prompt'=>'Select Category Name']);
     ?>
-
-
-    <?= $form->field($model, 'category_name')->textInput(['maxlength' => 20]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
