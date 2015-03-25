@@ -59,19 +59,8 @@ AppAsset::register($this);
 				//['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
 				//['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
 				//['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
-                ['label' => 'Stocks Record', 'items' => [
-                    ['label' => 'Stocks Record', 'url' => ['/stocksrecord/index'],],
-                    ['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
-                     ['label' => 'About Medicine', 'url' => ['/aboutmedicine/index']],
-                     ],'visible' => !Yii::$app->user->isGuest,],
-				 ['label' => 'Return Slip Form', 'items' => [
-                    ['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
-                    ['label' => 'Return Item', 'url' => ['/returnitem/index']],
-                    ],'visible' => !Yii::$app->user->isGuest,],
-                 ['label' => 'Stocks Issue Form', 'items' => [
-                    ['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
-                    ['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
-                    ],'visible' => !Yii::$app->user->isGuest,],
+                
+               
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
