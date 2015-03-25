@@ -3,7 +3,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=crpms_softdev',
+            'dsn' => 'mysql:host=localhost;dbname=crpms_softdev2',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
