@@ -11,7 +11,6 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'About Medicines', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
 <div class="about-medicine-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -31,13 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             //'stocks_record_item_id',
+			['attribute' => 'stocksRecordItem.medicine_name', 'label' => 'Medicine Name'],
 			//'id',
-            'description:ntext',
-			
+            'description:ntext',		
             'manufacturer',
-            'label' => 'Medicine Name',
-            'value' => 'aboutmedicine.medicine_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StocksRecordItem::find()-> all(),'id','medicine_name')],
+           
         ],
     ]) ?>
 

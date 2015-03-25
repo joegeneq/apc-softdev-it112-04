@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use backend\models\StockRecordItem;
+use backend\models\StocksRecordItem;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\AboutMedicineSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -10,7 +10,7 @@ use backend\models\StockRecordItem;
 $this->title = 'About Medicines';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
+
 <div class="about-medicine-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
 			//'stocks_record_item_id',
 			['attribute' => 'stocks_record_item_id',
             'label' => 'Medicine Name',
-            'value' => 'aboutmedicine.medicine_name',
+            'value' => 'stocksRecordItem.medicine_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\StocksRecordItem::find()-> all(),'id','medicine_name')],
-            //'id',
+			//'id',
             'description:ntext',
             'manufacturer',
 			

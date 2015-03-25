@@ -35,15 +35,15 @@ AppAsset::register($this);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
+               // ['label' => 'Contact', 'url' => ['/site/contact']],
 				['label' => 'Return Slip Form', 'items' => [
                     ['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
                     ['label' => 'Return Item', 'url' => ['/returnitem/index']],
                     ],'visible' => !Yii::$app->user->isGuest,],
-                 ['label' => 'Stocks Issue Form', 'items' => [
-                    ['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
-                    ['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
-                    ],'visible' => !Yii::$app->user->isGuest,],
+                // ['label' => 'Stocks Issue Form', 'items' => [
+                   // ['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
+                   // ['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
+                   // ],'visible' => !Yii::$app->user->isGuest,],
 				
             ];
             if (Yii::$app->user->isGuest) {
