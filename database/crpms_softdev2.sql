@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2015 at 07:42 AM
+-- Generation Time: Mar 25, 2015 at 02:51 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -46,11 +46,18 @@ CREATE TABLE IF NOT EXISTS `employee` (
 
 CREATE TABLE IF NOT EXISTS `item` (
 `id` int(11) NOT NULL,
-  `item_code` int(20) NOT NULL,
+  `item_code` char(5) NOT NULL,
   `item_name` varchar(20) NOT NULL,
   `description_item` longtext NOT NULL,
   `item_category_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `item`
+--
+
+INSERT INTO `item` (`id`, `item_code`, `item_name`, `description_item`, `item_category_id`) VALUES
+(1, 'TSTNG', 'Testing', 'Testing', 1);
 
 -- --------------------------------------------------------
 
@@ -140,7 +147,14 @@ CREATE TABLE IF NOT EXISTS `stock_inventory` (
   `item_id` int(11) NOT NULL,
   `location_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stock_inventory`
+--
+
+INSERT INTO `stock_inventory` (`id`, `stock_inventory_id`, `quantity_onhand`, `quantity_onorder`, `item_id`, `location_id`, `created`) VALUES
+(1, 'TSTNG1', 1000, 0, 1, 3, '2015-03-25 13:40:04');
 
 -- --------------------------------------------------------
 
@@ -152,9 +166,9 @@ CREATE TABLE IF NOT EXISTS `stock_issue_details` (
 `id` int(11) NOT NULL,
   `location_id` int(11) NOT NULL,
   `stock_inventory_id` int(11) NOT NULL,
-  `stock_issue_code` int(11) NOT NULL,
+  `stock_issue_code` varchar(20) NOT NULL,
   `stock_status_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -211,9 +225,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'E3n4JKw-tdsNvCx17E8e4gZx_AmjBlJ8', '$2y$13$7fkt3MbsuuxMiV1P3jVDTuT6qLliDVJ7HccG7apbeRwlU1OJ1wyy6', NULL, 'admin@example.com', 10, 10, 1426402583, 1426402583),
-(2, 'pharmacist', 'Cl8ToJBJ3UOWQr-iJ4LArYBFWjMJ0x0O', '$2y$13$/P27cRnmiD8SDUi4ONzc9O3mU8H.4dkAbUnsBvXXWLC.TlvuHO3IC', NULL, 'pharmacist@example.com', 10, 10, 1426403016, 1426403016),
-(3, 'accounting', 'qHlTcIVACOvo6M6WhoomZBy9NCFtCVva', '$2y$13$ITYbouiUdeEogfgL2xRiFOhTfQx8GguVrOpD5iSGupUHbmo.YmJDm', '', 'accounting@example.com', 20, 10, 1426403400, 1426403400);
+(1, 'admin', 'E3n4JKw-tdsNvCx17E8e4gZx_AmjBlJ8', '$2y$13$7fkt3MbsuuxMiV1P3jVDTuT6qLliDVJ7HccG7apbeRwlU1OJ1wyy6', NULL, 'admin@example.com', 20, 10, 1426402583, 1426402583),
+(2, 'pharmacist', 'Cl8ToJBJ3UOWQr-iJ4LArYBFWjMJ0x0O', '$2y$13$/P27cRnmiD8SDUi4ONzc9O3mU8H.4dkAbUnsBvXXWLC.TlvuHO3IC', NULL, 'pharmacist@example.com', 20, 10, 1426403016, 1426403016),
+(3, 'accounting', 'qHlTcIVACOvo6M6WhoomZBy9NCFtCVva', '$2y$13$ITYbouiUdeEogfgL2xRiFOhTfQx8GguVrOpD5iSGupUHbmo.YmJDm', '', 'accounting@example.com', 10, 10, 1426403400, 1426403400);
 
 --
 -- Indexes for dumped tables
@@ -277,7 +291,7 @@ ALTER TABLE `stock_status`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
- ADD KEY `id` (`id`);
+ ADD UNIQUE KEY `id_2` (`id`), ADD KEY `id` (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -292,7 +306,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `item_category`
 --
@@ -312,12 +326,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `stock_inventory`
 --
 ALTER TABLE `stock_inventory`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `stock_issue_details`
 --
 ALTER TABLE `stock_issue_details`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `stock_issue_header`
 --
