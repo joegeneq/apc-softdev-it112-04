@@ -2,6 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use backend\models\Location;
+use backend\models\Item;
+
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockInventory */
@@ -18,11 +22,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'quantity_onorder')->textInput() ?>
 
-    <?= $form->field($model, 'item_id')->textInput() ?>
+    <?php
+        $item=Item::find()->all();
+        $listData=ArrayHelper::map($item, 'id', 'item_name');
+        echo $form->field($model, 'item_id')->dropDownList(
+            $listData,['prompt'=>'Select Item']);
+    ?>
+  
+    <?php
+        $location=Location::find()->all();
+        $listData=ArrayHelper::map($location, 'id', 'location_name');
+        echo $form->field($model, 'location_id')->dropDownList(
+            $listData,['prompt'=>'Select Location']);
+    ?>
 
-    <?= $form->field($model, 'location_id')->textInput() ?>
-
-    <?= $form->field($model, 'created')->textInput() ?>
+    
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
