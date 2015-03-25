@@ -50,24 +50,24 @@ AppAsset::register($this);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
 
-                ['label' => 'User', 'url' => ['/user/index'],'visible' => !Yii::$app->user->isGuest, ],
-               
-				//['label' => 'Home', 'url' => ['/site/index']],
-				//['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
-				//['label' => 'Return Item', 'url' => ['/returnitem/index']],
-				//['label' => 'Stocks Record', 'url' => ['/stocksrecord/index']],
-				//['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
-				//['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
-				//['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
-                ['label' => 'Stock Inventory', 'items' => [
-                    ['label' => 'Stock Inventory Record', 'url' => ['/stockinventory/index'],],
-                    ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
-                    // ['label' => 'About Medicine', 'url' => ['/aboutmedicine/index']],
+                ['label' => 'User Management', 'items' => [
+                    ['label' => 'Update Users', 'url' => ['/user/index'],],
+                    ['label' => 'Manage Employee records', 'url' => ['/employee/index']],
+                     ['label' => 'Manage Positions', 'url' => ['/positions/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
+              
+                ['label' => 'Stock Inventory', 'items' => [
+                    ['label' => 'Stock Inventory Record', 'url' => ['/stockinventory/index']],
+                    ['label' => 'Stock Issue Details', 'url' => ['/stockissuedetails/index']],
+                    ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
+                     ['label' => 'Insert Item in Inventory', 'url' => ['/item/index']],
+                     ],'visible' => !Yii::$app->user->isGuest,],
+                    
+
                        ['label' => 'Create New attributes', 'items' => [
                     ['label' => 'Stock Status', 'url' => ['/stockstatus/index'],],
-                  //  ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
-                    // ['label' => 'About Medicine', 'url' => ['/aboutmedicine/index']],
+                    ['label' => 'location', 'url' => ['/location/index']],
+                    ['label' => 'item category', 'url' => ['/itemcategory/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
 				
             ];
