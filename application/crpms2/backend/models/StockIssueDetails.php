@@ -10,7 +10,7 @@ use Yii;
  * @property integer $id
  * @property integer $location_id
  * @property integer $stock_inventory_id
- * @property integer $stock_issue_code
+ * @property string $stock_issue_code
  * @property integer $stock_status_id
  *
  * @property StockStatus $stockStatus
@@ -35,7 +35,8 @@ class StockIssueDetails extends \yii\db\ActiveRecord
     {
         return [
             [['location_id', 'stock_inventory_id', 'stock_issue_code', 'stock_status_id'], 'required'],
-            [['location_id', 'stock_inventory_id', 'stock_issue_code', 'stock_status_id'], 'integer']
+            [['location_id', 'stock_inventory_id', 'stock_status_id'], 'integer'],
+            [['stock_issue_code'], 'string', 'max' => 20]
         ];
     }
 

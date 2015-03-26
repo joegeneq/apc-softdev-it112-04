@@ -2,15 +2,15 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueDetails */
 
-$this->title = 'Create Stock Issue Details';
+$this->title = 'Update Stock Issue Details: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Details', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="stock-issue-details-create">
+<div class="stock-issue-details-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
