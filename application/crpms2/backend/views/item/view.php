@@ -11,6 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Items', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../images/background5.png">
+
 <div class="item-view">
 
     <h1><?= Html::encode($this->title) ?></h1>

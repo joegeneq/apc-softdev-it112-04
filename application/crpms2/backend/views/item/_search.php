@@ -8,6 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <body background="../images/background5.png">
+
 <div class="item-search">
 
     <?php $form = ActiveForm::begin([
