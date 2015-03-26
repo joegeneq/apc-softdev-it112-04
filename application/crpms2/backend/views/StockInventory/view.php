@@ -32,8 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'stock_inventory_id',
             'quantity_onhand',
             'quantity_onorder',
-            'item_id',
-            'location_id',
+           // 'item_id',
+            ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
+            ['attribute' => 'location.location_name', 'label' => 'Location:'],
+            //'location_id',
             'created',
         ],
     ]) ?>
