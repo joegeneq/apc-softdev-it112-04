@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\PositionSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../images/background5.png">
 <div class="position-search">
 
     <?php $form = ActiveForm::begin([

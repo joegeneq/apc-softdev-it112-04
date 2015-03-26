@@ -39,7 +39,6 @@ AppAsset::register($this);
                 ['label' => 'User Management', 'items' => [
                     ['label' => 'Update Users', 'url' => ['/user/index'],],
                     ['label' => 'Manage Employee records', 'url' => ['/employee/index']],
-
                      ['label' => 'Manage Positions', 'url' => ['/position/index']],
 
                      ],'visible' => !Yii::$app->user->isGuest,],
@@ -54,8 +53,8 @@ AppAsset::register($this);
 
                        ['label' => 'Create New attributes', 'items' => [
                     ['label' => 'Stock Status', 'url' => ['/stockstatus/index'],],
-                    ['label' => 'location', 'url' => ['/location/index']],
-                    ['label' => 'item category', 'url' => ['/itemcategory/index']],
+                    ['label' => 'Location', 'url' => ['/location/index']],
+                    ['label' => 'Item Category', 'url' => ['/itemcategory/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
 				
             ];
