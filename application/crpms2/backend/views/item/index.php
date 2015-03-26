@@ -31,7 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'item_code',
             'item_name',
             'description_item:ntext',
-            'item_category_id',
+            //'item_category_id',
+			['attribute' => 'item_category_id',
+            'label' => 'Category Name',
+            'value' => 'itemCategory.category_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\ItemCategory::find()-> all(),'id','category_name')],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
