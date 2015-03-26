@@ -11,6 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' 
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <body background="../images/background5.png">
+
 <div class="position-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
