@@ -42,8 +42,6 @@ AppAsset::register($this);
 
                      ['label' => 'Manage Positions', 'url' => ['/position/index']],
 
-                     ['label' => 'Manage Positions', 'url' => ['/position/index'],],
-
                      ],'visible' => !Yii::$app->user->isGuest,],
               
                 ['label' => 'Stock Inventory', 'items' => [
