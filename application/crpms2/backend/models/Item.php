@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "item".
  *
  * @property integer $id
- * @property integer $item_code
+ * @property string $item_code
  * @property string $item_name
  * @property string $description_item
  * @property integer $item_category_id
@@ -34,8 +34,9 @@ class Item extends \yii\db\ActiveRecord
     {
         return [
             [['item_code', 'item_name', 'description_item', 'item_category_id'], 'required'],
-            [['item_code', 'item_category_id'], 'integer'],
             [['description_item'], 'string'],
+            [['item_category_id'], 'integer'],
+            [['item_code'], 'string', 'max' => 5],
             [['item_name'], 'string', 'max' => 20]
         ];
     }
