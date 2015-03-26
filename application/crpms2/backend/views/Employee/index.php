@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Employees';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="employee-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -25,17 +26,28 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'emp_code',
             'firstname',
             'lastname',
             'middlename',
             // 'address',
             // 'contact_number',
-            // 'position_id',
-            // 'user_id',
+           // 'position_id',
+            ['attribute' => 'position_id',
+            'label' => 'Position Name',
+            'value' => 'position.position_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\Position::find()-> all(),'id','position_name')],
+            
+           // 'user_id',
+            ['attribute' => 'user_id',
+            'label' => 'Created By',
+            'value' => 'user.username',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\User::find()-> all(),'id','username')],
 
             ['class' => 'yii\grid\ActionColumn'],
+
+            
         ],
     ]); ?>
 

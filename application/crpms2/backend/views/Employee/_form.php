@@ -2,7 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use backend\models\Position;
+use backend\models\User;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Employee */
 /* @var $form yii\widgets\ActiveForm */
@@ -24,9 +26,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'contact_number')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'position_id')->textInput() ?>
+    <?php
+        $position=Position::find()->all();
+        $listData=ArrayHelper::map($position, 'id', 'position_name');
+        echo $form->field($model, 'position_id')->dropDownList(
+            $listData,['prompt'=>'Select Position']);
+    ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
+    <?php
+        $users=User::find()->all();
+        $listData=ArrayHelper::map($users, 'id', 'username');
+        echo $form->field($model, 'user_id')->dropDownList(
+            $listData,['prompt'=>'Select User']);
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -25,21 +25,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
 		
-		/*echo Nav::widget([
-					'brandLabel' => 'CRMGH-PMS',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => ['class'=> 'navbar-nav-inverse navbar-fixed-top',]
-				'items' => [
-				
-				['label' => 'Home', 'url' => ['/site/index']],
-				['label' => 'Return Slip Form', 'url' => ['/returnslipform/index']],
-				['label' => 'Return Item', 'url' => ['/returnitem/index']],
-				['label' => 'Stocks Record', 'url' => ['/stocksrecord/index']],
-				['label' => 'Stocks Record Item', 'url' => ['/stocksrecorditem/index']],
-				['label' => 'Stocks Issue Item', 'url' => ['/stockissueitem/index']],
-				['label' => 'Stocks Issue Form', 'url' => ['/stockissueform/index']],
-				
-				];*/
+		
            NavBar::begin([
                 'brandLabel' => 'CRMGH-PMS',
                 'brandUrl' => Yii::$app->homeUrl,
@@ -53,7 +39,11 @@ AppAsset::register($this);
                 ['label' => 'User Management', 'items' => [
                     ['label' => 'Update Users', 'url' => ['/user/index'],],
                     ['label' => 'Manage Employee records', 'url' => ['/employee/index']],
+
                      ['label' => 'Manage Positions', 'url' => ['/position/index']],
+
+                     ['label' => 'Manage Positions', 'url' => ['/position/index'],],
+
                      ],'visible' => !Yii::$app->user->isGuest,],
               
                 ['label' => 'Stock Inventory', 'items' => [

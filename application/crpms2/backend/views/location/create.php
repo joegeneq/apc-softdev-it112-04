@@ -10,6 +10,7 @@ $this->title = 'Create Location';
 $this->params['breadcrumbs'][] = ['label' => 'Locations', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="location-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
