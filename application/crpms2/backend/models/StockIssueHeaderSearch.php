@@ -18,8 +18,8 @@ class StockIssueHeaderSearch extends StockIssueHeader
     public function rules()
     {
         return [
-            [['id', 'header_code', 'item_id', 'quantity', 'stock_issue_details_id'], 'integer'],
-            [['date_created', 'exp_date', 'remarks'], 'safe'],
+            [['id', 'item_id', 'quantity', 'stock_issue_details_id'], 'integer'],
+            [['header_code', 'date_created', 'exp_date', 'remarks'], 'safe'],
             [['unit_cost', 'amount'], 'number'],
         ];
     }
@@ -58,7 +58,6 @@ class StockIssueHeaderSearch extends StockIssueHeader
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'header_code' => $this->header_code,
             'date_created' => $this->date_created,
             'item_id' => $this->item_id,
             'quantity' => $this->quantity,
@@ -68,7 +67,8 @@ class StockIssueHeaderSearch extends StockIssueHeader
             'stock_issue_details_id' => $this->stock_issue_details_id,
         ]);
 
-        $query->andFilterWhere(['like', 'remarks', $this->remarks]);
+        $query->andFilterWhere(['like', 'header_code', $this->header_code])
+            ->andFilterWhere(['like', 'remarks', $this->remarks]);
 
         return $dataProvider;
     }

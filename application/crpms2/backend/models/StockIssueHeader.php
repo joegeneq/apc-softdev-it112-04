@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "stock_issue_header".
  *
  * @property integer $id
- * @property integer $header_code
+ * @property string $header_code
  * @property string $date_created
  * @property integer $item_id
  * @property integer $quantity
@@ -37,11 +37,12 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['header_code', 'date_created', 'item_id', 'quantity', 'exp_date', 'unit_cost', 'amount', 'remarks', 'stock_issue_details_id'], 'required'],
-            [['header_code', 'item_id', 'quantity', 'stock_issue_details_id'], 'integer'],
+            [['header_code', 'item_id', 'quantity', 'exp_date', 'unit_cost', 'amount', 'stock_issue_details_id'], 'required'],
             [['date_created', 'exp_date'], 'safe'],
+            [['item_id', 'quantity', 'stock_issue_details_id'], 'integer'],
             [['unit_cost', 'amount'], 'number'],
-            [['remarks'], 'string']
+            [['remarks'], 'string'],
+            [['header_code'], 'string', 'max' => 20]
         ];
     }
 
