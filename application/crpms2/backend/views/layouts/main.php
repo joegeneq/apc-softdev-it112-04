@@ -45,11 +45,19 @@ AppAsset::register($this);
               
                 ['label' => 'Stock Inventory', 'items' => [
                     ['label' => 'Stock Inventory Record', 'url' => ['/stockinventory/index']],
-                    ['label' => 'Stock Issue Details', 'url' => ['/stockissuedetails/index']],
-                    ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
-                     ['label' => 'Insert Item in Inventory', 'url' => ['/item/index']],
+                    ['label' => 'Insert Item in Inventory', 'url' => ['/item/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
                     
+                ['label' => 'Stock Issue Forms', 'items' => [
+                    ['label' => 'Stock Issue Details', 'url' => ['/stockissuedetails/index']],
+                    ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
+                     ],'visible' => !Yii::$app->user->isGuest,],
+
+                 ['label' => 'Return Item Forms', 'items' => [
+                    ['label' => 'Return Item Details', 'url' => ['/returnitemdetails/index']],
+                    ['label' => 'Return Item  Header', 'url' => ['/returnitemheader/index']],
+                     ],'visible' => !Yii::$app->user->isGuest,],
+
 
                        ['label' => 'Create New attributes', 'items' => [
                     ['label' => 'Stock Status', 'url' => ['/stockstatus/index'],],
