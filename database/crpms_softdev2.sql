@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2015 at 09:55 AM
+-- Generation Time: Mar 29, 2015 at 12:16 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `return_item_header_id` int(11) NOT NULL,
   `accounting_status_id` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
-  `return_to` set('pharmacist') NOT NULL,
+  `return_to` varchar(20) NOT NULL DEFAULT 'PHARMACIST',
   `created` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -215,7 +215,14 @@ CREATE TABLE IF NOT EXISTS `return_item_header` (
   `amount` decimal(10,0) NOT NULL,
   `remarks` longtext,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `return_item_header`
+--
+
+INSERT INTO `return_item_header` (`id`, `return_item_header_code`, `patient_last_name`, `patient_first_name`, `patient_middle_initial`, `location_id`, `bed_id`, `item_id`, `quantity`, `amount`, `remarks`, `created`) VALUES
+(1, 'RIH1', 'calanno', 'flordeliza', 'm', 1, 1, 1, 1, '10', '', '2015-03-29 09:57:34');
 
 -- --------------------------------------------------------
 
@@ -472,7 +479,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `return_item_header`
 --
 ALTER TABLE `return_item_header`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `stock_inventory`
 --
