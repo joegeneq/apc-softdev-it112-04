@@ -11,6 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Headers', 'url' => ['i
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="stock-issue-header-create">
+<body background="../images/background5.png">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

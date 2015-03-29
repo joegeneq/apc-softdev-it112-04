@@ -11,6 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' 
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="stock-issue-header-update">
+<body background="../images/background5.png">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
