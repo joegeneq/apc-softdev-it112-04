@@ -22,7 +22,7 @@ use backend\models\StockStatus;
     ?>
  <?php
         $stockinventory=StockInventory::find()->all();
-        $listData=ArrayHelper::map($stockinventory, 'id', 'stock_inventory_code');
+        $listData=ArrayHelper::map($stockinventory, 'id', 'stock_inventory_id');
         echo $form->field($model, 'stock_inventory_id')->dropDownList(
             $listData,['prompt'=>'Select Stock Inventory']);
     ?>
