@@ -10,6 +10,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
+<body background="../images/background5.png">
+
 <div class="user-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
