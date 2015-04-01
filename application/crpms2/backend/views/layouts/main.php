@@ -44,13 +44,13 @@ AppAsset::register($this);
                      ],'visible' => !Yii::$app->user->isGuest,],
               
                 ['label' => 'Stock Inventory', 'items' => [
-                    ['label' => 'Stock Inventory Record', 'url' => ['/stockinventory/index']],
+                    ['label' => 'Stock Inventory Record', 'url' => ['/stock-inventory/index']],
                     ['label' => 'Insert Item in Inventory', 'url' => ['/item/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
                     
                 ['label' => 'Stock Issue Forms', 'items' => [
                     ['label' => 'Stock Issue Details', 'url' => ['/stockissuedetails/index']],
-                    ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
+                    ['label' => 'Stock Issue Header', 'url' => ['/stock-issue-header/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
 
                  ['label' => 'Return Item Forms', 'items' => [
