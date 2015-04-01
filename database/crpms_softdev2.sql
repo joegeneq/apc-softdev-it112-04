@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2015 at 12:57 PM
+-- Generation Time: Apr 01, 2015 at 10:32 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -130,6 +130,22 @@ INSERT INTO `item_category` (`id`, `category_id`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `item_description`
+--
+
+CREATE TABLE IF NOT EXISTS `item_description` (
+`id` int(11) NOT NULL,
+  `item_code` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `item_name` varchar(25) NOT NULL,
+  `manufacturer` varchar(25) NOT NULL,
+  `remarks` longtext NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `location`
 --
 
@@ -157,6 +173,23 @@ INSERT INTO `location` (`id`, `location_code`, `location_name`) VALUES
 CREATE TABLE IF NOT EXISTS `migration` (
   `version` varchar(180) NOT NULL,
   `apply_time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient`
+--
+
+CREATE TABLE IF NOT EXISTS `patient` (
+`id` int(11) NOT NULL,
+  `patient_id_no` int(11) NOT NULL,
+  `lastname` varchar(25) NOT NULL,
+  `firstname` varchar(25) NOT NULL,
+  `middlename` int(10) NOT NULL,
+  `address` varchar(25) NOT NULL,
+  `birthdate` date NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -196,18 +229,6 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `return_item_details`
---
-
-INSERT INTO `return_item_details` (`id`, `return_item_details_code`, `location_id`, `return_item_header_id`, `accounting_status_id`, `employee_id`, `return_to`, `created_at`) VALUES
-(2, 'RID1', 1, 1, 1, 2, '', '2015-03-29 10:36:53'),
-(3, 'RID2', 1, 1, 1, 2, '', '2015-03-29 10:41:35'),
-(4, '1', 1, 1, 2, 2, 'pharmacist', '2015-03-29 10:45:49'),
-(5, 'RID3', 1, 1, 1, 2, '', '2015-03-29 10:49:40'),
-(7, 'RID4', 1, 1, 1, 2, 'testing', '2015-03-29 10:55:46'),
-(8, 'RID5', 1, 1, 1, 2, 'pharmacist', '2015-03-29 10:56:40');
-
 -- --------------------------------------------------------
 
 --
@@ -216,10 +237,8 @@ INSERT INTO `return_item_details` (`id`, `return_item_details_code`, `location_i
 
 CREATE TABLE IF NOT EXISTS `return_item_header` (
 `id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
   `return_item_header_code` varchar(20) NOT NULL,
-  `patient_last_name` varchar(20) NOT NULL,
-  `patient_first_name` varchar(20) NOT NULL,
-  `patient_middle_initial` varchar(10) NOT NULL,
   `location_id` int(11) NOT NULL,
   `bed_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
@@ -228,13 +247,6 @@ CREATE TABLE IF NOT EXISTS `return_item_header` (
   `remarks` longtext,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `return_item_header`
---
-
-INSERT INTO `return_item_header` (`id`, `return_item_header_code`, `patient_last_name`, `patient_first_name`, `patient_middle_initial`, `location_id`, `bed_id`, `item_id`, `quantity`, `amount`, `remarks`, `created`) VALUES
-(1, 'RIH1', 'calanno', 'flordeliza', 'm', 1, 1, 1, 1, '10', '', '2015-03-29 09:57:34');
 
 -- --------------------------------------------------------
 
@@ -270,16 +282,10 @@ CREATE TABLE IF NOT EXISTS `stock_issue_details` (
   `location_id` int(11) NOT NULL,
   `stock_inventory_id` int(11) NOT NULL,
   `stock_issue_code` varchar(20) NOT NULL,
-  `stock_status_id` int(11) NOT NULL
+  `stock_status_id` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `issue_from` varchar(25) NOT NULL DEFAULT 'pharmacist'
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `stock_issue_details`
---
-
-INSERT INTO `stock_issue_details` (`id`, `location_id`, `stock_inventory_id`, `stock_issue_code`, `stock_status_id`) VALUES
-(5, 1, 1, 'TSTNG3', 1),
-(6, 1, 1, 'SID1', 1);
 
 -- --------------------------------------------------------
 
@@ -299,14 +305,6 @@ CREATE TABLE IF NOT EXISTS `stock_issue_header` (
   `remarks` longtext,
   `stock_issue_details_id` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `stock_issue_header`
---
-
-INSERT INTO `stock_issue_header` (`id`, `header_code`, `date_created`, `item_id`, `quantity`, `exp_date`, `unit_cost`, `amount`, `remarks`, `stock_issue_details_id`) VALUES
-(1, 'SIH154', '2015-03-29 05:18:33', 1, 1, '2015-03-31', '10', '10', 'For Pedia', 5),
-(2, 'SIH143', '2015-03-29 04:53:07', 1, 1, '2015-04-05', '10', '10', '', 5);
 
 -- --------------------------------------------------------
 
@@ -390,10 +388,22 @@ ALTER TABLE `item_category`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `item_description`
+--
+ALTER TABLE `item_description`
+ ADD PRIMARY KEY (`id`), ADD KEY `item_description_ibfk_1` (`item_id`);
+
+--
 -- Indexes for table `location`
 --
 ALTER TABLE `location`
  ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`);
+
+--
+-- Indexes for table `patient`
+--
+ALTER TABLE `patient`
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`), ADD KEY `id_2` (`id`);
 
 --
 -- Indexes for table `position`
@@ -411,7 +421,7 @@ ALTER TABLE `return_item_details`
 -- Indexes for table `return_item_header`
 --
 ALTER TABLE `return_item_header`
- ADD PRIMARY KEY (`id`), ADD KEY `return_item_header_ibfk_1` (`location_id`), ADD KEY `return_item_header_ibfk_2` (`bed_id`), ADD KEY `return_item_header_ibfk_3` (`item_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `return_item_header_ibfk_1` (`location_id`), ADD KEY `return_item_header_ibfk_2` (`bed_id`), ADD KEY `return_item_header_ibfk_3` (`item_id`), ADD KEY `return_item_header_ibfk_4` (`patient_id`);
 
 --
 -- Indexes for table `stock_inventory`
@@ -423,7 +433,7 @@ ALTER TABLE `stock_inventory`
 -- Indexes for table `stock_issue_details`
 --
 ALTER TABLE `stock_issue_details`
- ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`), ADD KEY `stock_issue_details_ibfk_1` (`stock_status_id`), ADD KEY `stock_issue_details_ibfk_2` (`stock_inventory_id`), ADD KEY `stock_issue_details_ibfk_3` (`location_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`), ADD KEY `stock_issue_details_ibfk_1` (`stock_status_id`), ADD KEY `stock_issue_details_ibfk_2` (`stock_inventory_id`), ADD KEY `stock_issue_details_ibfk_3` (`location_id`), ADD KEY `stock_issue_details_ibfk_4` (`employee_id`);
 
 --
 -- Indexes for table `stock_issue_header`
@@ -473,10 +483,20 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 ALTER TABLE `item_category`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `item_description`
+--
+ALTER TABLE `item_description`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `location`
 --
 ALTER TABLE `location`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `patient`
+--
+ALTER TABLE `patient`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `position`
 --
@@ -530,6 +550,12 @@ ALTER TABLE `item`
 ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`item_category_id`) REFERENCES `item_category` (`id`);
 
 --
+-- Constraints for table `item_description`
+--
+ALTER TABLE `item_description`
+ADD CONSTRAINT `item_description_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`);
+
+--
 -- Constraints for table `return_item_details`
 --
 ALTER TABLE `return_item_details`
@@ -544,7 +570,8 @@ ADD CONSTRAINT `return_item_details_ibfk_4` FOREIGN KEY (`employee_id`) REFERENC
 ALTER TABLE `return_item_header`
 ADD CONSTRAINT `return_item_header_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
 ADD CONSTRAINT `return_item_header_ibfk_2` FOREIGN KEY (`bed_id`) REFERENCES `bed` (`id`),
-ADD CONSTRAINT `return_item_header_ibfk_3` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`);
+ADD CONSTRAINT `return_item_header_ibfk_3` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
+ADD CONSTRAINT `return_item_header_ibfk_4` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`);
 
 --
 -- Constraints for table `stock_inventory`
@@ -559,7 +586,8 @@ ADD CONSTRAINT `stock_inventory_ibfk_2` FOREIGN KEY (`location_id`) REFERENCES `
 ALTER TABLE `stock_issue_details`
 ADD CONSTRAINT `stock_issue_details_ibfk_1` FOREIGN KEY (`stock_status_id`) REFERENCES `stock_status` (`id`),
 ADD CONSTRAINT `stock_issue_details_ibfk_2` FOREIGN KEY (`stock_inventory_id`) REFERENCES `stock_inventory` (`id`),
-ADD CONSTRAINT `stock_issue_details_ibfk_3` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+ADD CONSTRAINT `stock_issue_details_ibfk_3` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
+ADD CONSTRAINT `stock_issue_details_ibfk_4` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`);
 
 --
 -- Constraints for table `stock_issue_header`
