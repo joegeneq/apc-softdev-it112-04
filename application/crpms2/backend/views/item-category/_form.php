@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\ItemCategory */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../images/background5.png">
 <div class="item-category-form">
 
     <?php $form = ActiveForm::begin(); ?>
