@@ -12,13 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'patient_id')->textInput() ?>
+
     <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 20]) ?>
-
-    <?= $form->field($model, 'patient_last_name')->textInput(['maxlength' => 20]) ?>
-
-    <?= $form->field($model, 'patient_first_name')->textInput(['maxlength' => 20]) ?>
-
-    <?= $form->field($model, 'patient_middle_initial')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'location_id')->textInput() ?>
 

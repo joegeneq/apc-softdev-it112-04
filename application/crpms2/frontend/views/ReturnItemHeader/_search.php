@@ -17,17 +17,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
+    <?= $form->field($model, 'patient_id') ?>
+
     <?= $form->field($model, 'return_item_header_code') ?>
 
-    <?= $form->field($model, 'patient_last_name') ?>
+    <?= $form->field($model, 'location_id') ?>
 
-    <?= $form->field($model, 'patient_first_name') ?>
-
-    <?= $form->field($model, 'patient_middle_initial') ?>
-
-    <?php // echo $form->field($model, 'location_id') ?>
-
-    <?php // echo $form->field($model, 'bed_id') ?>
+    <?= $form->field($model, 'bed_id') ?>
 
     <?php // echo $form->field($model, 'item_id') ?>
 

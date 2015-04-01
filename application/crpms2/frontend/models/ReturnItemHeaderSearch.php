@@ -18,8 +18,8 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
     public function rules()
     {
         return [
-            [['id', 'location_id', 'bed_id', 'item_id', 'quantity'], 'integer'],
-            [['return_item_header_code', 'patient_last_name', 'patient_first_name', 'patient_middle_initial', 'remarks', 'created'], 'safe'],
+            [['id', 'patient_id', 'location_id', 'bed_id', 'item_id', 'quantity'], 'integer'],
+            [['return_item_header_code', 'remarks', 'created'], 'safe'],
             [['amount'], 'number'],
         ];
     }
@@ -58,6 +58,7 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'patient_id' => $this->patient_id,
             'location_id' => $this->location_id,
             'bed_id' => $this->bed_id,
             'item_id' => $this->item_id,
@@ -67,9 +68,6 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
         ]);
 
         $query->andFilterWhere(['like', 'return_item_header_code', $this->return_item_header_code])
-            ->andFilterWhere(['like', 'patient_last_name', $this->patient_last_name])
-            ->andFilterWhere(['like', 'patient_first_name', $this->patient_first_name])
-            ->andFilterWhere(['like', 'patient_middle_initial', $this->patient_middle_initial])
             ->andFilterWhere(['like', 'remarks', $this->remarks]);
 
         return $dataProvider;

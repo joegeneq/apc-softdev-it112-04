@@ -29,10 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            'patient_id',
             'return_item_header_code',
-            'patient_last_name',
-            'patient_first_name',
-            'patient_middle_initial',
             'location_id',
             'bed_id',
             'item_id',
