@@ -10,6 +10,7 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Item Descriptions', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="item-description-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -28,10 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'item_code',
-            'item_id',
-            'item_name',
+            //'id',
+            //'item_code',
+            ['attribute' => 'item.item_code', 'label' => 'Item Code'],
+            //'item_id',
+            ['attribute' => 'item.id', 'label' => 'Item ID'],
+            //'item_name',
+            ['attribute' => 'item.item_name', 'label' => 'Item Name'],
             'manufacturer',
             'remarks:ntext',
             'created_at',
