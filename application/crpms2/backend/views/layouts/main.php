@@ -62,7 +62,7 @@ AppAsset::register($this);
                        ['label' => 'Create New attributes', 'items' => [
                     ['label' => 'Stock Status', 'url' => ['/stockstatus/index'],],
                     ['label' => 'Location', 'url' => ['/location/index']],
-                    ['label' => 'Item Category', 'url' => ['/itemcategory/index']],
+                    ['label' => 'Item Category', 'url' => ['/item_category/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
 				
             ];
