@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use backend\models\Employee;
+use yii\helpers\ArrayHelper;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemDetails */
 /* @var $form yii\widgets\ActiveForm */
@@ -20,7 +21,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'accounting_status_id')->textInput() ?>
 
-    <?= $form->field($model, 'employee_id')->textInput() ?>
+    <?= $form->field($model, 'employee_id')->dropDownList(
+        ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
+        ['prompt'=>'Select Employee'] ) 
+    ?>
 
 
 

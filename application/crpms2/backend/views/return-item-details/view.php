@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use backend\models\Employee;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemDetails */
@@ -34,7 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'location_id',
             'return_item_header_id',
             'accounting_status_id',
-            'employee_id',
+            'employee.lastname',
+
             'return_to',
             'created_at',
         ],

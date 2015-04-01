@@ -38,8 +38,8 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
     {
         return [
             [['return_item_details_code', 'location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'required'],
-            [['location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'integer'],
-            [['created_at'], 'safe'],
+            [['location_id', 'return_item_header_id', 'accounting_status_id'], 'integer'],
+            [['created_at', 'employee_id'], 'safe'],
             [['return_item_details_code', 'return_to'], 'string', 'max' => 20]
         ];
     }

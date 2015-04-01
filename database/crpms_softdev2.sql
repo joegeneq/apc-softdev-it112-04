@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2015 at 10:32 AM
+-- Generation Time: Apr 01, 2015 at 12:22 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -76,14 +76,15 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `contact_number` varchar(20) NOT NULL,
   `position_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
 --
 
 INSERT INTO `employee` (`id`, `emp_code`, `firstname`, `lastname`, `middlename`, `address`, `contact_number`, `position_id`, `user_id`) VALUES
-(2, '201155', 'flordeliza', 'calannoo', 'm', 'taguig city', '123456', 2, 1);
+(2, '201155', 'flordeliza', 'calanno', 'm', 'taguig city', '123456', 2, 1),
+(3, '201156', 'alih', 'lino', 'm', 'taguig city', '123456', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -186,11 +187,18 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `patient_id_no` int(11) NOT NULL,
   `lastname` varchar(25) NOT NULL,
   `firstname` varchar(25) NOT NULL,
-  `middlename` int(10) NOT NULL,
+  `middlename` varchar(10) NOT NULL,
   `address` varchar(25) NOT NULL,
   `birthdate` date NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `patient`
+--
+
+INSERT INTO `patient` (`id`, `patient_id_no`, `lastname`, `firstname`, `middlename`, `address`, `birthdate`, `created_at`) VALUES
+(1, 201112, 'fincale', 'jurena', '1', 'taguig city', '2015-04-24', '2015-04-01 09:57:13');
 
 -- --------------------------------------------------------
 
@@ -227,7 +235,14 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `employee_id` int(11) NOT NULL,
   `return_to` varchar(20) DEFAULT 'pharmacist',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `return_item_details`
+--
+
+INSERT INTO `return_item_details` (`id`, `return_item_details_code`, `location_id`, `return_item_header_id`, `accounting_status_id`, `employee_id`, `return_to`, `created_at`) VALUES
+(10, 'RID7', 1, 2, 1, 2, 'pharmacist', '2015-04-01 09:58:41');
 
 -- --------------------------------------------------------
 
@@ -246,7 +261,14 @@ CREATE TABLE IF NOT EXISTS `return_item_header` (
   `amount` decimal(10,0) NOT NULL,
   `remarks` longtext,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `return_item_header`
+--
+
+INSERT INTO `return_item_header` (`id`, `patient_id`, `return_item_header_code`, `location_id`, `bed_id`, `item_id`, `quantity`, `amount`, `remarks`, `created`) VALUES
+(2, 1, 'RIH2', 1, 1, 1, 1, '10', '', '2015-04-01 09:57:53');
 
 -- --------------------------------------------------------
 
@@ -471,7 +493,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `item`
 --
@@ -496,7 +518,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `position`
 --
@@ -506,12 +528,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `return_item_details`
 --
 ALTER TABLE `return_item_details`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `return_item_header`
 --
 ALTER TABLE `return_item_header`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `stock_inventory`
 --

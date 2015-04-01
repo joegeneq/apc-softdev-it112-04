@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use backend\models\Employee;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\ReturnItemDetailsSearch */
@@ -31,8 +32,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'location_id',
             'return_item_header_id',
             'accounting_status_id',
-            // 'employee_id',
-            // 'return_to',
+            //'employee_id',
+            [
+                'attribute' => 'employee_id',
+                'value' => 'employee.lastname'
+            ],
+             // 'return_to',
             // 'created_at',
 
             ['class' => 'yii\grid\ActionColumn'],
