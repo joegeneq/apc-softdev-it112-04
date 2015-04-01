@@ -49,7 +49,7 @@ AppAsset::register($this);
                      ],'visible' => !Yii::$app->user->isGuest,],
                     
                 ['label' => 'Stock Issue Forms', 'items' => [
-                    ['label' => 'Stock Issue Details', 'url' => ['/stockissuedetails/index']],
+                    ['label' => 'Stock Issue Details', 'url' => ['/stock-issue-details/index']],
                     ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
 
