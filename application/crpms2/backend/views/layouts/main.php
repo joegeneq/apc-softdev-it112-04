@@ -54,7 +54,7 @@ AppAsset::register($this);
                      ],'visible' => !Yii::$app->user->isGuest,],
 
                  ['label' => 'Return Item Forms', 'items' => [
-                    ['label' => 'Return Item Details', 'url' => ['/returnitemdetails/index']],
+                    ['label' => 'Return Item Details', 'url' => ['/return-item-details/index']],
                     ['label' => 'Return Item  Header', 'url' => ['/returnitemheader/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
 
