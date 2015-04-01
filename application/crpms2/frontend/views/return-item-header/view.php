@@ -2,14 +2,17 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use frontend\models\Patient;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\ReturnItemHeader */
 
-$this->title = $model->id;
+$this->title = $model->return_item_header_code;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<body background="../images/background5.png">
 <div class="return-item-header-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -28,16 +31,20 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'patient_id',
+            //'id',
+            'patient.lastname',
+            'patient.firstname',
             'return_item_header_code',
-            'location_id',
+            
+            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
+           
             'bed_id',
             'item_id',
             'quantity',
             'amount',
             'remarks:ntext',
             'created',
+
         ],
     ]) ?>
 
