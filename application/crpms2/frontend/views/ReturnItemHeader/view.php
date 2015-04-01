@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\ReturnItem */
+/* @var $model frontend\models\ReturnItemHeader */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Return Items', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="return-item-view">
+<div class="return-item-header-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,12 +29,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'date',
-            'item_name',
+            'return_item_header_code',
+            'patient_last_name',
+            'patient_first_name',
+            'patient_middle_initial',
+            'location_id',
+            'bed_id',
+            'item_id',
             'quantity',
             'amount',
-            'remarks',
-            'return_slip_form_id',
+            'remarks:ntext',
+            'created',
         ],
     ]) ?>
 
