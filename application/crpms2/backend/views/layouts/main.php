@@ -49,13 +49,11 @@ AppAsset::register($this);
                      ],'visible' => !Yii::$app->user->isGuest,],
                     
                 ['label' => 'Stock Issue Forms', 'items' => [
-<<<<<<< HEAD
+
                     ['label' => 'Stock Issue Details', 'url' => ['/stockissuedetails/index']],
                     ['label' => 'Stock Issue Header', 'url' => ['/stock-issue-header/index']],
-=======
-                    ['label' => 'Stock Issue Details', 'url' => ['/stock-issue-details/index']],
-                    ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
->>>>>>> e8690d322f9729e8d8b1faef1cb5e28d487efbb2
+
+                   
                      ],'visible' => !Yii::$app->user->isGuest,],
 
                  ['label' => 'Return Item Forms', 'items' => [
