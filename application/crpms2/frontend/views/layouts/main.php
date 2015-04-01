@@ -37,8 +37,10 @@ AppAsset::register($this);
                 ['label' => 'About', 'url' => ['/site/about']],
                // ['label' => 'Contact', 'url' => ['/site/contact']],
 				['label' => 'Return Item Forms', 'items' => [
-                    ['label' => 'Return Item Details', 'url' => ['/returnitemdetails/index']],
+
+                    ['label' => 'Return Item Details', 'url' => ['/return-item-details/index']],
                     ['label' => 'Return Item  Header', 'url' => ['/return-item-header/index']],
+
                      ],'visible' => !Yii::$app->user->isGuest,],
 
                 // ['label' => 'Stocks Issue Form', 'items' => [
