@@ -49,20 +49,25 @@ AppAsset::register($this);
                      ],'visible' => !Yii::$app->user->isGuest,],
                     
                 ['label' => 'Stock Issue Forms', 'items' => [
+<<<<<<< HEAD
                     ['label' => 'Stock Issue Details', 'url' => ['/stockissuedetails/index']],
                     ['label' => 'Stock Issue Header', 'url' => ['/stock-issue-header/index']],
+=======
+                    ['label' => 'Stock Issue Details', 'url' => ['/stock-issue-details/index']],
+                    ['label' => 'Stock Issue Header', 'url' => ['/stockissueheader/index']],
+>>>>>>> e8690d322f9729e8d8b1faef1cb5e28d487efbb2
                      ],'visible' => !Yii::$app->user->isGuest,],
 
                  ['label' => 'Return Item Forms', 'items' => [
-                    ['label' => 'Return Item Details', 'url' => ['/returnitemdetails/index']],
-                    ['label' => 'Return Item  Header', 'url' => ['/returnitemheader/index']],
+                    ['label' => 'Return Item Details', 'url' => ['/return-item-details/index']],
+                    ['label' => 'Return Item  Header', 'url' => ['/return-item-header/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
 
 
                        ['label' => 'Create New attributes', 'items' => [
-                    ['label' => 'Stock Status', 'url' => ['/stockstatus/index'],],
+                    ['label' => 'Stock Status', 'url' => ['/stock-status/index'],],
                     ['label' => 'Location', 'url' => ['/location/index']],
-                    ['label' => 'Item Category', 'url' => ['/item_category/index']],
+                    ['label' => 'Item Category', 'url' => ['/item-category/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
 				
             ];
