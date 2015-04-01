@@ -52,10 +52,10 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'return_item_details_code' => 'Return Item Details Code',
-            'location_id' => 'Location ID',
-            'return_item_header_id' => 'Return Item Header ID',
-            'accounting_status_id' => 'Accounting Status ID',
-            'employee_id' => 'Employee ID',
+            'location_id' => 'Location Name',
+            'return_item_header_id' => 'Return Item Header Code',
+            'accounting_status_id' => 'Accounting Status ',
+            'employee_id' => 'Employee Name',
             'return_to' => 'Return To',
             'created_at' => 'Created At',
         ];
