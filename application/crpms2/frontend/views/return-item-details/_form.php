@@ -38,6 +38,12 @@ use backend\models\ReturnItemHeader;
     ?>
 
     <?= $form->field($model, 'employee_id')->textInput() ?>
+    <?php
+        $employee=Employee::find()->all();
+        $listData=ArrayHelper::map($location, 'id', 'location_name');
+        echo $form->field($model, 'location_id')->dropDownList(
+            $listData,['prompt'=>'Select Employee']);
+    ?>
 
     <?= $form->field($model, 'return_to')->textInput(['maxlength' => 20]) ?>
 
