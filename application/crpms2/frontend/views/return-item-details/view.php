@@ -31,12 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             //'id',
             'return_item_details_code',
-            'location_id',
+            //'location_id',
+            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
             'return_item_header_id',
-            'accounting_status_id',
-            'employee_id',
-            'return_to',
-            'created_at',
+           //'accounting_status_id',
+            ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status:'],
+            //'employee_id',
+            //'return_to',
+            //'created_at',
         ],
     ]) ?>
 
