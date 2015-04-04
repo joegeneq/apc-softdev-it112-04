@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2015 at 12:22 PM
+-- Generation Time: Apr 04, 2015 at 06:40 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -115,7 +115,7 @@ INSERT INTO `item` (`id`, `item_code`, `item_name`, `description_item`, `item_ca
 
 CREATE TABLE IF NOT EXISTS `item_category` (
 `id` int(11) NOT NULL,
-  `category_id` int(20) NOT NULL,
+  `category_id` varchar(20) NOT NULL,
   `category_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -124,9 +124,7 @@ CREATE TABLE IF NOT EXISTS `item_category` (
 --
 
 INSERT INTO `item_category` (`id`, `category_id`, `category_name`) VALUES
-(1, 1, 'medicine'),
-(3, 2, 'supply'),
-(4, 3, 'equipment');
+(1, 'test', 'medicine');
 
 -- --------------------------------------------------------
 
