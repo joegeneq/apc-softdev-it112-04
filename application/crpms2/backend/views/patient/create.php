@@ -10,6 +10,7 @@ $this->title = 'Create Patient';
 $this->params['breadcrumbs'][] = ['label' => 'Patients', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="patient-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
