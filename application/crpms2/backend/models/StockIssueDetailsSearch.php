@@ -18,8 +18,8 @@ class StockIssueDetailsSearch extends StockIssueDetails
     public function rules()
     {
         return [
-            [['id', 'location_id', 'stock_inventory_id', 'stock_status_id'], 'integer'],
-            [['stock_issue_code'], 'safe'],
+            [['id', 'location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id'], 'integer'],
+            [['stock_issue_code', 'issue_from'], 'safe'],
         ];
     }
 
@@ -60,9 +60,11 @@ class StockIssueDetailsSearch extends StockIssueDetails
             'location_id' => $this->location_id,
             'stock_inventory_id' => $this->stock_inventory_id,
             'stock_status_id' => $this->stock_status_id,
+            'employee_id' => $this->employee_id,
         ]);
 
-        $query->andFilterWhere(['like', 'stock_issue_code', $this->stock_issue_code]);
+        $query->andFilterWhere(['like', 'stock_issue_code', $this->stock_issue_code])
+            ->andFilterWhere(['like', 'issue_from', $this->issue_from]);
 
         return $dataProvider;
     }
