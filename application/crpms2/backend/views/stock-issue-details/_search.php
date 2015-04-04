@@ -25,10 +25,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'stock_status_id') ?>
 
-    <?php // echo $form->field($model, 'employee_id') ?>
-
-    <?php // echo $form->field($model, 'issue_from') ?>
-
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

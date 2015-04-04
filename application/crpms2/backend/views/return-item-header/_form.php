@@ -2,7 +2,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use backend\models\Location;
+use backend\models\Bed;
+use backend\models\Item;
+use backend\models\Patient;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemHeader */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,19 +16,36 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'patient_id')->textInput() ?>
+
     <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'patient_last_name')->textInput(['maxlength' => 20]) ?>
+   <?php
+        $location=Location::find()->all();
+          $listData=ArrayHelper::map($location, 'id', 'location_name');
+        echo $form->field($model, 'location_id')->dropDownList(
+            $listData,['prompt'=>'Select Location Name']);
+    ?>
 
-    <?= $form->field($model, 'patient_first_name')->textInput(['maxlength' => 20]) ?>
-
-    <?= $form->field($model, 'patient_middle_initial')->textInput(['maxlength' => 10]) ?>
-
-    <?= $form->field($model, 'location_id')->textInput() ?>
-
-    <?= $form->field($model, 'bed_id')->textInput() ?>
-
-    <?= $form->field($model, 'item_id')->textInput() ?>
+     <?php
+        $bed=Bed::find()->all();
+          $listData=ArrayHelper::map($bed, 'id', 'bed_number');
+        echo $form->field($model, 'bed_id')->dropDownList(
+            $listData,['prompt'=>'Select Bed number']);
+    ?>
+	
+	
+     <?php
+        $item=Item::find()->all();
+          $listData=ArrayHelper::map($item, 'id', 'item_name');
+        echo $form->field($model, 'item_id')->dropDownList(
+            $listData,['prompt'=>'Select Item name']);
+    ?>
+	
+	<?= $form->field($model, 'patient_id')->dropDownList(
+        ArrayHelper::map(Patient::find()->all(), 'id', 'lastname', 'firstname'),
+        ['prompt'=>'Select Patient'] ) 
+    ?>
 
     <?= $form->field($model, 'quantity')->textInput() ?>
 

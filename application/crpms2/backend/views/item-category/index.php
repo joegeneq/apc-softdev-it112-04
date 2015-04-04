@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Item Categories';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../images/background5.png">
 <div class="item-category-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -25,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+          //  'id',
             'category_id',
             'category_name',
 

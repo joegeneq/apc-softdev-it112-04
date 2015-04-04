@@ -8,10 +8,8 @@ use Yii;
  * This is the model class for table "return_item_header".
  *
  * @property integer $id
+ * @property integer $patient_id
  * @property string $return_item_header_code
- * @property string $patient_last_name
- * @property string $patient_first_name
- * @property string $patient_middle_initial
  * @property integer $location_id
  * @property integer $bed_id
  * @property integer $item_id
@@ -24,6 +22,7 @@ use Yii;
  * @property Location $location
  * @property Bed $bed
  * @property Item $item
+ * @property Patient $patient
  */
 class ReturnItemHeader extends \yii\db\ActiveRecord
 {
@@ -41,13 +40,12 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['return_item_header_code', 'patient_last_name', 'patient_first_name', 'patient_middle_initial', 'location_id', 'bed_id', 'item_id', 'quantity', 'amount'], 'required'],
-            [['location_id', 'bed_id', 'item_id', 'quantity'], 'integer'],
+            [['patient_id', 'return_item_header_code', 'location_id', 'bed_id', 'item_id', 'quantity', 'amount'], 'required'],
+            [[ 'location_id', 'bed_id', 'item_id', 'quantity'], 'integer'],
             [['amount'], 'number'],
             [['remarks'], 'string'],
-            [['created'], 'safe'],
-            [['return_item_header_code', 'patient_last_name', 'patient_first_name'], 'string', 'max' => 20],
-            [['patient_middle_initial'], 'string', 'max' => 10]
+            [['created','patient_id'], 'safe'],
+            [['return_item_header_code'], 'string', 'max' => 20]
         ];
     }
 
@@ -58,10 +56,8 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'patient_id' => 'Patient ID',
             'return_item_header_code' => 'Return Item Header Code',
-            'patient_last_name' => 'Patient Last Name',
-            'patient_first_name' => 'Patient First Name',
-            'patient_middle_initial' => 'Patient Middle Initial',
             'location_id' => 'Location ID',
             'bed_id' => 'Bed ID',
             'item_id' => 'Item ID',
@@ -102,5 +98,13 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function getItem()
     {
         return $this->hasOne(Item::className(), ['id' => 'item_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPatient()
+    {
+        return $this->hasOne(Patient::className(), ['id' => 'patient_id']);
     }
 }
