@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ItemCategory */
+/* @var $model backend\models\Patient */
 
-$this->title = $model->category_id;
-$this->params['breadcrumbs'][] = ['label' => 'Item Categories', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Patients', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../images/background5.png">
-<div class="item-category-view">
+<div class="patient-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,9 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'category_id',
-            'category_name',
+            //'id',
+            'patient_id_no',
+            'lastname',
+            'firstname',
+            'middlename',
+            'address',
+            'birthdate',
+            'created_at',
         ],
     ]) ?>
 

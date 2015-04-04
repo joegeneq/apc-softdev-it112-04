@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\StockIssueDetailsSearch */
+/* @var $model backend\models\PatientSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="stock-issue-details-search">
+<div class="patient-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,13 +17,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'location_id') ?>
+    <?= $form->field($model, 'patient_id_no') ?>
 
-    <?= $form->field($model, 'stock_inventory_id') ?>
+    <?= $form->field($model, 'lastname') ?>
 
-    <?= $form->field($model, 'stock_issue_code') ?>
+    <?= $form->field($model, 'firstname') ?>
 
-    <?= $form->field($model, 'stock_status_id') ?>
+    <?= $form->field($model, 'middlename') ?>
+
+    <?php // echo $form->field($model, 'address') ?>
+
+    <?php // echo $form->field($model, 'birthdate') ?>
+
+    <?php // echo $form->field($model, 'created_at') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

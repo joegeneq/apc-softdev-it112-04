@@ -4,14 +4,14 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ItemCategory */
+/* @var $model backend\models\Patient */
 
-$this->title = 'Create Item Category';
-$this->params['breadcrumbs'][] = ['label' => 'Item Categories', 'url' => ['index']];
+$this->title = 'Create Patient';
+$this->params['breadcrumbs'][] = ['label' => 'Patients', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../images/background5.png">
-<div class="item-category-create">
+<div class="patient-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

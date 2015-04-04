@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\ItemCategory;
+use backend\models\Patient;
 
 /**
- * ItemCategorySearch represents the model behind the search form about `backend\models\ItemCategory`.
+ * PatientSearch represents the model behind the search form about `backend\models\Patient`.
  */
-class ItemCategorySearch extends ItemCategory
+class PatientSearch extends Patient
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ItemCategorySearch extends ItemCategory
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['category_id', 'category_name'], 'safe'],
+            [['id', 'patient_id_no'], 'integer'],
+            [['lastname', 'firstname', 'middlename', 'address', 'birthdate', 'created_at'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ItemCategorySearch extends ItemCategory
      */
     public function search($params)
     {
-        $query = ItemCategory::find();
+        $query = Patient::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,10 +57,15 @@ class ItemCategorySearch extends ItemCategory
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'patient_id_no' => $this->patient_id_no,
+            'birthdate' => $this->birthdate,
+            'created_at' => $this->created_at,
         ]);
 
-        $query->andFilterWhere(['like', 'category_id', $this->category_id])
-            ->andFilterWhere(['like', 'category_name', $this->category_name]);
+        $query->andFilterWhere(['like', 'lastname', $this->lastname])
+            ->andFilterWhere(['like', 'firstname', $this->firstname])
+            ->andFilterWhere(['like', 'middlename', $this->middlename])
+            ->andFilterWhere(['like', 'address', $this->address]);
 
         return $dataProvider;
     }

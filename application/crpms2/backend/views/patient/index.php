@@ -4,20 +4,20 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\ItemCategorySearch */
+/* @var $searchModel backend\models\PatientSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Item Categories';
+$this->title = 'Patients';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../images/background5.png">
-<div class="item-category-index">
+<div class="patient-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Item Category', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Patient', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -26,9 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-          //  'id',
-            'category_id',
-            'category_name',
+           // 'id',
+            'patient_id_no',
+            'lastname',
+            'firstname',
+            'middlename',
+            // 'address',
+            // 'birthdate',
+            // 'created_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
