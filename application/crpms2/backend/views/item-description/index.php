@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel frontend\models\ItemDescriptionSearch */
+/* @var $searchModel backend\models\ItemDescriptionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Item Descriptions';
@@ -24,28 +24,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-           // ['class' => 'yii\grid\SerialColumn'],
+           //['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            //'item_code',
+            //'item_id',
             ['attribute' => 'item_id',
             'label' => 'Item Code',
             'value' => 'item.item_code',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_code')],
-
-           //'item_id',
-            /*['attribute' => 'item_id',
-            'label' => 'Item ID',
-            'value' => 'item.id',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','id')],*/
-            //'item_name',
-            ['attribute' => 'item_id',
-            'label' => 'Item Name',
-            'value' => 'item.item_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
             'manufacturer',
-            // 'remarks:ntext',
-            // 'created_at',
+            'remarks:ntext',
+            'created_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -8,9 +8,7 @@ use Yii;
  * This is the model class for table "item_description".
  *
  * @property integer $id
- * @property integer $item_code
  * @property integer $item_id
- * @property string $item_name
  * @property string $manufacturer
  * @property string $remarks
  * @property string $created_at
@@ -33,11 +31,11 @@ class ItemDescription extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['item_code', 'item_id', 'item_name', 'manufacturer', 'remarks'], 'required'],
-            [['item_code', 'item_id'], 'integer'],
+            [['item_id', 'manufacturer', 'remarks'], 'required'],
+            [['item_id'], 'integer'],
             [['remarks'], 'string'],
             [['created_at'], 'safe'],
-            [['item_name', 'manufacturer'], 'string', 'max' => 25]
+            [['manufacturer'], 'string', 'max' => 25]
         ];
     }
 
@@ -48,9 +46,7 @@ class ItemDescription extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'item_code' => 'Item Code',
             'item_id' => 'Item ID',
-            'item_name' => 'Item Name',
             'manufacturer' => 'Manufacturer',
             'remarks' => 'Remarks',
             'created_at' => 'Created At',

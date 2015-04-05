@@ -17,27 +17,10 @@ use backend\models\Item;
     <!----?= $form->field($model, 'item_id')->textInput() ?---->
     <?php
         $item=Item::find()->all();
-        $listData=ArrayHelper::map($item, 'id', 'id');
-        echo $form->field($model, 'item_id')->dropDownList(
-            $listData,['prompt'=>'Select Item ID']);
-        ?>
-
-    <!----?= $form->field($model, 'item_code')->textInput() ?---->
-        <?php
-        $item=Item::find()->all();
         $listData=ArrayHelper::map($item, 'id', 'item_code');
-        echo $form->field($model, 'item_code')->dropDownList(
+        echo $form->field($model, 'item_id')->dropDownList(
             $listData,['prompt'=>'Select Item Code']);
-        ?>
-    
-
-    <!----?= $form->field($model, 'item_name')->textInput(['maxlength' => 25]) ?---->
-    <?php
-        $item=Item::find()->all();
-        $listData=ArrayHelper::map($item, 'id', 'item_name');
-        echo $form->field($model, 'item_name')->dropDownList(
-            $listData,['prompt'=>'Select Item Name']);
-        ?>
+		?>
 
     <?= $form->field($model, 'manufacturer')->textInput(['maxlength' => 25]) ?>
 
