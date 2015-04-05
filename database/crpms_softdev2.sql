@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2015 at 06:40 PM
+-- Generation Time: Apr 05, 2015 at 07:57 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -83,8 +83,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
 --
 
 INSERT INTO `employee` (`id`, `emp_code`, `firstname`, `lastname`, `middlename`, `address`, `contact_number`, `position_id`, `user_id`) VALUES
-(2, '201155', 'flordeliza', 'calanno', 'm', 'taguig city', '123456', 2, 1),
-(3, '201156', 'alih', 'lino', 'm', 'taguig city', '123456', 1, 3);
+(2, '201155', 'flordeliza', 'calanno', 'm', 'taguig city', '123456', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -134,9 +133,7 @@ INSERT INTO `item_category` (`id`, `category_id`, `category_name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `item_description` (
 `id` int(11) NOT NULL,
-  `item_code` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
-  `item_name` varchar(25) NOT NULL,
   `manufacturer` varchar(25) NOT NULL,
   `remarks` longtext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -233,14 +230,15 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `employee_id` int(11) NOT NULL,
   `return_to` varchar(20) DEFAULT 'pharmacist',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `return_item_details`
 --
 
 INSERT INTO `return_item_details` (`id`, `return_item_details_code`, `location_id`, `return_item_header_id`, `accounting_status_id`, `employee_id`, `return_to`, `created_at`) VALUES
-(10, 'RID7', 1, 2, 1, 2, 'pharmacist', '2015-04-01 09:58:41');
+(10, 'RID7', 1, 2, 1, 2, 'pharmacist', '2015-04-01 09:58:41'),
+(11, 'RID9', 2, 2, 1, 2, 'pharmacist', '2015-04-05 04:50:41');
 
 -- --------------------------------------------------------
 
@@ -305,7 +303,14 @@ CREATE TABLE IF NOT EXISTS `stock_issue_details` (
   `stock_status_id` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
   `issue_from` varchar(25) NOT NULL DEFAULT 'pharmacist'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stock_issue_details`
+--
+
+INSERT INTO `stock_issue_details` (`id`, `location_id`, `stock_inventory_id`, `stock_issue_code`, `stock_status_id`, `employee_id`, `issue_from`) VALUES
+(7, 1, 1, '1', 1, 2, '');
 
 -- --------------------------------------------------------
 
@@ -369,8 +374,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`) VALUES
+(0, 'pharmacist', 'P6M-ByYdBAlKlXrjb9UnlS-HktQ3nts4', '$2y$13$7qrXlIGDT0SKh0PomWiTYeoqU5mSzPA5Q0qEV4JVAGneEMFWIcT32', '', 'pharmacist@gmail.com', 20, 10, 1428206215, 1428206215),
 (1, 'admin', 'E3n4JKw-tdsNvCx17E8e4gZx_AmjBlJ8', '$2y$13$7fkt3MbsuuxMiV1P3jVDTuT6qLliDVJ7HccG7apbeRwlU1OJ1wyy6', NULL, 'admin@example.com', 20, 10, 1426402583, 1426402583),
-(2, 'pharmacist', 'Cl8ToJBJ3UOWQr-iJ4LArYBFWjMJ0x0O', '$2y$13$/P27cRnmiD8SDUi4ONzc9O3mU8H.4dkAbUnsBvXXWLC.TlvuHO3IC', NULL, 'pharmacist@example.com', 20, 10, 1426403016, 1426403016),
 (3, 'accounting', 'qHlTcIVACOvo6M6WhoomZBy9NCFtCVva', '$2y$13$ITYbouiUdeEogfgL2xRiFOhTfQx8GguVrOpD5iSGupUHbmo.YmJDm', '', 'accounting@example.com', 10, 10, 1426403400, 1426403400);
 
 --
@@ -526,7 +531,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `return_item_details`
 --
 ALTER TABLE `return_item_details`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `return_item_header`
 --
@@ -541,7 +546,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `stock_issue_details`
 --
 ALTER TABLE `stock_issue_details`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `stock_issue_header`
 --
