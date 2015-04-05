@@ -1,4 +1,3 @@
-
 <?php
 
 use yii\helpers\Html;
@@ -18,10 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Create Return Item Details', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -35,11 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'label' => 'Location Name',
             'value' => 'location.location_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-            'return_item_header_id',
-           /*['attribute' => 'item_id',
-            'label' => 'Category Name',
-            'value' => 'item.item_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],*/
+            //'return_item_header_id',
+           ['attribute' => 'return_item_header_id',
+            'label' => 'Return Item Header Code',
+            'value' => 'returnItemHeader.return_item_header_code',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\ReturnItemHeader::find()-> all(),'id','return_item_header_code')],
             //'accounting_status_id',
             ['attribute' => 'accounting_status_id',
             'label' => 'Accounting Status',
