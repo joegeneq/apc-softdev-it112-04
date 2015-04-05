@@ -12,6 +12,7 @@ $this->title = 'Return Item Details';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="return-item-details-index">
+<body background="../images/background5.png">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

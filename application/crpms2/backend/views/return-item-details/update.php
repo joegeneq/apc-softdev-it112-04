@@ -11,6 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->return_item_details_code, '
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="return-item-details-update">
+<body background="../images/background5.png">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
