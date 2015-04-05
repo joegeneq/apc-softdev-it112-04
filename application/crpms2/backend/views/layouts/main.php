@@ -59,6 +59,7 @@ AppAsset::register($this);
                      ],'visible' => !Yii::$app->user->isGuest,],
 
                  ['label' => 'Return Item Forms', 'items' => [
+                     ['label' => 'Create Patient Info', 'url' => ['/patient/index']],
                     ['label' => 'Return Item Details', 'url' => ['/return-item-details/index']],
                     ['label' => 'Return Item  Header', 'url' => ['/return-item-header/index']],
                      ],'visible' => !Yii::$app->user->isGuest,],
