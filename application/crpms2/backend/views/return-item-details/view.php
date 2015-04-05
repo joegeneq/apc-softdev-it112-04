@@ -2,11 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use backend\models\Employee;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemDetails */
 
-$this->title = $model->id;
+$this->title = $model->return_item_details_code;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Details', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,12 +29,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'return_item_details_code',
-            'location_id',
-            'return_item_header_id',
-            'accounting_status_id',
-            'employee_id',
+            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
+           
+            ['attribute' => 'returnItemHeader.return_item_header_code', 'label' => 'Return Item Header Code:'],
+            ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status:'],  
+            ['attribute' => 'employee.lastname', 'label' => 'Employee Last name'],
+            ['attribute' => 'employee.firstname', 'label' => 'Employee First name'],
+            
+             
             'return_to',
             'created_at',
         ],
