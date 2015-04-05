@@ -34,10 +34,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_code')],
 
            //'item_id',
-            ['attribute' => 'item_id',
+            /*['attribute' => 'item_id',
             'label' => 'Item ID',
             'value' => 'item.id',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','id')],
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','id')],*/
             //'item_name',
             ['attribute' => 'item_id',
             'label' => 'Item Name',
