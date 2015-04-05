@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockInventory */
 
-$this->title = $model->id;
+$this->title = $model->stock_inventory_id;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Inventories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

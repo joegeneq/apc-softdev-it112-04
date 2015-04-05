@@ -35,9 +35,9 @@ class StockInventory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['stock_inventory_id', 'quantity_onhand', 'quantity_onorder', 'item_id', 'location_id'], 'required'],
+            [['stock_inventory_id', 'quantity_onhand', 'quantity_onorder', 'location_id'], 'required'],
             [['quantity_onhand', 'quantity_onorder', 'item_id', 'location_id'], 'integer'],
-            [['created'], 'safe'],
+            [['created','item_id'], 'safe'],
             [['stock_inventory_id'], 'string', 'max' => 20]
         ];
     }
@@ -53,7 +53,7 @@ class StockInventory extends \yii\db\ActiveRecord
             'quantity_onhand' => 'Quantity Onhand',
             'quantity_onorder' => 'Quantity Onorder',
             'item_id' => 'Item ID',
-            'location_id' => 'Location ID',
+            'location_id' => 'Location Name',
             'created' => 'Created',
         ];
     }
