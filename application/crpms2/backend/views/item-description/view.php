@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'item_code',
             ['attribute' => 'item.item_code', 'label' => 'Item Code'],
             //'item_id',
-            ['attribute' => 'item.id', 'label' => 'Item ID'],
+            //['attribute' => 'item.id', 'label' => 'Item ID'],
             //'item_name',
             ['attribute' => 'item.item_name', 'label' => 'Item Name'],
             'manufacturer',
