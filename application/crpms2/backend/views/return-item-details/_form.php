@@ -14,6 +14,7 @@ use backend\models\ReturnItemHeader;
 ?>
 
 <div class="return-item-details-form">
+<body background="../images/background5.png">
 
     <?php $form = ActiveForm::begin(); ?>
 
