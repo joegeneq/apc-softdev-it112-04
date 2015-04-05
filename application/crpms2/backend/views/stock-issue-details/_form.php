@@ -6,15 +6,16 @@ use yii\helpers\ArrayHelper;
 use backend\models\Location;
 use backend\models\StockInventory;
 use backend\models\StockStatus;
+use backend\models\Employee;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueDetails */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../images/background5.png">
+
 <div class="stock-issue-details-form">
 
     <?php $form = ActiveForm::begin(); ?>
- <?php
+<?php
         $location=Location::find()->all();
         $listData=ArrayHelper::map($location, 'id', 'location_name');
         echo $form->field($model, 'location_id')->dropDownList(
@@ -26,7 +27,6 @@ use backend\models\StockStatus;
         echo $form->field($model, 'stock_inventory_id')->dropDownList(
             $listData,['prompt'=>'Select Stock Inventory']);
     ?>
-    <?= $form->field($model, 'stock_issue_code')->textInput() ?>
 
  <?php
         $stockstatus=StockStatus::find()->all();
@@ -34,6 +34,14 @@ use backend\models\StockStatus;
         echo $form->field($model, 'stock_status_id')->dropDownList(
             $listData,['prompt'=>'Select Stock Issued Id']);
     ?>
+
+<?= $form->field($model, 'employee_id')->dropDownList(
+        ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
+        ['prompt'=>'Select Employee'] ) 
+    ?>
+
+
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
