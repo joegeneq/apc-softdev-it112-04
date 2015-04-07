@@ -10,7 +10,6 @@ use yii\grid\GridView;
 $this->title = 'Stock Issue Details';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
 <div class="stock-issue-details-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -26,15 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-           // 'id',
+            'id',
             'location_id',
             'stock_inventory_id',
             'stock_issue_code',
             'stock_status_id',
-           [
-                'attribute' => 'employee_id',
-                'value' => 'employee.lastname'
-            ],
+            // 'employee_id',
             // 'issue_from',
 
             ['class' => 'yii\grid\ActionColumn'],
