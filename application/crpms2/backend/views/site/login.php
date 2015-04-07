@@ -9,9 +9,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-
-
+<body background="../web/images/background5.png">
 
 <div id="card">
 <script>    src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -22,8 +20,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?> <br>
                 <?= $form->field($model, 'username') ?><br>
                 <?= $form->field($model, 'password')->passwordInput() ?><br>
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-                <div class="form-group">
+                <center> <?= $form->field($model, 'rememberMe')->checkbox() ?>
+               <div class="form-group">
                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
             <?php ActiveForm::end(); ?>
