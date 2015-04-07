@@ -11,7 +11,7 @@ use backend\models\Patient;
 $this->title = 'Return Item Headers';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="return-item-header-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

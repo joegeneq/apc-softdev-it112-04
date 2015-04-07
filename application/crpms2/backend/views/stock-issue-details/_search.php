@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\StockIssueDetailsSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../web/images/background5.png">
 <div class="stock-issue-details-search">
 
     <?php $form = ActiveForm::begin([

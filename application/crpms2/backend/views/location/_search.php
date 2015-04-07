@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\LocationSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="location-search">
 
     <?php $form = ActiveForm::begin([

@@ -11,7 +11,7 @@ use backend\models\Item;
 /* @var $model backend\models\StockInventory */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../web/images/background5.png">
 <div class="stock-inventory-form">
 
     <?php $form = ActiveForm::begin(); ?>

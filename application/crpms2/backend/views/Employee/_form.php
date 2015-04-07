@@ -9,7 +9,7 @@ use backend\models\User;
 /* @var $model backend\models\Employee */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../web/images/background5.png">
 <div class="employee-form">
 
     <?php $form = ActiveForm::begin(); ?>

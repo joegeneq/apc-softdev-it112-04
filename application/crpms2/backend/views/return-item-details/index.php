@@ -11,7 +11,7 @@ use backend\models\Employee;
 $this->title = 'Return Item Details';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="return-item-details-index">
+<body background="../web/images/background5.png">
 <body background="../images/background5.png">
 
     <h1><?= Html::encode($this->title) ?></h1>

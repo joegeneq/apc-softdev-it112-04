@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\ItemDescriptionSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="item-description-search">
 
     <?php $form = ActiveForm::begin([

@@ -10,6 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Item Categories', 'url' => ['index
 $this->params['breadcrumbs'][] = ['label' => $model->category_id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
+<body background="../web/images/background5.png">
 <div class="item-category-update">
 
     <h1><?= Html::encode($this->title) ?></h1>

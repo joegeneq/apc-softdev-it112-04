@@ -8,8 +8,8 @@ $this->title = 'CRMGH-PMS';
 		<h1>Welcome to Cruz-Rabe Maternity and General Hospital </h1>
     </div---->
 
-<header><img src="../images/header1.png" width="1100" height="250" >
-<center><body background="../images/background5.png">
+<header><img src="../web/images/header1.png" width="1100" height="250" >
+<center><body background="../web/images/background5.png">
 <div class="site-index">
 
 <script type="text/javascript"> 
@@ -20,17 +20,17 @@ var image = new Array();
 
 // LIST OF IMAGES 
 
-image[0] = "../images/screenshot1.jpg"; 
+image[0] = "../web/images/screenshot1.jpg"; 
 
-image[1] = "../images/screenshot2.jpg"; 
+image[1] = "../web/images/screenshot2.jpg"; 
 
-image[2] = "../images/screenshot3.jpg";    
+image[2] = "../web/images/screenshot3.jpg";    
 
-image[3] = "../images/screenshot4.jpg"; 
+image[3] = "../web/images/screenshot4.jpg"; 
 
-image[4] = "../images/screenshot5.jpg"; 
+image[4] = "../web/images/screenshot5.jpg"; 
 
-image[5] = "../images/screenshot6.jpg"; 
+image[5] = "../web/images/screenshot6.jpg"; 
 
 var k = image.length-1;    
 

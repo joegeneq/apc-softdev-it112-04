@@ -10,8 +10,9 @@ $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Headers', 'url' => ['i
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
+<body background="../web/images/background5.png">
 <div class="stock-issue-header-update">
-<body background="../images/background5.png">
+
 
     <h1><?= Html::encode($this->title) ?></h1>
 

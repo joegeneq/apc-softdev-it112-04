@@ -11,7 +11,7 @@ use backend\models\Patient;
 /* @var $model backend\models\ReturnItemHeader */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="return-item-header-form">
 
     <?php $form = ActiveForm::begin(); ?>

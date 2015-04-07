@@ -10,7 +10,7 @@ $this->title = $model->header_code;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 
 <div class="stock-issue-header-view">
 

@@ -10,7 +10,7 @@ $this->title = 'Create Item Category';
 $this->params['breadcrumbs'][] = ['label' => 'Item Categories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="item-category-create">
 
     <h1><?= Html::encode($this->title) ?></h1>

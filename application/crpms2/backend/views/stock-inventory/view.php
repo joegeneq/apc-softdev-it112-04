@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Stock Inventories', 'url' => ['ind
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="stock-inventory-view">
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

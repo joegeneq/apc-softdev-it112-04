@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Stock Inventories';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="stock-inventory-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

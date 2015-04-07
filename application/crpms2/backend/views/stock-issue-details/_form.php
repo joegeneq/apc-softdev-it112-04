@@ -11,7 +11,7 @@ use backend\models\Employee;
 /* @var $model backend\models\StockIssueDetails */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="stock-issue-details-form">
 
     <?php $form = ActiveForm::begin(); ?>

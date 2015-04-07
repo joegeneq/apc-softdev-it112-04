@@ -10,6 +10,7 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Details', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../web/images/background5.png">
 <div class="stock-issue-details-view">
 
     <h1><?= Html::encode($this->title) ?></h1>

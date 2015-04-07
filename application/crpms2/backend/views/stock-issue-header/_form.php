@@ -10,7 +10,7 @@ use dosamigos\datepicker\DatePicker;
 /* @var $model backend\models\StockIssueHeader */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../web/images/background5.png">
 <div class="stock-issue-header-form">
 
     <?php $form = ActiveForm::begin(); ?>
