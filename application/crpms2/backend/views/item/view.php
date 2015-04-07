@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'item_code',
             'item_name',
             'description_item:ntext',
-            'item_category_id',
+            //'item_category_id',
 			['attribute' => 'itemCategory.category_name', 'label' => 'Category Name'],
         ],
     ]) ?>

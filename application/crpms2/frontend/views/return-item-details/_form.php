@@ -12,7 +12,7 @@ use backend\models\ReturnItemHeader;
 /* @var $model frontend\models\ReturnItemDetails */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="return-item-details-form">
 
     <?php $form = ActiveForm::begin(); ?>

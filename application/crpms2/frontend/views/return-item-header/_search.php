@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model frontend\models\ReturnItemHeaderSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../web/images/background5.png">
 <div class="return-item-header-search">
 
     <?php $form = ActiveForm::begin([
