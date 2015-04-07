@@ -10,15 +10,18 @@ $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
+
+
+<div id="card">
+<script>    src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <h2>Log in</h2>
     <p>Please fill out the following fields to login:</p>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-                <?= $form->field($model, 'username') ?>
-                <?= $form->field($model, 'password')->passwordInput() ?>
+ 
+            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?> <br>
+                <?= $form->field($model, 'username') ?><br>
+                <?= $form->field($model, 'password')->passwordInput() ?><br>
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
                 <div class="form-group">
                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
@@ -27,3 +30,23 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+   setInterval(function() {
+$("input[type=text]").each(function() {
+   var element = $(this);
+   if (element.val() !== "") {
+     $(this).css({
+       boxShadow: 'inset 8px 0px 0  #2ecc71',
+       paddingLeft: '12px'})
+   }
+   var element = $(this);
+   if (element.val() == "") {
+       $(this).css('border-left', '1px solid #ccc')
+   }
+});  
+}, 200);
+});  
+
+</script>
