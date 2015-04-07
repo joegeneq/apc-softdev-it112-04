@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-  
+      font-size: 14px;
 }
 .navbar-inverse {
   background-color: #088A29;
@@ -110,12 +110,9 @@ a.desc:after {
     -webkit-appearance: none;
     border-radius: 0;
 }
-body {
 
-    font-size: 14px;
-}
 #card {
-    width: 250px;
+    width: 270px;
     margin: auto;
     margin-top: 90px;
 }
@@ -137,7 +134,7 @@ body {
     margin: -30px 0 0;
     padding: 0;
     width: 300px;
-    height: 20px;
+    height: 40px;
 }
 input[type="text"],
 input[type="submit"] {
@@ -200,10 +197,6 @@ input[type=checkbox]:checked:before {
     line-height: 1.6;
     font-size: 10px;
     /*box-shadow*/
-    -webkit-box-shadow: 0 2px 0 #bdc3c7 ,inset 0 1px 0px 0 #107a3d;
-    -moz-box-shadow: 0 2px 0 #bdc3c7 ,inset 0 1px 0px 0 #107a3d;
-    box-shadow: 0 2px 0 #bdc3c7 ,inset 0 1px 0px 0 #107a3d;
-    text-shadow: 0 -1px 0 #107a3d;
     width: 16px;
     height: 16px;
     padding: 0px;
