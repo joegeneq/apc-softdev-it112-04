@@ -31,11 +31,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-            //['attribute' => 'stockinventory.stock_inventory_id', 'label' => 'Stock inventory id:'],
+           ['attribute' => 'stockInventory.stock_inventory_id', 'label' => 'Stock inventory id:'],
             'stock_issue_code',
+<<<<<<< HEAD
             
             ['attribute' => 'stockStatus.description_name', 'label' => 'Stock Description:'],
             ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
+=======
+           ['attribute' => 'stockStatus.description_name', 'label' => 'Stock issued id:'],
+           ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
+>>>>>>> 8c4d066841f19a2e8a71a3b665f95507f585f650
             'issue_from',
         ],
     ]) ?>
