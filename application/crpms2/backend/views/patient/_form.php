@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use dosamigos\datepicker\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Patient */
 /* @var $form yii\widgets\ActiveForm */
@@ -22,10 +23,29 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => 25]) ?>
 
-    <?= $form->field($model, 'birthdate')->textInput() ?>
+   <?= $form->field($model, 'birthdate')->widget(
+    DatePicker::className(), [
+        // inline too, not bad
+        'inline' => false, 
+        // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-m-d'
+        ]
+]);?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
+   <?= $form->field($model, 'created_at')->widget(
+    DatePicker::className(), [
+        // inline too, not bad
+        'inline' => false, 
+        // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-m-d'
+        ]
+]);?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
