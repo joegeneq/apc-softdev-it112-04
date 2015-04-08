@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
       font-size: 14px;
+	    font-family:proximaNova;
 }
 .navbar-inverse {
   background-color: #088A29;
@@ -98,44 +99,16 @@ a.desc:after {
 }
 
 
-@font-face{
-  src:url(http://lab.web-gate.fr/fonts/proxima-nova/ProximaNova-Light.ttf);
-  font-family:proximaNova;
-}
-* {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    font-family: "proximaNova", helvetica Neue;
-    font-weight: 900;
-    -webkit-appearance: none;
-    border-radius: 0;
-}
+
 
 #card {
     width: 270px;
     margin: auto;
     margin-top: 90px;
 }
-#card h2 {
-    text-shadow: 0 1px 0 #27ae60;
-    display: block;
-    width: 100%;
-    border-bottom: 2px solid #2ecc71;
-    /*box-shadow*/
 
-}
 #card a { color: #27ae60 }
-#card label {
- 
-    display: block;
-    float: right;
-    clear: left;
-    line-height: 2.4;
-    margin: -30px 0 0;
-    padding: 0;
-    width: 300px;
-    height: 40px;
-}
+
 input[type="text"],
 input[type="submit"] {
     clear: both;
@@ -149,12 +122,6 @@ input[type="submit"] {
     outline: 0;
     color: #34495e;
 
-}
-input[type=submit] {
-    background: #27ae60;
-    border: 0;
-    border-bottom: 2px solid #2ecc71;
-    margin: 10px 0 0;
 }
 input[type=checkbox] {
     display: block;
@@ -205,14 +172,5 @@ input[type=checkbox]:checked:before {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
-}
-input[type=text]:not([value*=" "]):active,
-input[type=text]:not([value*=" "]):focus {
-    /*box-shadow*/
-    -webkit-box-shadow: inset 15px 0px 0  #2ecc71;
-    -moz-box-shadow: inset 15px 0px 0  #2ecc71;
-    box-shadow: inset 8px 0px 0  #2ecc71;
-    padding-left: :;
-
 }
 
