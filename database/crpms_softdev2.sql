@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2015 at 11:47 AM
+-- Generation Time: Apr 11, 2015 at 08:22 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `accounting_status` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `status_code` varchar(20) NOT NULL,
   `description` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `accounting_status`
@@ -47,10 +47,10 @@ INSERT INTO `accounting_status` (`id`, `status_code`, `description`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `bed` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `bed_code` varchar(20) NOT NULL,
   `bed_number` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bed`
@@ -67,7 +67,7 @@ INSERT INTO `bed` (`id`, `bed_code`, `bed_number`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `employee` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `emp_code` varchar(20) NOT NULL,
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
@@ -76,14 +76,14 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `contact_number` varchar(20) NOT NULL,
   `position_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
 --
 
 INSERT INTO `employee` (`id`, `emp_code`, `firstname`, `lastname`, `middlename`, `address`, `contact_number`, `position_id`, `user_id`) VALUES
-(2, '201155', 'flordeliza', 'calanno', 'm', 'taguig city', '123456', 2, 1);
+(1, '201158', 'flordeliza', 'calanno', 'm', 'taguig city', '123456', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -92,19 +92,20 @@ INSERT INTO `employee` (`id`, `emp_code`, `firstname`, `lastname`, `middlename`,
 --
 
 CREATE TABLE IF NOT EXISTS `item` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `item_code` char(5) NOT NULL,
   `item_name` varchar(20) NOT NULL,
   `description_item` longtext NOT NULL,
   `item_category_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `item`
 --
 
 INSERT INTO `item` (`id`, `item_code`, `item_name`, `description_item`, `item_category_id`) VALUES
-(1, 'TSTNG', 'Testing', 'Testing', 1);
+(1, 'TSTNG', 'Testing', 'Testing', 1),
+(2, 'test', 'Testing', 'blah blah', 1);
 
 -- --------------------------------------------------------
 
@@ -113,10 +114,10 @@ INSERT INTO `item` (`id`, `item_code`, `item_name`, `description_item`, `item_ca
 --
 
 CREATE TABLE IF NOT EXISTS `item_category` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `category_id` varchar(20) NOT NULL,
   `category_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `item_category`
@@ -132,7 +133,7 @@ INSERT INTO `item_category` (`id`, `category_id`, `category_name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `item_description` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `manufacturer` varchar(25) NOT NULL,
   `remarks` longtext NOT NULL,
@@ -146,10 +147,10 @@ CREATE TABLE IF NOT EXISTS `item_description` (
 --
 
 CREATE TABLE IF NOT EXISTS `location` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `location_code` varchar(20) NOT NULL,
   `location_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `location`
@@ -178,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `migration` (
 --
 
 CREATE TABLE IF NOT EXISTS `patient` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `patient_id_no` int(11) NOT NULL,
   `lastname` varchar(25) NOT NULL,
   `firstname` varchar(25) NOT NULL,
@@ -186,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `address` varchar(25) NOT NULL,
   `birthdate` date NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient`
@@ -202,10 +203,10 @@ INSERT INTO `patient` (`id`, `patient_id_no`, `lastname`, `firstname`, `middlena
 --
 
 CREATE TABLE IF NOT EXISTS `position` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `position_code` varchar(20) NOT NULL,
   `position_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `position`
@@ -222,7 +223,7 @@ INSERT INTO `position` (`id`, `position_code`, `position_name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `return_item_details` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `return_item_details_code` varchar(20) NOT NULL,
   `item_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
@@ -241,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
 --
 
 CREATE TABLE IF NOT EXISTS `return_item_header` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `patient_id` int(11) NOT NULL,
   `return_item_header_code` varchar(20) NOT NULL,
   `location_id` int(11) NOT NULL,
@@ -258,14 +259,14 @@ CREATE TABLE IF NOT EXISTS `return_item_header` (
 --
 
 CREATE TABLE IF NOT EXISTS `stock_inventory` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `stock_inventory_id` varchar(20) NOT NULL,
   `quantity_onhand` int(11) NOT NULL,
   `quantity_onorder` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `location_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock_inventory`
@@ -281,7 +282,7 @@ INSERT INTO `stock_inventory` (`id`, `stock_inventory_id`, `quantity_onhand`, `q
 --
 
 CREATE TABLE IF NOT EXISTS `stock_issue_details` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `stock_issue_code` varchar(20) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `item_id` int(11) NOT NULL,
@@ -316,10 +317,10 @@ CREATE TABLE IF NOT EXISTS `stock_issue_header` (
 --
 
 CREATE TABLE IF NOT EXISTS `stock_status` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `status_code` varchar(20) NOT NULL,
   `description_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock_status`
@@ -450,6 +451,86 @@ ALTER TABLE `stock_issue_header`
 ALTER TABLE `stock_status`
  ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`);
 
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `accounting_status`
+--
+ALTER TABLE `accounting_status`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `bed`
+--
+ALTER TABLE `bed`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `item`
+--
+ALTER TABLE `item`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `item_category`
+--
+ALTER TABLE `item_category`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `item_description`
+--
+ALTER TABLE `item_description`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `location`
+--
+ALTER TABLE `location`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `patient`
+--
+ALTER TABLE `patient`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `position`
+--
+ALTER TABLE `position`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `return_item_details`
+--
+ALTER TABLE `return_item_details`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `return_item_header`
+--
+ALTER TABLE `return_item_header`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `stock_inventory`
+--
+ALTER TABLE `stock_inventory`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `stock_issue_details`
+--
+ALTER TABLE `stock_issue_details`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `stock_status`
+--
+ALTER TABLE `stock_status`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
