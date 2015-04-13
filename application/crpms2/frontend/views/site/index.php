@@ -8,7 +8,16 @@ $this->title = 'CRMGH-PMS';
 		<h1>Welcome to Cruz-Rabe Maternity and General Hospital </h1>
     </div---->
 
+<<<<<<< HEAD
 <header><img src="../web/images/header1.png" width="1100" height="250" >
+=======
+
+
+	
+    </div>
+
+<header><center><img src="../web/images/header1.png" width="1100" height="250" ></center>
+>>>>>>> d3ee5784f1d68d3cab36930191c963d7f5acf573
 <center><body background="../web/images/background5.png">
 <div class="site-index">
 
