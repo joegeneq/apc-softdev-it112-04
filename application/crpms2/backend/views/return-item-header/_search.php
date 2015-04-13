@@ -25,10 +25,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'bed_id') ?>
 
-    <?php // echo $form->field($model, 'item_id') ?>
-
-    <?php // echo $form->field($model, 'quantity') ?>
-
     <?php // echo $form->field($model, 'amount') ?>
 
     <?php // echo $form->field($model, 'remarks') ?>
