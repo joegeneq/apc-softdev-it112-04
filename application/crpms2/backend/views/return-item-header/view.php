@@ -31,8 +31,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'patient_id',
             'return_item_header_code',
+<<<<<<< HEAD
             'location_id',
             'bed_id',
+=======
+            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
+            ['attribute' => 'bed.bed_number', 'label' => 'Bed number:'],
+            ['attribute' => 'item.description_item', 'label' => 'Item Name:'],
+            'quantity',
+>>>>>>> 7aa8ffad5541f91f6f0c01495c75cdebf0fca2be
             'amount',
             'remarks:ntext',
             'created',
