@@ -12,17 +12,9 @@ use Yii;
  * @property string $return_item_header_code
  * @property integer $location_id
  * @property integer $bed_id
- * @property integer $item_id
- * @property integer $quantity
  * @property string $amount
  * @property string $remarks
  * @property string $created
- *
- * @property ReturnItemDetails[] $returnItemDetails
- * @property Location $location
- * @property Bed $bed
- * @property Item $item
- * @property Patient $patient
  */
 class ReturnItemHeader extends \yii\db\ActiveRecord
 {
@@ -40,8 +32,8 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['patient_id', 'return_item_header_code', 'location_id', 'bed_id', 'item_id', 'quantity', 'amount'], 'required'],
-            [['patient_id', 'location_id', 'bed_id', 'item_id', 'quantity'], 'integer'],
+            [['id', 'patient_id', 'return_item_header_code', 'location_id', 'bed_id', 'amount'], 'required'],
+            [['id', 'patient_id', 'location_id', 'bed_id'], 'integer'],
             [['amount'], 'number'],
             [['remarks'], 'string'],
             [['created'], 'safe'],
@@ -60,51 +52,9 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
             'return_item_header_code' => 'Return Item Header Code',
             'location_id' => 'Location ID',
             'bed_id' => 'Bed ID',
-            'item_id' => 'Item ID',
-            'quantity' => 'Quantity',
             'amount' => 'Amount',
             'remarks' => 'Remarks',
             'created' => 'Created',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getReturnItemDetails()
-    {
-        return $this->hasMany(ReturnItemDetails::className(), ['return_item_header_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getLocation()
-    {
-        return $this->hasOne(Location::className(), ['id' => 'location_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getBed()
-    {
-        return $this->hasOne(Bed::className(), ['id' => 'bed_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getItem()
-    {
-        return $this->hasOne(Item::className(), ['id' => 'item_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPatient()
-    {
-        return $this->hasOne(Patient::className(), ['id' => 'patient_id']);
     }
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2015 at 08:22 AM
+-- Generation Time: Apr 14, 2015 at 05:20 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -233,7 +233,14 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `employee_id` int(11) NOT NULL,
   `return_to` varchar(20) DEFAULT 'pharmacist',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `return_item_details`
+--
+
+INSERT INTO `return_item_details` (`id`, `return_item_details_code`, `item_id`, `quantity`, `location_id`, `return_item_header_id`, `accounting_status_id`, `employee_id`, `return_to`, `created_at`) VALUES
+(1, 'RID10', 1, 1, 1, 1, 1, 1, 'pharmacist', '2015-04-11 06:56:09');
 
 -- --------------------------------------------------------
 
@@ -250,7 +257,14 @@ CREATE TABLE IF NOT EXISTS `return_item_header` (
   `amount` decimal(10,0) NOT NULL,
   `remarks` longtext,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `return_item_header`
+--
+
+INSERT INTO `return_item_header` (`id`, `patient_id`, `return_item_header_code`, `location_id`, `bed_id`, `amount`, `remarks`, `created`) VALUES
+(1, 1, '1', 1, 1, '1', 'ASDFGHJKL', '2015-04-11 06:55:30');
 
 -- --------------------------------------------------------
 
@@ -301,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `stock_issue_details` (
 --
 
 CREATE TABLE IF NOT EXISTS `stock_issue_header` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `location_id` int(11) NOT NULL,
   `stock_inventory_id` int(11) NOT NULL,
   `header_code` varchar(20) NOT NULL,
@@ -510,12 +524,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `return_item_details`
 --
 ALTER TABLE `return_item_details`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `return_item_header`
 --
 ALTER TABLE `return_item_header`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `stock_inventory`
 --
@@ -525,6 +539,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `stock_issue_details`
 --
 ALTER TABLE `stock_issue_details`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `stock_issue_header`
+--
+ALTER TABLE `stock_issue_header`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `stock_status`
