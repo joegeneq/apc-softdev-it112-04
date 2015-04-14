@@ -19,11 +19,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'return_item_details_code') ?>
 
+    <?= $form->field($model, 'item_id') ?>
+
+    <?= $form->field($model, 'quantity') ?>
+
     <?= $form->field($model, 'location_id') ?>
 
-    <?= $form->field($model, 'return_item_header_id') ?>
+    <?php // echo $form->field($model, 'return_item_header_id') ?>
 
-    <?= $form->field($model, 'accounting_status_id') ?>
+    <?php // echo $form->field($model, 'accounting_status_id') ?>
 
     <?php // echo $form->field($model, 'employee_id') ?>
 

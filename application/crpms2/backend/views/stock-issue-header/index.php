@@ -11,7 +11,6 @@ $this->title = 'Stock Issue Headers';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../web/images/background5.png">
-
 <div class="stock-issue-header-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -28,22 +27,34 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            'header_code',
-            'date_created',
-            ['attribute' => 'item_id',
-            'label' => 'Category Name',
-            'value' => 'item.item_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
-            'quantity',
-            // 'exp_date',
-            // 'unit_cost',
-            // 'amount',
-            // 'remarks:ntext',
-            ['attribute' => 'stock_issue_details_id',
-            'label' => 'Stock Issue Details',
-            'value' => 'stockIssueDetails.stock_issue_code',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueDetails::find()-> all(),'id','stock_issue_code')],
+            //'location_id',
+            ['attribute' => 'location_id',
+            'label' => 'Location Name',
+            'value' => 'location.location_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
            
+            //'stock_inventory_id',
+            ['attribute' => 'stock_inventory_id',
+            'label' => 'Stock Inventory',
+            'value' => 'stockInventory.stock_inventory_id',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockInventory::find()-> all(),'id','stock_inventory_id')],
+            
+            'header_code',
+
+            /*['attribute' => 'stock_issue_header_id',
+            'label' => 'Header Code',
+            'value' => 'stockIssueHeader.header_code',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','header_code')],*/
+
+            'stock_issue_code',
+
+            ['attribute' => 'location_id',
+            'label' => 'Location Name',
+            'value' => 'location.location_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
+            // 'stock_status_id',
+            // 'employee_id',
+            // 'issue_from',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

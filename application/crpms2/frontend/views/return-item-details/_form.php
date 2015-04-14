@@ -3,11 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use backend\models\Item;
 use backend\models\Location;
-use backend\models\AccountingStatus;
-use backend\models\Employee;
 use backend\models\ReturnItemHeader;
-
+use backend\models\Employee;
+use backend\models\AccountingStatus;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\ReturnItemDetails */
 /* @var $form yii\widgets\ActiveForm */
@@ -19,31 +19,47 @@ use backend\models\ReturnItemHeader;
 
     <?= $form->field($model, 'return_item_details_code')->textInput(['maxlength' => 20]) ?>
 
+    <!----?= $form->field($model, 'item_id')->textInput() ?---->
+    <?php
+        $item=Item::find()->all();
+        $listData=ArrayHelper::map($item, 'id', 'item_name');
+        echo $form->field($model, 'item_id')->dropDownList(
+            $listData,['prompt'=>'Select Item Name']);
+        ?>
+
+    <?= $form->field($model, 'quantity')->textInput() ?>
+
     <!----?= $form->field($model, 'location_id')->textInput() ?---->
     <?php
         $location=Location::find()->all();
         $listData=ArrayHelper::map($location, 'id', 'location_name');
         echo $form->field($model, 'location_id')->dropDownList(
-            $listData,['prompt'=>'Select Location']);
-    ?>
+            $listData,['prompt'=>'Select Location Name']);
+        ?>
 
-    <?= $form->field($model, 'return_item_header_id')->textInput() ?>
+    <!----?= $form->field($model, 'return_item_header_id')->textInput() ?---->
+    <?php
+        $returnItemHeader=ReturnItemHeader::find()->all();
+        $listData=ArrayHelper::map($returnItemHeader, 'id', 'return_item_header_code');
+        echo $form->field($model, 'return_item_header_id')->dropDownList(
+            $listData,['prompt'=>'Select Header Code']);
+        ?>
 
     <!----?= $form->field($model, 'accounting_status_id')->textInput() ?---->
     <?php
-        $accountingstatus=AccountingStatus::find()->all();
-        $listData=ArrayHelper::map($accountingstatus, 'id', 'description');
-        echo $form->field($model, 'accounting_status_id')->dropDownList(
-            $listData,['prompt'=>'Select Status']);
-    ?>
+        $accountingStatus=AccountingStatus::find()->all();
+        $listData=ArrayHelper::map($stockStatus, 'id', 'description_name');
+        echo $form->field($model, 'stock_status_id')->dropDownList(
+            $listData,['prompt'=>'Select Stock Status']);
+        ?>
 
-    <?= $form->field($model, 'employee_id')->textInput() ?>
+    <!----?= $form->field($model, 'employee_id')->textInput() ?---->
     <?php
         $employee=Employee::find()->all();
-        $listData=ArrayHelper::map($location, 'id', 'location_name');
-        echo $form->field($model, 'location_id')->dropDownList(
-            $listData,['prompt'=>'Select Employee']);
-    ?>
+        $listData=ArrayHelper::map($employee, 'id', 'lastname', 'firstname');
+        echo $form->field($model, 'employee_id')->dropDownList(
+            $listData,['prompt'=>'Select Employee Name']);
+        ?>
 
     <?= $form->field($model, 'return_to')->textInput(['maxlength' => 20]) ?>
 

@@ -18,9 +18,8 @@ class StockIssueHeaderSearch extends StockIssueHeader
     public function rules()
     {
         return [
-            [['id', 'item_id', 'quantity', 'stock_issue_details_id'], 'integer'],
-            [['header_code', 'date_created', 'exp_date', 'remarks'], 'safe'],
-            [['unit_cost', 'amount'], 'number'],
+            [['id', 'location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id'], 'integer'],
+            [['header_code', 'stock_issue_code', 'issue_from'], 'safe'],
         ];
     }
 
@@ -58,17 +57,15 @@ class StockIssueHeaderSearch extends StockIssueHeader
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'date_created' => $this->date_created,
-            'item_id' => $this->item_id,
-            'quantity' => $this->quantity,
-            'exp_date' => $this->exp_date,
-            'unit_cost' => $this->unit_cost,
-            'amount' => $this->amount,
-            'stock_issue_details_id' => $this->stock_issue_details_id,
+            'location_id' => $this->location_id,
+            'stock_inventory_id' => $this->stock_inventory_id,
+            'stock_status_id' => $this->stock_status_id,
+            'employee_id' => $this->employee_id,
         ]);
 
         $query->andFilterWhere(['like', 'header_code', $this->header_code])
-            ->andFilterWhere(['like', 'remarks', $this->remarks]);
+            ->andFilterWhere(['like', 'stock_issue_code', $this->stock_issue_code])
+            ->andFilterWhere(['like', 'issue_from', $this->issue_from]);
 
         return $dataProvider;
     }

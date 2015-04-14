@@ -18,7 +18,7 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
     public function rules()
     {
         return [
-            [['id', 'location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'integer'],
+            [['id', 'item_id', 'quantity', 'location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'integer'],
             [['return_item_details_code', 'return_to', 'created_at'], 'safe'],
         ];
     }
@@ -57,6 +57,8 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'item_id' => $this->item_id,
+            'quantity' => $this->quantity,
             'location_id' => $this->location_id,
             'return_item_header_id' => $this->return_item_header_id,
             'accounting_status_id' => $this->accounting_status_id,

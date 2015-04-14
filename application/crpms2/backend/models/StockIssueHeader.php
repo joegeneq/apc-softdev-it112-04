@@ -8,18 +8,19 @@ use Yii;
  * This is the model class for table "stock_issue_header".
  *
  * @property integer $id
+ * @property integer $location_id
+ * @property integer $stock_inventory_id
  * @property string $header_code
- * @property string $date_created
- * @property integer $item_id
- * @property integer $quantity
- * @property string $exp_date
- * @property string $unit_cost
- * @property string $amount
- * @property string $remarks
- * @property integer $stock_issue_details_id
+ * @property string $stock_issue_code
+ * @property integer $stock_status_id
+ * @property integer $employee_id
+ * @property string $issue_from
  *
- * @property Item $item
- * @property StockIssueDetails $stockIssueDetails
+ * @property StockIssueDetails[] $stockIssueDetails
+ * @property StockStatus $stockStatus
+ * @property StockInventory $stockInventory
+ * @property Location $location
+ * @property Employee $employee
  */
 class StockIssueHeader extends \yii\db\ActiveRecord
 {
@@ -37,12 +38,10 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['header_code', 'item_id', 'quantity', 'exp_date', 'unit_cost', 'amount', 'stock_issue_details_id'], 'required'],
-            [['date_created', 'exp_date'], 'safe'],
-            [['item_id', 'quantity', 'stock_issue_details_id'], 'integer'],
-            [['unit_cost', 'amount'], 'number'],
-            [['remarks'], 'string'],
-            [['header_code'], 'string', 'max' => 20]
+            [['id', 'location_id', 'stock_inventory_id', 'header_code', 'stock_issue_code', 'stock_status_id', 'employee_id'], 'required'],
+            [['id', 'location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id'], 'integer'],
+            [['header_code', 'stock_issue_code'], 'string', 'max' => 20],
+            [['issue_from'], 'string', 'max' => 25]
         ];
     }
 
@@ -53,24 +52,14 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'location_id' => 'Location ID',
+            'stock_inventory_id' => 'Stock Inventory ID',
             'header_code' => 'Header Code',
-            'date_created' => 'Date Created',
-            'item_id' => 'Item ID',
-            'quantity' => 'Quantity',
-            'exp_date' => 'Exp Date',
-            'unit_cost' => 'Unit Cost',
-            'amount' => 'Amount',
-            'remarks' => 'Remarks',
-            'stock_issue_details_id' => 'Stock Issue Details ID',
+            'stock_issue_code' => 'Stock Issue Code',
+            'stock_status_id' => 'Stock Status ID',
+            'employee_id' => 'Employee ID',
+            'issue_from' => 'Issue From',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getItem()
-    {
-        return $this->hasOne(Item::className(), ['id' => 'item_id']);
     }
 
     /**
@@ -78,6 +67,38 @@ class StockIssueHeader extends \yii\db\ActiveRecord
      */
     public function getStockIssueDetails()
     {
-        return $this->hasOne(StockIssueDetails::className(), ['id' => 'stock_issue_details_id']);
+        return $this->hasMany(StockIssueDetails::className(), ['stock_issue_header_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStockStatus()
+    {
+        return $this->hasOne(StockStatus::className(), ['id' => 'stock_status_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStockInventory()
+    {
+        return $this->hasOne(StockInventory::className(), ['id' => 'stock_inventory_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLocation()
+    {
+        return $this->hasOne(Location::className(), ['id' => 'location_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmployee()
+    {
+        return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
     }
 }
