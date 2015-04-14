@@ -6,18 +6,17 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemHeader */
 
-$this->title = $model->return_item_header_code;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
 <div class="return-item-header-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->return_item_header_code], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->return_item_header_code], [
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -30,13 +29,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'patient.lastname',
-            'patient.firstname',
+            'patient_id',
             'return_item_header_code',
+<<<<<<< HEAD
+            'location_id',
+            'bed_id',
+=======
             ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
             ['attribute' => 'bed.bed_number', 'label' => 'Bed number:'],
             ['attribute' => 'item.description_item', 'label' => 'Item Name:'],
             'quantity',
+>>>>>>> 7aa8ffad5541f91f6f0c01495c75cdebf0fca2be
             'amount',
             'remarks:ntext',
             'created',

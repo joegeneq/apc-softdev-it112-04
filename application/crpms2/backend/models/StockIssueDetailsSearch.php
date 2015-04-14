@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\ReturnItemHeader;
+use backend\models\StockIssueDetails;
 
 /**
- * ReturnItemHeaderSearch represents the model behind the search form about `backend\models\ReturnItemHeader`.
+ * StockIssueDetailsSearch represents the model behind the search form about `backend\models\StockIssueDetails`.
  */
-class ReturnItemHeaderSearch extends ReturnItemHeader
+class StockIssueDetailsSearch extends StockIssueDetails
 {
     /**
      * @inheritdoc
@@ -18,9 +18,9 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
     public function rules()
     {
         return [
-            [['id', 'patient_id', 'location_id', 'bed_id'], 'integer'],
-            [['return_item_header_code', 'remarks', 'created'], 'safe'],
-            [['amount'], 'number'],
+            [['id', 'item_id', 'quantity', 'stock_issue_header_id'], 'integer'],
+            [['stock_issue_code', 'date_created', 'exp_date', 'remarks'], 'safe'],
+            [['unit_cost', 'amount'], 'number'],
         ];
     }
 
@@ -42,7 +42,7 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
      */
     public function search($params)
     {
-        $query = ReturnItemHeader::find();
+        $query = StockIssueDetails::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -58,14 +58,16 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'patient_id' => $this->patient_id,
-            'location_id' => $this->location_id,
-            'bed_id' => $this->bed_id,
+            'date_created' => $this->date_created,
+            'item_id' => $this->item_id,
+            'quantity' => $this->quantity,
+            'exp_date' => $this->exp_date,
+            'unit_cost' => $this->unit_cost,
             'amount' => $this->amount,
-            'created' => $this->created,
+            'stock_issue_header_id' => $this->stock_issue_header_id,
         ]);
 
-        $query->andFilterWhere(['like', 'return_item_header_code', $this->return_item_header_code])
+        $query->andFilterWhere(['like', 'stock_issue_code', $this->stock_issue_code])
             ->andFilterWhere(['like', 'remarks', $this->remarks]);
 
         return $dataProvider;

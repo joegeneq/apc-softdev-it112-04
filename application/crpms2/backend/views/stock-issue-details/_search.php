@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ReturnItemHeaderSearch */
+/* @var $model backend\models\StockIssueDetailsSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="return-item-header-search">
+<div class="stock-issue-details-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,19 +17,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'patient_id') ?>
+    <?= $form->field($model, 'stock_issue_code') ?>
 
-    <?= $form->field($model, 'return_item_header_code') ?>
+    <?= $form->field($model, 'date_created') ?>
 
-    <?= $form->field($model, 'location_id') ?>
+    <?= $form->field($model, 'item_id') ?>
 
-    <?= $form->field($model, 'bed_id') ?>
+    <?= $form->field($model, 'quantity') ?>
+
+    <?php // echo $form->field($model, 'exp_date') ?>
+
+    <?php // echo $form->field($model, 'unit_cost') ?>
 
     <?php // echo $form->field($model, 'amount') ?>
 
     <?php // echo $form->field($model, 'remarks') ?>
 
-    <?php // echo $form->field($model, 'created') ?>
+    <?php // echo $form->field($model, 'stock_issue_header_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
