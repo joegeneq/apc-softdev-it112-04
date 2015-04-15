@@ -10,6 +10,8 @@ $this->title = $model->return_item_details_code;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Details', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../web/images/background5.png">
+
 <div class="return-item-details-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -31,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'return_item_details_code',
            
-            ['attribute' => 'item.item_name', 'label' => 'Bed number:'],
+            ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
             
             'quantity',
             
