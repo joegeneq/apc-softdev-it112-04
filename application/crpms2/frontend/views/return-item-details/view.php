@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'accounting_status_id',
             ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status:'],
             //'employee_id',
-            ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
+            ['attribute' => 'employee.lastname', 'label' => 'Employee:'],
             'return_to',
             'created_at',
         ],

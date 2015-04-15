@@ -60,7 +60,7 @@ use backend\models\Employee;
         $employee=Employee::find()->all();
         $listData=ArrayHelper::map($employee, 'id', 'lastname','firstname');
         echo $form->field($model, 'employee_id')->dropDownList(
-            $listData,['prompt'=>'Select Employee Name']);
+            $listData,['prompt'=>'Select Employee']);
     ?>
 
     <?= $form->field($model, 'return_to')->textInput(['maxlength' => 20]) ?>
