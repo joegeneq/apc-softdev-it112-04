@@ -27,12 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
            // 'id',
-            //'patient_id',
-				[
+    [
                 'attribute' => 'patient_id',
+                'label' => 'Patient Lastname',
                 'value' => 'patient.lastname'
             ],
-			
 			
             'return_item_header_code',
   
