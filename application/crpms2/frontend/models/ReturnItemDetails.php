@@ -9,6 +9,8 @@ use Yii;
  *
  * @property integer $id
  * @property string $return_item_details_code
+ * @property integer $item_id
+ * @property integer $quantity
  * @property integer $location_id
  * @property integer $return_item_header_id
  * @property integer $accounting_status_id
@@ -16,10 +18,7 @@ use Yii;
  * @property string $return_to
  * @property string $created_at
  *
- * @property ReturnItemHeader $returnItemHeader
- * @property Location $location
- * @property AccountingStatus $accountingStatus
- * @property Employee $employee
+ * @property Item $item
  */
 class ReturnItemDetails extends \yii\db\ActiveRecord
 {
@@ -37,8 +36,8 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['return_item_details_code', 'location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'required'],
-            [['location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'integer'],
+            [['return_item_details_code', 'item_id', 'quantity', 'location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'required'],
+            [['item_id', 'quantity', 'location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'integer'],
             [['created_at'], 'safe'],
             [['return_item_details_code', 'return_to'], 'string', 'max' => 20]
         ];
@@ -52,6 +51,8 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'return_item_details_code' => 'Return Item Details Code',
+            'item_id' => 'Item ID',
+            'quantity' => 'Quantity',
             'location_id' => 'Location ID',
             'return_item_header_id' => 'Return Item Header ID',
             'accounting_status_id' => 'Accounting Status ID',
@@ -64,32 +65,8 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReturnItemHeader()
+    public function getItem()
     {
-        return $this->hasOne(ReturnItemHeader::className(), ['id' => 'return_item_header_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getLocation()
-    {
-        return $this->hasOne(Location::className(), ['id' => 'location_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAccountingStatus()
-    {
-        return $this->hasOne(AccountingStatus::className(), ['id' => 'accounting_status_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEmployee()
-    {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
+        return $this->hasOne(Item::className(), ['id' => 'item_id']);
     }
 }

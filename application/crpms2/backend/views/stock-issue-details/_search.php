@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\StockIssueDetailsSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../web/images/background5.png">
+
 <div class="stock-issue-details-search">
 
     <?php $form = ActiveForm::begin([
@@ -17,13 +17,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'location_id') ?>
-
-    <?= $form->field($model, 'stock_inventory_id') ?>
-
     <?= $form->field($model, 'stock_issue_code') ?>
 
-    <?= $form->field($model, 'stock_status_id') ?>
+    <?= $form->field($model, 'date_created') ?>
+
+    <?= $form->field($model, 'item_id') ?>
+
+    <?= $form->field($model, 'quantity') ?>
+
+    <?php // echo $form->field($model, 'exp_date') ?>
+
+    <?php // echo $form->field($model, 'unit_cost') ?>
+
+    <?php // echo $form->field($model, 'amount') ?>
+
+    <?php // echo $form->field($model, 'remarks') ?>
+
+    <?php // echo $form->field($model, 'stock_issue_header_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -6,12 +6,11 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueHeader */
 
-$this->title = $model->header_code;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../web/images/background5.png">
-
 <div class="stock-issue-header-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -31,16 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             //'id',
+            //'location_id',
+            ['attribute' => 'location.location_name', 'label' => 'Location:'],
+            'stock_inventory_id',
+            ['attribute' => 'stockInventory.stock_inventory_id', 'label' => 'Stock Inventory:'],
             'header_code',
-            'date_created',
-             ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
-            'quantity',
-            'exp_date',
-            'unit_cost',
-            'amount',
-            'remarks:ntext',
-            'stock_issue_details_id',
-             ['attribute' => 'stockIssueDetails.stock_issue_code', 'label' => 'Stock Issue Code'],
+            //['attribute' => 'location.location_name', 'label' => 'Header Code:'],
+            'stock_issue_code',
+            //'stock_status_id',
+            ['attribute' => 'stockStatus.description_name', 'label' => 'Stock Status:'],
+            //'employee_id',
+            ['attribute' => 'employee.lastname', 'label' => 'Employee:'],
+            'issue_from',
         ],
     ]) ?>
 

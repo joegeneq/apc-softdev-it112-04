@@ -1,8 +1,7 @@
 <?php
 
-use yii\helpers\Html; 
+use yii\helpers\Html;
 use yii\grid\GridView;
-use backend\models\Patient;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\ReturnItemHeaderSearch */
@@ -27,23 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
-            //'patient_id',
-			[
-                'attribute' => 'patient_id',
-                'value' => 'patient.lastname'
-            ],
+         //   'id',
+            'patient_id',
             'return_item_header_code',
-          ['attribute' => 'location_id',
-            'label' => 'Location Name',
-            'value' => 'location.location_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-          ['attribute' => 'bed_id',
-            'label' => 'Bed Id',
-            'value' => 'bed.bed_number',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Bed::find()-> all(),'id','bed_number')],
-            // 'item_id',
-            // 'quantity',
+            'location_id',
+            'bed_id',
             // 'amount',
             // 'remarks:ntext',
             // 'created',

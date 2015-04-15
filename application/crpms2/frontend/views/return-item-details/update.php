@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Return Item Details', 'url' => ['i
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<body background="../images/background5.png">
+<body background="../web/images/background5.png">
 <div class="return-item-details-update">
 
     <h1><?= Html::encode($this->title) ?></h1>

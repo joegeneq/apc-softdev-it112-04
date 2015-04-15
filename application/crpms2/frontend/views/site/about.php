@@ -6,8 +6,8 @@ $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<header><center><img src="../images/crpmslogo.png" width="300" height="250" >
-<center><body background="../images/background5.png">
+<header><center><img src="../web/images/crpmslogo.png" width="300" height="250" >
+<center><body background="../web/images/background5.png">
 <div class="site-index">
 
         <div class="jumbotron">

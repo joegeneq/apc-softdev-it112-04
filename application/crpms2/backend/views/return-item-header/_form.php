@@ -27,7 +27,7 @@ use backend\models\Patient;
             $listData,['prompt'=>'Select Location Name']);
     ?>
 
-     <?php
+       <?php
         $bed=Bed::find()->all();
           $listData=ArrayHelper::map($bed, 'id', 'bed_number');
         echo $form->field($model, 'bed_id')->dropDownList(
@@ -35,20 +35,6 @@ use backend\models\Patient;
     ?>
 	
 	
-     <?php
-        $item=Item::find()->all();
-          $listData=ArrayHelper::map($item, 'id', 'item_name');
-        echo $form->field($model, 'item_id')->dropDownList(
-            $listData,['prompt'=>'Select Item name']);
-    ?>
-	
-	<?= $form->field($model, 'patient_id')->dropDownList(
-        ArrayHelper::map(Patient::find()->all(), 'id', 'lastname', 'firstname'),
-        ['prompt'=>'Select Patient'] ) 
-    ?>
-
-    <?= $form->field($model, 'quantity')->textInput() ?>
-
     <?= $form->field($model, 'amount')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>

@@ -13,7 +13,6 @@ $this->params['breadcrumbs'][] = 'Update';
 <body background="../web/images/background5.png">
 <div class="stock-issue-header-update">
 
-
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [

@@ -26,24 +26,24 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-			 ['attribute' => 'location_id',
-            'label' => 'Location name',
-            'value' => 'location.location_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-            
-			['attribute' => 'stock_inventory_id',
-            'label' => 'Stock Inventory Id',
-            'value' => 'stockInventory.stock_inventory_id',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockInventory::find()-> all(),'id','stock_inventory_id')],
-          
+           // 'id',
             'stock_issue_code',
-			
-			['attribute' => 'stock_status_id',
-            'label' => 'Stock Status',
-            'value' => 'stockStatus.description_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockStatus::find()-> all(),'id','description_name')],
-          
-
+            'date_created',
+                   ['attribute' => 'item_id',
+            'label' => 'Item Name',
+            'value' => 'item.item_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
+            
+            'quantity',
+            // 'exp_date',
+            // 'unit_cost',
+            // 'amount',
+            // 'remarks:ntext',
+			['attribute' => 'stock_issue_header_id',
+            'label' => 'Stock Issue Header',
+            'value' => 'stockIssueHeader.stock_header_code',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','stock_issue_code')],
+           
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

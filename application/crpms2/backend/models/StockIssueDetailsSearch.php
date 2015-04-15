@@ -18,8 +18,9 @@ class StockIssueDetailsSearch extends StockIssueDetails
     public function rules()
     {
         return [
-            [['id', 'location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id'], 'integer'],
-            [['stock_issue_code', 'issue_from'], 'safe'],
+            [['id', 'item_id', 'quantity', 'stock_issue_header_id'], 'integer'],
+            [['stock_issue_code', 'date_created', 'exp_date', 'remarks'], 'safe'],
+            [['unit_cost', 'amount'], 'number'],
         ];
     }
 
@@ -57,14 +58,17 @@ class StockIssueDetailsSearch extends StockIssueDetails
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'location_id' => $this->location_id,
-            'stock_inventory_id' => $this->stock_inventory_id,
-            'stock_status_id' => $this->stock_status_id,
-            'employee_id' => $this->employee_id,
+            'date_created' => $this->date_created,
+            'item_id' => $this->item_id,
+            'quantity' => $this->quantity,
+            'exp_date' => $this->exp_date,
+            'unit_cost' => $this->unit_cost,
+            'amount' => $this->amount,
+            'stock_issue_header_id' => $this->stock_issue_header_id,
         ]);
 
         $query->andFilterWhere(['like', 'stock_issue_code', $this->stock_issue_code])
-            ->andFilterWhere(['like', 'issue_from', $this->issue_from]);
+            ->andFilterWhere(['like', 'remarks', $this->remarks]);
 
         return $dataProvider;
     }

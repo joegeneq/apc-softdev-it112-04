@@ -3,10 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use backend\models\Location;
-use backend\models\StockInventory;
-use backend\models\StockStatus;
-use backend\models\Employee;
+use backend\models\Item;
+use backend\models\StockIssueDetails;
+use dosamigos\datepicker\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueDetails */
 /* @var $form yii\widgets\ActiveForm */
@@ -15,29 +14,40 @@ use backend\models\Employee;
 <div class="stock-issue-details-form">
 
     <?php $form = ActiveForm::begin(); ?>
- <?php
-        $location=Location::find()->all();
-        $listData=ArrayHelper::map($location, 'id', 'location_name');
-        echo $form->field($model, 'location_id')->dropDownList(
-            $listData,['prompt'=>'Select Location']);
-    ?>
- <?php
-        $stockinventory=StockInventory::find()->all();
-        $listData=ArrayHelper::map($stockinventory, 'id', 'stock_inventory_id');
-        echo $form->field($model, 'stock_inventory_id')->dropDownList(
-            $listData,['prompt'=>'Select Stock Inventory']);
-    ?>
+
     <?= $form->field($model, 'stock_issue_code')->textInput(['maxlength' => 20]) ?>
 
- <?php
-        $stockstatus=StockStatus::find()->all();
-        $listData=ArrayHelper::map($stockstatus, 'id', 'description_name');
-        echo $form->field($model, 'stock_status_id')->dropDownList(
-            $listData,['prompt'=>'Select Stock Issued Id']);
+    
+    <?php
+        $item=Item::find()->all();
+        $listData=ArrayHelper::map($item, 'id', 'item_name');
+        echo $form->field($model, 'item_id')->dropDownList(
+            $listData,['prompt'=>'Select Item']);
     ?>
-    <?= $form->field($model, 'employee_id')->dropDownList(
-        ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
-        ['prompt'=>'Select Employee'] ) 
+    <?= $form->field($model, 'quantity')->textInput() ?>
+
+     <?= $form->field($model, 'exp_date')->widget(
+    DatePicker::className(), [
+        // inline too, not bad
+        'inline' => false, 
+        // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-m-d'
+        ]
+]);?>
+    <?= $form->field($model, 'unit_cost')->textInput(['maxlength' => 10]) ?>
+
+    <?= $form->field($model, 'amount')->textInput(['maxlength' => 10]) ?>
+
+    <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
+
+  <?php
+        $stockissuedetails=stockIssueDetails::find()->all();
+        $listData=ArrayHelper::map($stockissuedetails, 'id', 'stock_header_code');
+        echo $form->field($model, 'stock_issue_header_id')->dropDownList(
+            $listData,['prompt'=>'Select Stock Issue Details']);
     ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
