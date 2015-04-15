@@ -41,7 +41,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'remarks:ntext',
             'stock_issue_header_id',
 			 ['attribute' => 'stockIssueDetails.stock_issue_code', 'label' => 'Stock Issue Code'],
+<<<<<<< HEAD
              
+=======
+
+>>>>>>> 7f38b4149ca392349e802f214c95c7ead7704a63
             ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
            ['attribute' => 'stockInventory.stock_inventory_id', 'label' => 'Stock inventory id:'],
             'stock_issue_code',
