@@ -5,10 +5,10 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use backend\models\Location;
 use backend\models\StockInventory;
-use backend\models\Employee;
 use backend\models\StockIssueHeader;
-use backend\models\StockIssueDetails;
 use backend\models\StockStatus;
+use backend\models\Employee;
+
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueHeader */
@@ -19,55 +19,38 @@ use backend\models\StockStatus;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id')->textInput() ?>
-
     <!----?= $form->field($model, 'location_id')->textInput() ?---->
-     <?php
+    <?php
         $location=Location::find()->all();
         $listData=ArrayHelper::map($location, 'id', 'location_name');
         echo $form->field($model, 'location_id')->dropDownList(
-            $listData,['prompt'=>'Select Location:']);
-        ?>
-
+            $listData,['prompt'=>'Select Location']);
+    ?>
     <!----?= $form->field($model, 'stock_inventory_id')->textInput() ?---->
-     <?php
+    <?php
         $stockInventory=StockInventory::find()->all();
         $listData=ArrayHelper::map($stockInventory, 'id', 'stock_inventory_id');
         echo $form->field($model, 'stock_inventory_id')->dropDownList(
-            $listData,['prompt'=>'Select Stock Inventory:']);
-        ?>
+            $listData,['prompt'=>'Select Stock Inventory']);
+    ?>
 
     <?= $form->field($model, 'header_code')->textInput(['maxlength' => 20]) ?>
-     <!----?php
-        $stockIssueHeader=StockIssueHeader::find()->all();
-        $listData=ArrayHelper::map($stockIssueHeader, 'id', 'header_code');
-        echo $form->field($model, 'stock_issue_header_id')->dropDownList(
-            $listData,['prompt'=>'Select Header Code:']);
-        ?---->
-
-    <?= $form->field($model, 'stock_issue_code')->textInput(['maxlength' => 20]) ?>
-     <!----?php
-        $stockIssueDetails=StockIssueDetails::find()->all();
-        $listData=ArrayHelper::map(stockIssueDetails, 'id', 'stock_issue_code');
-        echo $form->field($model, 'stock_issue_code')->dropDownList(
-            $listData,['prompt'=>'Select Stock Issue Code:']);
-        ?---->
 
     <!----?= $form->field($model, 'stock_status_id')->textInput() ?---->
-     <?php
+    <?php
         $stockStatus=StockStatus::find()->all();
         $listData=ArrayHelper::map($stockStatus, 'id', 'description_name');
         echo $form->field($model, 'stock_status_id')->dropDownList(
-            $listData,['prompt'=>'Select Stock Status:']);
-        ?>
+            $listData,['prompt'=>'Select Stock Status']);
+    ?>
 
     <!----?= $form->field($model, 'employee_id')->textInput() ?---->
-     <?php
+    <?php
         $employee=Employee::find()->all();
-        $listData=ArrayHelper::map($employee, 'id', 'lastname','firstname');
+        $listData=ArrayHelper::map($employee, 'id', 'lastname', 'firstname');
         echo $form->field($model, 'employee_id')->dropDownList(
-            $listData,['prompt'=>'Select Employee Name:']);
-        ?>
+            $listData,['prompt'=>'Select Employee Name']);
+    ?>
 
     <?= $form->field($model, 'issue_from')->textInput(['maxlength' => 25]) ?>
 

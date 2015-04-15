@@ -32,27 +32,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'label' => 'Location Name',
             'value' => 'location.location_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-           
             //'stock_inventory_id',
             ['attribute' => 'stock_inventory_id',
             'label' => 'Stock Inventory',
             'value' => 'stockInventory.stock_inventory_id',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\StockInventory::find()-> all(),'id','stock_inventory_id')],
-            
             'header_code',
-
-            /*['attribute' => 'stock_issue_header_id',
-            'label' => 'Header Code',
-            'value' => 'stockIssueHeader.header_code',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','header_code')],*/
-
-            'stock_issue_code',
-
-            ['attribute' => 'location_id',
-            'label' => 'Location Name',
-            'value' => 'location.location_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-            // 'stock_status_id',
+            //'stock_status_id',
+            ['attribute' => 'stock_status_id',
+            'label' => 'Stock Status',
+            'value' => 'stockStatus.description_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockStatus::find()-> all(),'id','description_name')],
             // 'employee_id',
             // 'issue_from',
 

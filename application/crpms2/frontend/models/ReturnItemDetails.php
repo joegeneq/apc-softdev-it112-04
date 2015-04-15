@@ -18,6 +18,10 @@ use Yii;
  * @property string $return_to
  * @property string $created_at
  *
+ * @property Location $location
+ * @property AccountingStatus $accountingStatus
+ * @property ReturnItemHeader $returnItemHeader
+ * @property Employee $employee
  * @property Item $item
  */
 class ReturnItemDetails extends \yii\db\ActiveRecord
@@ -60,6 +64,38 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
             'return_to' => 'Return To',
             'created_at' => 'Created At',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLocation()
+    {
+        return $this->hasOne(Location::className(), ['id' => 'location_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAccountingStatus()
+    {
+        return $this->hasOne(AccountingStatus::className(), ['id' => 'accounting_status_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReturnItemHeader()
+    {
+        return $this->hasOne(ReturnItemHeader::className(), ['id' => 'return_item_header_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmployee()
+    {
+        return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
     }
 
     /**
