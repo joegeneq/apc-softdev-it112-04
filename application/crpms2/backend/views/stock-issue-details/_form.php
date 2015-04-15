@@ -60,12 +60,6 @@ use backend\models\Item;
 
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
 
-   <?php
-        $stockissuedetails=stockIssueDetails::find()->all();
-        $listData=ArrayHelper::map($stockissuedetails, 'id', 'stock_issue_code');
-        echo $form->field($model, 'stock_issue_code')->dropDownList(
-            $listData,['prompt'=>'Select Stock Issue Details']);
-    ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
