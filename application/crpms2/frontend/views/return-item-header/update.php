@@ -10,7 +10,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['i
 $this->params['breadcrumbs'][] = ['label' => $model->return_item_header_code, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<body background="../images/background5.png">
-
+<body background="../web/images/background5.png">
 
 <h2> You are not allowed to update this section. </h2>

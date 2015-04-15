@@ -10,6 +10,8 @@ use yii\grid\GridView;
 $this->title = 'Return Item Headers';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../web/images/background5.png">
+
 <div class="return-item-header-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
