@@ -49,7 +49,7 @@ class StockInventory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'stock_inventory_id' => 'Stock Inventory ID',
+            'stock_inventory_id' => 'Stock Inventory Code',
             'quantity_onhand' => 'Quantity Onhand',
             'quantity_onorder' => 'Quantity Onorder',
             'item_id' => 'Item ID',

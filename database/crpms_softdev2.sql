@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2015 at 05:20 PM
+-- Generation Time: Apr 15, 2015 at 08:11 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -385,7 +385,7 @@ ALTER TABLE `accounting_status`
 -- Indexes for table `bed`
 --
 ALTER TABLE `bed`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `employee`
@@ -558,14 +558,30 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- Constraints for table `return_item_details`
 --
 ALTER TABLE `return_item_details`
+ADD CONSTRAINT `return_item_details_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
+ADD CONSTRAINT `return_item_details_ibfk_2` FOREIGN KEY (`accounting_status_id`) REFERENCES `accounting_status` (`id`),
+ADD CONSTRAINT `return_item_details_ibfk_3` FOREIGN KEY (`return_item_header_id`) REFERENCES `return_item_header` (`id`),
+ADD CONSTRAINT `return_item_details_ibfk_4` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`),
 ADD CONSTRAINT `return_item_details_ibfk_5` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`);
+
+--
+-- Constraints for table `return_item_header`
+--
+ALTER TABLE `return_item_header`
+ADD CONSTRAINT `return_item_header_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
+ADD CONSTRAINT `return_item_header_ibfk_2` FOREIGN KEY (`bed_id`) REFERENCES `bed` (`id`),
+ADD CONSTRAINT `return_item_header_ibfk_3` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`),
+ADD CONSTRAINT `return_item_header_ibfk_5` FOREIGN KEY (`bed_id`) REFERENCES `bed` (`id`),
+ADD CONSTRAINT `return_item_header_ibfk_6` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
 
 --
 -- Constraints for table `stock_issue_details`
 --
 ALTER TABLE `stock_issue_details`
 ADD CONSTRAINT `stock_issue_details_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
-ADD CONSTRAINT `stock_issue_details_ibfk_2` FOREIGN KEY (`stock_issue_header_id`) REFERENCES `stock_issue_header` (`id`);
+ADD CONSTRAINT `stock_issue_details_ibfk_2` FOREIGN KEY (`stock_issue_header_id`) REFERENCES `stock_issue_header` (`id`),
+ADD CONSTRAINT `stock_issue_details_ibfk_3` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
+ADD CONSTRAINT `stock_issue_details_ibfk_4` FOREIGN KEY (`stock_issue_header_id`) REFERENCES `stock_issue_header` (`id`);
 
 --
 -- Constraints for table `stock_issue_header`
@@ -574,7 +590,11 @@ ALTER TABLE `stock_issue_header`
 ADD CONSTRAINT `stock_issue_header_ibfk_1` FOREIGN KEY (`stock_status_id`) REFERENCES `stock_status` (`id`),
 ADD CONSTRAINT `stock_issue_header_ibfk_2` FOREIGN KEY (`stock_inventory_id`) REFERENCES `stock_inventory` (`id`),
 ADD CONSTRAINT `stock_issue_header_ibfk_3` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
-ADD CONSTRAINT `stock_issue_header_ibfk_4` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`);
+ADD CONSTRAINT `stock_issue_header_ibfk_4` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`),
+ADD CONSTRAINT `stock_issue_header_ibfk_6` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
+ADD CONSTRAINT `stock_issue_header_ibfk_7` FOREIGN KEY (`stock_inventory_id`) REFERENCES `stock_inventory` (`id`),
+ADD CONSTRAINT `stock_issue_header_ibfk_8` FOREIGN KEY (`stock_status_id`) REFERENCES `stock_status` (`id`),
+ADD CONSTRAINT `stock_issue_header_ibfk_9` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
