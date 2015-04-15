@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
            // 'id',
             [
                 'attribute' => 'patient_id',
+                'label' => 'Patient Lastname',
                 'value' => 'patient.lastname'
             ],
             'return_item_header_code',

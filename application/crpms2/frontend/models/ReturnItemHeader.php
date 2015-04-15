@@ -38,10 +38,10 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     {
         return [
             [['patient_id', 'return_item_header_code', 'location_id', 'bed_id', 'amount'], 'required'],
-            [['patient_id', 'location_id', 'bed_id'], 'integer'],
+            [['location_id', 'bed_id'], 'integer'],
             [['amount'], 'number'],
             [['remarks'], 'string'],
-            [['created'], 'safe'],
+            [['created','patient_id' ], 'safe'],
             [['return_item_header_code'], 'string', 'max' => 20]
         ];
     }
