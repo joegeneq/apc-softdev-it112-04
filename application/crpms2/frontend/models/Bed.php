@@ -10,8 +10,6 @@ use Yii;
  * @property integer $id
  * @property string $bed_code
  * @property integer $bed_number
- *
- * @property ReturnItemHeader[] $returnItemHeaders
  */
 class Bed extends \yii\db\ActiveRecord
 {
@@ -45,13 +43,5 @@ class Bed extends \yii\db\ActiveRecord
             'bed_code' => 'Bed Code',
             'bed_number' => 'Bed Number',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getReturnItemHeaders()
-    {
-        return $this->hasMany(ReturnItemHeader::className(), ['bed_id' => 'id']);
     }
 }
