@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-<<<<<<< HEAD
+
             'stock_issue_code',
             'date_created',
             ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
@@ -41,20 +41,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'remarks:ntext',
             'stock_issue_header_id',
 			 ['attribute' => 'stockIssueDetails.stock_issue_code', 'label' => 'Stock Issue Code'],
-=======
+
             ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
            ['attribute' => 'stockInventory.stock_inventory_id', 'label' => 'Stock inventory id:'],
             'stock_issue_code',
-<<<<<<< HEAD
+
             
             ['attribute' => 'stockStatus.description_name', 'label' => 'Stock Description:'],
             ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
-=======
+
            ['attribute' => 'stockStatus.description_name', 'label' => 'Stock issued id:'],
            ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
->>>>>>> 8c4d066841f19a2e8a71a3b665f95507f585f650
+
             'issue_from',
->>>>>>> 7aa8ffad5541f91f6f0c01495c75cdebf0fca2be
+
         ],
     ]) ?>
 

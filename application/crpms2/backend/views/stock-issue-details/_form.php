@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use backend\models\Item;
-use backend\models\StockIssueDetails;
 use dosamigos\datepicker\DatePicker;
+use backend\models\StockIssueDetails;
+use backend\models\Item;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueDetails */
 /* @var $form yii\widgets\ActiveForm */
@@ -17,13 +17,29 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'stock_issue_code')->textInput(['maxlength' => 20]) ?>
 
-    
+
+	     <?= $form->field($model, 'date_created')->widget(
+    DatePicker::className(), [
+        // inline too, not bad
+        'inline' => false, 
+        // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-m-d'
+        ]
+]);?>
+	
+
+      
     <?php
         $item=Item::find()->all();
-        $listData=ArrayHelper::map($item, 'id', 'item_name');
+        $listData=ArrayHelper::map($item, 'id', 'item_code');
         echo $form->field($model, 'item_id')->dropDownList(
             $listData,['prompt'=>'Select Item']);
     ?>
+
+
     <?= $form->field($model, 'quantity')->textInput() ?>
 
      <?= $form->field($model, 'exp_date')->widget(
@@ -37,16 +53,17 @@ use dosamigos\datepicker\DatePicker;
             'format' => 'yyyy-m-d'
         ]
 ]);?>
+
     <?= $form->field($model, 'unit_cost')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'amount')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
 
-  <?php
+   <?php
         $stockissuedetails=stockIssueDetails::find()->all();
-        $listData=ArrayHelper::map($stockissuedetails, 'id', 'stock_header_code');
-        echo $form->field($model, 'stock_issue_header_id')->dropDownList(
+        $listData=ArrayHelper::map($stockissuedetails, 'id', 'stock_issue_code');
+        echo $form->field($model, 'stock_issue_code')->dropDownList(
             $listData,['prompt'=>'Select Stock Issue Details']);
     ?>
     <div class="form-group">
