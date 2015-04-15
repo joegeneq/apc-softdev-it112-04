@@ -26,24 +26,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-           // 'id',
+          //  'id',
             'stock_issue_code',
             'date_created',
-                   ['attribute' => 'item_id',
-            'label' => 'Item Name',
-            'value' => 'item.item_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
-            
+            'item_id',
             'quantity',
             // 'exp_date',
             // 'unit_cost',
             // 'amount',
             // 'remarks:ntext',
-			['attribute' => 'stock_issue_header_id',
-            'label' => 'Stock Issue Header',
-            'value' => 'stockIssueHeader.stock_header_code',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','stock_issue_code')],
-           
+            // 'stock_issue_header_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
