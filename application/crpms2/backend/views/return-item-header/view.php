@@ -10,6 +10,7 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../web/images/background5.png">
 <div class="return-item-header-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -28,18 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'patient_id',
+           //'id',
+            'patient.lastname',
+            'patient.firstname',
             'return_item_header_code',
-<<<<<<< HEAD
-            'location_id',
-            'bed_id',
-=======
-            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-            ['attribute' => 'bed.bed_number', 'label' => 'Bed number:'],
-            ['attribute' => 'item.description_item', 'label' => 'Item Name:'],
-            'quantity',
->>>>>>> 7aa8ffad5541f91f6f0c01495c75cdebf0fca2be
+           ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
+           ['attribute' => 'bed.bed_number', 'label' => 'Bed number:'],
             'amount',
             'remarks:ntext',
             'created',

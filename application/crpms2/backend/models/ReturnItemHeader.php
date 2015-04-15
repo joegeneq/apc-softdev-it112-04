@@ -15,6 +15,11 @@ use Yii;
  * @property string $amount
  * @property string $remarks
  * @property string $created
+ *
+ * @property ReturnItemDetails[] $returnItemDetails
+ * @property Location $location
+ * @property Bed $bed
+ * @property Patient $patient
  */
 class ReturnItemHeader extends \yii\db\ActiveRecord
 {
@@ -56,5 +61,37 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
             'remarks' => 'Remarks',
             'created' => 'Created',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReturnItemDetails()
+    {
+        return $this->hasMany(ReturnItemDetails::className(), ['return_item_header_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLocation()
+    {
+        return $this->hasOne(Location::className(), ['id' => 'location_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBed()
+    {
+        return $this->hasOne(Bed::className(), ['id' => 'bed_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPatient()
+    {
+        return $this->hasOne(Patient::className(), ['id' => 'patient_id']);
     }
 }
