@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 use backend\models\Location;
 use backend\models\Patient;
 use backend\models\Bed;
-use backend\models\ReturnItemHeader;
+
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemHeader */
 /* @var $form yii\widgets\ActiveForm */
@@ -21,9 +21,16 @@ use backend\models\ReturnItemHeader;
         ['prompt'=>'Select Patient'] ) 
     ?>
 
+<<<<<<< HEAD
 	
     <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 10]) ?>
 
+=======
+
+    <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 20]) ?>
+
+  
+>>>>>>> 16647e036212aeec94a840e23fa59c9a34e2c761
 	
    <?php
         $location=Location::find()->all();
@@ -43,6 +50,10 @@ use backend\models\ReturnItemHeader;
 
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
 
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 16647e036212aeec94a840e23fa59c9a34e2c761
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

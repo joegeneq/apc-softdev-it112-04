@@ -19,8 +19,7 @@ use backend\models\Item;
 
     <?= $form->field($model, 'return_item_details_code')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'item_id')->textInput() ?>
-
+   
 <?php
         $item=Item::find()->all();
         $listData=ArrayHelper::map($item, 'id', 'item_name');

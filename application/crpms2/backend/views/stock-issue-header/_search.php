@@ -23,9 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'header_code') ?>
 
-    <?= $form->field($model, 'stock_issue_code') ?>
-
-    <?php // echo $form->field($model, 'stock_status_id') ?>
+    <?= $form->field($model, 'stock_status_id') ?>
 
     <?php // echo $form->field($model, 'employee_id') ?>
 

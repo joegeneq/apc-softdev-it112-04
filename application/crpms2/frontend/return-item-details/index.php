@@ -10,12 +10,14 @@ use yii\grid\GridView;
 $this->title = 'Return Item Details';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
 <div class="return-item-details-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <!----?php echo $this->render('_search', ['model' => $searchModel]);?---->
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    <p>
+        <?= Html::a('Create Return Item Details', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -23,19 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
+            'id',
             'return_item_details_code',
-            //'item_id',
-            ['attribute' => 'item_id',
-            'label' => 'Item Name',
-            'value' => 'item.item_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
+            'item_id',
             'quantity',
-            //'location_id',
-            ['attribute' => 'location_id',
-            'label' => 'Location Name',
-            'value' => 'location.location_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
+            'location_id',
             // 'return_item_header_id',
             // 'accounting_status_id',
             // 'employee_id',

@@ -4,14 +4,12 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ReturnItemDetails */
+/* @var $model frontend\models\ReturnItemDetails */
 
-$this->title = $model->return_item_details_code;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Details', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
-
 <div class="return-item-details-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -30,21 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            //'id',
+            'id',
             'return_item_details_code',
-           
-            ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
-            
+            'item_id',
             'quantity',
-            
-            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-            
-           
-            ['attribute' => 'returnItemHeader.return_item_header_code', 'label' => 'Return Item Header Code'],
-            ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status'],
-            ['attribute' => 'employee.lastname', 'label' => 'Employee Last name'],
-            ['attribute' => 'employee.firstname', 'label' => 'Employee First name'],
-            
+            'location_id',
+            'return_item_header_id',
+            'accounting_status_id',
+            'employee_id',
             'return_to',
             'created_at',
         ],

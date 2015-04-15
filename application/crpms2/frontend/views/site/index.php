@@ -4,7 +4,7 @@
 
 $this->title = 'CRMGH-PMS';
 ?>
-        <!---div class="jumbotron">
+        <!----div class="jumbotron">
 		<h1>Welcome to Cruz-Rabe Maternity and General Hospital </h1>
     </div---->
 
@@ -12,6 +12,7 @@ $this->title = 'CRMGH-PMS';
     </div>
 
 <header><center><img src="../web/images/header1.png" width="1100" height="250" ></center>
+
 
 <center><body background="../web/images/background5.png">
 <div class="site-index">
