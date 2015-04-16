@@ -30,35 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-
             'stock_issue_code',
             'date_created',
-            ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
+              ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
+           
             'quantity',
             'exp_date',
             'unit_cost',
             'amount',
             'remarks:ntext',
             'stock_issue_header_id',
-			 ['attribute' => 'stockIssueDetails.stock_issue_code', 'label' => 'Stock Issue Code'],
-<<<<<<< HEAD
-             
-=======
-
->>>>>>> 7f38b4149ca392349e802f214c95c7ead7704a63
-            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-           ['attribute' => 'stockInventory.stock_inventory_id', 'label' => 'Stock inventory id:'],
-            'stock_issue_code',
-
-            
-            ['attribute' => 'stockStatus.description_name', 'label' => 'Stock Description:'],
-            ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
-
-           ['attribute' => 'stockStatus.description_name', 'label' => 'Stock issued id:'],
-           ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
-
-            'issue_from',
-
         ],
     ]) ?>
 
