@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2015 at 08:11 AM
+-- Generation Time: Apr 16, 2015 at 03:03 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -233,14 +233,16 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `employee_id` int(11) NOT NULL,
   `return_to` varchar(20) DEFAULT 'pharmacist',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `return_item_details`
 --
 
 INSERT INTO `return_item_details` (`id`, `return_item_details_code`, `item_id`, `quantity`, `location_id`, `return_item_header_id`, `accounting_status_id`, `employee_id`, `return_to`, `created_at`) VALUES
-(1, 'RID10', 1, 1, 1, 1, 1, 1, 'pharmacist', '2015-04-11 06:56:09');
+(1, 'RID10', 1, 1, 1, 1, 1, 1, 'pharmacist', '2015-04-11 06:56:09'),
+(2, 'RID11', 2, 1, 2, 1, 1, 1, 'pharmacist', '2015-04-15 11:27:45'),
+(3, 'RID12', 2, 10, 1, 2, 1, 1, 'pharmacist', '2015-04-15 11:33:38');
 
 -- --------------------------------------------------------
 
@@ -257,14 +259,15 @@ CREATE TABLE IF NOT EXISTS `return_item_header` (
   `amount` decimal(10,0) NOT NULL,
   `remarks` longtext,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `return_item_header`
 --
 
 INSERT INTO `return_item_header` (`id`, `patient_id`, `return_item_header_code`, `location_id`, `bed_id`, `amount`, `remarks`, `created`) VALUES
-(1, 1, '1', 1, 1, '1', 'ASDFGHJKL', '2015-04-11 06:55:30');
+(1, 1, 'RIH4', 1, 1, '1', 'ASDFGHJKL', '2015-04-15 06:28:01'),
+(2, 1, 'RIH5', 1, 2, '10', 'ASDFGHJKL', '2015-04-15 11:32:35');
 
 -- --------------------------------------------------------
 
@@ -322,7 +325,16 @@ CREATE TABLE IF NOT EXISTS `stock_issue_header` (
   `stock_status_id` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
   `issue_from` varchar(25) NOT NULL DEFAULT 'pharmacist'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stock_issue_header`
+--
+
+INSERT INTO `stock_issue_header` (`id`, `location_id`, `stock_inventory_id`, `header_code`, `stock_status_id`, `employee_id`, `issue_from`) VALUES
+(1, 1, 1, 'SIH156', 1, 1, 'PHARMACIST'),
+(2, 1, 1, 'SIH156', 1, 1, 'pharmacist'),
+(3, 1, 1, 'SIH156', 1, 1, 'pharmacist');
 
 -- --------------------------------------------------------
 
@@ -457,7 +469,7 @@ ALTER TABLE `stock_issue_details`
 -- Indexes for table `stock_issue_header`
 --
 ALTER TABLE `stock_issue_header`
- ADD KEY `id` (`id`), ADD KEY `stock_issue_header_ibfk_1` (`stock_status_id`), ADD KEY `stock_issue_header_ibfk_2` (`stock_inventory_id`), ADD KEY `stock_issue_header_ibfk_3` (`location_id`), ADD KEY `stock_issue_header_ibfk_4` (`employee_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`), ADD KEY `stock_issue_header_ibfk_1` (`stock_status_id`), ADD KEY `stock_issue_header_ibfk_2` (`stock_inventory_id`), ADD KEY `stock_issue_header_ibfk_3` (`location_id`), ADD KEY `stock_issue_header_ibfk_4` (`employee_id`);
 
 --
 -- Indexes for table `stock_status`
@@ -524,12 +536,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `return_item_details`
 --
 ALTER TABLE `return_item_details`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `return_item_header`
 --
 ALTER TABLE `return_item_header`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `stock_inventory`
 --
@@ -544,7 +556,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `stock_issue_header`
 --
 ALTER TABLE `stock_issue_header`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `stock_status`
 --
@@ -581,7 +593,8 @@ ALTER TABLE `stock_issue_details`
 ADD CONSTRAINT `stock_issue_details_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
 ADD CONSTRAINT `stock_issue_details_ibfk_2` FOREIGN KEY (`stock_issue_header_id`) REFERENCES `stock_issue_header` (`id`),
 ADD CONSTRAINT `stock_issue_details_ibfk_3` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
-ADD CONSTRAINT `stock_issue_details_ibfk_4` FOREIGN KEY (`stock_issue_header_id`) REFERENCES `stock_issue_header` (`id`);
+ADD CONSTRAINT `stock_issue_details_ibfk_4` FOREIGN KEY (`stock_issue_header_id`) REFERENCES `stock_issue_header` (`id`),
+ADD CONSTRAINT `stock_issue_details_ibfk_5` FOREIGN KEY (`stock_issue_header_id`) REFERENCES `stock_issue_header` (`id`);
 
 --
 -- Constraints for table `stock_issue_header`
