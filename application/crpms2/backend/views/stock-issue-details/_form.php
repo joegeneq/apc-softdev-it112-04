@@ -17,7 +17,7 @@ use backend\models\Item;
 
     <?= $form->field($model, 'stock_issue_code')->textInput(['maxlength' => 20]) ?>
 
-	     <?= $form->field($model, 'date_created')->widget(
+ 	     <?= $form->field($model, 'date_created')->widget(
     DatePicker::className(), [
         // inline too, not bad
         'inline' => false, 
@@ -38,10 +38,8 @@ use backend\models\Item;
             $listData,['prompt'=>'Select Item']);
     ?>
 
-	
     <?= $form->field($model, 'quantity')->textInput() ?>
-
-  <?= $form->field($model, 'exp_date')->widget(
+     <?= $form->field($model, 'exp_date')->widget(
     DatePicker::className(), [
         // inline too, not bad
         'inline' => false, 
@@ -52,11 +50,13 @@ use backend\models\Item;
             'format' => 'yyyy-m-d'
         ]
 ]);?>
+
     <?= $form->field($model, 'unit_cost')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'amount')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
