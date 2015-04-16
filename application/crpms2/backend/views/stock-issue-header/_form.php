@@ -3,12 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use backend\models\Location;
 use backend\models\StockInventory;
-use backend\models\StockIssueHeader;
+use backend\models\Location;
 use backend\models\StockStatus;
 use backend\models\Employee;
-
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueHeader */
@@ -24,8 +22,9 @@ use backend\models\Employee;
         $location=Location::find()->all();
         $listData=ArrayHelper::map($location, 'id', 'location_name');
         echo $form->field($model, 'location_id')->dropDownList(
-            $listData,['prompt'=>'Select Location']);
+            $listData,['prompt'=>'Select Location Name']);
     ?>
+
     <!----?= $form->field($model, 'stock_inventory_id')->textInput() ?---->
     <?php
         $stockInventory=StockInventory::find()->all();
@@ -49,7 +48,7 @@ use backend\models\Employee;
         $employee=Employee::find()->all();
         $listData=ArrayHelper::map($employee, 'id', 'lastname', 'firstname');
         echo $form->field($model, 'employee_id')->dropDownList(
-            $listData,['prompt'=>'Select Employee Name']);
+            $listData,['prompt'=>'Select Employee']);
     ?>
 
     <?= $form->field($model, 'issue_from')->textInput(['maxlength' => 25]) ?>
