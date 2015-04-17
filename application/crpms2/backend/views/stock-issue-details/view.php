@@ -6,11 +6,12 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueDetails */
 
-$this->title = $model->id;
+$this->title = $model->stock_issue_code;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Details', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../web/images/background5.png">
+
 <div class="stock-issue-details-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -29,32 +30,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+           // 'id',
             'stock_issue_code',
+            ['attribute' => 'stockIssueHeader.header_code', 'label' => 'Stock Issue Header Code:'],
             'date_created',
-         ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
            
+            ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
             'quantity',
             'exp_date',
             'unit_cost',
             'amount',
             'remarks:ntext',
-            'stock_issue_header_id',
-     ['attribute' => 'stockIssueDetails.stock_issue_code', 'label' => 'Stock Issue Code'],
-
-            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-           ['attribute' => 'stockInventory.stock_inventory_id', 'label' => 'Stock inventory id:'],
-            'stock_issue_code',
-
             
-            ['attribute' => 'stockStatus.description_name', 'label' => 'Stock Description:'],
-            ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
-
-           ['attribute' => 'stockStatus.description_name', 'label' => 'Stock issued id:'],
-           ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
-
-            'issue_from',
-
         ],
     ]) ?>
+
 </div>
