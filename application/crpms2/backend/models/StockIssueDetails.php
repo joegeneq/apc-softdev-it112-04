@@ -55,13 +55,13 @@ class StockIssueDetails extends \yii\db\ActiveRecord
             'id' => 'ID',
             'stock_issue_code' => 'Stock Issue Code',
             'date_created' => 'Date Created',
-            'item_id' => 'Item ID',
+            'item_id' => 'Item Name',
             'quantity' => 'Quantity',
-            'exp_date' => 'Exp Date',
+            'exp_date' => 'Expiration Date',
             'unit_cost' => 'Unit Cost',
             'amount' => 'Amount',
             'remarks' => 'Remarks',
-            'stock_issue_header_id' => 'Stock Issue Header ID',
+            'stock_issue_header_id' => 'Stock Issue Header Code',
         ];
     }
 

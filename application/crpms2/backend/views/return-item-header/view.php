@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemHeader */
 
-$this->title = $model->id;
+$this->title = $model->return_item_header_code;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
            //'id',
-            'patient.lastname',
-            'patient.firstname',
+            [ 'attribute' => 'patient.lastname', 'label' => 'Patient Last Name'],
+            [ 'attribute' => 'patient.firstname', 'label' => 'Patient First Name'],
             'return_item_header_code',
            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
            ['attribute' => 'bed.bed_number', 'label' => 'Bed number:'],

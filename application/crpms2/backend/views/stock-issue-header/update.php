@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueHeader */
 
-$this->title = 'Update Stock Issue Header: ' . ' ' . $model->id;
+$this->title = 'Update Stock Issue Header: ' . ' ' . $model->header_code;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Headers', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->header_code, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <body background="../web/images/background5.png">

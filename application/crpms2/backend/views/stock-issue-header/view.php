@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueHeader */
 
-$this->title = $model->id;
+$this->title = $model->header_code;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -31,10 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             //'id',
             //'location_id',
+        'header_code',
+            
             ['attribute' => 'location.location_name', 'label' => 'Location:'],
             //'stock_inventory_id',
             ['attribute' => 'stockInventory.stock_inventory_id', 'label' => 'Stock Inventory:'],
-            'header_code',
             //'stock_status_id',
             ['attribute' => 'stockStatus.description_name', 'label' => 'Stock Status:'],
             //'employee_id',

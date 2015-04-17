@@ -46,7 +46,7 @@ class ItemDescription extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'item_id' => 'Item ID',
+            'item_id' => 'Item Name',
             'manufacturer' => 'Manufacturer',
             'remarks' => 'Remarks',
             'created_at' => 'Created At',

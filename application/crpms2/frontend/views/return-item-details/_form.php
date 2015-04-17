@@ -63,10 +63,7 @@ use backend\models\Employee;
             $listData,['prompt'=>'Select Employee']);
     ?>
 
-    <?= $form->field($model, 'return_to')->textInput(['maxlength' => 20]) ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
+   
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

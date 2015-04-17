@@ -55,7 +55,7 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
             'id' => 'ID',
             'patient_id' => 'Patient ID',
             'return_item_header_code' => 'Return Item Header Code',
-            'location_id' => 'Location ID',
+            'location_id' => 'Location Name',
             'bed_id' => 'Bed ID',
             'amount' => 'Amount',
             'remarks' => 'Remarks',

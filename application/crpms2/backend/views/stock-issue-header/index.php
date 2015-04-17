@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //'id',
            // 'location_id',
+        'header_code',
             ['attribute' => 'location_id',
             'label' => 'Location Name',
             'value' => 'location.location_name',
@@ -37,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'label' => 'Stock Issue Code',
             'value' => 'stockInventory.stock_inventory_id',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\StockInventory::find()-> all(),'id','stock_inventory_id')],
-            'header_code',
+            
             //'stock_status_id',
             ['attribute' => 'stock_status_id',
             'label' => 'Stock Status',

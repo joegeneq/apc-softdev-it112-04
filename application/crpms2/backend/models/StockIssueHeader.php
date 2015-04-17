@@ -51,11 +51,11 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'location_id' => 'Location ID',
-            'stock_inventory_id' => 'Stock Inventory ID',
+            'location_id' => 'Location Name',
+            'stock_inventory_id' => 'Stock Inventory Name',
             'header_code' => 'Header Code',
-            'stock_status_id' => 'Stock Status ID',
-            'employee_id' => 'Employee ID',
+            'stock_status_id' => 'Stock Status',
+            'employee_id' => 'Employee Full name',
             'issue_from' => 'Issue From',
         ];
     }

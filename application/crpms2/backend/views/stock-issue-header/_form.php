@@ -16,6 +16,7 @@ use backend\models\Employee;
 <div class="stock-issue-header-form">
 
     <?php $form = ActiveForm::begin(); ?>
+<?= $form->field($model, 'header_code')->textInput(['maxlength' => 20]) ?>
 
     <!----?= $form->field($model, 'location_id')->textInput() ?---->
     <?php
@@ -33,8 +34,7 @@ use backend\models\Employee;
             $listData,['prompt'=>'Select Stock Inventory']);
     ?>
 
-    <?= $form->field($model, 'header_code')->textInput(['maxlength' => 20]) ?>
-
+    
     <!----?= $form->field($model, 'stock_status_id')->textInput() ?---->
     <?php
         $stockStatus=StockStatus::find()->all();
@@ -51,8 +51,7 @@ use backend\models\Employee;
             $listData,['prompt'=>'Select Employee']);
     ?>
 
-    <?= $form->field($model, 'issue_from')->textInput(['maxlength' => 25]) ?>
-
+    
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

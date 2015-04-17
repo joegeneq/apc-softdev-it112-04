@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
          
    ['attribute' => 'bed_id',
-            'label' => 'Bed Id',
+            'label' => 'Bed Number',
             'value' => 'bed.bed_number',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Bed::find()-> all(),'id','bed_number')],
            
