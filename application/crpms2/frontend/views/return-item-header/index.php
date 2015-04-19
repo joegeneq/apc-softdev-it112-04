@@ -10,8 +10,6 @@ use yii\grid\GridView;
 $this->title = 'Return Item Headers';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
-
 <div class="return-item-header-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -27,24 +25,34 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-           // 'id',
+            //'id',
+            'return_item_header_code',
+           // 'date_prepared',
+            //'patient_id',
             [
                 'attribute' => 'patient_id',
                 'label' => 'Patient Lastname',
                 'value' => 'patient.lastname'
             ],
-            'return_item_header_code',
-            ['attribute' => 'location_id',
+           // 'location_id',
+              ['attribute' => 'location_id',
             'label' => 'Location Name',
             'value' => 'location.location_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-            ['attribute' => 'bed_id',
-            'label' => 'Bed Number',
-            'value' => 'bed.bed_number',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Bed::find()-> all(),'id','bed_number')],
-             // 'amount',
-            // 'remarks:ntext',
-            // 'created',
+          
+            // 'bed_id',
+            // 'total_amount',
+            // 'employee_id',
+            // 'employee_lastname',
+            // 'employee_firstname',
+           // 'accounting_status_id',
+             ['attribute' => 'accounting_status_id',
+            'label' => 'Accounting Status',
+            'value' => 'accountingStatus.description',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\AccountingStatus::find()-> all(),'id','description')],
+          
+            // 'date_created',
+            // 'date_updated',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

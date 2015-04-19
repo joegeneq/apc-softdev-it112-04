@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\StockInventory;
+use backend\models\Manufacturer;
 
 /**
- * StockInventorySearch represents the model behind the search form about `backend\models\StockInventory`.
+ * ManufacturerSearch represents the model behind the search form about `backend\models\Manufacturer`.
  */
-class StockInventorySearch extends StockInventory
+class ManufacturerSearch extends Manufacturer
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class StockInventorySearch extends StockInventory
     public function rules()
     {
         return [
-            [['id', 'item_id', 'location_id', 'quantity_onhand', 'quantity_onorder'], 'integer'],
-            [['stock_inventory_code', 'created'], 'safe'],
+            [['id'], 'integer'],
+            [['manufacturer_name', 'description'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class StockInventorySearch extends StockInventory
      */
     public function search($params)
     {
-        $query = StockInventory::find();
+        $query = Manufacturer::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,14 +57,10 @@ class StockInventorySearch extends StockInventory
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'item_id' => $this->item_id,
-            'location_id' => $this->location_id,
-            'quantity_onhand' => $this->quantity_onhand,
-            'quantity_onorder' => $this->quantity_onorder,
-            'created' => $this->created,
         ]);
 
-        $query->andFilterWhere(['like', 'stock_inventory_code', $this->stock_inventory_code]);
+        $query->andFilterWhere(['like', 'manufacturer_name', $this->manufacturer_name])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

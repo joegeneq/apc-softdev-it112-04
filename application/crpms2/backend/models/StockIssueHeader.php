@@ -8,12 +8,17 @@ use Yii;
  * This is the model class for table "stock_issue_header".
  *
  * @property integer $id
+ * @property string $stock_issue_header_code
+ * @property string $date_prepared
  * @property integer $location_id
  * @property integer $stock_inventory_id
- * @property string $header_code
  * @property integer $stock_status_id
  * @property integer $employee_id
- * @property string $issue_from
+ * @property integer $employee_lastname
+ * @property integer $employee_firstname
+ * @property integer $employee_middlename
+ * @property string $date_created
+ * @property string $date_updated
  *
  * @property StockIssueDetails[] $stockIssueDetails
  * @property StockStatus $stockStatus
@@ -37,10 +42,10 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['location_id', 'stock_inventory_id', 'header_code', 'stock_status_id', 'employee_id'], 'required'],
-            [['location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id'], 'integer'],
-            [['header_code'], 'string', 'max' => 20],
-            [['issue_from'], 'string', 'max' => 25]
+            [['stock_issue_header_code', 'date_prepared', 'location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'employee_middlename'], 'required'],
+            [['date_prepared', 'date_created', 'date_updated'], 'safe'],
+            [['location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'employee_middlename'], 'integer'],
+            [['stock_issue_header_code'], 'string', 'max' => 20]
         ];
     }
 
@@ -51,12 +56,17 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'location_id' => 'Location Name',
-            'stock_inventory_id' => 'Stock Inventory Name',
-            'header_code' => 'Header Code',
-            'stock_status_id' => 'Stock Status',
-            'employee_id' => 'Employee Full name',
-            'issue_from' => 'Issue From',
+            'stock_issue_header_code' => 'Stock Issue Header Code',
+            'date_prepared' => 'Date Prepared',
+            'location_id' => 'Location ID',
+            'stock_inventory_id' => 'Stock Inventory ID',
+            'stock_status_id' => 'Stock Status ID',
+            'employee_id' => 'Employee ID',
+            'employee_lastname' => 'Employee Lastname',
+            'employee_firstname' => 'Employee Firstname',
+            'employee_middlename' => 'Employee Middlename',
+            'date_created' => 'Date Created',
+            'date_updated' => 'Date Updated',
         ];
     }
 

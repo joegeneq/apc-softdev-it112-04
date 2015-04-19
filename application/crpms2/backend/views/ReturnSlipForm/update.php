@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\StockInventory */
+/* @var $model backend\models\ReturnItemHeader */
 
-$this->title = 'Update Stock Inventory: ' . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Stock Inventories', 'url' => ['index']];
+$this->title = 'Update Return Item Header: ' . ' ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="stock-inventory-update">
+<div class="return-item-header-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

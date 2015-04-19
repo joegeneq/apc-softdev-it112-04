@@ -8,16 +8,14 @@ use Yii;
  * This is the model class for table "stock_inventory".
  *
  * @property integer $id
- * @property string $stock_inventory_id
- * @property integer $quantity_onhand
- * @property integer $quantity_onorder
  * @property integer $item_id
  * @property integer $location_id
+ * @property integer $quantity_onhand
+ * @property integer $quantity_onorder
+ * @property string $stock_inventory_code
  * @property string $created
  *
- * @property Item $item
- * @property Location $location
- * @property StockIssueDetails[] $stockIssueDetails
+ * @property StockIssueHeader[] $stockIssueHeaders
  */
 class StockInventory extends \yii\db\ActiveRecord
 {
@@ -35,10 +33,10 @@ class StockInventory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['stock_inventory_id', 'quantity_onhand', 'quantity_onorder', 'location_id'], 'required'],
-            [['quantity_onhand', 'quantity_onorder', 'item_id', 'location_id'], 'integer'],
-            [['created','item_id'], 'safe'],
-            [['stock_inventory_id'], 'string', 'max' => 20]
+            [['item_id', 'location_id', 'quantity_onhand', 'quantity_onorder', 'stock_inventory_code'], 'required'],
+            [['item_id', 'location_id', 'quantity_onhand', 'quantity_onorder'], 'integer'],
+            [['created'], 'safe'],
+            [['stock_inventory_code'], 'string', 'max' => 20]
         ];
     }
 
@@ -49,11 +47,11 @@ class StockInventory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'stock_inventory_id' => 'Stock Inventory Code',
+            'item_id' => 'Item ID',
+            'location_id' => 'Location ID',
             'quantity_onhand' => 'Quantity Onhand',
             'quantity_onorder' => 'Quantity Onorder',
-            'item_id' => 'Item Name',
-            'location_id' => 'Location Name',
+            'stock_inventory_code' => 'Stock Inventory Code',
             'created' => 'Created',
         ];
     }
@@ -61,24 +59,8 @@ class StockInventory extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getItem()
+    public function getStockIssueHeaders()
     {
-        return $this->hasOne(Item::className(), ['id' => 'item_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getLocation()
-    {
-        return $this->hasOne(Location::className(), ['id' => 'location_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getStockIssueDetails()
-    {
-        return $this->hasMany(StockIssueDetails::className(), ['stock_inventory_id' => 'id']);
+        return $this->hasMany(StockIssueHeader::className(), ['stock_inventory_id' => 'id']);
     }
 }
