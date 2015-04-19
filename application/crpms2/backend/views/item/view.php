@@ -6,12 +6,11 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Item */
 
-$this->title = $model->item_name;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Items', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../web/images/background5.png">
-
 <div class="item-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -33,9 +32,16 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'item_code',
             'item_name',
-            'description_item:ntext',
             //'item_category_id',
-			['attribute' => 'itemCategory.category_name', 'label' => 'Category Name'],
+            ['attribute' => 'itemCategory.category_name', 'label' => 'Item Category Name:'],
+            //'manufacturer_id',
+            ['attribute' => 'manufacturer.manufacturer_name', 'label' => 'Manufacturer Name:'],
+            //'generic_name_id',
+            ['attribute' => 'genericName.generic_name', 'label' => 'Generic Name:'],
+            'minimum_reorder_quantity',
+            'remarks:ntext',
+            'date_created',
+            'date_updated',
         ],
     ]) ?>
 

@@ -8,7 +8,6 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <body background="../web/images/background5.png">
-
 <div class="item-search">
 
     <?php $form = ActiveForm::begin([
@@ -22,9 +21,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'item_name') ?>
 
-    <?= $form->field($model, 'description_item') ?>
-
     <?= $form->field($model, 'item_category_id') ?>
+
+    <?= $form->field($model, 'manufacturer_id') ?>
+
+    <?php // echo $form->field($model, 'generic_name_id') ?>
+
+    <?php // echo $form->field($model, 'minimum_reorder_quantity') ?>
+
+    <?php // echo $form->field($model, 'remarks') ?>
+
+    <?php // echo $form->field($model, 'date_created') ?>
+
+    <?php // echo $form->field($model, 'date_updated') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

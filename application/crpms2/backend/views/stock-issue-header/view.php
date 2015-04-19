@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueHeader */
 
-$this->title = $model->header_code;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Issue Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -30,17 +30,25 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             //'id',
+            //'stock_issue_header_code',
+            ['attribute' => 'stockIssueHeader.stock_issue_header_code', 'label' => 'Header Code:'],
+            'date_prepared',
             //'location_id',
-        'header_code',
-            
-            ['attribute' => 'location.location_name', 'label' => 'Location:'],
+            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
             //'stock_inventory_id',
-            ['attribute' => 'stockInventory.stock_inventory_id', 'label' => 'Stock Inventory:'],
+            ['attribute' => 'stockInventory.stock_inventory_code', 'label' => 'Inventory Code:'],
             //'stock_status_id',
             ['attribute' => 'stockStatus.description_name', 'label' => 'Stock Status:'],
             //'employee_id',
-            ['attribute' => 'employee.lastname', 'label' => 'Employee Name:'],
-            'issue_from',
+            ['attribute' => 'employee.emp_code', 'label' => 'Employee Code:'],
+            //'employee_lastname',
+            ['attribute' => 'employee.lastname', 'label' => 'Lastame:'],
+            //'employee_firstname',
+            ['attribute' => 'employee.firstname', 'label' => 'Firstname:'],
+            //'employee_middlename',
+            ['attribute' => 'employee.middlename', 'label' => 'Middle Name:'],
+            'date_created',
+            'date_updated',
         ],
     ]) ?>
 
