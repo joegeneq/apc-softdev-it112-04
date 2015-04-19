@@ -38,12 +38,12 @@ use backend\models\GenericName;
     ?>
 
     <!----?= $form->field($model, 'generic_name_id')->textInput() ?---->
-    <!----?php
+    <?php
         $genericName=GenericName::find()->all();
         $listData=ArrayHelper::map($genericName, 'id', 'generic_name');
         echo $form->field($model, 'generic_name_id')->dropDownList(
             $listData,['prompt'=>'Select Generic Name']);
-    ?---->
+    ?>
 
     <?= $form->field($model, 'minimum_reorder_quantity')->textInput() ?>
 

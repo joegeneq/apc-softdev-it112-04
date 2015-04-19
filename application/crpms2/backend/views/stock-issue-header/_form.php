@@ -8,6 +8,7 @@ use backend\models\Location;
 use backend\models\StockInventory;
 use backend\models\StockStatus;
 use backend\models\Employee;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueHeader */
@@ -20,7 +21,18 @@ use backend\models\Employee;
 
     <?= $form->field($model, 'stock_issue_header_code')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'date_prepared')->textInput() ?>
+    <!----?= $form->field($model, 'date_prepared')->textInput() ?---->
+    <?= $form->field($model, 'date_prepared')->widget(
+    DatePicker::className(), [
+        // inline too, not bad
+        'inline' => false, 
+        // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-m-d'
+        ]
+]);?>
 
     <!----?= $form->field($model, 'location_id')->textInput() ?---->
     <?php
