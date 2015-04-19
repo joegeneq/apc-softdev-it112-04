@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2015 at 04:27 PM
+-- Generation Time: Apr 19, 2015 at 04:48 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -224,7 +224,6 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `item_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `amount` decimal(10,0) NOT NULL,
-  `return_to` varchar(20) DEFAULT 'pharmacist',
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
