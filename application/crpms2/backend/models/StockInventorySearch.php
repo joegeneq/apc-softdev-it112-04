@@ -18,8 +18,8 @@ class StockInventorySearch extends StockInventory
     public function rules()
     {
         return [
-            [['id', 'quantity_onhand', 'quantity_onorder', 'location_id'], 'integer'],
-            [['stock_inventory_id', 'created', 'item_id'], 'safe'],
+            [['id', 'item_id', 'location_id', 'quantity_onhand', 'quantity_onorder'], 'integer'],
+            [['stock_inventory_code', 'created'], 'safe'],
         ];
     }
 
@@ -54,19 +54,18 @@ class StockInventorySearch extends StockInventory
             // $query->where('0=1');
             return $dataProvider;
         }
-        $query->joinWith('item');
+
         $query->andFilterWhere([
             'id' => $this->id,
+            'item_id' => $this->item_id,
+            'location_id' => $this->location_id,
             'quantity_onhand' => $this->quantity_onhand,
             'quantity_onorder' => $this->quantity_onorder,
-            //'item_id' => $this->item_id,
-            'location_id' => $this->location_id,
             'created' => $this->created,
         ]);
 
-        $query->andFilterWhere(['like', 'stock_inventory_id', $this->stock_inventory_id])
-        ->andFilterWhere(['like', 'item.item_name', $this->item_id]);
-            
+        $query->andFilterWhere(['like', 'stock_inventory_code', $this->stock_inventory_code]);
+
         return $dataProvider;
     }
 }

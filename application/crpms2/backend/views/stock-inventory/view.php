@@ -6,12 +6,11 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockInventory */
 
-$this->title = $model->stock_inventory_id;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Stock Inventories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="stock-inventory-view">
-<body background="../web/images/background5.png">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,14 +28,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            //'id',
-            'stock_inventory_id',
+           // 'id',
+            'item_id',
+            [ 'attribute' => 'item.item_name', 'label' => 'Item Name'],
+             [ 'attribute' => 'location.location_name', 'label' => 'Location Name'],
+           
+            //'location_id',
             'quantity_onhand',
             'quantity_onorder',
-           // 'item_id',
-            ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
-            ['attribute' => 'location.location_name', 'label' => 'Location:'],
-            //'location_id',
+            'stock_inventory_code',
             'created',
         ],
     ]) ?>

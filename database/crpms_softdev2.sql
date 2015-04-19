@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2015 at 04:48 PM
+-- Generation Time: Apr 19, 2015 at 05:57 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -265,13 +265,6 @@ CREATE TABLE IF NOT EXISTS `stock_inventory` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `stock_inventory`
---
-
-INSERT INTO `stock_inventory` (`id`, `item_id`, `location_id`, `quantity_onhand`, `quantity_onorder`, `stock_inventory_code`, `created`) VALUES
-(1, 1, 3, 1000, 0, 'TSTNG1', '2015-03-25 13:40:04');
-
 -- --------------------------------------------------------
 
 --
@@ -391,7 +384,7 @@ ALTER TABLE `generic_name`
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
- ADD PRIMARY KEY (`id`), ADD KEY `item_ibfk_1` (`item_category_id`), ADD KEY `item_ibfk_4` (`generic_name_id`), ADD KEY `item_ibfk_5` (`manufacturer_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `item_ibfk_1` (`item_category_id`), ADD KEY `item_ibfk_4` (`generic_name_id`), ADD KEY `item_ibfk_5` (`manufacturer_id`), ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `item_category`
@@ -586,6 +579,13 @@ ADD CONSTRAINT `return_item_header_ibfk_2` FOREIGN KEY (`bed_id`) REFERENCES `be
 ADD CONSTRAINT `return_item_header_ibfk_3` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`),
 ADD CONSTRAINT `return_item_header_ibfk_5` FOREIGN KEY (`bed_id`) REFERENCES `bed` (`id`),
 ADD CONSTRAINT `return_item_header_ibfk_6` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+
+--
+-- Constraints for table `stock_inventory`
+--
+ALTER TABLE `stock_inventory`
+ADD CONSTRAINT `stock_inventory_ibfk_3` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
+ADD CONSTRAINT `stock_inventory_ibfk_4` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
 
 --
 -- Constraints for table `stock_issue_details`

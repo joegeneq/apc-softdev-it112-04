@@ -18,9 +18,9 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
     public function rules()
     {
         return [
-            [['id', 'location_id', 'bed_id'], 'integer'],
-            [['return_item_header_code', 'remarks', 'created', 'patient_id'], 'safe'],
-            [['amount'], 'number'],
+            [['id', 'date_prepared', 'location_id', 'bed_id', 'accounting_status_id'], 'integer'],
+            [['return_item_header_code', 'date_created', 'date_updated', 'patient_id', 'employee_id', 'employee_lastname', 'employee_firstname'], 'safe'],
+            [['total_amount'], 'number'],
         ];
     }
 
@@ -55,19 +55,23 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
             // $query->where('0=1');
             return $dataProvider;
         }
-        $query->joinWith('patient');
+
         $query->andFilterWhere([
             'id' => $this->id,
-          //  'patient_id' => $this->patient_id,
+            'date_prepared' => $this->date_prepared,
+           // 'patient_id' => $this->patient_id,
             'location_id' => $this->location_id,
             'bed_id' => $this->bed_id,
-            'amount' => $this->amount,
-            'created' => $this->created,
+            'total_amount' => $this->total_amount,
+            'employee_id' => $this->employee_id,
+            'employee_lastname' => $this->employee_lastname,
+            'employee_firstname' => $this->employee_firstname,
+            'accounting_status_id' => $this->accounting_status_id,
+            'date_created' => $this->date_created,
+            'date_updated' => $this->date_updated,
         ]);
 
-        $query->andFilterWhere(['like', 'return_item_header_code', $this->return_item_header_code])
-            ->andFilterWhere(['like', 'remarks', $this->remarks])
-         ->andFilterWhere(['like', 'patient.lastname', $this->patient_id]);
+        $query->andFilterWhere(['like', 'return_item_header_code', $this->return_item_header_code]);
 
         return $dataProvider;
     }

@@ -8,16 +8,25 @@ use Yii;
  * This is the model class for table "return_item_header".
  *
  * @property integer $id
- * @property integer $patient_id
  * @property string $return_item_header_code
+ * @property integer $date_prepared
+ * @property integer $patient_id
  * @property integer $location_id
  * @property integer $bed_id
- * @property string $amount
- * @property string $remarks
- * @property string $created
+ * @property string $total_amount
+ * @property integer $employee_id
+ * @property integer $employee_lastname
+ * @property integer $employee_firstname
+ * @property integer $accounting_status_id
+ * @property string $date_created
+ * @property string $date_updated
  *
  * @property ReturnItemDetails[] $returnItemDetails
  * @property Location $location
+ * @property Employee $employee
+ * @property Employee $employeeLastname
+ * @property Employee $employeeFirstname
+ * @property AccountingStatus $accountingStatus
  * @property Bed $bed
  * @property Patient $patient
  */
@@ -37,11 +46,10 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['patient_id', 'return_item_header_code', 'location_id', 'bed_id', 'amount'], 'required'],
-            [['location_id', 'bed_id'], 'integer'],
-            [['amount'], 'number'],
-            [['remarks'], 'string'],
-            [['created','patient_id' ], 'safe'],
+            [['return_item_header_code', 'date_prepared', 'location_id', 'bed_id', 'total_amount', 'accounting_status_id'], 'required'],
+            [['date_prepared', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
+            [['total_amount'], 'number'],
+            [['date_created', 'date_updated', 'patient_id', 'employee_id', 'employee_lastname', 'employee_firstname'], 'safe'],
             [['return_item_header_code'], 'string', 'max' => 20]
         ];
     }
@@ -53,13 +61,18 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'patient_id' => 'Patient ID',
             'return_item_header_code' => 'Return Item Header Code',
-            'location_id' => 'Location ID',
-            'bed_id' => 'Bed ID',
-            'amount' => 'Amount',
-            'remarks' => 'Remarks',
-            'created' => 'Created',
+            'date_prepared' => 'Date Prepared',
+            'patient_id' => 'Patient ID',
+            'location_id' => 'Location Name',
+            'bed_id' => 'Bed Number',
+            'total_amount' => 'Total Amount',
+            'employee_id' => 'Returned By:',
+            'employee_lastname' => 'Received By:',
+            'employee_firstname' => 'Approved By:',
+            'accounting_status_id' => 'Accounting Status ',
+            'date_created' => 'Date Created',
+            'date_updated' => 'Date Updated',
         ];
     }
 
@@ -77,6 +90,38 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function getLocation()
     {
         return $this->hasOne(Location::className(), ['id' => 'location_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmployee()
+    {
+        return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmployeeLastname()
+    {
+        return $this->hasOne(Employee::className(), ['id' => 'employee_lastname']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmployeeFirstname()
+    {
+        return $this->hasOne(Employee::className(), ['id' => 'employee_firstname']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAccountingStatus()
+    {
+        return $this->hasOne(AccountingStatus::className(), ['id' => 'accounting_status_id']);
     }
 
     /**
