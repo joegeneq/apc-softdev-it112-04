@@ -8,12 +8,15 @@ use Yii;
  * This is the model class for table "patient".
  *
  * @property integer $id
- * @property integer $patient_id_no
+ * @property string $patient_id_no
  * @property string $lastname
  * @property string $firstname
  * @property string $middlename
  * @property string $address
  * @property string $birthdate
+ * @property integer $telephone_number
+ * @property integer $cellphone_number
+ * @property string $email_address
  * @property string $created_at
  *
  * @property ReturnItemHeader[] $returnItemHeaders
@@ -35,9 +38,10 @@ class Patient extends \yii\db\ActiveRecord
     {
         return [
             [['patient_id_no', 'lastname', 'firstname', 'middlename', 'address', 'birthdate'], 'required'],
-            [['patient_id_no'], 'integer'],
             [['birthdate', 'created_at'], 'safe'],
-            [['lastname', 'firstname', 'address'], 'string', 'max' => 25],
+            [['telephone_number', 'cellphone_number'], 'integer'],
+            [['patient_id_no'], 'string', 'max' => 20],
+            [['lastname', 'firstname', 'address', 'email_address'], 'string', 'max' => 25],
             [['middlename'], 'string', 'max' => 10]
         ];
     }
@@ -55,6 +59,9 @@ class Patient extends \yii\db\ActiveRecord
             'middlename' => 'Middlename',
             'address' => 'Address',
             'birthdate' => 'Birthdate',
+            'telephone_number' => 'Telephone Number',
+            'cellphone_number' => 'Cellphone Number',
+            'email_address' => 'Email Address',
             'created_at' => 'Created At',
         ];
     }
