@@ -14,8 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="return-item-details-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <!----?php echo $this->render('_search', ['model' => $searchModel]);?---->
-
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,23 +23,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            'return_item_details_code',
+            //'return_item_header_id',
+            ['attribute' => 'return_item_header_id',
+            'label' => 'Return Item Header Code',
+            'value' => 'returnItemHeader.return_item_header_code',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\ReturnItemHeader::find()-> all(),'id','return_item_header_code')],
             //'item_id',
-            ['attribute' => 'item_id',
-            'label' => 'Item Name',
+            ['attribute' =>'item_id',
+            'label' => 'Item name',
             'value' => 'item.item_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
             'quantity',
-            //'location_id',
-            ['attribute' => 'location_id',
-            'label' => 'Location Name',
-            'value' => 'location.location_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-            // 'return_item_header_id',
-            // 'accounting_status_id',
-            // 'employee_id',
+            'amount',
             // 'return_to',
-            // 'created_at',
+            // 'date_created',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

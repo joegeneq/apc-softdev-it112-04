@@ -18,8 +18,9 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
     public function rules()
     {
         return [
-            [['id', 'item_id', 'quantity', 'location_id', 'return_item_header_id', 'accounting_status_id', 'employee_id'], 'integer'],
-            [['return_item_details_code', 'return_to', 'created_at'], 'safe'],
+            [['id', 'return_item_header_id', 'item_id', 'quantity'], 'integer'],
+            [['amount'], 'number'],
+            [['return_to', 'date_created'], 'safe'],
         ];
     }
 
@@ -57,17 +58,14 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'return_item_header_id' => $this->return_item_header_id,
             'item_id' => $this->item_id,
             'quantity' => $this->quantity,
-            'location_id' => $this->location_id,
-            'return_item_header_id' => $this->return_item_header_id,
-            'accounting_status_id' => $this->accounting_status_id,
-            'employee_id' => $this->employee_id,
-            'created_at' => $this->created_at,
+            'amount' => $this->amount,
+            'date_created' => $this->date_created,
         ]);
 
-        $query->andFilterWhere(['like', 'return_item_details_code', $this->return_item_details_code])
-            ->andFilterWhere(['like', 'return_to', $this->return_to]);
+        $query->andFilterWhere(['like', 'return_to', $this->return_to]);
 
         return $dataProvider;
     }

@@ -16,9 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+
     <p>
         <?= Html::a('Create Stock Issue Header', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -27,16 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            //'stock_issue_header_code',
-            ['attribute' => 'stock_issue_header_code',
-            'label' => 'Header Code',
-            'value' => 'stockIssueHeader.stock_issue_header_code',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','stock_issue_header_code')],
-            //'date_prepared',
-             ['attribute' => 'date_prepared',
-            'label' => 'Date Prepared',
-            'value' => 'stockIssueHeader.date_prepared',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','date_prepared')],
+            'stock_issue_header_code',
+            'date_prepared',
             //'location_id',
             ['attribute' => 'location_id',
             'label' => 'Location name',
