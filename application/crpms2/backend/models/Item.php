@@ -18,9 +18,11 @@ use Yii;
  * @property string $date_created
  * @property string $date_updated
  *
+ * @property ItemCategory $itemCategory
  * @property GenericName $genericName
  * @property Manufacturer $manufacturer
  * @property ReturnItemDetails[] $returnItemDetails
+ * @property StockInventory[] $stockInventories
  * @property StockIssueDetails[] $stockIssueDetails
  */
 class Item extends \yii\db\ActiveRecord
@@ -70,6 +72,14 @@ class Item extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getItemCategory()
+    {
+        return $this->hasOne(ItemCategory::className(), ['id' => 'item_category_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getGenericName()
     {
         return $this->hasOne(GenericName::className(), ['id' => 'generic_name_id']);
@@ -89,6 +99,14 @@ class Item extends \yii\db\ActiveRecord
     public function getReturnItemDetails()
     {
         return $this->hasMany(ReturnItemDetails::className(), ['item_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStockInventories()
+    {
+        return $this->hasMany(StockInventory::className(), ['item_id' => 'id']);
     }
 
     /**

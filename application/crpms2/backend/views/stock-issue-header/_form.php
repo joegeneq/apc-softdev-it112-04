@@ -57,36 +57,21 @@ use dosamigos\datepicker\DatePicker;
             $listData,['prompt'=>'Select Stock Status']);
     ?>
 
-    <!----?= $form->field($model, 'employee_id')->textInput() ?---->
-     <?php
-        $employee=Employee::find()->all();
-        $listData=ArrayHelper::map($employee, 'id', 'emp_code');
-        echo $form->field($model, 'employee_id')->dropDownList(
-            $listData,['prompt'=>'Select Item']);
+     <?= $form->field($model, 'employee_id')->dropDownList(
+        ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
+        ['prompt'=>'Select Employee'] ) 
     ?>
-
-    <!----?= $form->field($model, 'employee_lastname')->textInput() ?---->
- <?php
-        $employee=Employee::find()->all();
-        $listData=ArrayHelper::map($employee, 'id', 'lastname');
-        echo $form->field($model, 'employee_lastname')->dropDownList(
-            $listData,['prompt'=>'Select Lastname']);
+    <?= $form->field($model, 'employee_lastname')->dropDownList(
+        ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
+        ['prompt'=>'Select Employee'] ) 
     ?>
-
-    <!----?= $form->field($model, 'employee_firstname')->textInput() ?---->
- <?php
-        $employee=Employee::find()->all();
-        $listData=ArrayHelper::map($employee, 'id', 'firstname');
-        echo $form->field($model, 'employee_firstname')->dropDownList(
-            $listData,['prompt'=>'Select Firstname']);
+ <?= $form->field($model, 'employee_firstname')->dropDownList(
+        ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
+        ['prompt'=>'Select Employee'] ) 
     ?>
-
-    <!----?= $form->field($model, 'employee_middlename')->textInput() ?---->
- <?php
-        $employee=Employee::find()->all();
-        $listData=ArrayHelper::map($employee, 'id', 'middlename');
-        echo $form->field($model, 'employee_middlename')->dropDownList(
-            $listData,['prompt'=>'Select Middlename']);
+    <?= $form->field($model, 'employee_middlename')->dropDownList(
+        ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
+        ['prompt'=>'Select Employee'] ) 
     ?>
 
     <!----?= $form->field($model, 'date_created')->textInput() ?---->

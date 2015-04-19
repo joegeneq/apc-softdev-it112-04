@@ -15,6 +15,8 @@ use Yii;
  * @property string $stock_inventory_code
  * @property string $created
  *
+ * @property Item $item
+ * @property Location $location
  * @property StockIssueHeader[] $stockIssueHeaders
  */
 class StockInventory extends \yii\db\ActiveRecord
@@ -54,6 +56,22 @@ class StockInventory extends \yii\db\ActiveRecord
             'stock_inventory_code' => 'Stock Inventory Code',
             'created' => 'Created',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getItem()
+    {
+        return $this->hasOne(Item::className(), ['id' => 'item_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLocation()
+    {
+        return $this->hasOne(Location::className(), ['id' => 'location_id']);
     }
 
     /**
