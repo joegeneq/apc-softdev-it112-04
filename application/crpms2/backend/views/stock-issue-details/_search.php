@@ -17,9 +17,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'stock_issue_code') ?>
+    <?= $form->field($model, 'stock_issue_header_id') ?>
 
-    <?= $form->field($model, 'date_created') ?>
+    <?= $form->field($model, 'date_release') ?>
 
     <?= $form->field($model, 'item_id') ?>
 
@@ -33,7 +33,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'remarks') ?>
 
-    <?php // echo $form->field($model, 'stock_issue_header_id') ?>
+    <?php // echo $form->field($model, 'date_created') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
