@@ -18,8 +18,8 @@ class PatientSearch extends Patient
     public function rules()
     {
         return [
-            [['id', 'patient_id_no'], 'integer'],
-            [['lastname', 'firstname', 'middlename', 'address', 'birthdate', 'created_at'], 'safe'],
+            [['id', 'telephone_number', 'cellphone_number'], 'integer'],
+            [['patient_id_no', 'lastname', 'firstname', 'middlename', 'address', 'birthdate', 'email_address', 'created_at'], 'safe'],
         ];
     }
 
@@ -57,15 +57,18 @@ class PatientSearch extends Patient
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'patient_id_no' => $this->patient_id_no,
             'birthdate' => $this->birthdate,
+            'telephone_number' => $this->telephone_number,
+            'cellphone_number' => $this->cellphone_number,
             'created_at' => $this->created_at,
         ]);
 
-        $query->andFilterWhere(['like', 'lastname', $this->lastname])
+        $query->andFilterWhere(['like', 'patient_id_no', $this->patient_id_no])
+            ->andFilterWhere(['like', 'lastname', $this->lastname])
             ->andFilterWhere(['like', 'firstname', $this->firstname])
             ->andFilterWhere(['like', 'middlename', $this->middlename])
-            ->andFilterWhere(['like', 'address', $this->address]);
+            ->andFilterWhere(['like', 'address', $this->address])
+            ->andFilterWhere(['like', 'email_address', $this->email_address]);
 
         return $dataProvider;
     }

@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\PatientSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../web/images/background5.png">
+
 <div class="patient-search">
 
     <?php $form = ActiveForm::begin([
@@ -28,6 +28,12 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'address') ?>
 
     <?php // echo $form->field($model, 'birthdate') ?>
+
+    <?php // echo $form->field($model, 'telephone_number') ?>
+
+    <?php // echo $form->field($model, 'cellphone_number') ?>
+
+    <?php // echo $form->field($model, 'email_address') ?>
 
     <?php // echo $form->field($model, 'created_at') ?>
 
