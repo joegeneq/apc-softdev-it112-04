@@ -18,7 +18,7 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
     public function rules()
     {
         return [
-            [['id', 'date_prepared', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'employee_middlename', 'accounting_status_id'], 'integer'],
+            [['id', 'date_prepared', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
             [['return_item_header_code', 'date_created', 'date_updated'], 'safe'],
             [['total_amount'], 'number'],
         ];
@@ -66,7 +66,6 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
             'employee_id' => $this->employee_id,
             'employee_lastname' => $this->employee_lastname,
             'employee_firstname' => $this->employee_firstname,
-            'employee_middlename' => $this->employee_middlename,
             'accounting_status_id' => $this->accounting_status_id,
             'date_created' => $this->date_created,
             'date_updated' => $this->date_updated,
