@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Item;
+use backend\models\GenericName;
 
 /**
- * ItemSearch represents the model behind the search form about `backend\models\Item`.
+ * GenericNameSearch represents the model behind the search form about `backend\models\GenericName`.
  */
-class ItemSearch extends Item
+class GenericNameSearch extends GenericName
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ItemSearch extends Item
     public function rules()
     {
         return [
-            [['id', 'item_category_id', 'manufacturer_id', 'generic_name_id', 'minimum_reorder_quantity'], 'integer'],
-            [['item_code', 'item_name', 'remarks', 'date_created', 'date_updated'], 'safe'],
+            [['id'], 'integer'],
+            [['generic_name', 'description'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ItemSearch extends Item
      */
     public function search($params)
     {
-        $query = Item::find();
+        $query = GenericName::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,17 +57,10 @@ class ItemSearch extends Item
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'item_category_id' => $this->item_category_id,
-            'manufacturer_id' => $this->manufacturer_id,
-            'generic_name_id' => $this->generic_name_id,
-            'minimum_reorder_quantity' => $this->minimum_reorder_quantity,
-            'date_created' => $this->date_created,
-            'date_updated' => $this->date_updated,
         ]);
 
-        $query->andFilterWhere(['like', 'item_code', $this->item_code])
-            ->andFilterWhere(['like', 'item_name', $this->item_name])
-            ->andFilterWhere(['like', 'remarks', $this->remarks]);
+        $query->andFilterWhere(['like', 'generic_name', $this->generic_name])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

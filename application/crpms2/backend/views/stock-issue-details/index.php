@@ -9,8 +9,8 @@ use yii\grid\GridView;
 
 $this->title = 'Stock Issue Details';
 $this->params['breadcrumbs'][] = $this->title;
-?><body background="../web/images/background5.png">
-
+?>
+<body background="../web/images/background5.png">
 <div class="stock-issue-details-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -27,24 +27,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            'stock_issue_code',
+        'stock_issue_code',
             'date_created',
-            ['attribute' => 'item_id',
-            'label' => 'Item Name',
+               ['attribute' => 'item_id',
+            'label' => 'Item name',
             'value' => 'item.item_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
-           
+         
             'quantity',
             // 'exp_date',
             // 'unit_cost',
             // 'amount',
             // 'remarks:ntext',
-           
-             ['attribute' => 'stock_issue_header_id',
-            'label' => 'Stock Issue Header Code',
-            'value' => 'stockIssueHeader.header_code',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','header_code')],
-           
+            // 'stock_issue_header_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

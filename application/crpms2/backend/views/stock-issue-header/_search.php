@@ -17,17 +17,27 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
+    <?= $form->field($model, 'stock_issue_header_code') ?>
+
+    <?= $form->field($model, 'date_prepared') ?>
+
     <?= $form->field($model, 'location_id') ?>
 
     <?= $form->field($model, 'stock_inventory_id') ?>
 
-    <?= $form->field($model, 'header_code') ?>
-
-    <?= $form->field($model, 'stock_status_id') ?>
+    <?php // echo $form->field($model, 'stock_status_id') ?>
 
     <?php // echo $form->field($model, 'employee_id') ?>
 
-    <?php // echo $form->field($model, 'issue_from') ?>
+    <?php // echo $form->field($model, 'employee_lastname') ?>
+
+    <?php // echo $form->field($model, 'employee_firstname') ?>
+
+    <?php // echo $form->field($model, 'employee_middlename') ?>
+
+    <?php // echo $form->field($model, 'date_created') ?>
+
+    <?php // echo $form->field($model, 'date_updated') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

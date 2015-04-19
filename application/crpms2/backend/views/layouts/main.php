@@ -47,6 +47,8 @@ AppAsset::register($this);
                     ['label' => 'Stock Inventory Record', 'url' => ['/stock-inventory/index']],
                     ['label' => 'Insert Item in Inventory', 'url' => ['/item/index']],
                     ['label' => 'Verify Item Description', 'url' => ['/item-description/index']],
+                    ['label' => 'Manufacturer', 'url' => ['/manufacturer/index']],
+                   // ['label' => 'Generic ', 'url' => ['/index']],
 
                      ],'visible' => !Yii::$app->user->isGuest,],
                     

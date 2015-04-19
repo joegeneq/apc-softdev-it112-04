@@ -4,15 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\StockStatus */
+/* @var $model backend\models\GenericName */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Stock Statuses', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Generic Names', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <body background="../web/images/background5.png">
-<div class="stock-status-view">
+<div class="generic-name-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            //'id',
-            'status_code',
-            'description_name',
+            'id',
+            'generic_name',
+            'description:ntext',
         ],
     ]) ?>
 
