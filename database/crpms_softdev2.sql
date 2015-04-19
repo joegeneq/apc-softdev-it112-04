@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2015 at 04:05 PM
+-- Generation Time: Apr 19, 2015 at 04:48 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -224,7 +224,6 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `item_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `amount` decimal(10,0) NOT NULL,
-  `return_to` varchar(20) DEFAULT 'pharmacist',
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -245,7 +244,6 @@ CREATE TABLE IF NOT EXISTS `return_item_header` (
   `employee_id` int(11) NOT NULL,
   `employee_lastname` int(11) NOT NULL,
   `employee_firstname` int(11) NOT NULL,
-  `employee_middlename` int(11) NOT NULL,
   `accounting_status_id` int(11) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -435,7 +433,7 @@ ALTER TABLE `return_item_details`
 -- Indexes for table `return_item_header`
 --
 ALTER TABLE `return_item_header`
- ADD PRIMARY KEY (`id`), ADD KEY `return_item_header_ibfk_1` (`location_id`), ADD KEY `return_item_header_ibfk_2` (`bed_id`), ADD KEY `return_item_header_ibfk_4` (`patient_id`), ADD KEY `return_item_header_ibfk_10` (`employee_id`), ADD KEY `return_item_header_ibfk_11` (`employee_lastname`), ADD KEY `return_item_header_ibfk_12` (`employee_firstname`), ADD KEY `return_item_header_ibfk_13` (`employee_middlename`), ADD KEY `return_item_header_ibfk_14` (`accounting_status_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `return_item_header_ibfk_1` (`location_id`), ADD KEY `return_item_header_ibfk_2` (`bed_id`), ADD KEY `return_item_header_ibfk_4` (`patient_id`), ADD KEY `return_item_header_ibfk_10` (`employee_id`), ADD KEY `return_item_header_ibfk_11` (`employee_lastname`), ADD KEY `return_item_header_ibfk_12` (`employee_firstname`), ADD KEY `return_item_header_ibfk_14` (`accounting_status_id`);
 
 --
 -- Indexes for table `stock_inventory`
@@ -583,7 +581,6 @@ ADD CONSTRAINT `return_item_header_ibfk_1` FOREIGN KEY (`location_id`) REFERENCE
 ADD CONSTRAINT `return_item_header_ibfk_10` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`),
 ADD CONSTRAINT `return_item_header_ibfk_11` FOREIGN KEY (`employee_lastname`) REFERENCES `employee` (`id`),
 ADD CONSTRAINT `return_item_header_ibfk_12` FOREIGN KEY (`employee_firstname`) REFERENCES `employee` (`id`),
-ADD CONSTRAINT `return_item_header_ibfk_13` FOREIGN KEY (`employee_middlename`) REFERENCES `employee` (`id`),
 ADD CONSTRAINT `return_item_header_ibfk_14` FOREIGN KEY (`accounting_status_id`) REFERENCES `accounting_status` (`id`),
 ADD CONSTRAINT `return_item_header_ibfk_2` FOREIGN KEY (`bed_id`) REFERENCES `bed` (`id`),
 ADD CONSTRAINT `return_item_header_ibfk_3` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`),

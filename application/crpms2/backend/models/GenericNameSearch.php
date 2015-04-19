@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Patient;
+use backend\models\GenericName;
 
 /**
- * PatientSearch represents the model behind the search form about `backend\models\Patient`.
+ * GenericNameSearch represents the model behind the search form about `backend\models\GenericName`.
  */
-class PatientSearch extends Patient
+class GenericNameSearch extends GenericName
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class PatientSearch extends Patient
     public function rules()
     {
         return [
-            [['id', 'telephone_number', 'cellphone_number'], 'integer'],
-            [['patient_id_no', 'lastname', 'firstname', 'middlename', 'address', 'birthdate', 'email_address', 'created_at'], 'safe'],
+            [['id'], 'integer'],
+            [['generic_name', 'description'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class PatientSearch extends Patient
      */
     public function search($params)
     {
-        $query = Patient::find();
+        $query = GenericName::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,18 +57,10 @@ class PatientSearch extends Patient
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'birthdate' => $this->birthdate,
-            'telephone_number' => $this->telephone_number,
-            'cellphone_number' => $this->cellphone_number,
-            'created_at' => $this->created_at,
         ]);
 
-        $query->andFilterWhere(['like', 'patient_id_no', $this->patient_id_no])
-            ->andFilterWhere(['like', 'lastname', $this->lastname])
-            ->andFilterWhere(['like', 'firstname', $this->firstname])
-            ->andFilterWhere(['like', 'middlename', $this->middlename])
-            ->andFilterWhere(['like', 'address', $this->address])
-            ->andFilterWhere(['like', 'email_address', $this->email_address]);
+        $query->andFilterWhere(['like', 'generic_name', $this->generic_name])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

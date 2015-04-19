@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Patient */
+/* @var $model backend\models\GenericName */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Patients', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Generic Names', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <body background="../web/images/background5.png">
-<div class="patient-view">
+<div class="generic-name-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,16 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'patient_id_no',
-            'lastname',
-            'firstname',
-            'middlename',
-            'address',
-            'birthdate',
-            'telephone_number',
-            'cellphone_number',
-            'email_address:email',
-            'created_at',
+            'generic_name',
+            'description:ntext',
         ],
     ]) ?>
 

@@ -2,11 +2,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use backend\models\Employee;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemHeader */
 
-$this->title = $model->return_item_header_code;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -29,15 +29,25 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-           //'id',
-            [ 'attribute' => 'patient.lastname', 'label' => 'Patient Last Name'],
-            [ 'attribute' => 'patient.firstname', 'label' => 'Patient First Name'],
-            'return_item_header_code',
-           ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-           ['attribute' => 'bed.bed_number', 'label' => 'Bed number:'],
-            'amount',
-            'remarks:ntext',
-            'created',
+            'id',
+          ['attribute' => 'returnItemHeader.return_item_header_code', 'label' => 'Return Item Header Code:'],
+           
+            'date_prepared',
+            'patient_id',
+			
+         ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
+          
+            'bed_id',
+            'total_amount',
+            'employee_id',
+            ['attribute' => 'employee.lastname', 'label' => 'Employee Last name'],
+            ['attribute' => 'employee.firstname', 'label' => 'Employee First name'],
+           
+           // 'employee_middlename',
+            ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status:'],  
+          
+            'date_created',
+            'date_updated',
         ],
     ]) ?>
 
