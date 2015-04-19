@@ -90,9 +90,9 @@ use dosamigos\datepicker\DatePicker;
             $listData,['prompt'=>'Select Middlename']);
     ?>
 
-    <?= $form->field($model, 'date_created')->textInput() ?>
+    <!---?= $form->field($model, 'date_created')->textInput() ?---->
 
-    <?= $form->field($model, 'date_updated')->textInput() ?>
+    <!----?= $form->field($model, 'date_updated')->textInput() ?---->
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
