@@ -29,13 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
           //  'id',
         
 			
-			 ['attribute' => 'generic_name',
-            'label' => 'Generic Name',
-            'value' => 'genericname.generic_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','generic_name')],
-           
 			
 			
+			'generic_name',
             'description:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
