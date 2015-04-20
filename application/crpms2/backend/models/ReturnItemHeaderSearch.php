@@ -18,8 +18,8 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
     public function rules()
     {
         return [
-            [['id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
-            [['return_item_header_code', 'date_prepared', 'date_created', 'date_updated', 'patient_id'], 'safe'],
+            [['id', 'patient_id', 'location_id', 'bed_id', 'returned_by', 'received_by', 'approved_by', 'accounting_status_id', 'created_by'], 'integer'],
+            [['return_item_header_code', 'date_prepared', 'date_created', 'date_updated'], 'safe'],
             [['total_amount'], 'number'],
         ];
     }
@@ -55,26 +55,25 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
             // $query->where('0=1');
             return $dataProvider;
         }
- $query->innerJoinWith('patient');
-         $query->andFilterWhere([
+
+        $query->andFilterWhere([
             'id' => $this->id,
             'date_prepared' => $this->date_prepared,
-            //'patient_id' => $this->patient_id,
+            'patient_id' => $this->patient_id,
             'location_id' => $this->location_id,
             'bed_id' => $this->bed_id,
             'total_amount' => $this->total_amount,
-            'employee_id' => $this->employee_id,
-            'employee_lastname' => $this->employee_lastname,
-            'employee_firstname' => $this->employee_firstname,
+            'returned_by' => $this->returned_by,
+            'received_by' => $this->received_by,
+            'approved_by' => $this->approved_by,
             'accounting_status_id' => $this->accounting_status_id,
             'date_created' => $this->date_created,
             'date_updated' => $this->date_updated,
+            'created_by' => $this->created_by,
         ]);
 
-        $query->andFilterWhere(['like', 'return_item_header_code', $this->return_item_header_code])
-   ->andFilterWhere(['like', 'patient.lastname', $this->patient_id]);
-       
+        $query->andFilterWhere(['like', 'return_item_header_code', $this->return_item_header_code]);
+
         return $dataProvider;
-   
     }
 }

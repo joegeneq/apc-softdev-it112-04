@@ -29,25 +29,25 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-      //'id',
+          //  'id',
             'return_item_header_code',
             'date_prepared',
-            [ 'attribute' => 'patient.lastname', 'label' => 'Patient Last Name'],
+             [ 'attribute' => 'patient.lastname', 'label' => 'Patient Last Name'],
             [ 'attribute' => 'patient.firstname', 'label' => 'Patient First Name'],
              ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
             ['attribute' => 'bed.bed_number', 'label' => 'Bed Number:'],
            
-             'total_amount',
-           
-              [ 'attribute' => 'employee.lastname', 'label' => 'Returned By:'],
-             // [ 'attribute' => 'employee_firstname', 'label' => 'Received By:'],
-               //[ 'attribute' => 'employee.lastname', 'label' => 'Approved By:'],
+            'total_amount',
+              [ 'attribute' => 'employee.returned_by', 'label' => 'Returned By:'],
+              [ 'attribute' => 'employee.received_by', 'label' => 'Received By:'],
+           //   [ 'attribute' => 'employee.approved_by, 'label' => 'Approved By:'],
               
-            //   'accounting_status_id',
-           ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status:'],
+           // 'accounting_status_id',
+		      ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status:'],
          
             'date_created',
             'date_updated',
+            'created_by',
         ],
     ]) ?>
 

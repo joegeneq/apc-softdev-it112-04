@@ -18,9 +18,9 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-     <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 20]) ?>
+    <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 20]) ?>
 
-     <?= $form->field($model, 'date_prepared')->widget(
+   <?= $form->field($model, 'date_prepared')->widget(
     DatePicker::className(), [
         // inline too, not bad
         'inline' => false, 
@@ -31,12 +31,11 @@ use dosamigos\datepicker\DatePicker;
             'format' => 'yyyy-m-d'
         ]
 ]);?>
-    <?= $form->field($model, 'patient_id')->dropDownList(
+     <?= $form->field($model, 'patient_id')->dropDownList(
         ArrayHelper::map(Patient::find()->all(), 'id', 'lastname', 'firstname'),
         ['prompt'=>'Select Patient'] ) 
     ?>
-
-    <?php
+     <?php
         $location=Location::find()->all();
           $listData=ArrayHelper::map($location, 'id', 'location_name');
         echo $form->field($model, 'location_id')->dropDownList(
@@ -52,27 +51,29 @@ use dosamigos\datepicker\DatePicker;
 ?>
     <?= $form->field($model, 'total_amount')->textInput(['maxlength' => 10]) ?>
 
-     <?= $form->field($model, 'employee_id')->dropDownList(
+     <?= $form->field($model, 'returned_by')->dropDownList(
         ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
-        ['prompt'=>'Select Employee'] ) 
+        ['prompt'=>'Select Returned by'] ) 
     ?>
-    <?= $form->field($model, 'employee_lastname')->dropDownList(
+    <?= $form->field($model, 'received_by')->dropDownList(
         ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
-        ['prompt'=>'Select Employee'] ) 
+        ['prompt'=>'Select Receive by'] ) 
     ?>
- <?= $form->field($model, 'employee_firstname')->dropDownList(
+ <?= $form->field($model, 'approved_by')->dropDownList(
         ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
-        ['prompt'=>'Select Employee'] ) 
+        ['prompt'=>'Select approved by'] ) 
     ?>
-
-     <?php
+	
+      <?php
         $accountingStatus=AccountingStatus::find()->all();
           $listData=ArrayHelper::map($accountingStatus, 'id', 'description');
         echo $form->field($model, 'accounting_status_id')->dropDownList(
             $listData,['prompt'=>'Select Accounting Status']);
 
 ?>
-    
+
+    <?= $form->field($model, 'created_by')->textInput() ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

@@ -25,35 +25,39 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
- //'id',
+
+        //    'id',
             'return_item_header_code',
            // 'date_prepared',
-            //'patient_id',
-            [
+    
+		    [
                 'attribute' => 'patient_id',
                 'label' => 'Patient Lastname',
                 'value' => 'patient.lastname'
             ],
-           // 'location_id',
-              ['attribute' => 'location_id',
+		   
+         //   'location_id',
+		  ['attribute' => 'location_id',
             'label' => 'Location Name',
             'value' => 'location.location_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
           
+		 
+		 
             // 'bed_id',
             // 'total_amount',
-            // 'employee_id',
-            // 'employee_lastname',
-            // 'employee_firstname',
-           // 'accounting_status_id',
-             ['attribute' => 'accounting_status_id',
+            // 'returned_by',
+            // 'received_by',
+            // 'approved_by',
+            // 'accounting_status_id',
+			   ['attribute' => 'accounting_status_id',
             'label' => 'Accounting Status',
             'value' => 'accountingStatus.description',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\AccountingStatus::find()-> all(),'id','description')],
-          
+			
             // 'date_created',
             // 'date_updated',
-
+             'created_by',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
