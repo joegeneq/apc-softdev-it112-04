@@ -10,7 +10,6 @@ $this->title = 'Create Generic Name';
 $this->params['breadcrumbs'][] = ['label' => 'Generic Names', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
 <div class="generic-name-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
