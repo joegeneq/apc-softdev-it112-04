@@ -35,8 +35,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'employee_firstname') ?>
 
-    <?php // echo $form->field($model, 'employee_middlename') ?>
-
     <?php // echo $form->field($model, 'accounting_status_id') ?>
 
     <?php // echo $form->field($model, 'date_created') ?>

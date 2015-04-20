@@ -17,7 +17,6 @@ use Yii;
  * @property integer $employee_id
  * @property integer $employee_lastname
  * @property integer $employee_firstname
- * @property integer $employee_middlename
  * @property integer $accounting_status_id
  * @property string $date_created
  * @property string $date_updated
@@ -27,7 +26,6 @@ use Yii;
  * @property Employee $employee
  * @property Employee $employeeLastname
  * @property Employee $employeeFirstname
- * @property Employee $employeeMiddlename
  * @property AccountingStatus $accountingStatus
  * @property Bed $bed
  * @property Patient $patient
@@ -48,8 +46,8 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['return_item_header_code', 'date_prepared', 'patient_id', 'location_id', 'bed_id', 'total_amount', 'employee_id', 'employee_lastname', 'employee_firstname', 'employee_middlename', 'accounting_status_id'], 'required'],
-            [['date_prepared', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'employee_middlename', 'accounting_status_id'], 'integer'],
+            [['return_item_header_code', 'date_prepared', 'patient_id', 'location_id', 'bed_id', 'total_amount', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'required'],
+            [['date_prepared', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
             [['total_amount'], 'number'],
             [['date_created', 'date_updated'], 'safe'],
             [['return_item_header_code'], 'string', 'max' => 20]
@@ -72,7 +70,6 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
             'employee_id' => 'Employee ID',
             'employee_lastname' => 'Employee Lastname',
             'employee_firstname' => 'Employee Firstname',
-            'employee_middlename' => 'Employee Middlename',
             'accounting_status_id' => 'Accounting Status ID',
             'date_created' => 'Date Created',
             'date_updated' => 'Date Updated',
@@ -117,14 +114,6 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function getEmployeeFirstname()
     {
         return $this->hasOne(Employee::className(), ['id' => 'employee_firstname']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEmployeeMiddlename()
-    {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_middlename']);
     }
 
     /**

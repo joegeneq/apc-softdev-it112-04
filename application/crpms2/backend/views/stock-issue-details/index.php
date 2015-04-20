@@ -28,14 +28,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //'id',
           
-            'date_release',
-
-			  ['attribute' => 'item_id',
-            'label' => 'Item name',
+           // 'date_release',
+           ['attribute' => 'item_id',
+            'label' => 'Item Name',
             'value' => 'item.item_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
-         
-            'quantity',
+
+           // 'date_created',
+        
+           // 'quantity',
             // 'exp_date',
             // 'unit_cost',
             // 'amount',
@@ -43,10 +44,9 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'date_created',
             
 			['attribute' => 'stock_issue_header_id',
-            'label' => 'Stock Issue Header Code',
-            'value' => 'stockIssueHeader.header_code',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','header_code')],
-           
+            'label' => 'Stock Issue Header ID ',
+            'value' => 'stockIssueHeader.stock_issue_header_code',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\StockIssueHeader::find()-> all(),'id','stock_issue_header_code')],
 
 
             ['class' => 'yii\grid\ActionColumn'],
