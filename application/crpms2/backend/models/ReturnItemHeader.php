@@ -46,8 +46,8 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['return_item_header_code', 'date_prepared', 'patient_id', 'location_id', 'bed_id', 'total_amount', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'required'],
-            [['date_prepared', 'date_created', 'date_updated'], 'safe'],
+            [['return_item_header_code', 'date_prepared', 'location_id', 'bed_id', 'total_amount', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'required'],
+            [['date_prepared', 'date_created', 'date_updated', 'patient_id'], 'safe'],
             [['patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
             [['total_amount'], 'number'],
             [['return_item_header_code'], 'string', 'max' => 20]
@@ -64,12 +64,12 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
             'return_item_header_code' => 'Return Item Header Code',
             'date_prepared' => 'Date Prepared',
             'patient_id' => 'Patient ID',
-            'location_id' => 'Location ID',
-            'bed_id' => 'Bed ID',
+            'location_id' => 'Location Name',
+            'bed_id' => 'Bed Number',
             'total_amount' => 'Total Amount',
-            'employee_id' => 'Employee ID',
-            'employee_lastname' => 'Employee Lastname',
-            'employee_firstname' => 'Employee Firstname',
+            'employee_id' => 'Return By:',
+            'employee_lastname' => 'Receive By:',
+            'employee_firstname' => 'Approved By:',
             'accounting_status_id' => 'Accounting Status ID',
             'date_created' => 'Date Created',
             'date_updated' => 'Date Updated',
