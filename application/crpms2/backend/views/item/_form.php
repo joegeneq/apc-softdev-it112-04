@@ -30,6 +30,8 @@ use backend\models\GenericName;
     ?>
 
     <!----?= $form->field($model, 'manufacturer_id')->textInput() ?---->
+
+    <p><b> Item Details </b></p>
     <?php
         $manufacturer=Manufacturer::find()->all();
         $listData=ArrayHelper::map($manufacturer, 'id', 'manufacturer_name');
