@@ -15,7 +15,7 @@ use backend\models\Item;
 
     <?php $form = ActiveForm::begin(); ?>
 
-
+  
 	   <?php
         $stockissueheader=StockIssueHeader::find()->all();
         $listData=ArrayHelper::map($stockissueheader, 'id', 'stock_issue_header_code');
@@ -23,10 +23,6 @@ use backend\models\Item;
             $listData,['prompt'=>'Select Stock Issue Header Id']);
     ?>
 
-	
-	
-	
-	
     <?= $form->field($model, 'date_release')->widget(
     DatePicker::className(), [
         // inline too, not bad
@@ -39,6 +35,7 @@ use backend\models\Item;
         ]
 ]);?>
 
+  
    <?php
         $item=Item::find()->all();
         $listData=ArrayHelper::map($item, 'id', 'item_code');
@@ -47,9 +44,8 @@ use backend\models\Item;
     ?>
 
     <?= $form->field($model, 'quantity')->textInput() ?>
- 
 
- <?= $form->field($model, 'exp_date')->widget(
+    <?= $form->field($model, 'exp_date')->widget(
     DatePicker::className(), [
         // inline too, not bad
         'inline' => false, 
@@ -66,6 +62,7 @@ use backend\models\Item;
 
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
 
+    <?= $form->field($model, 'created_by')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

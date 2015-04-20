@@ -29,17 +29,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-         //   'id',
-              ['attribute' => 'stockIssueHeader.stock_issue_header_code', 'label' => 'Stock Issue Header Code:'],
+           // 'id',
+            ['attribute' => 'stockIssueHeader.stock_issue_header_code', 'label' => 'Stock Issue Header Code:'],
          
             'date_release',
-        ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
+           ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
+        
             'quantity',
             'exp_date',
             'unit_cost',
             'amount',
             'remarks:ntext',
             'date_created',
+            'created_by',
         ],
     ]) ?>
 

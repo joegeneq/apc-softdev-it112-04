@@ -17,6 +17,7 @@ use Yii;
  * @property string $amount
  * @property string $remarks
  * @property string $date_created
+ * @property integer $created_by
  *
  * @property Item $item
  * @property StockIssueHeader $stockIssueHeader
@@ -37,8 +38,8 @@ class StockIssueDetails extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['stock_issue_header_id', 'date_release', 'item_id', 'quantity', 'exp_date', 'unit_cost', 'amount'], 'required'],
-            [['stock_issue_header_id', 'item_id', 'quantity'], 'integer'],
+            [['stock_issue_header_id', 'date_release', 'item_id', 'quantity', 'exp_date', 'unit_cost', 'amount', 'created_by'], 'required'],
+            [['stock_issue_header_id', 'item_id', 'quantity', 'created_by'], 'integer'],
             [['date_release', 'exp_date', 'date_created'], 'safe'],
             [['unit_cost', 'amount'], 'number'],
             [['remarks'], 'string']
@@ -61,6 +62,7 @@ class StockIssueDetails extends \yii\db\ActiveRecord
             'amount' => 'Amount',
             'remarks' => 'Remarks',
             'date_created' => 'Date Created',
+            'created_by' => 'Created By',
         ];
     }
 

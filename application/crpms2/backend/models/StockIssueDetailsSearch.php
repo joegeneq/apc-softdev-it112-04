@@ -18,7 +18,7 @@ class StockIssueDetailsSearch extends StockIssueDetails
     public function rules()
     {
         return [
-            [['id', 'stock_issue_header_id', 'item_id', 'quantity'], 'integer'],
+            [['id', 'stock_issue_header_id', 'item_id', 'quantity', 'created_by'], 'integer'],
             [['date_release', 'exp_date', 'remarks', 'date_created'], 'safe'],
             [['unit_cost', 'amount'], 'number'],
         ];
@@ -66,6 +66,7 @@ class StockIssueDetailsSearch extends StockIssueDetails
             'unit_cost' => $this->unit_cost,
             'amount' => $this->amount,
             'date_created' => $this->date_created,
+            'created_by' => $this->created_by,
         ]);
 
         $query->andFilterWhere(['like', 'remarks', $this->remarks]);

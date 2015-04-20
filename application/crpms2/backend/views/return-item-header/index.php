@@ -47,6 +47,14 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'bed_id',
             // 'total_amount',
             // 'returned_by',
+			
+			   ['attribute' => 'accounting_status_id',
+            'label' => 'Accounting Status',
+            'value' => 'accountingStatus.description',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\AccountingStatus::find()-> all(),'id','description')],
+			
+			
+			
             // 'received_by',
             // 'approved_by',
             // 'accounting_status_id',
