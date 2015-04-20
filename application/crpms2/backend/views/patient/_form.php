@@ -23,8 +23,7 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => 25]) ?>
 
-
-   <?= $form->field($model, 'birthdate')->widget(
+    <?= $form->field($model, 'birthdate')->widget(
     DatePicker::className(), [
         // inline too, not bad
         'inline' => false, 
@@ -35,14 +34,13 @@ use dosamigos\datepicker\DatePicker;
             'format' => 'yyyy-m-d'
         ]
 ]);?>
+    <?= $form->field($model, 'telephone_number')->textInput(['maxlength' => 20]) ?>
 
-
-    <?= $form->field($model, 'telephone_number')->textInput() ?>
-
-    <?= $form->field($model, 'cellphone_number')->textInput() ?>
+    <?= $form->field($model, 'cellphone_number')->textInput(['maxlength' => 20]) ?>
 
     <?= $form->field($model, 'email_address')->textInput(['maxlength' => 25]) ?>
 
+    <?= $form->field($model, 'created_by')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
