@@ -9,7 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $return_item_header_code
- * @property integer $date_prepared
+ * @property string $date_prepared
  * @property integer $patient_id
  * @property integer $location_id
  * @property integer $bed_id
@@ -47,9 +47,9 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     {
         return [
             [['return_item_header_code', 'date_prepared', 'patient_id', 'location_id', 'bed_id', 'total_amount', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'required'],
-            [['date_prepared', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
+            [['date_prepared', 'date_created', 'date_updated'], 'safe'],
+            [['patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
             [['total_amount'], 'number'],
-            [['date_created', 'date_updated'], 'safe'],
             [['return_item_header_code'], 'string', 'max' => 20]
         ];
     }

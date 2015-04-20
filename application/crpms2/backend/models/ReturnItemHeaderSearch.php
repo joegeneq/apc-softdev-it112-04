@@ -18,8 +18,8 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
     public function rules()
     {
         return [
-            [['id', 'date_prepared', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
-            [['return_item_header_code', 'date_created', 'date_updated'], 'safe'],
+            [['id', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
+            [['return_item_header_code', 'date_prepared', 'date_created', 'date_updated'], 'safe'],
             [['total_amount'], 'number'],
         ];
     }

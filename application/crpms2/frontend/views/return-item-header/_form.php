@@ -8,7 +8,6 @@ use backend\models\Employee;
 use backend\models\AccountingStatus;
 use backend\models\Bed;
 use backend\models\Location;
-
 use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */

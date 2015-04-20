@@ -18,7 +18,7 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 20]) ?>
+     <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 20]) ?>
 
      <?= $form->field($model, 'date_prepared')->widget(
     DatePicker::className(), [
@@ -73,7 +73,6 @@ use dosamigos\datepicker\DatePicker;
 
 ?>
     
-   
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
