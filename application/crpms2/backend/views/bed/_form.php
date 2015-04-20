@@ -9,7 +9,7 @@ use backend\models\Location;
 /* @var $model backend\models\Bed */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../web/images/background5.png">
 <div class="bed-form">
 
     <?php $form = ActiveForm::begin(); ?>

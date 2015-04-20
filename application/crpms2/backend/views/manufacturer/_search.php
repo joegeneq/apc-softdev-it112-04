@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\ManufacturerSearch */
+/* @var $model frontend\models\ManufacturerSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <body background="../web/images/background5.png">
