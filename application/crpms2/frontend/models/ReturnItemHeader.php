@@ -9,7 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $return_item_header_code
- * @property integer $date_prepared
+ * @property string $date_prepared
  * @property integer $patient_id
  * @property integer $location_id
  * @property integer $bed_id
@@ -46,10 +46,10 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['return_item_header_code', 'date_prepared', 'location_id', 'bed_id', 'total_amount', 'accounting_status_id'], 'required'],
-            [['date_prepared', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
+            [['return_item_header_code', 'date_prepared', 'location_id', 'bed_id', 'total_amount', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'required'],
+            [['date_prepared', 'date_created', 'date_updated', 'patient_id'], 'safe'],
+            [['patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
             [['total_amount'], 'number'],
-            [['date_created', 'date_updated', 'patient_id', 'employee_id', 'employee_lastname', 'employee_firstname'], 'safe'],
             [['return_item_header_code'], 'string', 'max' => 20]
         ];
     }
@@ -67,9 +67,9 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
             'location_id' => 'Location Name',
             'bed_id' => 'Bed Number',
             'total_amount' => 'Total Amount',
-            'employee_id' => 'Returned By:',
-            'employee_lastname' => 'Received By:',
-            'employee_firstname' => 'Approved By:',
+            'employee_id' => 'Returned By',
+            'employee_lastname' => 'Receive By',
+            'employee_firstname' => 'Approved By',
             'accounting_status_id' => 'Accounting Status ',
             'date_created' => 'Date Created',
             'date_updated' => 'Date Updated',

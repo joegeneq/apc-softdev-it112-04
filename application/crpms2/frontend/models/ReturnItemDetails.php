@@ -12,7 +12,6 @@ use Yii;
  * @property integer $item_id
  * @property integer $quantity
  * @property string $amount
- * @property string $return_to
  * @property string $date_created
  *
  * @property ReturnItemHeader $returnItemHeader
@@ -37,8 +36,7 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
             [['return_item_header_id', 'item_id', 'quantity', 'amount'], 'required'],
             [['return_item_header_id', 'item_id', 'quantity'], 'integer'],
             [['amount'], 'number'],
-            [['date_created'], 'safe'],
-            [['return_to'], 'string', 'max' => 20]
+            [['date_created'], 'safe']
         ];
     }
 
@@ -53,7 +51,6 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
             'item_id' => 'Item ID',
             'quantity' => 'Quantity',
             'amount' => 'Amount',
-            'return_to' => 'Return To',
             'date_created' => 'Date Created',
         ];
     }

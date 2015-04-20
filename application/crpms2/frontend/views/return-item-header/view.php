@@ -16,13 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
+      
+        
     </p>
 
     <?= DetailView::widget([
@@ -34,14 +29,15 @@ $this->params['breadcrumbs'][] = $this->title;
             [ 'attribute' => 'patient.lastname', 'label' => 'Patient Last Name'],
             [ 'attribute' => 'patient.firstname', 'label' => 'Patient First Name'],
              ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-            ['attribute' => 'bed.description', 'label' => 'Bed Number:'],
+            ['attribute' => 'bed.bed_number', 'label' => 'Bed Number:'],
            
              'total_amount',
+           
               [ 'attribute' => 'employee.lastname', 'label' => 'Returned By:'],
-              [ 'attribute' => 'employee.lastname', 'label' => 'Received By:'],
-               [ 'attribute' => 'employee.lastname', 'label' => 'Approved By:'],
+             // [ 'attribute' => 'employee_firstname', 'label' => 'Received By:'],
+               //[ 'attribute' => 'employee.lastname', 'label' => 'Approved By:'],
               
-               'accounting_status_id',
+            //   'accounting_status_id',
            ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status:'],
          
             'date_created',

@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\ReturnItemDetailsSearch */
+/* @var $model backend\models\BedSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="return-item-details-search">
+<div class="bed-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,15 +17,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'return_item_header_id') ?>
+    <?= $form->field($model, 'bed_code') ?>
 
-    <?= $form->field($model, 'item_id') ?>
+    <?= $form->field($model, 'bed_number') ?>
 
-    <?= $form->field($model, 'quantity') ?>
-
-    <?= $form->field($model, 'amount') ?>
-
-    <?php // echo $form->field($model, 'date_created') ?>
+    <?= $form->field($model, 'location_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -18,8 +18,8 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
     public function rules()
     {
         return [
-            [['id', 'date_prepared', 'location_id', 'bed_id', 'accounting_status_id'], 'integer'],
-            [['return_item_header_code', 'date_created', 'date_updated', 'patient_id', 'employee_id', 'employee_lastname', 'employee_firstname'], 'safe'],
+            [['id', 'patient_id', 'location_id', 'bed_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'accounting_status_id'], 'integer'],
+            [['return_item_header_code', 'date_prepared', 'date_created', 'date_updated'], 'safe'],
             [['total_amount'], 'number'],
         ];
     }
@@ -59,7 +59,7 @@ class ReturnItemHeaderSearch extends ReturnItemHeader
         $query->andFilterWhere([
             'id' => $this->id,
             'date_prepared' => $this->date_prepared,
-           // 'patient_id' => $this->patient_id,
+            'patient_id' => $this->patient_id,
             'location_id' => $this->location_id,
             'bed_id' => $this->bed_id,
             'total_amount' => $this->total_amount,

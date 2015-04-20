@@ -68,8 +68,8 @@ use dosamigos\datepicker\DatePicker;
     ?>
 
      <?php
-        $bed=Bed::find()->all();
-          $listData=ArrayHelper::map($bed, 'id', 'description');
+        $accountingStatus=AccountingStatus::find()->all();
+          $listData=ArrayHelper::map($accountingStatus, 'id', 'description');
         echo $form->field($model, 'accounting_status_id')->dropDownList(
             $listData,['prompt'=>'Select Accounting Status']);
 

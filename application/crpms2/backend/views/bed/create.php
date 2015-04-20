@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\ReturnItemDetails */
+/* @var $model backend\models\Bed */
 
-$this->title = 'Create Return Item Details';
-$this->params['breadcrumbs'][] = ['label' => 'Return Item Details', 'url' => ['index']];
+$this->title = 'Create Bed';
+$this->params['breadcrumbs'][] = ['label' => 'Beds', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="return-item-details-create">
+<div class="bed-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

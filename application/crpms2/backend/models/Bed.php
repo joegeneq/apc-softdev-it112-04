@@ -10,7 +10,9 @@ use Yii;
  * @property integer $id
  * @property string $bed_code
  * @property integer $bed_number
+ * @property integer $location_id
  *
+ * @property Location $location
  * @property ReturnItemHeader[] $returnItemHeaders
  */
 class Bed extends \yii\db\ActiveRecord
@@ -29,8 +31,8 @@ class Bed extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['bed_code', 'bed_number'], 'required'],
-            [['bed_number'], 'integer'],
+            [['bed_code', 'bed_number', 'location_id'], 'required'],
+            [['bed_number', 'location_id'], 'integer'],
             [['bed_code'], 'string', 'max' => 20]
         ];
     }
@@ -44,7 +46,16 @@ class Bed extends \yii\db\ActiveRecord
             'id' => 'ID',
             'bed_code' => 'Bed Code',
             'bed_number' => 'Bed Number',
+            'location_id' => 'Location ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLocation()
+    {
+        return $this->hasOne(Location::className(), ['id' => 'location_id']);
     }
 
     /**

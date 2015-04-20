@@ -1,16 +1,16 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\ReturnItemDetails;
+use backend\models\Bed;
 
 /**
- * ReturnItemDetailsSearch represents the model behind the search form about `frontend\models\ReturnItemDetails`.
+ * BedSearch represents the model behind the search form about `backend\models\Bed`.
  */
-class ReturnItemDetailsSearch extends ReturnItemDetails
+class BedSearch extends Bed
 {
     /**
      * @inheritdoc
@@ -18,9 +18,8 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
     public function rules()
     {
         return [
-            [['id', 'return_item_header_id', 'item_id', 'quantity'], 'integer'],
-            [['amount'], 'number'],
-            [['date_created'], 'safe'],
+            [['id', 'bed_number', 'location_id'], 'integer'],
+            [['bed_code'], 'safe'],
         ];
     }
 
@@ -42,7 +41,7 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
      */
     public function search($params)
     {
-        $query = ReturnItemDetails::find();
+        $query = Bed::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -58,12 +57,11 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'return_item_header_id' => $this->return_item_header_id,
-            'item_id' => $this->item_id,
-            'quantity' => $this->quantity,
-            'amount' => $this->amount,
-            'date_created' => $this->date_created,
+            'bed_number' => $this->bed_number,
+            'location_id' => $this->location_id,
         ]);
+
+        $query->andFilterWhere(['like', 'bed_code', $this->bed_code]);
 
         return $dataProvider;
     }
