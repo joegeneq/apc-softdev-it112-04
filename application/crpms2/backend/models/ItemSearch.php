@@ -18,7 +18,7 @@ class ItemSearch extends Item
     public function rules()
     {
         return [
-            [['id', 'item_category_id', 'manufacturer_id', 'generic_name_id', 'minimum_reorder_quantity'], 'integer'],
+            [['id', 'item_category_id', 'manufacturer_id', 'generic_name_id', 'minimum_reorder_quantity', 'unit_of_measure_id'], 'integer'],
             [['item_code', 'item_name', 'remarks', 'date_created', 'date_updated'], 'safe'],
         ];
     }
@@ -61,6 +61,7 @@ class ItemSearch extends Item
             'manufacturer_id' => $this->manufacturer_id,
             'generic_name_id' => $this->generic_name_id,
             'minimum_reorder_quantity' => $this->minimum_reorder_quantity,
+            'unit_of_measure_id' => $this->unit_of_measure_id,
             'date_created' => $this->date_created,
             'date_updated' => $this->date_updated,
         ]);

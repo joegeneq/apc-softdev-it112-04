@@ -5,12 +5,12 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\ReturnItemDetails;
+use backend\models\Manufacturer;
 
 /**
- * ReturnItemDetailsSearch represents the model behind the search form about `frontend\models\ReturnItemDetails`.
+ * ManufacturerSearch represents the model behind the search form about `backend\models\Manufacturer`.
  */
-class ReturnItemDetailsSearch extends ReturnItemDetails
+class ManufacturerSearch extends Manufacturer
 {
     /**
      * @inheritdoc
@@ -18,9 +18,8 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
     public function rules()
     {
         return [
-            [['id', 'return_item_header_id', 'item_id', 'quantity', 'created_by'], 'integer'],
-            [['unit_cost', 'amount'], 'number'],
-            [['date_created'], 'safe'],
+            [['id'], 'integer'],
+            [['manufacturer_name', 'description', 'contact_person', 'address', 'telephone_number', 'cellphone_number'], 'safe'],
         ];
     }
 
@@ -42,7 +41,7 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
      */
     public function search($params)
     {
-        $query = ReturnItemDetails::find();
+        $query = Manufacturer::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -58,14 +57,14 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'return_item_header_id' => $this->return_item_header_id,
-            'item_id' => $this->item_id,
-            'quantity' => $this->quantity,
-            'unit_cost' => $this->unit_cost,
-            'amount' => $this->amount,
-            'date_created' => $this->date_created,
-            'created_by' => $this->created_by,
         ]);
+
+        $query->andFilterWhere(['like', 'manufacturer_name', $this->manufacturer_name])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'contact_person', $this->contact_person])
+            ->andFilterWhere(['like', 'address', $this->address])
+            ->andFilterWhere(['like', 'telephone_number', $this->telephone_number])
+            ->andFilterWhere(['like', 'cellphone_number', $this->cellphone_number]);
 
         return $dataProvider;
     }

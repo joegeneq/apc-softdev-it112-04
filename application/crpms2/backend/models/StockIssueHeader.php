@@ -13,18 +13,18 @@ use Yii;
  * @property integer $location_id
  * @property integer $stock_inventory_id
  * @property integer $stock_status_id
- * @property integer $employee_id
- * @property integer $employee_lastname
- * @property integer $employee_firstname
- * @property integer $employee_middlename
+ * @property integer $prepared_by
+ * @property integer $approved_by
+ * @property integer $issued_by
+ * @property integer $received_by
  * @property string $date_created
  * @property string $date_updated
+ * @property integer $created_by
  *
  * @property StockIssueDetails[] $stockIssueDetails
  * @property StockStatus $stockStatus
  * @property StockInventory $stockInventory
  * @property Location $location
- * @property Employee $employee
  */
 class StockIssueHeader extends \yii\db\ActiveRecord
 {
@@ -42,9 +42,9 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['stock_issue_header_code', 'date_prepared', 'location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'employee_middlename'], 'required'],
+            [['stock_issue_header_code', 'date_prepared', 'location_id', 'stock_inventory_id', 'stock_status_id', 'prepared_by', 'approved_by', 'issued_by', 'received_by', 'created_by'], 'required'],
             [['date_prepared', 'date_created', 'date_updated'], 'safe'],
-            [['location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'employee_middlename'], 'integer'],
+            [['location_id', 'stock_inventory_id', 'stock_status_id', 'prepared_by', 'approved_by', 'issued_by', 'received_by', 'created_by'], 'integer'],
             [['stock_issue_header_code'], 'string', 'max' => 20]
         ];
     }
@@ -61,12 +61,13 @@ class StockIssueHeader extends \yii\db\ActiveRecord
             'location_id' => 'Location ID',
             'stock_inventory_id' => 'Stock Inventory ID',
             'stock_status_id' => 'Stock Status ID',
-            'employee_id' => 'Prepared By:',
-            'employee_lastname' => 'Approved By',
-            'employee_firstname' => 'Issued By',
-            'employee_middlename' => 'Received By:',
+            'prepared_by' => 'Prepared By',
+            'approved_by' => 'Approved By',
+            'issued_by' => 'Issued By',
+            'received_by' => 'Received By',
             'date_created' => 'Date Created',
             'date_updated' => 'Date Updated',
+            'created_by' => 'Created By',
         ];
     }
 
@@ -100,13 +101,5 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     public function getLocation()
     {
         return $this->hasOne(Location::className(), ['id' => 'location_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEmployee()
-    {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
     }
 }

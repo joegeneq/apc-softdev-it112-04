@@ -32,6 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'manufacturer_name',
             'description:ntext',
+            'contact_person',
+            'address',
+            'telephone_number',
+            'cellphone_number',
         ],
     ]) ?>
 

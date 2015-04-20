@@ -21,6 +21,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description') ?>
 
+    <?= $form->field($model, 'contact_person') ?>
+
+    <?= $form->field($model, 'address') ?>
+
+    <?php // echo $form->field($model, 'telephone_number') ?>
+
+    <?php // echo $form->field($model, 'cellphone_number') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

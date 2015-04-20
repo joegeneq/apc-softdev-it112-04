@@ -1,16 +1,16 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\ReturnItemDetails;
+use backend\models\UnitOfMeasure;
 
 /**
- * ReturnItemDetailsSearch represents the model behind the search form about `frontend\models\ReturnItemDetails`.
+ * UnitOfMeasureSearch represents the model behind the search form about `backend\models\UnitOfMeasure`.
  */
-class ReturnItemDetailsSearch extends ReturnItemDetails
+class UnitOfMeasureSearch extends UnitOfMeasure
 {
     /**
      * @inheritdoc
@@ -18,9 +18,7 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
     public function rules()
     {
         return [
-            [['id', 'return_item_header_id', 'item_id', 'quantity', 'created_by'], 'integer'],
-            [['unit_cost', 'amount'], 'number'],
-            [['date_created'], 'safe'],
+            [['id', 'type_of_measure', 'description'], 'integer'],
         ];
     }
 
@@ -42,7 +40,7 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
      */
     public function search($params)
     {
-        $query = ReturnItemDetails::find();
+        $query = UnitOfMeasure::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -58,13 +56,8 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'return_item_header_id' => $this->return_item_header_id,
-            'item_id' => $this->item_id,
-            'quantity' => $this->quantity,
-            'unit_cost' => $this->unit_cost,
-            'amount' => $this->amount,
-            'date_created' => $this->date_created,
-            'created_by' => $this->created_by,
+            'type_of_measure' => $this->type_of_measure,
+            'description' => $this->description,
         ]);
 
         return $dataProvider;

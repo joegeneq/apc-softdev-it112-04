@@ -14,6 +14,7 @@ use Yii;
  * @property integer $manufacturer_id
  * @property integer $generic_name_id
  * @property integer $minimum_reorder_quantity
+ * @property integer $unit_of_measure_id
  * @property string $remarks
  * @property string $date_created
  * @property string $date_updated
@@ -41,8 +42,8 @@ class Item extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['item_code', 'item_name', 'item_category_id', 'manufacturer_id', 'generic_name_id', 'minimum_reorder_quantity'], 'required'],
-            [['item_category_id', 'manufacturer_id', 'generic_name_id', 'minimum_reorder_quantity'], 'integer'],
+            [['item_code', 'item_name', 'item_category_id', 'manufacturer_id', 'generic_name_id', 'minimum_reorder_quantity', 'unit_of_measure_id'], 'required'],
+            [['item_category_id', 'manufacturer_id', 'generic_name_id', 'minimum_reorder_quantity', 'unit_of_measure_id'], 'integer'],
             [['remarks'], 'string'],
             [['date_created', 'date_updated'], 'safe'],
             [['item_code'], 'string', 'max' => 5],
@@ -63,6 +64,7 @@ class Item extends \yii\db\ActiveRecord
             'manufacturer_id' => 'Manufacturer ID',
             'generic_name_id' => 'Generic Name ID',
             'minimum_reorder_quantity' => 'Minimum Reorder Quantity',
+            'unit_of_measure_id' => 'Unit Of Measure ID',
             'remarks' => 'Remarks',
             'date_created' => 'Date Created',
             'date_updated' => 'Date Updated',

@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-
 /* @var $this yii\web\View */
 /* @var $model backend\models\Manufacturer */
 /* @var $form yii\widgets\ActiveForm */
@@ -16,6 +15,14 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'manufacturer_name')->textInput(['maxlength' => 25]) ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+
+    <?= $form->field($model, 'contact_person')->textInput(['maxlength' => 25]) ?>
+
+    <?= $form->field($model, 'address')->textInput(['maxlength' => 25]) ?>
+
+    <?= $form->field($model, 'telephone_number')->textInput(['maxlength' => 25]) ?>
+
+    <?= $form->field($model, 'cellphone_number')->textInput(['maxlength' => 25]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

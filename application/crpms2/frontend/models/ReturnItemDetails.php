@@ -11,8 +11,10 @@ use Yii;
  * @property integer $return_item_header_id
  * @property integer $item_id
  * @property integer $quantity
+ * @property string $unit_cost
  * @property string $amount
  * @property string $date_created
+ * @property integer $created_by
  *
  * @property ReturnItemHeader $returnItemHeader
  * @property Item $item
@@ -33,9 +35,9 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['return_item_header_id', 'item_id', 'quantity', 'amount'], 'required'],
-            [['return_item_header_id', 'item_id', 'quantity'], 'integer'],
-            [['amount'], 'number'],
+            [['return_item_header_id', 'item_id', 'quantity', 'unit_cost', 'amount', 'created_by'], 'required'],
+            [['return_item_header_id', 'item_id', 'quantity', 'created_by'], 'integer'],
+            [['unit_cost', 'amount'], 'number'],
             [['date_created'], 'safe']
         ];
     }
@@ -50,8 +52,10 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
             'return_item_header_id' => 'Return Item Header ID',
             'item_id' => 'Item ID',
             'quantity' => 'Quantity',
+            'unit_cost' => 'Unit Cost',
             'amount' => 'Amount',
             'date_created' => 'Date Created',
+            'created_by' => 'Created By',
         ];
     }
 

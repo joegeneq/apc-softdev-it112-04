@@ -6,6 +6,7 @@ use yii\helpers\ArrayHelper;
 use backend\models\ItemCategory;
 use backend\models\Manufacturer;
 use backend\models\GenericName;
+use backend\models\UnitOfMeasure;
 
 
 /* @var $this yii\web\View */
@@ -26,12 +27,10 @@ use backend\models\GenericName;
         $itemCategory=ItemCategory::find()->all();
         $listData=ArrayHelper::map($itemCategory, 'id', 'category_name');
         echo $form->field($model, 'item_category_id')->dropDownList(
-            $listData,['prompt'=>'Select Category Name']);
+            $listData,['prompt'=>'Select Item Category']);
     ?>
 
     <!----?= $form->field($model, 'manufacturer_id')->textInput() ?---->
-
-    <p><b> Item Details </b></p>
     <?php
         $manufacturer=Manufacturer::find()->all();
         $listData=ArrayHelper::map($manufacturer, 'id', 'manufacturer_name');
@@ -49,7 +48,19 @@ use backend\models\GenericName;
 
     <?= $form->field($model, 'minimum_reorder_quantity')->textInput() ?>
 
+    <!----?= $form->field($model, 'unit_of_measure_id')->textInput() ?---->
+    <?php
+        $unitOfMeasure=UnitOfMeasure::find()->all();
+        $listData=ArrayHelper::map($unitOfMeasure, 'id', 'type_of_measure');
+        echo $form->field($model, 'unit_of_measure_id')->dropDownList(
+            $listData,['prompt'=>'Select Type of Measure']);
+    ?>
+
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
+
+    <!----?= $form->field($model, 'date_created')->textInput() ?---->
+
+    <!----?= $form->field($model, 'date_updated')->textInput() ?---->
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

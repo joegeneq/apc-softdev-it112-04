@@ -10,6 +10,10 @@ use Yii;
  * @property integer $id
  * @property string $manufacturer_name
  * @property string $description
+ * @property string $contact_person
+ * @property string $address
+ * @property string $telephone_number
+ * @property string $cellphone_number
  *
  * @property Item[] $items
  */
@@ -29,9 +33,9 @@ class Manufacturer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['manufacturer_name', 'description'], 'required'],
+            [['manufacturer_name', 'description', 'contact_person', 'address', 'telephone_number', 'cellphone_number'], 'required'],
             [['description'], 'string'],
-            [['manufacturer_name'], 'string', 'max' => 25]
+            [['manufacturer_name', 'contact_person', 'address', 'telephone_number', 'cellphone_number'], 'string', 'max' => 25]
         ];
     }
 
@@ -44,6 +48,10 @@ class Manufacturer extends \yii\db\ActiveRecord
             'id' => 'ID',
             'manufacturer_name' => 'Manufacturer Name',
             'description' => 'Description',
+            'contact_person' => 'Contact Person',
+            'address' => 'Address',
+            'telephone_number' => 'Telephone Number',
+            'cellphone_number' => 'Cellphone Number',
         ];
     }
 

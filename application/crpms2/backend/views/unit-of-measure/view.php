@@ -4,13 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\ReturnItemDetails */
+/* @var $model backend\models\UnitOfMeasure */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Return Item Details', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Unit Of Measures', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="return-item-details-view">
+<body background="../web/images/background5.png">
+<div class="unit-of-measure-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -28,14 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'return_item_header_id',
-            'item_id',
-            'quantity',
-            'unit_cost',
-            'amount',
-            'date_created',
-            'created_by',
+            //'id',
+            'type_of_measure',
+            'description',
         ],
     ]) ?>
 

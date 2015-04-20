@@ -18,7 +18,7 @@ class StockIssueHeaderSearch extends StockIssueHeader
     public function rules()
     {
         return [
-            [['id', 'location_id', 'stock_inventory_id', 'stock_status_id', 'employee_id', 'employee_lastname', 'employee_firstname', 'employee_middlename'], 'integer'],
+            [['id', 'location_id', 'stock_inventory_id', 'stock_status_id', 'prepared_by', 'approved_by', 'issued_by', 'received_by', 'created_by'], 'integer'],
             [['stock_issue_header_code', 'date_prepared', 'date_created', 'date_updated'], 'safe'],
         ];
     }
@@ -61,12 +61,13 @@ class StockIssueHeaderSearch extends StockIssueHeader
             'location_id' => $this->location_id,
             'stock_inventory_id' => $this->stock_inventory_id,
             'stock_status_id' => $this->stock_status_id,
-            'employee_id' => $this->employee_id,
-            'employee_lastname' => $this->employee_lastname,
-            'employee_firstname' => $this->employee_firstname,
-            'employee_middlename' => $this->employee_middlename,
+            'prepared_by' => $this->prepared_by,
+            'approved_by' => $this->approved_by,
+            'issued_by' => $this->issued_by,
+            'received_by' => $this->received_by,
             'date_created' => $this->date_created,
             'date_updated' => $this->date_updated,
+            'created_by' => $this->created_by,
         ]);
 
         $query->andFilterWhere(['like', 'stock_issue_header_code', $this->stock_issue_header_code]);

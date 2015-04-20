@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\ItemSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<body background="../web/images/background5.png">
 <div class="item-search">
 
     <?php $form = ActiveForm::begin([
@@ -28,6 +28,8 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'generic_name_id') ?>
 
     <?php // echo $form->field($model, 'minimum_reorder_quantity') ?>
+
+    <?php // echo $form->field($model, 'unit_of_measure_id') ?>
 
     <?php // echo $form->field($model, 'remarks') ?>
 

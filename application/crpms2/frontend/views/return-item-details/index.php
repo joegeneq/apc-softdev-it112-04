@@ -15,27 +15,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    <p>
+        <?= Html::a('Create Return Item Details', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-           // 'id',
-             ['attribute' => 'return_item_header_id',
-            'label' => 'Return Item Header Code',
-            'value' => 'returnItemHeader.return_item_header_code',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\ReturnItemHeader::find()-> all(),'id','return_item_header_code')],
-          
+            'id',
+            'return_item_header_id',
             'item_id',
-             ['attribute' => 'item_id',
-            'label' => 'Item name',
-            'value' => 'item.item_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
-          
             'quantity',
-            'amount',
+            'unit_cost',
+            // 'amount',
             // 'date_created',
+            // 'created_by',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
