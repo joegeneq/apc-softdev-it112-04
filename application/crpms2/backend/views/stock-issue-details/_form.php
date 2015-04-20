@@ -15,8 +15,18 @@ use backend\models\Item;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'stock_issue_header_id')->textInput() ?>
 
+	   <?php
+        $stockissueheader=StockIssueHeader::find()->all();
+        $listData=ArrayHelper::map($stockissueheader, 'id', 'stock_issue_header_code');
+        echo $form->field($model, 'stock_issue_header_id')->dropDownList(
+            $listData,['prompt'=>'Select Stock Issue Header Id']);
+    ?>
+
+	
+	
+	
+	
     <?= $form->field($model, 'date_release')->widget(
     DatePicker::className(), [
         // inline too, not bad

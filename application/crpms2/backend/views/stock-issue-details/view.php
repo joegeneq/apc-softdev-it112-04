@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
          //   'id',
-              ['attribute' => 'stockIssueHeader.header_code', 'label' => 'Stock Issue Header Code:'],
+              ['attribute' => 'stockIssueHeader.stock_issue_header_code', 'label' => 'Stock Issue Header Code:'],
          
             'date_release',
         ['attribute' => 'item.item_name', 'label' => 'Item Name:'],
