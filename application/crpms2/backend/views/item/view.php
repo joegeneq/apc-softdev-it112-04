@@ -40,8 +40,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' => 'genericName.generic_name', 'label' => 'Generic Name:'],
             'minimum_reorder_quantity',
             'remarks:ntext',
-            'date_created',
-            'date_updated',
+            //'date_created',
+            //'date_updated',
         ],
     ]) ?>
 

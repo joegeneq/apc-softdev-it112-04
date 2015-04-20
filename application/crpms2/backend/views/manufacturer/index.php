@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\ManufacturerSearch */
+/* @var $searchModel frontend\models\ManufacturerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Manufacturers';
@@ -27,11 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            //'manufacturer_name',
-             ['attribute' => 'manufacturer_name',
-            'label' => 'Manufacturer Name',
-            'value' => 'manufacturer.manufacturer_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Manufacturer::find()-> all(),'id','manufacturer_name')],
+            'manufacturer_name',
             'description:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
