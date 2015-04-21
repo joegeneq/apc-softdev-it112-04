@@ -37,11 +37,11 @@ $this->params['breadcrumbs'][] = $this->title;
          
            // 'bed_description:ntext',
             // 'bed_comments:ntext',
-             'bed_status_id',
+             //'bed_status_id',
              ['attribute' => 'bed_status_id',
             'label' => 'Bed Status',
-            'value' => 'bedStatus.status',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\BedStatus::find()-> all(),'id','status')],
+            'value' => 'bedStatus.status_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\BedStatus::find()-> all(),'id','status_name')],
          
             ['class' => 'yii\grid\ActionColumn'],
         ],

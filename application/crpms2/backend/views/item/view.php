@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' => 'genericName.generic_name', 'label' => 'Generic Name:'],
             'minimum_reorder_quantity',
             //'unit_of_measure_id',
-            ['attribute' => 'unitOfMeasure.type_of_measure', 'label' => 'Unit Of Measure:'],
+           // ['attribute' => 'unitOfMeasure.type_of_measure', 'label' => 'Unit Of Measure:'],
             'remarks:ntext',
             //'date_created',
             //'date_updated',

@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'bed_description:ntext',
             'bed_comments:ntext',
            // 'bed_status_id',
-            ['attribute'=>'bedStatus.status','label'=>'Bed Status'],
+            ['attribute'=>'bedStatus.status_name','label'=>'Bed Status'],
         ],
     ]) ?>
 

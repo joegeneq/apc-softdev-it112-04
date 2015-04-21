@@ -31,7 +31,7 @@ use backend\models\BedStatus;
 
     <?php
         $bedStatus=BedStatus::find()->all();
-        $listData=ArrayHelper::map($location, 'id', 'status');
+        $listData=ArrayHelper::map($bedStatus, 'id', 'status_name');
         echo $form->field($model, 'bed_status_id')->dropDownList(
             $listData,['prompt'=>'Select Bed Status']);
     ?>
