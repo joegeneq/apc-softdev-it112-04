@@ -25,8 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'return_item_header_id',
+         //   'id',
+        //    'return_item_header_id',
+            ['attribute' => 'return_item_header_id',
+            'label' => 'Return Item Header Code',
+            'value' => 'returnItemHeader.return_item_header_code',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\ReturnItemHeader::find()-> all(),'id','return_item_header_code')],
+              ['attribute' => 'item_id',
+            'label' => 'Item Name',
+            'value' => 'item.item_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
+            
             'item_id',
             'quantity',
             'unit_cost',

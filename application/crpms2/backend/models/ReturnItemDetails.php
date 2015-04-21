@@ -16,6 +16,7 @@ use Yii;
  * @property string $date_created
  * @property integer $created_by
  *
+ * @property User $createdBy
  * @property ReturnItemHeader $returnItemHeader
  * @property Item $item
  */
@@ -57,6 +58,14 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
             'date_created' => 'Date Created',
             'created_by' => 'Created By',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCreatedBy()
+    {
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
     }
 
     /**
