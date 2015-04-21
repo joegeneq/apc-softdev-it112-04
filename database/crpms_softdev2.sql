@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2015 at 01:23 PM
+-- Generation Time: Apr 21, 2015 at 02:32 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -336,7 +336,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `status` smallint(6) NOT NULL DEFAULT '10',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`) VALUES
+(4, 'pharmacist', 'uROGCjXlNl5pphXNHCKTXx_ZsDnzl3Um', '$2y$13$JG3jK4lPdZBS3hrKPwssve4MV9BrOnnfPXkLYyj5IF3xELI2z/AH2', NULL, 'pharmacist@gmail.com', 20, 10, 1429619235, 1429619235),
+(5, 'admin', 'p-JyJ83c-EO5T3gUe-gZdV87sgy6JL9n', '$2y$13$SD03oYsNV5uRMJtHZAavN.cedysfxa3nv/slsuYNtE0EgV4xvD/li', NULL, 'admin@example.com', 20, 10, 1429619253, 1429619253),
+(6, 'accounting', 'bFtxKJnXsblIxOucn3uZJCzyvo8J3lVp', '$2y$13$MTeY94onkjl24n5oLHabaexOcC0hEFJxqppTReA9jjMrVMa9LYYMO', NULL, 'accounting@example.com', 10, 10, 1429619316, 1429619316);
 
 --
 -- Indexes for dumped tables
@@ -554,7 +563,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
