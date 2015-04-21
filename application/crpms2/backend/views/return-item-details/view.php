@@ -40,11 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'date_created',
 
             //'created_by',
-             ['attribute' => 'created_by',
-            'label' => 'Location name',
-            'value' => 'user.username',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\User::find()-> all(),'id','username')],
-            
+           
 
         ],
     ]) ?>
