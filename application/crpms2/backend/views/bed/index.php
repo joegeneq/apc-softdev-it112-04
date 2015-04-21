@@ -10,7 +10,6 @@ use yii\grid\GridView;
 $this->title = 'Beds';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
 <div class="bed-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -26,15 +25,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-           // 'id',
+            //'id',
             'bed_code',
             'bed_number',
-              ['attribute' => 'location_id',
+            //'location_id',
+             ['attribute' => 'location_id',
             'label' => 'Location Name',
             'value' => 'location.location_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-          
-
+         
+           // 'bed_description:ntext',
+            // 'bed_comments:ntext',
+             'bed_status_id',
+             ['attribute' => 'bed_status_id',
+            'label' => 'Bed Status',
+            'value' => 'bedStatus.status',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\BedStatus::find()-> all(),'id','status')],
+         
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

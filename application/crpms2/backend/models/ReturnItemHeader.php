@@ -44,8 +44,8 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['return_item_header_code', 'date_prepared', 'patient_id', 'location_id', 'bed_id', 'total_amount', 'returned_by', 'received_by', 'approved_by', 'accounting_status_id', 'created_by'], 'required'],
-            [['date_prepared', 'date_created', 'date_updated'], 'safe'],
+            [['return_item_header_code', 'date_prepared', 'location_id', 'bed_id', 'total_amount', 'returned_by', 'received_by', 'approved_by', 'accounting_status_id', 'created_by'], 'required'],
+            [['date_prepared', 'date_created', 'date_updated', 'patient_id'], 'safe'],
             [['patient_id', 'location_id', 'bed_id', 'returned_by', 'received_by', 'approved_by', 'accounting_status_id', 'created_by'], 'integer'],
             [['total_amount'], 'number'],
             [['return_item_header_code'], 'string', 'max' => 20]
@@ -61,14 +61,14 @@ class ReturnItemHeader extends \yii\db\ActiveRecord
             'id' => 'ID',
             'return_item_header_code' => 'Return Item Header Code',
             'date_prepared' => 'Date Prepared',
-            'patient_id' => 'Patient ID',
-            'location_id' => 'Location ID',
-            'bed_id' => 'Bed ID',
+            'patient_id' => 'Patient Full name',
+            'location_id' => 'Location Name',
+            'bed_id' => 'Bed Number',
             'total_amount' => 'Total Amount',
             'returned_by' => 'Returned By',
             'received_by' => 'Received By',
             'approved_by' => 'Approved By',
-            'accounting_status_id' => 'Accounting Status ID',
+            'accounting_status_id' => 'Accounting Status ',
             'date_created' => 'Date Created',
             'date_updated' => 'Date Updated',
             'created_by' => 'Created By',

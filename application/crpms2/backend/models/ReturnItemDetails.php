@@ -50,8 +50,8 @@ class ReturnItemDetails extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'return_item_header_id' => 'Return Item Header ID',
-            'item_id' => 'Item ID',
+            'return_item_header_id' => 'Return Item Header Code',
+            'item_id' => 'Item Name',
             'quantity' => 'Quantity',
             'unit_cost' => 'Unit Cost',
             'amount' => 'Amount',

@@ -53,9 +53,9 @@ class StockIssueDetails extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'stock_issue_header_id' => 'Stock Issue Header ID',
+            'stock_issue_header_id' => 'Stock Issue Header Code',
             'date_release' => 'Date Release',
-            'item_id' => 'Item ID',
+            'item_id' => 'Item Name',
             'quantity' => 'Quantity',
             'exp_date' => 'Exp Date',
             'unit_cost' => 'Unit Cost',

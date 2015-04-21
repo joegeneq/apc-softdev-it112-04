@@ -6,11 +6,10 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Bed */
 
-$this->title = $model->id;
+$this->title = $model->bed_code;
 $this->params['breadcrumbs'][] = ['label' => 'Beds', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
 <div class="bed-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -29,12 +28,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            //'id',
+           // 'id',
             'bed_code',
             'bed_number',
             //'location_id',
-              ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-          
+            ['attribute'=>'location.location_name','label'=>'Location Name'],
+       
+            'bed_description:ntext',
+            'bed_comments:ntext',
+           // 'bed_status_id',
+            ['attribute'=>'bedStatus.status','label'=>'Bed Status'],
         ],
     ]) ?>
 

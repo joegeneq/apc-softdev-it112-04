@@ -50,8 +50,8 @@ class StockInventory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'item_id' => 'Item ID',
-            'location_id' => 'Location ID',
+            'item_id' => 'Item Name',
+            'location_id' => 'Location Name',
             'quantity_onhand' => 'Quantity Onhand',
             'quantity_onorder' => 'Quantity Onorder',
             'stock_inventory_code' => 'Stock Inventory Code',

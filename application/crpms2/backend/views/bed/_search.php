@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\BedSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../web/images/background5.png">
+
 <div class="bed-search">
 
     <?php $form = ActiveForm::begin([
@@ -22,6 +22,12 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'bed_number') ?>
 
     <?= $form->field($model, 'location_id') ?>
+
+    <?= $form->field($model, 'bed_description') ?>
+
+    <?php // echo $form->field($model, 'bed_comments') ?>
+
+    <?php // echo $form->field($model, 'bed_status_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

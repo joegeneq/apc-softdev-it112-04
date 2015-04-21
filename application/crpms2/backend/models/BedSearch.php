@@ -18,8 +18,8 @@ class BedSearch extends Bed
     public function rules()
     {
         return [
-            [['id', 'bed_number', 'location_id'], 'integer'],
-            [['bed_code'], 'safe'],
+            [['id', 'bed_number', 'location_id', 'bed_status_id'], 'integer'],
+            [['bed_code', 'bed_description', 'bed_comments'], 'safe'],
         ];
     }
 
@@ -59,9 +59,12 @@ class BedSearch extends Bed
             'id' => $this->id,
             'bed_number' => $this->bed_number,
             'location_id' => $this->location_id,
+            'bed_status_id' => $this->bed_status_id,
         ]);
 
-        $query->andFilterWhere(['like', 'bed_code', $this->bed_code]);
+        $query->andFilterWhere(['like', 'bed_code', $this->bed_code])
+            ->andFilterWhere(['like', 'bed_description', $this->bed_description])
+            ->andFilterWhere(['like', 'bed_comments', $this->bed_comments]);
 
         return $dataProvider;
     }

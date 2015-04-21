@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2015 at 10:03 AM
+-- Generation Time: Apr 21, 2015 at 10:48 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -361,7 +361,7 @@ ALTER TABLE `accounting_status`
 -- Indexes for table `bed`
 --
 ALTER TABLE `bed`
- ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`), ADD KEY `bed_ibfk_3` (`location_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`), ADD KEY `bed_ibfk_3` (`location_id`), ADD KEY `bed_ibfk_4` (`bed_status_id`);
 
 --
 -- Indexes for table `bed_status`
@@ -572,7 +572,8 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- Constraints for table `bed`
 --
 ALTER TABLE `bed`
-ADD CONSTRAINT `bed_ibfk_3` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+ADD CONSTRAINT `bed_ibfk_3` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
+ADD CONSTRAINT `bed_ibfk_4` FOREIGN KEY (`bed_status_id`) REFERENCES `bed_status` (`id`);
 
 --
 -- Constraints for table `employee`
