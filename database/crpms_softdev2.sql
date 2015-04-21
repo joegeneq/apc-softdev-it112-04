@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2015 at 09:11 AM
+-- Generation Time: Apr 21, 2015 at 09:19 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -124,15 +124,6 @@ CREATE TABLE IF NOT EXISTS `item_category` (
   `category_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `item_category`
---
-
-INSERT INTO `item_category` (`id`, `category_id`, `category_name`) VALUES
-(1, 'test', 'medicine'),
-(2, 'SPPLY', 'Supplies'),
-(3, 'EQPMNT', 'Equipment');
-
 -- --------------------------------------------------------
 
 --
@@ -144,15 +135,6 @@ CREATE TABLE IF NOT EXISTS `location` (
   `location_code` varchar(20) NOT NULL,
   `location_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `location`
---
-
-INSERT INTO `location` (`id`, `location_code`, `location_name`) VALUES
-(1, 'PDWRD', 'pedia ward'),
-(2, 'FWARD', 'female ward'),
-(3, 'MWARD', 'male ward');
 
 -- --------------------------------------------------------
 
@@ -213,14 +195,6 @@ CREATE TABLE IF NOT EXISTS `position` (
   `position_code` varchar(20) NOT NULL,
   `position_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `position`
---
-
-INSERT INTO `position` (`id`, `position_code`, `position_name`) VALUES
-(1, 'NRS', 'nurse'),
-(2, 'ASNRS', 'assistant nurse');
 
 -- --------------------------------------------------------
 
@@ -363,15 +337,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`) VALUES
-(0, 'pharmacist', 'P6M-ByYdBAlKlXrjb9UnlS-HktQ3nts4', '$2y$13$7qrXlIGDT0SKh0PomWiTYeoqU5mSzPA5Q0qEV4JVAGneEMFWIcT32', '', 'pharmacist@gmail.com', 20, 10, 1428206215, 1428206215),
-(1, 'admin', 'E3n4JKw-tdsNvCx17E8e4gZx_AmjBlJ8', '$2y$13$7fkt3MbsuuxMiV1P3jVDTuT6qLliDVJ7HccG7apbeRwlU1OJ1wyy6', NULL, 'admin@example.com', 20, 10, 1426402583, 1426402583),
-(3, 'accounting', 'qHlTcIVACOvo6M6WhoomZBy9NCFtCVva', '$2y$13$ITYbouiUdeEogfgL2xRiFOhTfQx8GguVrOpD5iSGupUHbmo.YmJDm', '', 'accounting@example.com', 10, 10, 1426403400, 1426403400);
 
 --
 -- Indexes for dumped tables
