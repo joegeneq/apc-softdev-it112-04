@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\ReturnItemHeader */
 
-$this->title = $model->id;
+$this->title = $model->return_item_header_code;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,20 +28,25 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'return_item_header_code',
+
             'date_prepared',
-            'patient_id',
-            'location_id',
-            'bed_id',
+           // 'patient_id',
+            [ 'attribute' => 'patient.lastname', 'label' => 'Patient Last Name'],
+            [ 'attribute' => 'patient.firstname', 'label' => 'Patient First Name'],
+            
+            ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
+            ['attribute' => 'bed.description', 'label' => 'Bed Number:'],
+           
             'total_amount',
-            'returned_by',
-            'received_by',
-            'approved_by',
-            'accounting_status_id',
-            'date_created',
+            //'returned_by',
+            //'received_by',
+            //'approved_by',
+             ['attribute' => 'accountingStatus.description', 'label' => 'Accounting Status:'],
+           'date_created',
             'date_updated',
-            'created_by',
+            //'created_by',
         ],
     ]) ?>
 

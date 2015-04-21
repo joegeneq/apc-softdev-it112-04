@@ -37,8 +37,7 @@ use backend\models\ReturnItemHeader;
 
     <?= $form->field($model, 'amount')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'date_created')->textInput() ?>
-
+   
     <?= $form->field($model, 'created_by')->textInput() ?>
 
     <div class="form-group">

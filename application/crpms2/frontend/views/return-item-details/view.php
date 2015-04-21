@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'quantity',
             'unit_cost',
             'amount',
-            //'date_created',
+            'date_created',
             //'created_by',
         ],
     ]) ?>

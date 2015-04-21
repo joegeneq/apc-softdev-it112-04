@@ -25,12 +25,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'return_item_header_code',
             'date_prepared',
-            'patient_id',
-            'location_id',
-            // 'bed_id',
+          [
+                'attribute' => 'patient_id',
+                'label' => 'Patient Lastname',
+                'value' => 'patient.lastname'
+            ],
+              ['attribute' => 'location_id',
+            'label' => 'Location Name',
+            'value' => 'location.location_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
+           // 'bed_id',
             // 'total_amount',
             // 'returned_by',
             // 'received_by',
