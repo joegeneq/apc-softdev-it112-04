@@ -10,6 +10,8 @@ $this->title = 'Create Stock Inventory';
 $this->params['breadcrumbs'][] = ['label' => 'Stock Inventories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../web/images/background5.png">
+
 <div class="stock-inventory-create">
 
     <h1><?= Html::encode($this->title) ?></h1>

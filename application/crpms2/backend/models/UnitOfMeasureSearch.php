@@ -18,7 +18,8 @@ class UnitOfMeasureSearch extends UnitOfMeasure
     public function rules()
     {
         return [
-            [['id', 'type_of_measure', 'description'], 'integer'],
+            [['id'], 'integer'],
+            [['type_of_measure', 'description'], 'safe'],
         ];
     }
 
@@ -56,9 +57,10 @@ class UnitOfMeasureSearch extends UnitOfMeasure
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'type_of_measure' => $this->type_of_measure,
-            'description' => $this->description,
         ]);
+
+        $query->andFilterWhere(['like', 'type_of_measure', $this->type_of_measure])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

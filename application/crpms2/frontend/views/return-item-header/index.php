@@ -10,14 +10,14 @@ use yii\grid\GridView;
 $this->title = 'Return Item Headers';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../web/images/background5.png">
+
 <div class="return-item-header-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Create Return Item Header', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+   
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -25,12 +25,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'return_item_header_code',
             'date_prepared',
-            'patient_id',
-            'location_id',
-            // 'bed_id',
+          [
+                'attribute' => 'patient_id',
+                'label' => 'Patient Lastname',
+                'value' => 'patient.lastname'
+            ],
+              ['attribute' => 'location_id',
+            'label' => 'Location Name',
+            'value' => 'location.location_name',
+            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
+           // 'bed_id',
             // 'total_amount',
             // 'returned_by',
             // 'received_by',

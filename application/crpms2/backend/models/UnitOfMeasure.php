@@ -8,8 +8,8 @@ use Yii;
  * This is the model class for table "unit_of_measure".
  *
  * @property integer $id
- * @property integer $type_of_measure
- * @property integer $description
+ * @property string $type_of_measure
+ * @property string $description
  */
 class UnitOfMeasure extends \yii\db\ActiveRecord
 {
@@ -28,7 +28,8 @@ class UnitOfMeasure extends \yii\db\ActiveRecord
     {
         return [
             [['type_of_measure'], 'required'],
-            [['type_of_measure', 'description'], 'integer']
+            [['description'], 'string'],
+            [['type_of_measure'], 'string', 'max' => 25]
         ];
     }
 

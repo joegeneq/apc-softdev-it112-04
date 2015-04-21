@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             //'id',
             'type_of_measure',
-            'description',
+            'description:ntext',
         ],
     ]) ?>
 
