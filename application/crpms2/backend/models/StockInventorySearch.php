@@ -18,7 +18,7 @@ class StockInventorySearch extends StockInventory
     public function rules()
     {
         return [
-            [['id', 'item_id', 'location_id', 'quantity_onhand', 'quantity_onorder'], 'integer'],
+            [['id', 'item_id', 'location_id', 'quantity_onhand', 'quantity_onorder', 'created_by'], 'integer'],
             [['stock_inventory_code', 'created'], 'safe'],
         ];
     }
@@ -62,6 +62,7 @@ class StockInventorySearch extends StockInventory
             'quantity_onhand' => $this->quantity_onhand,
             'quantity_onorder' => $this->quantity_onorder,
             'created' => $this->created,
+            'created_by' => $this->created_by,
         ]);
 
         $query->andFilterWhere(['like', 'stock_inventory_code', $this->stock_inventory_code]);

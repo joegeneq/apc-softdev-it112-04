@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\ReturnItemDetailsSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../web/images/background5.png">
+
 <div class="return-item-details-search">
 
     <?php $form = ActiveForm::begin([
@@ -23,9 +23,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'quantity') ?>
 
-    <?= $form->field($model, 'amount') ?>
+    <?= $form->field($model, 'unit_cost') ?>
+
+    <?php // echo $form->field($model, 'amount') ?>
 
     <?php // echo $form->field($model, 'date_created') ?>
+
+    <?php // echo $form->field($model, 'created_by') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

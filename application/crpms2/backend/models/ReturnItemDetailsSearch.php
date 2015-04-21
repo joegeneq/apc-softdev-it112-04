@@ -18,8 +18,8 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
     public function rules()
     {
         return [
-            [['id', 'return_item_header_id', 'item_id', 'quantity'], 'integer'],
-            [['amount'], 'number'],
+            [['id', 'return_item_header_id', 'item_id', 'quantity', 'created_by'], 'integer'],
+            [['unit_cost', 'amount'], 'number'],
             [['date_created'], 'safe'],
         ];
     }
@@ -61,8 +61,10 @@ class ReturnItemDetailsSearch extends ReturnItemDetails
             'return_item_header_id' => $this->return_item_header_id,
             'item_id' => $this->item_id,
             'quantity' => $this->quantity,
+            'unit_cost' => $this->unit_cost,
             'amount' => $this->amount,
             'date_created' => $this->date_created,
+            'created_by' => $this->created_by,
         ]);
 
         return $dataProvider;

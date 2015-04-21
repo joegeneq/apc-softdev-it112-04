@@ -10,7 +10,6 @@ use yii\grid\GridView;
 $this->title = 'Return Item Details';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
 <div class="return-item-details-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -26,22 +25,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
-         
-            ['attribute' => 'return_item_header_id',
-            'label' => 'Return Item Header Code',
-            'value' => 'returnItemHeader.return_item_header_code',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\ReturnItemHeader::find()-> all(),'id','return_item_header_code')],
-             ['attribute' => 'item_id',
-            'label' => 'Item Name',
-            'value' => 'item.item_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
-         
-  
-        
+            'id',
+            'return_item_header_id',
+            'item_id',
             'quantity',
-            'amount',
+            'unit_cost',
+            // 'amount',
             // 'date_created',
+            // 'created_by',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

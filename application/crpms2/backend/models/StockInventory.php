@@ -14,6 +14,7 @@ use Yii;
  * @property integer $quantity_onorder
  * @property string $stock_inventory_code
  * @property string $created
+ * @property integer $created_by
  *
  * @property Item $item
  * @property Location $location
@@ -35,8 +36,8 @@ class StockInventory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['item_id', 'location_id', 'quantity_onhand', 'quantity_onorder', 'stock_inventory_code'], 'required'],
-            [['item_id', 'location_id', 'quantity_onhand', 'quantity_onorder'], 'integer'],
+            [['item_id', 'location_id', 'quantity_onhand', 'quantity_onorder', 'stock_inventory_code', 'created_by'], 'required'],
+            [['item_id', 'location_id', 'quantity_onhand', 'quantity_onorder', 'created_by'], 'integer'],
             [['created'], 'safe'],
             [['stock_inventory_code'], 'string', 'max' => 20]
         ];
@@ -55,6 +56,7 @@ class StockInventory extends \yii\db\ActiveRecord
             'quantity_onorder' => 'Quantity Onorder',
             'stock_inventory_code' => 'Stock Inventory Code',
             'created' => 'Created',
+            'created_by' => 'Created By',
         ];
     }
 

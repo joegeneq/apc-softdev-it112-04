@@ -25,21 +25,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-           // 'id',
-             ['attribute' => 'item_id',
-            'label' => 'Item Name',
-            'value' => 'item.item_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
-        // 'location_id',
-           ['attribute' => 'location_id',
-            'label' => 'Item Name',
-            'value' => 'location.location_name',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\Location::find()-> all(),'id','location_name')],
-         
+            'id',
+            'item_id',
+            'location_id',
             'quantity_onhand',
             'quantity_onorder',
             // 'stock_inventory_code',
             // 'created',
+            // 'created_by',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
