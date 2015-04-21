@@ -9,7 +9,8 @@ use yii\widgets\DetailView;
 $this->title = $model->return_item_header_code;
 $this->params['breadcrumbs'][] = ['label' => 'Return Item Headers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-?>
+?><body background="../web/images/background5.png">
+
 <div class="return-item-header-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
