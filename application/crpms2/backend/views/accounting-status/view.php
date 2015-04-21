@@ -10,6 +10,7 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Accounting Statuses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<body background="../web/images/background5.png">
 <div class="accounting-status-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -28,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'status_code',
             'description',
         ],
