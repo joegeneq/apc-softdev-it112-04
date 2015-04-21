@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2015 at 09:19 AM
+-- Generation Time: Apr 21, 2015 at 10:21 AM
 -- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- PHP Version: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -194,7 +194,16 @@ CREATE TABLE IF NOT EXISTS `position` (
 `id` int(11) NOT NULL,
   `position_code` varchar(20) NOT NULL,
   `position_name` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `position`
+--
+
+INSERT INTO `position` (`id`, `position_code`, `position_name`) VALUES
+(3, 'NRSE', 'Nurse'),
+(4, 'ASST NRSE', 'Assistant Nurse'),
+(5, 'PHRMCST', 'Pharmacist');
 
 -- --------------------------------------------------------
 
@@ -326,7 +335,7 @@ CREATE TABLE IF NOT EXISTS `unit_of_measure` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -336,7 +345,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `status` smallint(6) NOT NULL DEFAULT '10',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'pharmacist', '0WXm4Lpvd1vdTixccRKG0sEmXFtQpA6E', '$2y$13$eRy9Sa2HrNrCtjf/0sXqJuwHS3xG5AwWO76ngKlsH4UHWJ0l5K6jm', NULL, 'pharmacist@gmail.com', 20, 10, 1429601439, 1429601439),
+(2, 'admin', 'XZfsBFObdUNbsXRIyUsVbVY5VKKW9rNX', '$2y$13$2vijun0mPd.8kMR32DwSlOYOhd0p3kWO2pqoFw/QF6aJoNuClMDpm', NULL, 'admin@example.com', 20, 10, 1429603285, 1429603285),
+(3, 'accounting', 'uhfXsFS37SfLW9xA9JP_fVByYJIOVgCx', '$2y$13$bDU2d9OsR28UzygpSzSlNenT2zci1JhXBjlwc.H/qqVIuHwiM9.YK', NULL, 'accounting@example.com', 10, 10, 1429603315, 1429603315);
 
 --
 -- Indexes for dumped tables
@@ -514,7 +532,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `position`
 --
 ALTER TABLE `position`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `return_item_details`
 --
@@ -551,6 +569,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 ALTER TABLE `unit_of_measure`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
 -- Constraints for dumped tables
 --
 
@@ -564,7 +587,7 @@ ADD CONSTRAINT `bed_ibfk_3` FOREIGN KEY (`location_id`) REFERENCES `location` (`
 -- Constraints for table `employee`
 --
 ALTER TABLE `employee`
-ADD CONSTRAINT `employee_ibfk_8` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+ADD CONSTRAINT `employee_ibfk_9` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `item`
