@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2015 at 05:56 AM
+-- Generation Time: Apr 21, 2015 at 06:36 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -443,14 +443,15 @@ CREATE TABLE IF NOT EXISTS `unit_of_measure` (
 `id` int(11) NOT NULL,
   `type_of_measure` varchar(25) NOT NULL,
   `description` longtext
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `unit_of_measure`
 --
 
 INSERT INTO `unit_of_measure` (`id`, `type_of_measure`, `description`) VALUES
-(1, 'mg', 'Milligrams');
+(1, 'mg', 'Milligrams'),
+(2, 'kg', 'Kilograms');
 
 -- --------------------------------------------------------
 
@@ -691,7 +692,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `unit_of_measure`
 --
 ALTER TABLE `unit_of_measure`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
