@@ -17,13 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
+       
     </p>
 
     <?= DetailView::widget([
@@ -38,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [ 'attribute' => 'patient.firstname', 'label' => 'Patient First Name'],
             
             ['attribute' => 'location.location_name', 'label' => 'Location Name:'],
-            ['attribute' => 'bed.description', 'label' => 'Bed Number:'],
+            ['attribute' => 'bed.bed_number', 'label' => 'Bed Number:'],
            
             'total_amount',
             //'returned_by',
