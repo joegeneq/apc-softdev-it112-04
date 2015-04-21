@@ -4,6 +4,10 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use backend\models\User;
+
+use backend\models\Item;
+
+use backend\models\ReturnItemHeader;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemDetails */
 /* @var $form yii\widgets\ActiveForm */
@@ -13,9 +17,18 @@ use backend\models\User;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'return_item_header_id')->textInput() ?>
-
-    <?= $form->field($model, 'item_id')->textInput() ?>
+    <?php
+        $returnItemHeader=ReturnItemHeader::find()->all();
+        $listData=ArrayHelper::map($returnItemHeader, 'id', 'return_item_header_code');
+        echo $form->field($model, 'return_item_header_id')->dropDownList(
+            $listData,['prompt'=>'Select Return Item Header']);
+    ?>
+<?php
+        $item=Item::find()->all();
+        $listData=ArrayHelper::map($item, 'id', 'item_name');
+        echo $form->field($model, 'item_id')->dropDownList(
+            $listData,['prompt'=>'Select Item']);
+    ?>
 
     <?= $form->field($model, 'quantity')->textInput() ?>
 
@@ -23,14 +36,12 @@ use backend\models\User;
 
     <?= $form->field($model, 'amount')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'date_created')->textInput() ?>
-
-    <?= $form->field($model, 'created_by')->textInput() ?>
+ 
     <?php
         $user=User::find()->all();
         $listData=ArrayHelper::map($user, 'id', 'username');
         echo $form->field($model, 'created_by')->dropDownList(
-            $listData,['prompt'=>'Select Generic Name']);
+            $listData,['prompt'=>'Select User']);
     ?>
 
     <div class="form-group">

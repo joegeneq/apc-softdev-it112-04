@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'value' => 'item.item_name',
             'filter' => yii\helpers\ArrayHelper::map(backend\models\Item::find()-> all(),'id','item_name')],
             
-            'item_id',
+            //'item_id',
             'quantity',
             'unit_cost',
             // 'amount',

@@ -2,7 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use backend\models\Item;
+use backend\models\Location;
+use backend\models\User;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockInventory */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,9 +15,18 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'item_id')->textInput() ?>
-
-    <?= $form->field($model, 'location_id')->textInput() ?>
+   <?php
+        $item=Item::find()->all();
+        $listData=ArrayHelper::map($item, 'id', 'item_name');
+        echo $form->field($model, 'item_id')->dropDownList(
+            $listData,['prompt'=>'Select Item']);
+    ?>
+<?php
+        $location=Location::find()->all();
+        $listData=ArrayHelper::map($location, 'id', 'location_name');
+        echo $form->field($model, 'location_id')->dropDownList(
+            $listData,['prompt'=>'Select Location']);
+    ?>
 
     <?= $form->field($model, 'quantity_onhand')->textInput() ?>
 
@@ -22,10 +34,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'stock_inventory_code')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'created')->textInput() ?>
-
-    <?= $form->field($model, 'created_by')->textInput() ?>
-
+    
+    <?php
+        $user=User::find()->all();
+        $listData=ArrayHelper::map($user, 'id', 'username');
+        echo $form->field($model, 'created_by')->dropDownList(
+            $listData,['prompt'=>'Select User']);
+    ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
