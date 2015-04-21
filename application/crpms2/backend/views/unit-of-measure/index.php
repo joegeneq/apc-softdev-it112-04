@@ -26,13 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-           //'id',
-            //'type_of_measure',
-            ['attribute' => 'unit_of_measure_id',
-            'label' => 'Unit of Measure',
-            'value' => 'unitOfMeasure.type_of_measure',
-            'filter' => yii\helpers\ArrayHelper::map(backend\models\UnitOfMeasure::find()-> all(),'id','type_of_measure')],
-            'description',
+            //'id',
+            'type_of_measure',
+            'description:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

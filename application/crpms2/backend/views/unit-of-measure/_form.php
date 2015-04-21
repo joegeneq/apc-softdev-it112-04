@@ -12,9 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'type_of_measure')->textInput() ?>
+    <?= $form->field($model, 'type_of_measure')->textInput(['maxlength' => 25]) ?>
 
-    <?= $form->field($model, 'description')->textInput() ?>
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

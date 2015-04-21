@@ -3,9 +3,13 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Apr 21, 2015 at 10:48 AM
+=======
+-- Generation Time: Apr 21, 2015 at 10:21 AM
+>>>>>>> d35734873124ba0f8a8a6e1a2a7ad05b6442e965
 -- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- PHP Version: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -194,7 +198,16 @@ CREATE TABLE IF NOT EXISTS `position` (
 `id` int(11) NOT NULL,
   `position_code` varchar(20) NOT NULL,
   `position_name` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `position`
+--
+
+INSERT INTO `position` (`id`, `position_code`, `position_name`) VALUES
+(3, 'NRSE', 'Nurse'),
+(4, 'ASST NRSE', 'Assistant Nurse'),
+(5, 'PHRMCST', 'Pharmacist');
 
 -- --------------------------------------------------------
 
@@ -523,7 +536,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `position`
 --
 ALTER TABLE `position`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `return_item_details`
 --
