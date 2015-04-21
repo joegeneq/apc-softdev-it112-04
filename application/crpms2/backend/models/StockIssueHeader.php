@@ -25,6 +25,7 @@ use Yii;
  * @property StockStatus $stockStatus
  * @property StockInventory $stockInventory
  * @property Location $location
+ * @property User $createdBy
  */
 class StockIssueHeader extends \yii\db\ActiveRecord
 {
@@ -58,9 +59,9 @@ class StockIssueHeader extends \yii\db\ActiveRecord
             'id' => 'ID',
             'stock_issue_header_code' => 'Stock Issue Header Code',
             'date_prepared' => 'Date Prepared',
-            'location_id' => 'Location Name',
-            'stock_inventory_id' => 'Stock Inventory Code',
-            'stock_status_id' => 'Stock Status ',
+            'location_id' => 'Location ID',
+            'stock_inventory_id' => 'Stock Inventory ID',
+            'stock_status_id' => 'Stock Status ID',
             'prepared_by' => 'Prepared By',
             'approved_by' => 'Approved By',
             'issued_by' => 'Issued By',
@@ -101,5 +102,13 @@ class StockIssueHeader extends \yii\db\ActiveRecord
     public function getLocation()
     {
         return $this->hasOne(Location::className(), ['id' => 'location_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCreatedBy()
+    {
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
     }
 }

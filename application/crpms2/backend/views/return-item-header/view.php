@@ -38,8 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' => 'bed.bed_number', 'label' => 'Bed Number:'],
            
             'total_amount',
-              [ 'attribute' => 'employee.returned_by', 'label' => 'Returned By:'],
-              [ 'attribute' => 'employee.received_by', 'label' => 'Received By:'],
+            //  [ 'attribute' => 'employee.returned_by', 'label' => 'Returned By:'],
+              //[ 'attribute' => 'employee.received_by', 'label' => 'Received By:'],
            //   [ 'attribute' => 'employee.approved_by, 'label' => 'Approved By:'],
               
            // 'accounting_status_id',
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
          
             'date_created',
             'date_updated',
-            'created_by',
+           // 'created_by',
         ],
     ]) ?>
 

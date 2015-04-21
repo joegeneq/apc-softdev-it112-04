@@ -6,6 +6,7 @@ use yii\helpers\ArrayHelper;
 use dosamigos\datepicker\DatePicker;
 use backend\models\StockIssueHeader;
 use backend\models\Item;
+use backend\models\User;
 /* @var $this yii\web\View */
 /* @var $model backend\models\StockIssueDetails */
 /* @var $form yii\widgets\ActiveForm */
@@ -62,8 +63,12 @@ use backend\models\Item;
 
     <?= $form->field($model, 'remarks')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'created_by')->textInput() ?>
-
+     <?php
+        $user=User::find()->all();
+        $listData=ArrayHelper::map($user, 'id', 'username');
+        echo $form->field($model, 'created_by')->dropDownList(
+            $listData,['prompt'=>'Select User']);
+    ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

@@ -9,6 +9,7 @@ use backend\models\AccountingStatus;
 use backend\models\Bed;
 use backend\models\Location;
 use dosamigos\datepicker\DatePicker;
+use backend\models\User;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReturnItemHeader */
 /* @var $form yii\widgets\ActiveForm */
@@ -72,8 +73,12 @@ use dosamigos\datepicker\DatePicker;
 
 ?>
 
-    <?= $form->field($model, 'created_by')->textInput() ?>
-
+     <?php
+        $user=User::find()->all();
+        $listData=ArrayHelper::map($user, 'id', 'username');
+        echo $form->field($model, 'created_by')->dropDownList(
+            $listData,['prompt'=>'Select User']);
+    ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

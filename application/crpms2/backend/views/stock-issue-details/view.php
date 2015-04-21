@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'amount',
             'remarks:ntext',
             'date_created',
-            'created_by',
+           // 'created_by',
         ],
     ]) ?>
 
