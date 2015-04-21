@@ -9,7 +9,8 @@ use yii\helpers\Html;
 $this->title = 'Create Bed';
 $this->params['breadcrumbs'][] = ['label' => 'Beds', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-?>
+?><body background="../web/images/background5.png">
+
 <div class="bed-create">
 
     <h1><?= Html::encode($this->title) ?></h1>

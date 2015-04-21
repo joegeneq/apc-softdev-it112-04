@@ -9,7 +9,8 @@ use yii\widgets\DetailView;
 $this->title = $model->bed_code;
 $this->params['breadcrumbs'][] = ['label' => 'Beds', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-?>
+?><body background="../web/images/background5.png">
+
 <div class="bed-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
