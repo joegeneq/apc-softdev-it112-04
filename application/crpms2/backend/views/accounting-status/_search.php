@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\AccountingStatusSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../web/images/background5.png">
+
 <div class="accounting-status-search">
 
     <?php $form = ActiveForm::begin([

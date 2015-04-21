@@ -11,7 +11,7 @@ use Yii;
  * @property string $status_code
  * @property string $description
  *
- * @property ReturnItemDetails[] $returnItemDetails
+ * @property ReturnItemHeader[] $returnItemHeaders
  */
 class AccountingStatus extends \yii\db\ActiveRecord
 {
@@ -49,8 +49,8 @@ class AccountingStatus extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReturnItemDetails()
+    public function getReturnItemHeaders()
     {
-        return $this->hasMany(ReturnItemDetails::className(), ['accounting_status_id' => 'id']);
+        return $this->hasMany(ReturnItemHeader::className(), ['accounting_status_id' => 'id']);
     }
 }
