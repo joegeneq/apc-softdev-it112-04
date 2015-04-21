@@ -43,14 +43,14 @@ use backend\models\User;
 
     <?= $form->field($model, 'email_address')->textInput(['maxlength' => 25]) ?>
 
-<<<<<<< HEAD
+
    <?php
         $user=User::find()->all();
         $listData=ArrayHelper::map($user, 'id', 'username');
         echo $form->field($model, 'created_by')->dropDownList(
             $listData,['prompt'=>'Select User']);
     ?>
-=======
+
     <!----?= $form->field($model, 'created_by')->textInput() ?---->
     <?php
         $employee=Employee::find()->all();
@@ -59,7 +59,7 @@ use backend\models\User;
             $listData,['prompt'=>'Select Employee']);
     ?>
 
->>>>>>> dfd61fab962bc6b0d6611f8eb248cab237840894
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
