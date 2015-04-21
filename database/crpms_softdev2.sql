@@ -3,9 +3,13 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Apr 21, 2015 at 06:36 AM
+=======
+-- Generation Time: Apr 21, 2015 at 07:01 AM
+>>>>>>> 55cf6d57c0027801004a9e9407dd5373918c2e29
 -- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -501,7 +505,7 @@ ALTER TABLE `bed`
 -- Indexes for table `bed_status`
 --
 ALTER TABLE `bed_status`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `employee`
@@ -704,6 +708,12 @@ ALTER TABLE `bed`
 ADD CONSTRAINT `bed_ibfk_3` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
 
 --
+-- Constraints for table `employee`
+--
+ALTER TABLE `employee`
+ADD CONSTRAINT `employee_ibfk_8` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
 -- Constraints for table `item`
 --
 ALTER TABLE `item`
@@ -755,7 +765,8 @@ ADD CONSTRAINT `stock_issue_header_ibfk_2` FOREIGN KEY (`stock_inventory_id`) RE
 ADD CONSTRAINT `stock_issue_header_ibfk_3` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
 ADD CONSTRAINT `stock_issue_header_ibfk_6` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`),
 ADD CONSTRAINT `stock_issue_header_ibfk_7` FOREIGN KEY (`stock_inventory_id`) REFERENCES `stock_inventory` (`id`),
-ADD CONSTRAINT `stock_issue_header_ibfk_8` FOREIGN KEY (`stock_status_id`) REFERENCES `stock_status` (`id`);
+ADD CONSTRAINT `stock_issue_header_ibfk_8` FOREIGN KEY (`stock_status_id`) REFERENCES `stock_status` (`id`),
+ADD CONSTRAINT `stock_issue_header_ibfk_9` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
