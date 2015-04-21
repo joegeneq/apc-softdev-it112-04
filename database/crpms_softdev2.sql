@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2015 at 02:23 PM
+-- Generation Time: Apr 21, 2015 at 05:21 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
 INSERT INTO `employee` (`id`, `emp_code`, `firstname`, `lastname`, `middlename`, `address`, `contact_number`, `position_id`, `user_id`, `created_by`, `date_created`) VALUES
 (1, '201158', 'flordeliza', 'calanno', 'm', 'taguig city', '123456', 2, 1, 0, '2015-04-20 07:24:47'),
 (2, '201159', 'TEN TEN', 'RONARIO', 'L', 'taguig city', '123456', 2, 0, 0, '2015-04-20 07:24:47'),
-(3, '2011510', 'KEVIN', 'NAVARRO', 'A', 'taguig city', '123456', 2, 0, 0, '2015-04-20 07:24:47');
+(3, '2011510', 'KEVIN', 'NAVARRO', 'D', 'taguig city', '123456', 2, 0, 0, '2015-04-21 00:37:42');
 
 -- --------------------------------------------------------
 
@@ -160,14 +160,16 @@ CREATE TABLE IF NOT EXISTS `item_category` (
 `id` int(11) NOT NULL,
   `category_id` varchar(20) NOT NULL,
   `category_name` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `item_category`
 --
 
 INSERT INTO `item_category` (`id`, `category_id`, `category_name`) VALUES
-(1, 'test', 'medicine');
+(1, 'test', 'medicine'),
+(2, 'SPPLY', 'Supplies'),
+(3, 'EQPMNT', 'Equipment');
 
 -- --------------------------------------------------------
 
@@ -204,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   `address` varchar(25) NOT NULL,
   `telephone_number` varchar(25) NOT NULL,
   `cellphone_number` varchar(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `manufacturer`
@@ -212,7 +214,9 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
 
 INSERT INTO `manufacturer` (`id`, `manufacturer_name`, `description`, `contact_person`, `address`, `telephone_number`, `cellphone_number`) VALUES
 (1, 'TST1', 'ASDASDASDASD', '', '', '', ''),
-(2, 'Unilab', 'TESTING\r\n\r\n', '', '', '', '');
+(2, 'Unilab', 'TESTING\r\n\r\n', '', '', '', ''),
+(3, 'Unilab', 'Testing', 'Sample testing', 'Pasay City', '840-7000', '09102419671'),
+(4, 'Pfizer', 'Testing2', 'Sample', 'Quezon City', '88-09-0898', '(+63)9087494487');
 
 -- --------------------------------------------------------
 
@@ -370,14 +374,15 @@ CREATE TABLE IF NOT EXISTS `stock_issue_details` (
   `remarks` longtext,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock_issue_details`
 --
 
 INSERT INTO `stock_issue_details` (`id`, `stock_issue_header_id`, `date_release`, `item_id`, `quantity`, `exp_date`, `unit_cost`, `amount`, `remarks`, `date_created`, `created_by`) VALUES
-(1, 1, '2015-04-30', 1, 1000, '2015-06-29', '10', '100', '', '2015-04-20 05:07:11', 0);
+(1, 1, '2015-04-30', 1, 1000, '2015-06-29', '10', '100', '', '2015-04-20 05:07:11', 0),
+(2, 1, '2015-04-30', 1, 1000, '2015-06-30', '10', '100', '', '2015-04-21 00:12:26', 1);
 
 -- --------------------------------------------------------
 
@@ -399,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `stock_issue_header` (
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock_issue_header`
@@ -407,7 +412,7 @@ CREATE TABLE IF NOT EXISTS `stock_issue_header` (
 
 INSERT INTO `stock_issue_header` (`id`, `stock_issue_header_code`, `date_prepared`, `location_id`, `stock_inventory_id`, `stock_status_id`, `prepared_by`, `approved_by`, `issued_by`, `received_by`, `date_created`, `date_updated`, `created_by`) VALUES
 (1, 'SIH1234', '2015-04-02', 1, 2, 1, 0, 0, 0, 0, '2015-04-19 22:41:59', '2015-04-19 22:41:59', 0),
-(2, 'SIH1235', '2015-04-09', 1, 1, 1, 0, 0, 0, 0, '2015-04-19 22:51:01', '2015-04-19 22:51:01', 0);
+(5, 'SIH002', '2015-09-09', 2, 1, 1, 1, 2, 1, 1, '2015-04-21 03:16:01', '2015-04-21 03:16:01', 1);
 
 -- --------------------------------------------------------
 
@@ -436,9 +441,16 @@ INSERT INTO `stock_status` (`id`, `status_code`, `description_name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `unit_of_measure` (
 `id` int(11) NOT NULL,
-  `type_of_measure` int(11) NOT NULL,
-  `description` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `type_of_measure` varchar(25) NOT NULL,
+  `description` longtext
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `unit_of_measure`
+--
+
+INSERT INTO `unit_of_measure` (`id`, `type_of_measure`, `description`) VALUES
+(1, 'mg', 'Milligrams');
 
 -- --------------------------------------------------------
 
@@ -624,7 +636,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `item_category`
 --
 ALTER TABLE `item_category`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `location`
 --
@@ -634,7 +646,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `patient`
 --
@@ -664,12 +676,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `stock_issue_details`
 --
 ALTER TABLE `stock_issue_details`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `stock_issue_header`
 --
 ALTER TABLE `stock_issue_header`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `stock_status`
 --
@@ -679,7 +691,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `unit_of_measure`
 --
 ALTER TABLE `unit_of_measure`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
