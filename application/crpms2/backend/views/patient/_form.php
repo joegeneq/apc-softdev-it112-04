@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use backend\models\Employee;
 use dosamigos\datepicker\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Patient */
@@ -40,7 +41,13 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'email_address')->textInput(['maxlength' => 25]) ?>
 
-    <?= $form->field($model, 'created_by')->textInput() ?>
+    <!----?= $form->field($model, 'created_by')->textInput() ?---->
+    <?php
+        $employee=Employee::find()->all();
+        $listData=ArrayHelper::map($employee, 'id', 'lastname','firstname');
+        echo $form->field($model, 'created_by')->dropDownList(
+            $listData,['prompt'=>'Select Employee']);
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
