@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2015 at 12:48 PM
+-- Generation Time: Apr 21, 2015 at 01:23 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -32,13 +32,6 @@ CREATE TABLE IF NOT EXISTS `accounting_status` (
   `description` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `accounting_status`
---
-
-INSERT INTO `accounting_status` (`id`, `status_code`, `description`) VALUES
-(3, 'fv', 'for viewing');
-
 -- --------------------------------------------------------
 
 --
@@ -55,13 +48,6 @@ CREATE TABLE IF NOT EXISTS `bed` (
   `bed_status_id` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `bed`
---
-
-INSERT INTO `bed` (`id`, `bed_code`, `bed_number`, `location_id`, `bed_description`, `bed_comments`, `bed_status_id`) VALUES
-(2, 'B2', 207, 4, 'asdasd', 'awdrewe', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -73,13 +59,6 @@ CREATE TABLE IF NOT EXISTS `bed_status` (
   `status_name` varchar(20) NOT NULL,
   `description` longtext
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `bed_status`
---
-
-INSERT INTO `bed_status` (`id`, `status_name`, `description`) VALUES
-(1, 'disposed', NULL);
 
 -- --------------------------------------------------------
 
@@ -101,13 +80,6 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `employee`
---
-
-INSERT INTO `employee` (`id`, `emp_code`, `firstname`, `lastname`, `middlename`, `address`, `contact_number`, `position_id`, `user_id`, `created_by`, `date_created`) VALUES
-(4, '2011555', 'flordeliza', 'calannoo', 'm', 'taguig city', '123456', 4, 1, 0, '2015-04-21 10:04:36');
-
 -- --------------------------------------------------------
 
 --
@@ -119,13 +91,6 @@ CREATE TABLE IF NOT EXISTS `generic_name` (
   `generic_name` varchar(25) NOT NULL,
   `description` longtext NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `generic_name`
---
-
-INSERT INTO `generic_name` (`id`, `generic_name`, `description`) VALUES
-(2, 'TST', 'asdsad');
 
 -- --------------------------------------------------------
 
@@ -147,13 +112,6 @@ CREATE TABLE IF NOT EXISTS `item` (
   `date_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `item`
---
-
-INSERT INTO `item` (`id`, `item_code`, `item_name`, `item_category_id`, `manufacturer_id`, `generic_name_id`, `minimum_reorder_quantity`, `unit_of_measure_id`, `remarks`, `date_created`, `date_updated`) VALUES
-(2, 'TSTNG', 'Testing', 4, 5, 2, 123, 3, '', '2015-04-21 09:51:06', '2015-04-21 09:51:06');
-
 -- --------------------------------------------------------
 
 --
@@ -166,13 +124,6 @@ CREATE TABLE IF NOT EXISTS `item_category` (
   `category_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `item_category`
---
-
-INSERT INTO `item_category` (`id`, `category_id`, `category_name`) VALUES
-(4, 'S1', 'Supplies');
-
 -- --------------------------------------------------------
 
 --
@@ -184,13 +135,6 @@ CREATE TABLE IF NOT EXISTS `location` (
   `location_code` varchar(20) NOT NULL,
   `location_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `location`
---
-
-INSERT INTO `location` (`id`, `location_code`, `location_name`) VALUES
-(4, 'FW', 'female_ward');
 
 -- --------------------------------------------------------
 
@@ -207,13 +151,6 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   `telephone_number` varchar(25) NOT NULL,
   `cellphone_number` varchar(25) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `manufacturer`
---
-
-INSERT INTO `manufacturer` (`id`, `manufacturer_name`, `description`, `contact_person`, `address`, `telephone_number`, `cellphone_number`) VALUES
-(5, 'unilab', 'asd', 'asda', 'dasd', 'azsdasd', 'fasfasd');
 
 -- --------------------------------------------------------
 
@@ -247,13 +184,6 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `patient`
---
-
-INSERT INTO `patient` (`id`, `patient_id_no`, `lastname`, `firstname`, `middlename`, `address`, `birthdate`, `telephone_number`, `cellphone_number`, `email_address`, `created_at`, `created_by`) VALUES
-(2, '201112', 'fincale', 'jurena', 'a', 'taguig city', '2015-05-04', '', '', '', '2015-04-21 10:15:42', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -265,15 +195,6 @@ CREATE TABLE IF NOT EXISTS `position` (
   `position_code` varchar(20) NOT NULL,
   `position_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `position`
---
-
-INSERT INTO `position` (`id`, `position_code`, `position_name`) VALUES
-(3, 'NRSE', 'Nurse'),
-(4, 'ASST NRSE', 'Assistant Nurse'),
-(5, 'PHRMCST', 'Pharmacist');
 
 -- --------------------------------------------------------
 
@@ -291,13 +212,6 @@ CREATE TABLE IF NOT EXISTS `return_item_details` (
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `return_item_details`
---
-
-INSERT INTO `return_item_details` (`id`, `return_item_header_id`, `item_id`, `quantity`, `unit_cost`, `amount`, `date_created`, `created_by`) VALUES
-(3, 3, 2, 1, '10.00', '10', '2015-04-21 10:36:27', 2);
 
 -- --------------------------------------------------------
 
@@ -322,13 +236,6 @@ CREATE TABLE IF NOT EXISTS `return_item_header` (
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `return_item_header`
---
-
-INSERT INTO `return_item_header` (`id`, `return_item_header_code`, `date_prepared`, `patient_id`, `location_id`, `bed_id`, `total_amount`, `returned_by`, `received_by`, `approved_by`, `accounting_status_id`, `date_created`, `date_updated`, `created_by`) VALUES
-(3, 'RIH5', '2015-04-20', 2, 4, 2, '100', 4, 4, 4, 3, '2015-04-21 10:19:55', '2015-04-21 10:19:55', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -345,13 +252,6 @@ CREATE TABLE IF NOT EXISTS `stock_inventory` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `stock_inventory`
---
-
-INSERT INTO `stock_inventory` (`id`, `item_id`, `location_id`, `quantity_onhand`, `quantity_onorder`, `stock_inventory_code`, `created`, `created_by`) VALUES
-(3, 2, 4, 1000, 0, 'SI123', '2015-04-21 10:02:38', 1);
 
 -- --------------------------------------------------------
 
@@ -372,13 +272,6 @@ CREATE TABLE IF NOT EXISTS `stock_issue_details` (
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `stock_issue_details`
---
-
-INSERT INTO `stock_issue_details` (`id`, `stock_issue_header_id`, `date_release`, `item_id`, `quantity`, `exp_date`, `unit_cost`, `amount`, `remarks`, `date_created`, `created_by`) VALUES
-(3, 6, '2015-04-16', 2, 1, '2015-04-15', '10', '10', 'asdasd', '2015-04-21 10:13:38', 1);
 
 -- --------------------------------------------------------
 
@@ -402,13 +295,6 @@ CREATE TABLE IF NOT EXISTS `stock_issue_header` (
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `stock_issue_header`
---
-
-INSERT INTO `stock_issue_header` (`id`, `stock_issue_header_code`, `date_prepared`, `location_id`, `stock_inventory_id`, `stock_status_id`, `prepared_by`, `approved_by`, `issued_by`, `received_by`, `date_created`, `date_updated`, `created_by`) VALUES
-(6, 'SIH1234', '2015-05-05', 4, 3, 2, 4, 4, 4, 4, '2015-04-21 10:10:26', '2015-04-21 10:10:26', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -421,13 +307,6 @@ CREATE TABLE IF NOT EXISTS `stock_status` (
   `description_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `stock_status`
---
-
-INSERT INTO `stock_status` (`id`, `status_code`, `description_name`) VALUES
-(2, 'PNDNG', 'asddasd');
-
 -- --------------------------------------------------------
 
 --
@@ -439,13 +318,6 @@ CREATE TABLE IF NOT EXISTS `unit_of_measure` (
   `type_of_measure` varchar(25) NOT NULL,
   `description` longtext
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `unit_of_measure`
---
-
-INSERT INTO `unit_of_measure` (`id`, `type_of_measure`, `description`) VALUES
-(3, 'mg', 'asdasd');
 
 -- --------------------------------------------------------
 
@@ -465,15 +337,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'pharmacist', '0WXm4Lpvd1vdTixccRKG0sEmXFtQpA6E', '$2y$13$eRy9Sa2HrNrCtjf/0sXqJuwHS3xG5AwWO76ngKlsH4UHWJ0l5K6jm', NULL, 'pharmacist@gmail.com', 20, 10, 1429601439, 1429601439),
-(2, 'admin', 'XZfsBFObdUNbsXRIyUsVbVY5VKKW9rNX', '$2y$13$2vijun0mPd.8kMR32DwSlOYOhd0p3kWO2pqoFw/QF6aJoNuClMDpm', NULL, 'admin@example.com', 20, 10, 1429603285, 1429603285),
-(3, 'accounting', 'uhfXsFS37SfLW9xA9JP_fVByYJIOVgCx', '$2y$13$bDU2d9OsR28UzygpSzSlNenT2zci1JhXBjlwc.H/qqVIuHwiM9.YK', NULL, 'accounting@example.com', 10, 10, 1429603315, 1429603315);
 
 --
 -- Indexes for dumped tables
