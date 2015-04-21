@@ -17,6 +17,7 @@ use backend\models\User;
 <body background="../web/images/background5.png">
 <div class="return-item-header-form">
 
+
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'return_item_header_code')->textInput(['maxlength' => 20]) ?>
@@ -36,7 +37,8 @@ use backend\models\User;
         ArrayHelper::map(Patient::find()->all(), 'id', 'lastname', 'firstname'),
         ['prompt'=>'Select Patient'] ) 
     ?>
-     <?php
+
+    <?php
         $location=Location::find()->all();
           $listData=ArrayHelper::map($location, 'id', 'location_name');
         echo $form->field($model, 'location_id')->dropDownList(
@@ -52,34 +54,34 @@ use backend\models\User;
 ?>
     <?= $form->field($model, 'total_amount')->textInput(['maxlength' => 10]) ?>
 
-     <?= $form->field($model, 'returned_by')->dropDownList(
+ <?= $form->field($model, 'returned_by')->dropDownList(
         ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
-        ['prompt'=>'Select Returned by'] ) 
+        ['prompt'=>'Select Employee'] ) 
     ?>
     <?= $form->field($model, 'received_by')->dropDownList(
         ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
-        ['prompt'=>'Select Receive by'] ) 
+        ['prompt'=>'Select Employee'] ) 
     ?>
- <?= $form->field($model, 'approved_by')->dropDownList(
+    <?= $form->field($model, 'approved_by')->dropDownList(
         ArrayHelper::map(Employee::find()->all(), 'id', 'lastname', 'firstname'),
-        ['prompt'=>'Select approved by'] ) 
+        ['prompt'=>'Select Employee'] ) 
     ?>
-	
-      <?php
+   
+   
+     <?php
         $accountingStatus=AccountingStatus::find()->all();
           $listData=ArrayHelper::map($accountingStatus, 'id', 'description');
         echo $form->field($model, 'accounting_status_id')->dropDownList(
             $listData,['prompt'=>'Select Accounting Status']);
 
 ?>
-
-     <?php
+   <?php
         $user=User::find()->all();
         $listData=ArrayHelper::map($user, 'id', 'username');
         echo $form->field($model, 'created_by')->dropDownList(
             $listData,['prompt'=>'Select User']);
     ?>
-    <div class="form-group">
+ <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
