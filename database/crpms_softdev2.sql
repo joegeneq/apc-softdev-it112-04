@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2015 at 05:21 AM
+-- Generation Time: Apr 21, 2015 at 05:56 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -578,7 +578,7 @@ ALTER TABLE `stock_issue_details`
 -- Indexes for table `stock_issue_header`
 --
 ALTER TABLE `stock_issue_header`
- ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`), ADD KEY `stock_issue_header_ibfk_1` (`stock_status_id`), ADD KEY `stock_issue_header_ibfk_2` (`stock_inventory_id`), ADD KEY `stock_issue_header_ibfk_3` (`location_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`), ADD KEY `stock_issue_header_ibfk_1` (`stock_status_id`), ADD KEY `stock_issue_header_ibfk_2` (`stock_inventory_id`), ADD KEY `stock_issue_header_ibfk_3` (`location_id`), ADD KEY `created_by` (`created_by`);
 
 --
 -- Indexes for table `stock_status`
