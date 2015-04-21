@@ -70,6 +70,7 @@ AppAsset::register($this);
 
                        ['label' => 'Create New attributes', 'items' => [
                     ['label' => 'Stock Status', 'url' => ['/stock-status/index'],],
+                    ['label' => 'Accounting Status', 'url' => ['/accounting-status/index']],
                     ['label' => 'Location', 'url' => ['/location/index']],
                     ['label' => 'Bed', 'url' => ['/bed/index']],
                     ['label' => 'Item Category', 'url' => ['/item-category/index']],
