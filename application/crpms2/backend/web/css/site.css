@@ -1,5 +1,6 @@
-html,
+﻿html,
 body {
+ background-image: url(../images/background5.png);
     height: 100%;
       font-size: 14px;
 	    font-family:proximaNova;
