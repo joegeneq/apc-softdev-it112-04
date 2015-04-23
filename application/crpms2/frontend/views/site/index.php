@@ -14,7 +14,7 @@ $this->title = 'CRMGH-PMS';
 <header><center><img src="../web/images/header1.png" width="1100" height="250" ></center>
 
 
-<center><body background="../web/images/background5.png">
+<center>
 <div class="site-index">
 
 <script type="text/javascript"> 

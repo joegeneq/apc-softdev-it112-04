@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Accounting Statuses';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
+
 <div class="accounting-status-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

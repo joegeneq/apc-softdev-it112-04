@@ -10,5 +10,5 @@ $this->params['breadcrumbs'][] = ['label' => 'Return Item Details', 'url' => ['i
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<body background="../web/images/background5.png">
+
 <p> <b> You are not allowed to update </b></p>

@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\models\AccountingStatus */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<body background="../web/images/background5.png">
+
 <div class="accounting-status-form">
 
     <?php $form = ActiveForm::begin(); ?>

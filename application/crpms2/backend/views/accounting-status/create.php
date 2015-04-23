@@ -10,7 +10,7 @@ $this->title = 'Create Accounting Status';
 $this->params['breadcrumbs'][] = ['label' => 'Accounting Statuses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<body background="../web/images/background5.png">
+
 <div class="accounting-status-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
