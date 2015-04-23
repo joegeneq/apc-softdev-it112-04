@@ -52,12 +52,7 @@ use backend\models\User;
     ?>
 
     <!----?= $form->field($model, 'created_by')->textInput() ?---->
-    <?php
-        $employee=Employee::find()->all();
-        $listData=ArrayHelper::map($employee, 'id', 'lastname','firstname');
-        echo $form->field($model, 'created_by')->dropDownList(
-            $listData,['prompt'=>'Select Employee']);
-    ?>
+    
 
 
     <div class="form-group">
