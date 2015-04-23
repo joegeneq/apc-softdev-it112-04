@@ -128,38 +128,48 @@ swapImage();
 
 
 	
-    <div class="body-content">
+     <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Company Profile</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>
+                
+                <b> With the mission to help the constituents of Taguig in their Medical needs. <b> <br>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+            <li>    1969 - Year of founding, as a 3-bed maternity. <br></li>
+            <li>    1974 - Expanded into a primary general hospital with 12 beds capacity. <br></li>
+            <li>    1981 - Expanded and upgraded into a secondary hospital with 50 beds. <br></li>
+        </p>
+         <p><a class="btn btn-default" href="http://localhost/crpms2/frontend/web/index.php?r=site%2Fabout">View More &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Vision</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                <p>
+                
+                <li> SSMC is one of the country's leading, trusted and affordable one stop provider of health care solutions for employers, 
+            their workforce and the working class in general.</li> <br>
+                <li>SSMC is an advocate of the business principle of Corporate Citizenship whereby its business interest is served 
+                    best with profitability and growth being a ccomplished alongside the development of the communities, the protection 
+                    and sustainability of the environment, and the improvement of people's quality of life. </li> <br>
+                </p>
+     <p><a class="btn btn-default" href="http://localhost/crpms2/frontend/web/index.php?r=site%2Fabout">View More &raquo;</a></p>
+ 
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Mission</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>
+                
+        <li> SSMC regards all those it serve with the respect,kindness and compassion;</li><br>
+        <li>SSMC promotes health and wellness pratices in the worplaces of its client as well as of itself for sound business outcomes;</li><br>
+        <li>SSMC continiously strives to have a full assortment of suitable equipment and facilities to etter serve its patients;</li><br>
+     <p><a class="btn btn-default" href="http://localhost/crpms2/frontend/web/index.php?r=site%2Fabout">View More &raquo;</a></p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                
+                </p>
             </div>
         </div>
 
